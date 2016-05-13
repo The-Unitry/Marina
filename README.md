@@ -1,2 +1,2 @@
-# Marina
+# Navicula
 Android app
