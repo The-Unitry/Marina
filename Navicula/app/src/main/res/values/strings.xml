@@ -30,4 +30,15 @@
     <string name="hint_userName">Gebruikersnaam</string>
 
     <string name="textView_signIn">Login</string>
+
+    //Registration form
+    <string name="registration_title">Registreren</string>
+    <string name="registration_first_name">Voornaam</string>
+    <string name="registration_last_name">Achternaam</string>
+    <string name="registration_email">E-mailadres</string>
+    <string name="registration_adress">Adres</string>
+    <string name="registration_house_number">Huisnummer</string>
+    <string name="registration_phone">Telefoonnummer</string>
+    <string name="registration_button_send">Verzenden</string>
+
 </resources>
