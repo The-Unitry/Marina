@@ -8,9 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import eu.theunitry.navicula.FragmentMain;
 import eu.theunitry.navicula.R;
 
-public class RegistrationForm extends Fragment {
+public class RegistrationForm extends FragmentMain {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         FloatingActionButton fab = (FloatingActionButton) getActivity().findViewById(R.id.fab);

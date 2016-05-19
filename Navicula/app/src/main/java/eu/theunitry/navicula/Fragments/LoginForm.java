@@ -8,16 +8,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import eu.theunitry.navicula.FragmentMain;
+import eu.theunitry.navicula.MainActivity;
 import eu.theunitry.navicula.R;
 
-public class LoginForm extends Fragment {
+public class LoginForm extends FragmentMain {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        FloatingActionButton fab = (FloatingActionButton) getActivity().findViewById(R.id.fab);
-        CoordinatorLayout.LayoutParams p =(CoordinatorLayout.LayoutParams) fab.getLayoutParams();
-        fab.setLayoutParams(p);
-        fab.setVisibility(View.GONE);
+
+        ((MainActivity) getActivity()).hideFab();
         return inflater.inflate(R.layout.fragment_login_form, container, false);
     }
 

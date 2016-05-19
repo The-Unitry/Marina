@@ -6,9 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import eu.theunitry.navicula.FragmentMain;
 import eu.theunitry.navicula.R;
 
-public class RentBoxes extends Fragment {
+public class RentBoxes extends FragmentMain {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 

@@ -23,6 +23,9 @@ import eu.theunitry.navicula.fragments.RentBoxes;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    private FloatingActionButton fab;
+    private boolean fabShown = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -96,11 +99,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.show();
         FragmentManager fm = getFragmentManager();
 
         int id = item.getItemId();
+
+        showFab();
 
         switch (id) {
             case R.id.nav_home:
@@ -139,5 +142,33 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
+    public void showFab() {
+        if (!isFabShown()) {
+            setFabShown(true);
+            getFab().show();
+        }
+    }
 
+    public void hideFab() {
+        if (isFabShown()) {
+            setFabShown(false);
+            getFab().hide();
+        }
+    }
+
+    public FloatingActionButton getFab() {
+        return this.fab;
+    }
+
+    public void setFab(FloatingActionButton fab) {
+        this.fab.show();
+    }
+
+    public boolean isFabShown() {
+        return this.fabShown;
+    }
+
+    public void setFabShown(boolean fabShown) {
+        this.fabShown = fabShown;
+    }
 }
