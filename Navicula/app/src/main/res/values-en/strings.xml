@@ -17,17 +17,20 @@
     <string name="action_reserveCrane">Reserve crane</string>
     <string name="action_myInfo">My info</string>
 
-    <string name="action_logIn">Sign in</string>
-    <string name="action_forgotPassword">Forgot Password?</string>
+
 
 
     <string name="action_manageUsers">Manage users</string>
     <string name="action_manageBoats">Manage boats</string>
     <string name="action_manageCranes">Manage crane</string>
 
+
+
+    //Login form
+    <string name="textView_signIn">Sign in</string>
     <string name="hint_passWord">Password</string>
     <string name="hint_userName">Username</string>
+    <string name="action_logIn">Sign in</string>
+    <string name="action_forgotPassword">Forgot Password?</string>
 
-
-    <string name="textView_signIn">Sign in</string>
 </resources>

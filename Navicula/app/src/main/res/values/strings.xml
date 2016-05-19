@@ -18,18 +18,20 @@
     <string name="action_myInfo">Mijn gegevens</string>
 
     <string name="action_">Mijn gegevens</string>
-    <string name="action_logIn">Inloggen</string>
-    <string name="action_forgotPassword">Wachtwoord vergeten?</string>
 
 
     <string name="action_manageUsers">Gebruikers beheren</string>
     <string name="action_manageBoats">Boten beheren</string>
     <string name="action_manageCranes">Hijskranen beheren</string>
 
+
+    //Login form
+    <string name="textView_signIn">Login</string>
     <string name="hint_passWord">Wachtwoord</string>
     <string name="hint_userName">Gebruikersnaam</string>
+    <string name="action_logIn">Inloggen</string>
+    <string name="action_forgotPassword">Wachtwoord vergeten?</string>
 
-    <string name="textView_signIn">Login</string>
 
     //Registration form
     <string name="registration_title">Registreren</string>
@@ -37,7 +39,7 @@
     <string name="registration_last_name">Achternaam</string>
     <string name="registration_email">E-mailadres</string>
     <string name="registration_adress">Adres</string>
-    <string name="registration_house_number">Huisnummer</string>
+    <string name="registration_house_number">Huisnr</string>
     <string name="registration_phone">Telefoonnummer</string>
     <string name="registration_button_send">Verzenden</string>
 
