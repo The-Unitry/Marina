@@ -47,6 +47,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+        getFragmentManager().beginTransaction().replace(R.id.content_frame, new Blog()).commit();
+        navigationView.setCheckedItem(R.id.nav_home);
     }
 
     @Override
