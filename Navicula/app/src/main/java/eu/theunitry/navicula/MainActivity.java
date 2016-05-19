@@ -79,17 +79,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_home) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_myInfo) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_myBoats) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_myBoxes) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_rentBox) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_reserveCrane) {
+
+        } else if (id == R.id.nav_myInfo) {
+
+        } else if (id == R.id.nav_login) {
+
+        } else if (id == R.id.nav_register) {
 
         }
 
