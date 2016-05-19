@@ -2,6 +2,7 @@ package eu.theunitry.navicula;
 
 import android.app.FragmentManager;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
@@ -95,7 +96,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.show();
         FragmentManager fm = getFragmentManager();
 
         int id = item.getItemId();
@@ -136,4 +138,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onPrepareOptionsMenu(menu);
         return true;
     }
+
+
 }
