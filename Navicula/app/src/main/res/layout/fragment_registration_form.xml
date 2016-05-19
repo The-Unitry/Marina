@@ -6,9 +6,85 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="RegForm"
-        android:id="@+id/textView2"
+        android:text="Registreren"
+        android:id="@+id/textViewTitle"
+        android:layout_marginTop="44dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginStart="29dp"
         android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Voornaam"
+        android:ems="10"
+        android:id="@+id/editTextFirstName"
+        android:layout_below="@+id/textViewTitle"
+        android:layout_alignLeft="@+id/textViewTitle"
+        android:layout_alignStart="@+id/textViewTitle"
+        android:layout_marginTop="25dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Achternaam"
+        android:ems="10"
+        android:id="@+id/editTextLastName"
+        android:layout_below="@+id/editTextFirstName"
+        android:layout_alignLeft="@+id/editTextFirstName"
+        android:layout_alignStart="@+id/editTextFirstName"
+        android:layout_marginTop="25dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:hint="E-mailadres"
+        android:ems="10"
+        android:id="@+id/editTextEmail"
+        android:layout_below="@+id/editTextLastName"
+        android:layout_alignLeft="@+id/editTextLastName"
+        android:layout_alignStart="@+id/editTextLastName"
+        android:layout_marginTop="25dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Adres"
+        android:ems="10"
+        android:id="@+id/editTextAdress"
+        android:layout_below="@+id/editTextEmail"
+        android:layout_alignLeft="@+id/editTextEmail"
+        android:layout_alignStart="@+id/editTextEmail"
+        android:layout_marginTop="25dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:hint="Telefoonnummer"
+        android:ems="10"
+        android:id="@+id/editTextPhone"
+        android:layout_below="@+id/editTextAdress"
+        android:layout_alignLeft="@+id/editTextAdress"
+        android:layout_alignStart="@+id/editTextAdress"
+        android:layout_marginTop="25dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Verzenden"
+        android:id="@+id/button"
+        android:textAllCaps="false"
+        android:textColor="@color/colorAccent"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="178dp" />
+        android:layout_marginBottom="25dp" />
+
 </RelativeLayout>
