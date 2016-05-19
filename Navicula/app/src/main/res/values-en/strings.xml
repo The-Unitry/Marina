@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Navicula</string>
+    <string name="app_desc">Jachthaven Harderwijk</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    //Menu catagories
+    <string name="catagory_login">Sign in</string>
+    //Menu items
+    <string name="action_home">Home</string>
+    <string name="action_login">Inloggen</string>
+    <string name="action_register">Register</string>
+    <string name="action_myBoats">My boats</string>
+    <string name="action_myBoxes">My boxes</string>
+    <string name="action_rentBoxes">Rent box</string>
+    <string name="action_reserveCrane">Reserve crane</string>
+    <string name="action_myInfo">My info</string>
+
+    <string name="action_manageUsers">Manage users</string>
+    <string name="action_manageBoats">Manage boats</string>
+    <string name="action_manageCranes">Manage crane</string>
+
+</resources>
