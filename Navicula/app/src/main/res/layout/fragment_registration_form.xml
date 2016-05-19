@@ -66,6 +66,16 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Huisnummer"
+        android:ems="10"
+        android:id="@+id/editTextHouseNumber"
+        android:layout_alignTop="@+id/editTextAdress"
+        android:layout_toRightOf="@+id/editTextAdress" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:inputType="phone"
         android:hint="Telefoonnummer"
         android:ems="10"
