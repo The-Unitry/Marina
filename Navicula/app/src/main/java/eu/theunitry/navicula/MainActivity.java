@@ -1,5 +1,6 @@
 package eu.theunitry.navicula;
 
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,6 +14,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
+
+import eu.theunitry.navicula.fragments.Blog;
+import eu.theunitry.navicula.fragments.LoginForm;
+import eu.theunitry.navicula.fragments.RegistrationForm;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -80,26 +85,33 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+
+        FragmentManager fm = getFragmentManager();
+
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_myInfo) {
+        switch (id) {
+            case R.id.nav_home:
+                fm.beginTransaction().replace(R.id.content_frame, new Blog()).commit();
+                break;
+            case R.id.nav_myInfo:
 
-        } else if (id == R.id.nav_myBoats) {
+                break;
+            case R.id.nav_myBoats:
 
-        } else if (id == R.id.nav_myBoxes) {
+                break;
+            case R.id.nav_rentBox:
 
-        } else if (id == R.id.nav_rentBox) {
+                break;
+            case R.id.nav_reserveCrane:
 
-        } else if (id == R.id.nav_reserveCrane) {
-
-        } else if (id == R.id.nav_myInfo) {
-
-        } else if (id == R.id.nav_login) {
-
-        } else if (id == R.id.nav_register) {
-
+                break;
+            case R.id.nav_login:
+                fm.beginTransaction().replace(R.id.content_frame, new LoginForm()).commit();
+                break;
+            case R.id.nav_register:
+                fm.beginTransaction().replace(R.id.content_frame, new RegistrationForm()).commit();
+                break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
