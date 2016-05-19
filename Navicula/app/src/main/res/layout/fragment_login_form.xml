@@ -51,7 +51,7 @@
         android:textSize="18dp"
         android:fontFamily="garamond"
         android:focusableInTouchMode="false"
-        android:background="#59bf59"
+        android:background="@color/colorPrimary"
         android:textColor="#ffffff"
         android:layout_alignWithParentIfMissing="false"
         android:textAlignment="center"
