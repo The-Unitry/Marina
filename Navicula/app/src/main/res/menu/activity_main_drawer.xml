@@ -22,7 +22,6 @@
             android:title="@string/action_reserveCrane" />
     </group>
 
-
     <item android:title="@string/catagory_login">
         <menu>
             <group android:checkableBehavior="single">
