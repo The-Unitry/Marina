@@ -18,6 +18,7 @@ import android.view.WindowManager;
 import eu.theunitry.navicula.fragments.Blog;
 import eu.theunitry.navicula.fragments.LoginForm;
 import eu.theunitry.navicula.fragments.RegistrationForm;
+import eu.theunitry.navicula.fragments.RentBoxes;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -32,8 +33,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "\uD83D\uDEA2", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                FragmentManager fm = getFragmentManager();
+                NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+
+                fm.beginTransaction().replace(R.id.content_frame, new RentBoxes()).commit();
+                navigationView.setCheckedItem(R.id.nav_rentBox);
             }
         });
 
@@ -107,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 break;
             case R.id.nav_rentBox:
-
+                fm.beginTransaction().replace(R.id.content_frame, new RentBoxes()).commit();
                 break;
             case R.id.nav_reserveCrane:
 

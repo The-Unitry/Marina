@@ -8,11 +8,10 @@ import android.view.ViewGroup;
 
 import eu.theunitry.navicula.R;
 
-public class Blog extends Fragment {
+public class RentBoxes extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-
-        return inflater.inflate(R.layout.fragment_blog, container, false);
+        return inflater.inflate(R.layout.fragment_rent_boxes, container, false);
     }
 }
