@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    //Main colors
     <color name="colorPrimary">#4A94E2</color>
     <color name="colorPrimaryDark">#4A94E2</color>
     <color name="colorAccent">#4A94E2</color>
+
+    //Registration form
+    <color name="colorWhite">#FFFFFF</color>
 </resources>
