@@ -51,7 +51,7 @@
         android:textSize="18dp"
         android:fontFamily="garamond"
         android:focusableInTouchMode="false"
-        android:background="@color/colorPrimary"
+        android:background="#59bf59"
         android:textColor="#ffffff"
         android:layout_alignWithParentIfMissing="false"
         android:textAlignment="center"
@@ -71,6 +71,7 @@
         android:layout_below="@+id/signIn"
         android:layout_alignRight="@+id/signIn"
         android:layout_alignEnd="@+id/signIn"
+        android:layout_alignParentTop="false"
         android:layout_marginTop="15dp" />
 
     <TextView
@@ -82,7 +83,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="44dp"
-        android:fontFamily="@string/action_register"
+        android:fontFamily="Arial"
         android:textSize="45dp" />
 
 
