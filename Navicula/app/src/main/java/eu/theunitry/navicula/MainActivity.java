@@ -158,7 +158,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (getFab().getVisibility() == View.GONE) {
             getFab().show();
         }
-        System.out.println(getFab().getVisibility());
     }
 
     public void hideFab() {
