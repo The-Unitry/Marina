@@ -5,19 +5,19 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    //Menu catagories
-    <string name="catagory_login">Aanmelden</string>
+    //Menu categories
+    <string name="category_login">Aanmelden</string>
+    <string name="category_account">Account</string>
     //Menu items
     <string name="action_home">Home</string>
     <string name="action_login">Inloggen</string>
     <string name="action_register">Registreren</string>
+    <string name="action_logout">Uitloggen</string>
     <string name="action_myBoats">Mijn boten</string>
     <string name="action_myBoxes">Mijn boxen</string>
     <string name="action_rentBoxes">Box huren</string>
     <string name="action_reserveCrane">Hijskraan reserveren</string>
     <string name="action_myInfo">Mijn gegevens</string>
-
-    <string name="action_">Mijn gegevens</string>
 
 
     <string name="action_manageUsers">Gebruikers beheren</string>

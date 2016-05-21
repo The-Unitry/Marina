@@ -60,6 +60,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         getFragmentManager().beginTransaction().replace(R.id.content_frame, new Blog()).commit();
         navigationView.setCheckedItem(R.id.nav_home);
+
+        MenuManager menuManager = new MenuManager(navigationView.getMenu());
+        menuManager.switchMenu("debug");
+
     }
 
     @Override

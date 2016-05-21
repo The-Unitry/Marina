@@ -6,9 +6,6 @@
             android:id="@+id/nav_home"
             android:title="@string/action_home" />
         <item
-            android:id="@+id/nav_myInfo"
-            android:title="@string/action_myInfo" />
-        <item
             android:id="@+id/nav_myBoats"
             android:title="@string/action_myBoats" />
         <item
@@ -22,7 +19,7 @@
             android:title="@string/action_reserveCrane" />
     </group>
 
-    <item android:title="@string/catagory_login">
+    <item android:title="@string/category_login">
         <menu>
             <group android:checkableBehavior="single">
                 <item
@@ -31,6 +28,19 @@
                 <item
                     android:id="@+id/nav_register"
                     android:title="@string/action_register" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/category_account">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_myInfo"
+                    android:title="@string/action_myInfo" />
+                <item
+                    android:id="@+id/nav_logout"
+                    android:title="@string/action_logout" />
             </group>
         </menu>
     </item>

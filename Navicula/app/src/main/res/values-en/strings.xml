@@ -5,12 +5,14 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    //Menu catagories
-    <string name="catagory_login">Sign in</string>
+    //Menu categories
+    <string name="category_login">Sign in</string>
+    <string name="category_account">Account</string>
     //Menu items
     <string name="action_home">Home</string>
-    <string name="action_login">Inloggen</string>
+    <string name="action_login">Login</string>
     <string name="action_register">Register</string>
+    <string name="action_logout">Logout</string>
     <string name="action_myBoats">My boats</string>
     <string name="action_myBoxes">My boxes</string>
     <string name="action_rentBoxes">Rent box</string>
