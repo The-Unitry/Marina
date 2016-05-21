@@ -16,6 +16,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
 
+import java.util.ArrayList;
+
 import eu.theunitry.navicula.fragments.Blog;
 import eu.theunitry.navicula.fragments.LoginForm;
 import eu.theunitry.navicula.fragments.RegistrationForm;
@@ -103,30 +105,40 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         int id = item.getItemId();
 
-        showFab();
+        FragmentMain fragment;
 
         switch (id) {
             case R.id.nav_home:
-                fm.beginTransaction().replace(R.id.content_frame, new Blog()).commit();
+                fragment = new Blog();
                 break;
             case R.id.nav_myInfo:
-
+                fragment = new Blog();
                 break;
             case R.id.nav_myBoats:
-
+                fragment = new Blog();
                 break;
             case R.id.nav_rentBox:
-                fm.beginTransaction().replace(R.id.content_frame, new RentBoxes()).commit();
+                fragment = new RentBoxes();
                 break;
             case R.id.nav_reserveCrane:
-
+                fragment = new Blog();
                 break;
             case R.id.nav_login:
-                fm.beginTransaction().replace(R.id.content_frame, new LoginForm()).commit();
+                fragment = new LoginForm();
                 break;
             case R.id.nav_register:
-                fm.beginTransaction().replace(R.id.content_frame, new RegistrationForm()).commit();
+                fragment = new RegistrationForm();
                 break;
+            default:
+                fragment = new Blog();
+                break;
+        }
+        fm.beginTransaction().replace(R.id.content_frame, fragment).commit();
+
+        if (fragment.hasFAB()) {
+            showFab();
+        } else {
+            hideFab();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -143,15 +155,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     public void showFab() {
-        if (!isFabShown()) {
-            setFabShown(true);
+        if (getFab().getVisibility() == View.GONE) {
             getFab().show();
         }
+        System.out.println(getFab().getVisibility());
     }
 
     public void hideFab() {
-        if (isFabShown()) {
-            setFabShown(false);
+        if (getFab().getVisibility() == View.VISIBLE) {
             getFab().hide();
         }
     }
@@ -162,13 +173,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public void setFab(FloatingActionButton fab) {
         this.fab.show();
-    }
-
-    public boolean isFabShown() {
-        return this.fabShown;
-    }
-
-    public void setFabShown(boolean fabShown) {
-        this.fabShown = fabShown;
     }
 }

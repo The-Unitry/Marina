@@ -12,12 +12,15 @@ import eu.theunitry.navicula.FragmentMain;
 import eu.theunitry.navicula.R;
 
 public class RegistrationForm extends FragmentMain {
+
+    public RegistrationForm() {
+        setFAB(false);
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        FloatingActionButton fab = (FloatingActionButton) getActivity().findViewById(R.id.fab);
-        CoordinatorLayout.LayoutParams p =(CoordinatorLayout.LayoutParams) fab.getLayoutParams();
-        fab.setLayoutParams(p);
-        fab.setVisibility(View.GONE);
+
         return inflater.inflate(R.layout.fragment_registration_form, container, false);
     }
+
 }

@@ -14,12 +14,14 @@ import eu.theunitry.navicula.R;
 
 public class LoginForm extends FragmentMain {
 
+    public LoginForm() {
+        setFAB(false);
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        ((MainActivity) getActivity()).hideFab();
         return inflater.inflate(R.layout.fragment_login_form, container, false);
     }
-
 
 }

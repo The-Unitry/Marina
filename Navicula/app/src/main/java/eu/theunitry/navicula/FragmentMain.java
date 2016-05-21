@@ -8,7 +8,13 @@ import android.support.design.widget.FloatingActionButton;
  */
 public class FragmentMain extends Fragment {
 
-    private FloatingActionButton fab;
+    private boolean FAB = true;
 
+    public boolean hasFAB() {
+        return this.FAB;
+    }
 
+    public void setFAB(boolean FAB) {
+        this.FAB = FAB;
+    }
 }
