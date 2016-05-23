@@ -19,6 +19,7 @@ import android.view.WindowManager;
 import java.util.ArrayList;
 
 import eu.theunitry.navicula.fragments.Blog;
+import eu.theunitry.navicula.fragments.BoatView;
 import eu.theunitry.navicula.fragments.LoginForm;
 import eu.theunitry.navicula.fragments.RegistrationForm;
 import eu.theunitry.navicula.fragments.RentBoxes;
@@ -138,7 +139,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 fragment = new Blog();
                 break;
             case R.id.nav_myBoats:
-                fragment = new Blog();
+                fragment = new BoatView();
                 break;
             case R.id.nav_rentBox:
                 fragment = new RentBoxes();
