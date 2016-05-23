@@ -44,4 +44,15 @@
             </group>
         </menu>
     </item>
+
+    <item android:title="Debug menu">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/splashscreen"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="Splashscreen" />
+            </group>
+        </menu>
+    </item>
 </menu>
