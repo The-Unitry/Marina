@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private FloatingActionButton fab;
     private NavigationView navigationView;
+    private MenuManager menuManager;
+    public static UserManager userManager = new UserManager();
     private boolean fabShown = true;
 
     @Override
@@ -41,11 +43,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentManager fm = getFragmentManager();
-                NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-
-                fm.beginTransaction().replace(R.id.content_frame, new RentBoxes()).commit();
-                navigationView.setCheckedItem(R.id.nav_rentBox);
+                switchFragment(getMenuItem(R.id.nav_rentBox));
             }
         });
 
@@ -60,11 +58,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-        getFragmentManager().beginTransaction().replace(R.id.content_frame, new Blog()).commit();
-        navigationView.setCheckedItem(R.id.nav_home);
-
-        MenuManager menuManager = new MenuManager(navigationView.getMenu());
+        menuManager = new MenuManager(navigationView.getMenu());
         menuManager.switchMenu("debug");
+
+        switchFragment(getMenuItem(R.id.nav_home));
 
     }
 
@@ -107,6 +104,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+        switchFragment(item);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        MenuItem item= menu.findItem(R.id.action_settings);
+        item.setVisible(false);
+        super.onPrepareOptionsMenu(menu);
+        return true;
+    }
+
+    public void switchFragment(MenuItem item) {
         FragmentManager fm = getFragmentManager();
 
         int id = item.getItemId();
@@ -145,23 +158,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fm.beginTransaction().replace(R.id.content_frame, fragment).commit();
         getSupportActionBar().setTitle(navigationView.getMenu().findItem(id).getTitle().toString());
 
+        navigationView.setCheckedItem(id);
+
         if (fragment.hasFAB()) {
             showFab();
         } else {
             hideFab();
         }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
-
-    @Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        MenuItem item= menu.findItem(R.id.action_settings);
-        item.setVisible(false);
-        super.onPrepareOptionsMenu(menu);
-        return true;
     }
 
     public void showFab() {
@@ -176,11 +179,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
+    public MenuItem getMenuItem(Integer id) {
+        return getMenuManager().getMenu().findItem(id);
+    }
+
     public FloatingActionButton getFab() {
         return this.fab;
     }
 
     public void setFab(FloatingActionButton fab) {
         this.fab.show();
+    }
+
+    public MenuManager getMenuManager() {
+        return this.menuManager;
+    }
+
+    public void setMenuManager(MenuManager menuManager) {
+        this.menuManager = menuManager;
     }
 }

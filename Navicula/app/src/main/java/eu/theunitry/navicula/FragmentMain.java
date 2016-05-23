@@ -9,6 +9,11 @@ import android.support.design.widget.FloatingActionButton;
 public class FragmentMain extends Fragment {
 
     private boolean FAB = true;
+    private UserManager userManager;
+
+    public FragmentMain() {
+        setUserManager(MainActivity.userManager);
+    }
 
     public boolean hasFAB() {
         return this.FAB;
@@ -16,5 +21,17 @@ public class FragmentMain extends Fragment {
 
     public void setFAB(boolean FAB) {
         this.FAB = FAB;
+    }
+
+    public UserManager getUserManager() {
+        return this.userManager;
+    }
+
+    public void setUserManager(UserManager userManager) {
+        this.userManager = userManager;
+    }
+
+    public MainActivity getMainActivity() {
+        return (MainActivity) getActivity();
     }
 }
