@@ -31,6 +31,8 @@
     <string name="hint_email">E-mailadres</string>
     <string name="action_logIn">Inloggen</string>
     <string name="action_forgotPassword">Wachtwoord vergeten?</string>
+    <string name="action_loggedIn">Welkom, [FIRST_NAME]</string>
+    <string name="action_loggedOut">Tot ziens!</string>
 
 
     //Registration form

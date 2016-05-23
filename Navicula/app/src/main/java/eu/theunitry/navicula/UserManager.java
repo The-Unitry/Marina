@@ -18,6 +18,11 @@ public class UserManager {
         return results;
     }
 
+    public void logout() {
+        // WHERE THE MAGIC HAPPENS
+        setLoggedIn(false);
+    }
+
     public boolean isLoggedIn() {
         return this.loggedIn;
     }
