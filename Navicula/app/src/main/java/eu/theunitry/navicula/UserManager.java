@@ -9,11 +9,18 @@ import java.util.HashMap;
 public class UserManager {
 
     private boolean loggedIn;
+    private User user;
 
     public HashMap<String, String> login(String username, String password) {
         // WHERE THE MAGIC HAPPENS
         HashMap<String, String> results = new HashMap<String, String>();
         results.put("success", "true");
+        results.put("firstname", "John");
+        results.put("surname", "Doe");
+
+        user = new User();
+        user.setFirstname(results.get("firstname"));
+        user.setSurname(results.get("surname"));
 
         return results;
     }
@@ -29,5 +36,13 @@ public class UserManager {
 
     public void setLoggedIn(boolean loggedIn) {
         this.loggedIn = loggedIn;
+    }
+
+    public User getUser() {
+        return this.user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
