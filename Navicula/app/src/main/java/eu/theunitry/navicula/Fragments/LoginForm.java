@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.app.Fragment;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,15 +41,14 @@ public class LoginForm extends FragmentMain implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.buttonLogin:
-                System.out.println("Login");
                 handleLogin(getUserManager().login("", ""));
                 break;
         }
     }
 
-    public void handleLogin(HashMap<String, Object> results) {
+    public void handleLogin(HashMap<String, String> results) {
 
-        if (results.get("success") == true) {
+        if (results.get("success") == "true") {
             MenuManager menu = getMainActivity().getMenuManager();
             menu.switchMenu("user");
 

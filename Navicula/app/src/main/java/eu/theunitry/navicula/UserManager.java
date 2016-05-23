@@ -10,10 +10,10 @@ public class UserManager {
 
     private boolean loggedIn;
 
-    public HashMap<String, Object> login(String username, String password) {
+    public HashMap<String, String> login(String username, String password) {
         // WHERE THE MAGIC HAPPENS
-        HashMap<String, Object> results = new HashMap<String, Object>();
-        results.put("success", true);
+        HashMap<String, String> results = new HashMap<String, String>();
+        results.put("success", "true");
 
         return results;
     }

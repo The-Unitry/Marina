@@ -71,7 +71,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            if (getMenuItem(R.id.nav_home).isChecked()) {
+                super.onBackPressed();
+            } else {
+                switchFragment(getMenuItem(R.id.nav_home));
+            }
         }
     }
 
