@@ -15,6 +15,8 @@ import eu.theunitry.navicula.R;
 
 public class Splashscreen extends FragmentMain {
 
+    public ProgressBar bar;
+
     public Splashscreen() {
         setFAB(false);
     }
@@ -27,11 +29,14 @@ public class Splashscreen extends FragmentMain {
 
         getMainActivity().getSupportActionBar().hide();
 
+        ProgressBar bar = (ProgressBar) getActivity().findViewById(R.id.progressBar);
+
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
+
             boolean reverse = false;
             public void run() {
-                ProgressBar bar = (ProgressBar) getActivity().findViewById(R.id.progressBar);
+                ProgressBar bar = (ProgressBar) getMainActivity().findViewById(R.id.progressBar);
                 if (reverse == true){
                     if(bar.getProgress() < 100){
                         bar.setProgress(bar.getProgress() + 1);
@@ -49,7 +54,7 @@ public class Splashscreen extends FragmentMain {
                 }
 
                 //calling postdelayed again
-                handler.postDelayed(this, 100);       //added this line
+                handler.postDelayed(this, 1);       //added this line
             }
         }, 100);
 
