@@ -27,8 +27,8 @@
 
     //Login form
     <string name="textView_signIn">Login</string>
-    <string name="hint_passWord">Wachtwoord</string>
-    <string name="hint_userName">Gebruikersnaam</string>
+    <string name="hint_password">Wachtwoord</string>
+    <string name="hint_email">E-mailadres</string>
     <string name="action_logIn">Inloggen</string>
     <string name="action_forgotPassword">Wachtwoord vergeten?</string>
 

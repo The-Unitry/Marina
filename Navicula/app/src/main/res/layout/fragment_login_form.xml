@@ -1,42 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGrey">
 
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view_login"
+        android:background="#FFFFFF"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="@string/hint_userName"
-        android:ems="10"
-        android:id="@+id/editTextUserName"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="93dp" />
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:hint="@string/hint_passWord"
-        android:fontFamily="Arial"
-        android:ems="10"
-        android:id="@+id/editTextPassword"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/editTextUserName"
-        android:layout_alignLeft="@+id/editTextUserName"
-        android:layout_alignStart="@+id/editTextUserName" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:inputType="textEmailAddress"
+            android:hint="@string/hint_email"
+            android:ems="10"
+            android:id="@+id/editTextUserName"
+            android:layout_marginTop="20dp"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Inloggen"
-        android:textColor="#FFFFFF"
-        android:textAllCaps="false"
-        android:background="@color/colorPrimary"
-        android:id="@+id/buttonLogin"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/editTextPassword"
-        android:layout_centerHorizontal="true" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:layout_centerHorizontal="true"
+            android:hint="@string/hint_password"
+            android:fontFamily="Arial"
+            android:ems="10"
+            android:id="@+id/editTextPassword"
+            android:layout_below="@+id/editTextUserName"
+            android:layout_marginTop="10dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Inloggen"
+            android:textColor="#FFFFFF"
+            android:textAllCaps="false"
+            android:background="@color/colorPrimary"
+            android:id="@+id/buttonLogin"
+            android:layout_below="@+id/editTextPassword"
+            android:layout_marginTop="20dp" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
 
 </RelativeLayout>

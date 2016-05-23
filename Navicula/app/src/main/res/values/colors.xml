@@ -5,6 +5,8 @@
     <color name="colorPrimaryDark">#4A94E2</color>
     <color name="colorAccent">#4A94E2</color>
 
-    //Registration form
+    //Shades
     <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorGrey">#EEEEEE</color>
 </resources>
