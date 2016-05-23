@@ -26,6 +26,7 @@ import eu.theunitry.navicula.fragments.RentBoxes;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private FloatingActionButton fab;
+    private NavigationView navigationView;
     private boolean fabShown = true;
 
     @Override
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -138,6 +139,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
         }
         fm.beginTransaction().replace(R.id.content_frame, fragment).commit();
+        getSupportActionBar().setTitle(navigationView.getMenu().findItem(id).getTitle().toString());
 
         if (fragment.hasFAB()) {
             showFab();
