@@ -11,8 +11,7 @@
         android:layout_marginTop="50dp"
         android:layout_gravity="center"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="150dp">
+        android:layout_height="wrap_content">
 
         <RelativeLayout
             android:layout_width="fill_parent"
@@ -33,13 +32,14 @@
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:text="@string/boat_view_button_add"
-                android:id="@+id/buttonAdd"
+                android:id="@+id/buttonAddBoat"
                 android:textAllCaps="false"
                 android:textColor="@color/colorWhite"
                 android:background="@color/colorPrimary"
                 android:layout_below="@+id/textViewTitle"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="30dp"/>
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"/>
 
         </RelativeLayout>
 
