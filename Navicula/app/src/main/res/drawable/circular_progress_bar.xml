@@ -10,10 +10,10 @@
 
         <gradient
             android:angle="0"
-            android:endColor="#4A76E2"
-            android:startColor="#4A76E2"
+            android:endColor="#FFF"
+            android:startColor="#FFF"
             android:type="sweep"
             android:useLevel="false"
-            android:background="@drawable/planet" />
+            />
     </shape>
 </rotate>
