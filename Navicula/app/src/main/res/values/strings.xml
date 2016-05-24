@@ -46,4 +46,8 @@
     <string name="registration_phone">Telefoonnummer</string>
     <string name="registration_button_send">Registreren</string>
 
+    //Boat View
+    <string name="boat_view_zero_boats">U heeft nog geen boten</string>
+    <string name="boat_view_button_add">Boot toevoegen</string>
+
 </resources>
