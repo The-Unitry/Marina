@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -49,6 +50,9 @@ public class LoginForm extends FragmentMain implements View.OnClickListener {
     public void handleLogin(HashMap<String, String> results) {
 
         if (results.get("success") == "true") {
+            String message = getString(R.string.action_loggedIn).replace("[FIRST_NAME]", getUserManager().getUser().getFirstname());
+            Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+
             MenuManager menu = getMainActivity().getMenuManager();
             menu.switchMenu("user");
 

@@ -31,18 +31,23 @@
     <string name="hint_email">E-mailadres</string>
     <string name="action_logIn">Inloggen</string>
     <string name="action_forgotPassword">Wachtwoord vergeten?</string>
+    <string name="action_loggedIn">Welkom, [FIRST_NAME]</string>
+    <string name="action_loggedOut">Tot ziens!</string>
 
 
     //Registration form
     <string name="registration_title">Aanmelden duurt maar een paar seconden d.m.v. een aantal van uw basis gegevens achter te laten</string>
-    <string name="registration_warning">Velden met een * zijn verplicht</string>
-    <string name="registration_first_name">Voornaam *</string>
-    <string name="registration_last_name">Achternaam *</string>
-    <string name="registration_email">E-mailadres *</string>
-    <string name="registration_adress">Adres *</string>
-    <string name="registration_house_number">Huisnummer *</string>
+    <string name="registration_first_name">Voornaam</string>
+    <string name="registration_last_name">Achternaam</string>
+    <string name="registration_email">E-mailadres</string>
+    <string name="registration_adress">Adres</string>
+    <string name="registration_house_number">Huisnummer</string>
     <string name="registration_house_number_addition">Toevoeging</string>
-    <string name="registration_phone">Telefoonnummer *</string>
+    <string name="registration_phone">Telefoonnummer</string>
     <string name="registration_button_send">Registreren</string>
+
+    //Boat View
+    <string name="boat_view_zero_boats">U heeft nog geen boten</string>
+    <string name="boat_view_button_add">Boot toevoegen</string>
 
 </resources>
