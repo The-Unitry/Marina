@@ -51,6 +51,22 @@
     <string name="boat_view_zero_boats">U heeft nog geen boten</string>
     <string name="boat_view_button_add">Boot toevoegen</string>
 
+    //Boat Add
+    <string name="boat_add_title">Een boot registreren duurt maar een paar seconden d.m.v. een aantal van uw boot gegevens achter te laten</string>
+    <string name="boat_add_boat_name">Naam boot</string>
+    <string name="boat_add_boat_owner">Eigenaar boot</string>
+    <string name="boat_add_boat_brand">Merk boot</string>
+    <string name="boat_add_boat_type">Type boot</string>
+    <string name="boat_add_boat_color">Kleur boot</string>
+    <string name="boat_add_dimensions">Afmeteingen</string>
+    <string name="boat_add_dimensions_length">Lengte</string>
+    <string name="boat_add_dimensions_width">Breedte</string>
+    <string name="boat_add_dimensions_heigth">Hoogte</string>
+    <string name="boat_add_radiobutton_motorboat">Motorboot</string>
+    <string name="boat_add_radiobutton_sailboat">Zeilboot</string>
+    <string name="boat_add_boat_people">Aantal betrokkene mensen</string>
+    <string name="boat_add_button_register">Registreer boot</string>
+
     //Box Rent
     <string name="rent_this_box">Box huren</string>
     <string name="box_width">B</string>

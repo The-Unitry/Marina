@@ -29,7 +29,8 @@ public class BoatView extends FragmentMain implements View.OnClickListener {
     @Override
     public void onClick(View view) {
 
-        getActivity().setContentView(R.layout.fragment_blog);
+        FragmentMain fragment = new BoatAdd();
+        getFragmentManager().beginTransaction().replace(R.id.content_frame, fragment).commit();
 
     }
 }
