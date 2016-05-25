@@ -51,4 +51,11 @@
     <string name="boat_view_zero_boats">U heeft nog geen boten</string>
     <string name="boat_view_button_add">Boot toevoegen</string>
 
+
+    //Box Rent
+    <string name="rent_this_box">Box huren</string>
+    <string name="box_width">B</string>
+    <string name="box_price">Prijs</string>
+    <string name="box_number">Box nummer</string>
+
 </resources>
