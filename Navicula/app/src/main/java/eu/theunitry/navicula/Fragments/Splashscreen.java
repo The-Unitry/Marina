@@ -39,7 +39,7 @@ public class Splashscreen extends FragmentMain {
         getMainActivity().getSupportActionBar().hide();
 
         //Run progress bar
-        runProgressBar(10);
+        runProgressBar(20);
 
         return inflater.inflate(R.layout.splashscreen, container, false);
     }
@@ -79,7 +79,7 @@ public class Splashscreen extends FragmentMain {
                     willWork = true;
                 }
                 else{
-                    if(icon.getRotation() <= 360){
+                    if(icon.getRotation() <= 358){
                         if (willWorkToo == 0){
                             icon.setRotation(icon.getRotation() + 4);
                             willWorkToo++;
