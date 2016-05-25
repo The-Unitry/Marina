@@ -21,10 +21,6 @@ import eu.theunitry.navicula.R;
 
 public class LoginForm extends FragmentMain implements View.OnClickListener {
 
-    public LoginForm() {
-        setFAB(false);
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 

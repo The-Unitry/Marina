@@ -15,6 +15,11 @@ import eu.theunitry.navicula.R;
 import eu.theunitry.navicula.WebRequest;
 
 public class Blog extends FragmentMain {
+
+    public Blog() {
+        setFAB(true);
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
