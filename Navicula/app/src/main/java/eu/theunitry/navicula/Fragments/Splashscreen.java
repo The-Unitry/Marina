@@ -2,29 +2,20 @@ package eu.theunitry.navicula.fragments;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.internal.NavigationMenu;
 import android.support.v4.widget.DrawerLayout;
-import android.util.DisplayMetrics;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.RadioButton;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-import java.io.SyncFailedException;
+import java.util.Random;
 
 import eu.theunitry.navicula.FragmentMain;
-import eu.theunitry.navicula.MainActivity;
 import eu.theunitry.navicula.R;
 
 public class Splashscreen extends FragmentMain {
-
-    public ProgressBar bar;
 
     public Splashscreen() {
         setFAB(false);
@@ -34,7 +25,7 @@ public class Splashscreen extends FragmentMain {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         DrawerLayout draw = (DrawerLayout) getActivity().findViewById(R.id.drawer_layout);
-        //draw.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+        draw.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
 
         getMainActivity().getSupportActionBar().hide();
 
@@ -45,6 +36,7 @@ public class Splashscreen extends FragmentMain {
     }
 
     public void runProgressBar(final int time){
+
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
 
@@ -54,21 +46,60 @@ public class Splashscreen extends FragmentMain {
 
             public void run() {
                 //Declare all View elements
-                ProgressBar bar = (ProgressBar) getMainActivity().findViewById(R.id.progressBar);
-                ImageView icon = (ImageView) getMainActivity().findViewById(R.id.imageView3);
+                ImageView icon = (ImageView) getMainActivity().findViewById(R.id.iconImage);
                 TextView progressText = (TextView) getMainActivity().findViewById(R.id.progressText);
-                ImageView earth = (ImageView) getMainActivity().findViewById(R.id.imageView2);
+                ImageView earth = (ImageView) getMainActivity().findViewById(R.id.planetImage);
+                TextView quote = (TextView) getMainActivity().findViewById(R.id.quoteText);
 
                 //Make sure the pivot point is only set once
-                if (loopOnce != true){
+                if (!loopOnce){
+
 
                     float newPivotPointY = earth.getY() + earth.getHeight() / 2 ;
                     icon.setPivotY(newPivotPointY / 3 + icon.getPivotY() - icon.getHeight() / 5);
 
                     icon.setY(icon.getY() - icon.getY() / 100);
+
+                    int random = new Random().nextInt(8);
+
+                    switch (random){
+                        case 0:
+                            quote.setText(getResources().getString(R.string.splash_quote_one));
+                            break;
+                        case 1:
+                            quote.setText(getResources().getString(R.string.splash_quote_two));
+                            break;
+                        case 2:
+                            quote.setText(getResources().getString(R.string.splash_quote_three));
+                            break;
+                        case 3:
+                            quote.setText(getResources().getString(R.string.splash_quote_four));
+                            break;
+                        case 4:
+                            quote.setText(getResources().getString(R.string.splash_quote_five));
+                            break;
+                        case 5:
+                            quote.setText(getResources().getString(R.string.splash_quote_six));
+                            break;
+                        case 6:
+                            quote.setText(getResources().getString(R.string.splash_quote_seven));
+                            break;
+                        case 7:
+                            quote.setText(getResources().getString(R.string.splash_quote_eight));
+                            break;
+                        case 8:
+                            quote.setText(getResources().getString(R.string.splash_quote_ten));
+                            break;
+                        case 9:
+                            quote.setText(getResources().getString(R.string.splash_quote_one));
+                            break;
+                    }
+
                     loopOnce = true;
 
                 }
+
+                ProgressBar bar = (ProgressBar) getMainActivity().findViewById(R.id.progressBar);
 
                 //Move elements
                 if(!willWork){
