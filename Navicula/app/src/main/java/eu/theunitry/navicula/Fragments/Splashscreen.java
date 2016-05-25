@@ -1,5 +1,6 @@
 package eu.theunitry.navicula.fragments;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.DrawerLayout;
@@ -47,12 +48,20 @@ public class Splashscreen extends FragmentMain {
                 ImageView earth = (ImageView) getMainActivity().findViewById(R.id.planetImage);
                 TextView quote = (TextView) getMainActivity().findViewById(R.id.quoteText);
 
+
                 //Make sure the pivot point is only set once
                 if (!loopOnce){
 
-
                     float newPivotPointY = earth.getY() + earth.getHeight() / 2 ;
+
+                    icon.setPivotX((earth.getWidth() / 2 + earth.getX() / 4) / 10 + icon.getHeight() / 3);
+
                     icon.setPivotY(newPivotPointY / 3 + icon.getPivotY() - icon.getHeight() / 5);
+
+                    int currentapiVersion = android.os.Build.VERSION.SDK_INT;
+                    if (currentapiVersion <= Build.VERSION_CODES.KITKAT){
+                        icon.setVisibility(View.GONE);
+                    }
 
                     icon.setY(icon.getY() - icon.getY() / 100);
 
