@@ -18,14 +18,13 @@ public class Blog extends FragmentMain {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-
         return inflater.inflate(R.layout.fragment_blog, container, false);
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
 
-        WebRequest jsonAsync = new WebRequest(this, "api-example.json");
+        WebRequest jsonAsync = new WebRequest(this, "api-example.json", "GET");
         jsonAsync.execute();
     }
 
