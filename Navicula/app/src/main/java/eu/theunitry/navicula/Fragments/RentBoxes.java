@@ -10,6 +10,8 @@ import eu.theunitry.navicula.FragmentMain;
 import eu.theunitry.navicula.R;
 
 public class RentBoxes extends FragmentMain {
+    
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 

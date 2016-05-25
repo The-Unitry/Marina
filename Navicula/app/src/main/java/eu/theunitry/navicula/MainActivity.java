@@ -25,6 +25,7 @@ import eu.theunitry.navicula.fragments.LoginForm;
 import eu.theunitry.navicula.fragments.Logout;
 import eu.theunitry.navicula.fragments.RegistrationForm;
 import eu.theunitry.navicula.fragments.RentBoxes;
+import eu.theunitry.navicula.fragments.ReserveCrane;
 import eu.theunitry.navicula.fragments.Splashscreen;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -132,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 fragment = new RentBoxes();
                 break;
             case R.id.nav_reserveCrane:
-                fragment = new Blog();
+                fragment = new ReserveCrane();
                 break;
             case R.id.nav_login:
                 fragment = new LoginForm();

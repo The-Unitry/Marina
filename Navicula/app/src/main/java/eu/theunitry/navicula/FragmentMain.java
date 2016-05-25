@@ -13,7 +13,7 @@ import org.json.JSONArray;
  */
 public class FragmentMain extends Fragment {
 
-    private boolean FAB = true;
+    private boolean FAB = false;
     private UserManager userManager;
 
     public FragmentMain() {

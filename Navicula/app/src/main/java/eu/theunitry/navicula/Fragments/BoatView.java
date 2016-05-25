@@ -11,10 +11,6 @@ import eu.theunitry.navicula.R;
 
 public class BoatView extends FragmentMain implements View.OnClickListener {
 
-    public BoatView() {
-        setFAB(false);
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);

@@ -17,10 +17,6 @@ import eu.theunitry.navicula.R;
 
 public class Splashscreen extends FragmentMain {
 
-    public Splashscreen() {
-        setFAB(false);
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
