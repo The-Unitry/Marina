@@ -3,7 +3,7 @@
     //Main colors
     <color name="colorPrimary">#4A94E2</color>
     <color name="colorPrimaryDark">#4A94E2</color>
-    <color name="colorAccent">#ffffff</color>
+    <color name="colorAccent">#4A94E2</color>
 
     //Shades
     <color name="colorWhite">#FFFFFF</color>
