@@ -23,7 +23,6 @@
         android:layout_height="160dp"
         android:id="@+id/planetImage"
         android:background="@drawable/planet"
-        android:backgroundTint="#4A76E2"
         android:layout_alignParentRight="false"
         android:layout_alignParentLeft="false"
         android:layout_alignParentTop="false"
@@ -68,9 +67,9 @@
         android:textStyle="bold"
         android:textSize="20dp"
         android:text="000%"
-        android:layout_below="@+id/iconImage"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="-15dp" />
+        android:layout_alignTop="@+id/progressBar"
+        android:layout_marginTop="90dp" />
 
     <TextView
         android:layout_width="wrap_content"
