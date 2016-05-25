@@ -19,6 +19,7 @@ import android.view.WindowManager;
 import java.util.ArrayList;
 
 import eu.theunitry.navicula.fragments.Blog;
+import eu.theunitry.navicula.fragments.BoatAdd;
 import eu.theunitry.navicula.fragments.BoatView;
 import eu.theunitry.navicula.fragments.LoginForm;
 import eu.theunitry.navicula.fragments.Logout;
@@ -124,6 +125,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_myBoats:
                 fragment = new BoatView();
                 break;
+            case R.id.nav_addBoats:
+                fragment = new BoatAdd();
+                break;
             case R.id.nav_rentBox:
                 fragment = new RentBoxes();
                 break;
@@ -156,6 +160,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else {
             hideFab();
         }
+    }
+
+    public void setActionBarTitle(String title) {
+        getSupportActionBar().setTitle(title);
     }
 
     public void showFab() {

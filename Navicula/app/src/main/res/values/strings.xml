@@ -14,6 +14,7 @@
     <string name="action_register">Registreren</string>
     <string name="action_logout">Uitloggen</string>
     <string name="action_myBoats">Mijn boten</string>
+    <string name="action_addBoats">Boot toevoegen</string>
     <string name="action_myBoxes">Mijn boxen</string>
     <string name="action_rentBoxes">Box huren</string>
     <string name="action_reserveCrane">Hijskraan reserveren</string>

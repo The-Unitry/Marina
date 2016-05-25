@@ -25,6 +25,7 @@ public class MenuManager {
         menuItems.add(R.id.nav_home);
         menuItems.add(R.id.nav_myInfo);
         menuItems.add(R.id.nav_myBoats);
+        menuItems.add(R.id.nav_addBoats);
         menuItems.add(R.id.nav_myBoxes);
         menuItems.add(R.id.nav_rentBox);
         menuItems.add(R.id.nav_reserveCrane);

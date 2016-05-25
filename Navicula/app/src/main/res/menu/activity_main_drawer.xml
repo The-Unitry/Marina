@@ -9,6 +9,9 @@
             android:id="@+id/nav_myBoats"
             android:title="@string/action_myBoats" />
         <item
+            android:id="@+id/nav_addBoats"
+            android:title="@string/action_addBoats" />
+        <item
             android:id="@+id/nav_myBoxes"
             android:title="@string/action_myBoxes" />
         <item

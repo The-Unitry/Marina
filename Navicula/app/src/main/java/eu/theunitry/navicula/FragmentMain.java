@@ -1,7 +1,10 @@
 package eu.theunitry.navicula;
 
 import android.app.Fragment;
+import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
 
 /**
  * Created by Allan on 19-5-2016.
@@ -34,4 +37,6 @@ public class FragmentMain extends Fragment {
     public MainActivity getMainActivity() {
         return (MainActivity) getActivity();
     }
+
+
 }
