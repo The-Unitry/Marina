@@ -60,6 +60,8 @@ public class Splashscreen extends FragmentMain {
 
                     icon.setPivotX((earth.getWidth() / 2 + earth.getX() / 4) / 10 + icon.getHeight() / 3);
 
+                    icon.setPivotY(newPivotPointY / 3 + icon.getPivotY() - icon.getHeight() / 5);
+
                     int currentapiVersion = android.os.Build.VERSION.SDK_INT;
                     if (currentapiVersion <= Build.VERSION_CODES.KITKAT){
                         icon.setVisibility(View.GONE);
