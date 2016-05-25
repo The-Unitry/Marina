@@ -51,11 +51,22 @@
     <string name="boat_view_zero_boats">U heeft nog geen boten</string>
     <string name="boat_view_button_add">Boot toevoegen</string>
 
-
     //Box Rent
     <string name="rent_this_box">Box huren</string>
     <string name="box_width">B</string>
     <string name="box_price">Prijs</string>
     <string name="box_number">Box nummer</string>
+
+    //Splashscreen
+    <string name="splash_quote_one">De zee vullen met water</string>
+    <string name="splash_quote_two">Ankers laten zakken</string>
+    <string name="splash_quote_three">Schepen aanmeren</string>
+    <string name="splash_quote_four">Zeilen hijsen</string>
+    <string name="splash_quote_five">Havenmeester wakker maken</string>
+    <string name="splash_quote_six">Dek schrobben</string>
+    <string name="splash_quote_seven">Landrotten werven</string>
+    <string name="splash_quote_eight">Rubberboot opblazen</string>
+    <string name="splash_quote_nine">In de zeilen blazen</string>
+    <string name="splash_quote_ten">Maarten Bootje</string>
 
 </resources>
