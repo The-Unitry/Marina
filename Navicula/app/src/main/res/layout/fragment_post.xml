@@ -10,7 +10,7 @@
     android:layout_height="fill_parent"
     android:background="#eeeeee"
     android:orientation="vertical"
-    android:layout_marginBottom="60dp">
+    >
 
     <FrameLayout
     android:layout_width="fill_parent"
