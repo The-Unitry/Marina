@@ -141,6 +141,24 @@
                 android:textSize="18dp"
                 android:layout_marginRight="4dp" />
 
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:id="@+id/imageView3"
+                android:layout_gravity="center_horizontal|top"
+                android:src="@drawable/pencil"
+                android:layout_marginTop="26dp"
+                android:layout_marginRight="70dp" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:id="@+id/imageView4"
+                android:layout_gravity="center_horizontal|bottom"
+                android:src="@drawable/pencil"
+                android:layout_marginRight="70dp"
+                android:layout_marginBottom="11dp" />
+
         </FrameLayout>
 
     </android.support.v7.widget.CardView>
@@ -156,20 +174,32 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="5dp">
-
-
+            android:paddingLeft="10dp"
+            android:paddingTop="8dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="8dp">
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/crane_availability">
             <RadioButton
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/crane_available"
-                android:id="@+id/crane_not_available"
+                android:id="@+id/crane_available"
                 android:layout_gravity="center_horizontal|top"
                 android:textStyle="bold"
+                android:button="@null"
                 android:textSize="20dp"
+                android:drawableRight="@drawable/abc_btn_radio_material"
                 android:textColor="@color/colorPrimary"
-                android:checked="false" />
-
+                android:checked="false"
+                android:drawableTint="@color/colorPrimary" />
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#c0c0c0"
+                android:layout_gravity="center" />
             <RadioButton
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -177,9 +207,15 @@
                 android:id="@+id/crane_not_available"
                 android:layout_gravity="center_horizontal|bottom"
                 android:checked="false"
+                android:button="@null"
+                android:drawableRight="@drawable/abc_btn_radio_material"
                 android:textSize="20dp"
                 android:textColor="@color/colorPrimary"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:drawableTint="@color/colorPrimary" />
+        </RadioGroup>
+
+
         </FrameLayout>
 
     </android.support.v7.widget.CardView>
@@ -203,11 +239,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="69dp"
                 android:text="@string/crane_save"
-                android:id="@+id/crane_cancel"
+                android:id="@+id/crane_save"
                 android:layout_gravity="right|center_vertical"
-                android:textStyle="bold"
                 android:textColor="@color/colorWhite"
                 android:textSize="18dp"
+                android:textAllCaps="false"
                 android:background="@color/colorPrimary"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp" />
@@ -218,9 +254,9 @@
                 android:text="@string/crane_cancel"
                 android:id="@+id/crane_cancel"
                 android:layout_gravity="left|center_vertical"
-                android:textStyle="bold"
                 android:textColor="@color/colorWhite"
                 android:textSize="18dp"
+                android:textAllCaps="false"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:background="#0D47A1" />
