@@ -54,26 +54,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"
-                    android:hint="@string/boat_add_boat_owner"
-                    android:ems="10"
-                    android:id="@+id/editTextBoatOwner"
-                    android:layout_below="@+id/editTextBoatName"
-                    android:layout_alignLeft="@+id/editTextBoatName"
-                    android:layout_alignStart="@+id/editTextBoatName"
-                    android:layout_marginTop="10dp"
-                    android:layout_alignRight="@+id/editTextBoatName"
-                    android:layout_alignEnd="@+id/editTextBoatName" />
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
                     android:hint="@string/boat_add_boat_brand"
                     android:ems="10"
                     android:id="@+id/editTextBoatBrand"
-                    android:layout_below="@+id/editTextBoatOwner"
-                    android:layout_alignLeft="@+id/editTextBoatOwner"
-                    android:layout_alignStart="@+id/editTextBoatOwner"
+                    android:layout_below="@+id/editTextBoatName"
+                    android:layout_alignLeft="@+id/editTextBoatName"
+                    android:layout_alignStart="@+id/editTextBoatName"
                     android:layout_marginTop="10dp"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true" />
@@ -92,19 +78,27 @@
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true" />
 
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:hint="@string/boat_add_boat_color"
-                    android:ems="10"
-                    android:id="@+id/editTextBoatColor"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/boat_add_boat_color"
+                    android:id="@+id/textViewBoatColor"
                     android:layout_below="@+id/editTextBoatType"
-                    android:layout_alignLeft="@+id/editTextBoatType"
-                    android:layout_alignStart="@+id/editTextBoatType"
-                    android:layout_marginTop="10dp"
+                    android:textColor="@color/colorBlack"
+                    android:layout_alignLeft="@+id/editTextBoatBrand"
+                    android:layout_alignStart="@+id/editTextBoatBrand"
+                    android:layout_marginTop="20dp"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true" />
+
+                <Spinner
+                    android:id="@+id/spinnerBoatColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textViewBoatColor"
+                    android:layout_alignLeft="@+id/editTextBoatType"
+                    android:layout_alignStart="@+id/editTextBoatType" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -113,9 +107,12 @@
                     android:text="@string/boat_add_dimensions"
                     android:id="@+id/textViewDimensions"
                     android:textColor="@color/colorBlack"
-                    android:layout_marginTop="10dp"
-                    android:layout_below="@+id/editTextBoatColor"
-                    android:layout_centerHorizontal="true" />
+                    android:layout_below="@+id/spinnerBoatColor"
+                    android:layout_alignLeft="@+id/editTextBoatType"
+                    android:layout_alignStart="@+id/editTextBoatType"
+                    android:layout_marginTop="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
 
                 <EditText
                     android:layout_width="wrap_content"
@@ -125,7 +122,10 @@
                     android:ems="10"
                     android:id="@+id/editTextDimensionsLength"
                     android:layout_below="@+id/textViewDimensions"
-                    android:layout_centerHorizontal="true" />
+                    android:layout_alignLeft="@+id/editTextBoatType"
+                    android:layout_alignStart="@+id/editTextBoatType"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
 
                 <EditText
                     android:layout_width="wrap_content"
@@ -135,7 +135,10 @@
                     android:ems="10"
                     android:id="@+id/editTextDimensionsWidth"
                     android:layout_below="@+id/editTextDimensionsLength"
-                    android:layout_centerHorizontal="true" />
+                    android:layout_alignLeft="@+id/editTextBoatType"
+                    android:layout_alignStart="@+id/editTextBoatType"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
 
                 <EditText
                     android:layout_width="wrap_content"
@@ -145,16 +148,19 @@
                     android:ems="10"
                     android:id="@+id/editTextDimensionsHeigth"
                     android:layout_below="@+id/editTextDimensionsWidth"
-                    android:layout_centerHorizontal="true" />
+                    android:layout_alignLeft="@+id/editTextBoatType"
+                    android:layout_alignStart="@+id/editTextBoatType"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
 
                 <RadioGroup
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/editTextDimensionsHeigth"
-                    android:layout_alignLeft="@+id/editTextBoatColor"
-                    android:layout_alignStart="@+id/editTextBoatColor"
+                    android:layout_alignLeft="@+id/spinnerBoatColor"
+                    android:layout_alignStart="@+id/spinnerBoatColor"
                     android:orientation="horizontal"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="20dp"
                     android:id="@+id/radioGroupBoatSpecies">
 
                     <RadioButton
@@ -173,6 +179,14 @@
                         android:checked="false"
                         android:buttonTint="@color/colorBlack"/>
 
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/boat_add_radiobutton_otherboat"
+                        android:id="@+id/radioButtonOtherBoat"
+                        android:checked="false"
+                        android:buttonTint="@color/colorBlack"/>
+
                 </RadioGroup>
 
                 <EditText
@@ -186,21 +200,21 @@
                     android:layout_marginTop="10dp"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
-                    android:layout_alignLeft="@+id/editTextBoatColor"
-                    android:layout_alignStart="@+id/editTextBoatColor" />
+                    android:layout_alignLeft="@+id/spinnerBoatColor"
+                    android:layout_alignStart="@+id/spinnerBoatColor" />
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
                     android:text="@string/boat_add_button_register"
-                    android:id="@+id/buttonSend"
+                    android:id="@+id/buttonRegisterBoat"
                     android:textAllCaps="false"
                     android:layout_below="@+id/editTextBoatPeople"
                     android:textColor="@color/colorWhite"
                     android:background="@color/colorPrimary"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginBottom="10dp"/>
 
 
