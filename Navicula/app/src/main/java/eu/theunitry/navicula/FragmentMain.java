@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 
@@ -39,6 +41,8 @@ public class FragmentMain extends Fragment {
     public MainActivity getMainActivity() {
         return (MainActivity) getActivity();
     }
+
+    public String getStringValue(int id) { return ((EditText) getActivity().findViewById(id)).getText().toString(); }
 
     public void onRequestCompleted(JSONArray jsonObject) {}
 

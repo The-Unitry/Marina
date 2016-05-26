@@ -23,6 +23,7 @@ import eu.theunitry.navicula.fragments.BoatAdd;
 import eu.theunitry.navicula.fragments.BoatView;
 import eu.theunitry.navicula.fragments.LoginForm;
 import eu.theunitry.navicula.fragments.Logout;
+import eu.theunitry.navicula.fragments.Post;
 import eu.theunitry.navicula.fragments.RegistrationForm;
 import eu.theunitry.navicula.fragments.RentBoxes;
 import eu.theunitry.navicula.fragments.ReserveCrane;
@@ -109,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-    public void switchFragment(MenuItem item) {
+    public FragmentMain switchFragment(MenuItem item) {
         FragmentManager fm = getFragmentManager();
 
         int id = item.getItemId();
@@ -119,6 +120,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (id) {
             case R.id.nav_home:
                 fragment = new Blog();
+                break;
+            case R.id.nav_post:
+                fragment = new Post();
                 break;
             case R.id.nav_myInfo:
                 fragment = new Blog();
@@ -161,6 +165,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else {
             hideFab();
         }
+
+        return fragment;
     }
 
     public void setActionBarTitle(String title) {

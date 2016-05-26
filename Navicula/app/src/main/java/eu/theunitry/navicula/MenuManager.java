@@ -23,6 +23,7 @@ public class MenuManager {
         setMenu(menu);
 
         menuItems.add(R.id.nav_home);
+        menuItems.add(R.id.nav_post);
         menuItems.add(R.id.nav_myInfo);
         menuItems.add(R.id.nav_myBoats);
         menuItems.add(R.id.nav_addBoats);

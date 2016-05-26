@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -14,7 +15,7 @@ import eu.theunitry.navicula.FragmentMain;
 import eu.theunitry.navicula.R;
 import eu.theunitry.navicula.WebRequest;
 
-public class Blog extends FragmentMain {
+public class Blog extends FragmentMain implements View.OnClickListener {
 
     public Blog() {
         setFAB(true);
@@ -43,5 +44,13 @@ public class Blog extends FragmentMain {
                 e.printStackTrace();
             }
         }
+
+        FrameLayout post = (FrameLayout) getActivity().findViewById(R.id.frameLayout);
+        post.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        getMainActivity().switchFragment(getMainActivity().getMenuItem(R.id.nav_post));
     }
 }
