@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -39,23 +41,34 @@ public class BoatAdd extends FragmentMain implements View.OnClickListener {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
-        Button button = (Button) getActivity().findViewById(R.id.buttonAddBoat);
+        Button button = (Button) getActivity().findViewById(R.id.buttonRegisterBoat);
         button.setOnClickListener(this);
+
+        RadioGroup radioGroupSpecies = (RadioGroup) getActivity().findViewById(R.id.radioGroupBoatSpecies);
+        radioGroupSpecies.setOnClickListener(this);
 
     }
 
     @Override
     public void onClick(View v) {
 
+        Spinner spinner = (Spinner) getActivity().findViewById(R.id.spinnerBoatColor);
+        String spinnerText = spinner.getSelectedItem().toString();
+
+        RadioGroup radioGroupSpecies = (RadioGroup) getActivity().findViewById(R.id.radioGroupBoatSpecies);
+        int selectedId = radioGroupSpecies.getCheckedRadioButtonId();
+        RadioButton checkedRadioButton = (RadioButton) getActivity().findViewById(selectedId);
+        String radioButtontext = checkedRadioButton.getText().toString();
+
         HashMap<String, String> par = new HashMap<String, String>();
         par.put("boatName", getStringValue(R.id.editTextBoatName));
         par.put("boatBrand", getStringValue(R.id.editTextBoatBrand));
         par.put("boatType", getStringValue(R.id.editTextBoatType));
-        par.put("boatColor", getStringValue(R.id.spinnerBoatColor));
+        par.put("boatColor", spinnerText);
         par.put("boatDimensionsLength", getStringValue(R.id.editTextDimensionsLength));
         par.put("boatDimensionsWidth", getStringValue(R.id.editTextDimensionsWidth));
         par.put("boatDimensionsHeigth", getStringValue(R.id.editTextDimensionsHeigth));
-        par.put("boatSpecies", getStringValue(R.id.radioGroupBoatSpecies));
+        par.put("boatSpecies", radioButtontext);
         par.put("boatPeople", getStringValue(R.id.editTextBoatPeople));
 
         WebRequest jsonAsync = new WebRequest(this, "api-example.json", "POST", par);
