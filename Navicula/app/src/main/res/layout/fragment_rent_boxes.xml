@@ -40,28 +40,28 @@
                         android:id="@+id/button1"
                         android:layout_gravity="center"
                         android:text="#"
-                        android:backgroundTint="@color/colorPrimary"
+                        android:backgroundTint="#42A5F5"
                         android:textColor="@color/colorWhite" />
 
                     <Button
                         android:id="@+id/button2"
                         android:layout_gravity="center"
                         android:text="B | N"
-                        android:backgroundTint="@android:color/holo_green_dark"
+                        android:backgroundTint="#1E88E5"
                         android:textColor="@color/colorWhite" />
 
                     <Button
                         android:id="@+id/button3"
                         android:layout_gravity="center"
                         android:text="B"
-                        android:backgroundTint="#90ce00"
+                        android:backgroundTint="#1565C0"
                         android:textColor="@color/colorWhite" />
 
                     <Button
                         android:id="@+id/button4"
                         android:layout_gravity="center"
                         android:text="N"
-                        android:backgroundTint="#de0000"
+                        android:backgroundTint="#0D47A1"
                         android:textColor="@color/colorWhite" />
                 </TableRow>
 
