@@ -34,6 +34,7 @@
     <string name="action_forgotPassword">Wachtwoord vergeten?</string>
     <string name="action_loggedIn">Welkom, [FIRST_NAME]</string>
     <string name="action_loggedOut">Tot ziens!</string>
+    <string name="action_logIn_failed">Er ging wat mis, probeer het opnieuw.</string>
 
 
     //Registration form
@@ -99,7 +100,7 @@
     <string name="splash_quote_six">Dek schrobben</string>
     <string name="splash_quote_seven">Landrotten werven</string>
     <string name="splash_quote_eight">Rubberboot opblazen</string>
-    <string name="splash_quote_nine">In de zeilen blazen</string>
+    <string name="splash_quote_nine">Wind in de zeilen blazen</string>
     <string name="splash_quote_ten">Maarten Bootje</string>
 
 </resources>

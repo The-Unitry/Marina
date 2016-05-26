@@ -27,6 +27,7 @@ public class Splashscreen extends FragmentMain {
         getMainActivity().getSupportActionBar().hide();
 
         //Run progress bar
+
         runProgressBar(20);
 
         return inflater.inflate(R.layout.splashscreen, container, false);
@@ -40,6 +41,8 @@ public class Splashscreen extends FragmentMain {
             boolean loopOnce = false;
             boolean willWork = false;
             int willWorkToo = 0;
+            long timeStart;
+            long timeStop;
 
             public void run() {
                 //Declare all View elements
@@ -55,6 +58,7 @@ public class Splashscreen extends FragmentMain {
                     float newPivotPointY = earth.getY() + earth.getHeight() / 2 ;
 
                     icon.setPivotX((earth.getWidth() / 2 + earth.getX() / 4) / 10 + icon.getHeight() / 3);
+
 
                     icon.setPivotY(newPivotPointY / 3 + icon.getPivotY() - icon.getHeight() / 5);
 
@@ -99,7 +103,7 @@ public class Splashscreen extends FragmentMain {
                             quote.setText(getResources().getString(R.string.splash_quote_one));
                             break;
                     }
-
+                    timeStart = System.nanoTime();
                     loopOnce = true;
 
                 }
@@ -135,6 +139,10 @@ public class Splashscreen extends FragmentMain {
                 if (bar.getProgress() != bar.getMax()) {
                     //Calling postdelayed again
                     handler.postDelayed(this, time);
+                }
+                else{
+                    timeStop = System.nanoTime();
+                    System.out.println(timeStop - timeStart);
                 }
             }
         }, time);

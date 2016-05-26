@@ -18,6 +18,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -96,7 +97,7 @@ public class WebRequest extends AsyncTask<Void, Void, String> {
             JSONArray object = new JSONArray(response);
             this.fragment.onRequestCompleted(object);
         } catch (JSONException e) {
-            System.out.println(e);
+            System.out.println("Exception: " + e);
         }
     }
 
@@ -117,6 +118,10 @@ public class WebRequest extends AsyncTask<Void, Void, String> {
         }
 
         return result.toString();
+    }
+
+    private void sendRequest(){
+
     }
 
 }
