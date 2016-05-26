@@ -84,6 +84,10 @@
     <string name="box_price">Prijs</string>
     <string name="box_number">Box nummer</string>
 
+    //Crane Rent
+    <string name="crane_start_date">Start datum</string>
+    <string name="crane_end_date">Eind datum</string>
+
     //Splashscreen
     <string name="splash_quote_one">De zee vullen met water</string>
     <string name="splash_quote_two">Ankers laten zakken</string>
