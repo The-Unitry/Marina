@@ -25,8 +25,7 @@ public class BoatView extends FragmentMain implements View.OnClickListener {
     @Override
     public void onClick(View view) {
 
-        FragmentMain fragment = new BoatAdd();
-        getFragmentManager().beginTransaction().replace(R.id.content_frame, fragment).commit();
+        getMainActivity().switchFragment(getMainActivity().getMenuItem(R.id.nav_addBoats));
 
     }
 }
