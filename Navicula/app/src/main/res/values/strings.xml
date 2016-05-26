@@ -54,14 +54,22 @@
     //Boat Add
     <string name="boat_add_title">Een boot registreren duurt maar een paar seconden d.m.v. een aantal van uw boot gegevens achter te laten</string>
     <string name="boat_add_boat_name">Naam boot</string>
-    <string name="boat_add_boat_owner">Eigenaar boot</string>
     <string name="boat_add_boat_brand">Merk boot</string>
     <string name="boat_add_boat_type">Type boot</string>
     <string name="boat_add_boat_color">Kleur boot</string>
-    <string name="boat_add_dimensions">Afmeteingen</string>
-    <string name="boat_add_dimensions_length">Lengte</string>
-    <string name="boat_add_dimensions_width">Breedte</string>
-    <string name="boat_add_dimensions_heigth">Hoogte</string>
+    <string-array name="boat_add_boat_color">
+        <item>Wit</item>
+        <item>Bruin</item>
+        <item>Zwart</item>
+        <item>Rood</item>
+        <item>Blauw</item>
+        <item>Groen</item>
+        <item>Geel</item>
+    </string-array>
+    <string name="boat_add_dimensions">Afmetingen</string>
+    <string name="boat_add_dimensions_length">Lengte (m)</string>
+    <string name="boat_add_dimensions_width">Breedte (m)</string>
+    <string name="boat_add_dimensions_heigth">Hoogte (m)</string>
     <string name="boat_add_radiobutton_motorboat">Motorboot</string>
     <string name="boat_add_radiobutton_sailboat">Zeilboot</string>
     <string name="boat_add_boat_people">Aantal betrokkene mensen</string>
