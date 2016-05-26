@@ -90,6 +90,11 @@
     <string name="crane_end_date">Eind datum</string>
     <string name="crane_start_time">Start tijd</string>
     <string name="crane_end_time">Eind tijd</string>
+    <string name="crane_available">Beschikbaar</string>
+    <string name="crane_not_available">Niet Beschikbaar</string>
+    <string name="crane_notes">Notitie</string>
+    <string name="crane_save">Opslaan</string>
+    <string name="crane_cancel">Annuleren</string>
 
     //Splashscreen
     <string name="splash_quote_one">De zee vullen met water</string>
