@@ -13,7 +13,35 @@
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
         android:layout_width="fill_parent"
-        android:layout_height="150dp"
+        android:layout_height="45dp"
+        android:backgroundTint="@color/colorWhite"
+        android:padding="5dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/reserve_crane_here"
+                android:id="@+id/textView5"
+                android:layout_gravity="left|center_vertical"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary" />
+        </FrameLayout>
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view_reserve_crane1"
+        android:background="@color/colorWhite"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="75dp"
         android:backgroundTint="@color/colorWhite">
 
         <FrameLayout
@@ -30,17 +58,25 @@
                 android:id="@+id/crane_start_date"
                 android:layout_gravity="left|top"
                 android:textStyle="italic"
-                android:layout_marginLeft="4dp" />
+                android:layout_marginLeft="4dp"
+                android:textSize="15dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/crane_start_time"
+                android:text="@string/crane_start_end_time"
                 android:id="@+id/crane_start_time"
                 android:layout_gravity="top|right"
                 android:textStyle="italic"
-                android:layout_marginRight="8dp" />
+                android:layout_marginRight="38dp"
+                android:textSize="15dp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#c0c0c0"
+                android:layout_gravity="center" />
 
             <Button
                 style="?android:attr/buttonStyleSmall"
@@ -48,173 +84,35 @@
                 android:layout_height="wrap_content"
                 android:text="16/03/2016"
                 android:id="@+id/crane_start_date_btn"
-                android:layout_gravity="left|top"
-                android:layout_marginTop="18dp"
-                android:layout_marginLeft="-2dp"
-                android:background="?android:attr/selectableItemBackground"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:textColor="@color/colorPrimary"
-                android:minHeight="35dp"
-                android:minWidth="80dp"
-                android:textStyle="bold"
-                android:textSize="18dp" />
-
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="16:00"
-                android:id="@+id/crane_start_time_btn"
-                android:layout_gravity="right|top"
-                android:textColor="@color/colorPrimary"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:layout_marginTop="18dp"
-                android:background="?android:attr/selectableItemBackground"
-                android:minHeight="35dp"
-                android:minWidth="60dp"
-                android:textStyle="bold"
-                android:textSize="18dp"
-                android:layout_marginRight="4dp" />
-
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="#c0c0c0"
-                android:layout_gravity="center" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/crane_end_date"
-                android:id="@+id/crane_end_date"
-                android:layout_gravity="left|center_vertical"
-                android:layout_marginTop="18dp"
-                android:textStyle="italic"
-                android:layout_marginLeft="4dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/crane_end_time"
-                android:id="@+id/crane_end_time"
-                android:layout_gravity="right|center_vertical"
-                android:layout_marginTop="18dp"
-                android:textStyle="italic"
-                android:clickable="false"
-                android:layout_marginRight="8dp" />
-
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="17/03/2016"
-                android:id="@+id/crane_end_date_btn"
                 android:layout_gravity="left|bottom"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimary"
+                android:layout_marginLeft="-2dp"
+                android:background="?android:attr/selectableItemBackground"
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
-                android:minWidth="80dp"
+                android:textColor="@color/colorPrimary"
                 android:minHeight="35dp"
-                android:background="?android:attr/selectableItemBackground"
-                android:layout_marginLeft="-2dp"
-                android:textSize="18dp" />
+                android:minWidth="80dp"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:layout_marginBottom="-10dp" />
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="17:00"
-                android:id="@+id/crane_end_time_btn"
+                android:text="16:00 - 18:00"
+                android:id="@+id/crane_start_time_btn"
                 android:layout_gravity="right|bottom"
+                android:textColor="@color/colorPrimary"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 android:background="?android:attr/selectableItemBackground"
                 android:minHeight="35dp"
                 android:minWidth="60dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
                 android:textStyle="bold"
-                android:textColor="@color/colorPrimary"
                 android:textSize="18dp"
-                android:layout_marginRight="4dp" />
-
-            <ImageView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:id="@+id/imageView3"
-                android:layout_gravity="center_horizontal|top"
-                android:src="@drawable/pencil"
-                android:layout_marginTop="26dp"
-                android:layout_marginRight="70dp" />
-
-            <ImageView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:id="@+id/imageView4"
-                android:layout_gravity="center_horizontal|bottom"
-                android:src="@drawable/pencil"
-                android:layout_marginRight="70dp"
-                android:layout_marginBottom="11dp" />
-
-        </FrameLayout>
-
-    </android.support.v7.widget.CardView>
-    <android.support.v7.widget.CardView
-        android:id="@+id/card_view_reserve_crane1"
-        android:background="@color/colorWhite"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center"
-        android:layout_width="fill_parent"
-        android:layout_height="80dp"
-        android:backgroundTint="@color/colorWhite">
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingLeft="10dp"
-            android:paddingTop="8dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="8dp">
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/crane_availability">
-            <RadioButton
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/crane_available"
-                android:id="@+id/crane_available"
-                android:layout_gravity="center_horizontal|top"
-                android:textStyle="bold"
-                android:button="@null"
-                android:textSize="20dp"
-                android:drawableRight="@drawable/abc_btn_radio_material"
-                android:textColor="@color/colorPrimary"
-                android:checked="false"
-                android:drawableTint="@color/colorPrimary" />
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="#c0c0c0"
-                android:layout_gravity="center" />
-            <RadioButton
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/crane_not_available"
-                android:id="@+id/crane_not_available"
-                android:layout_gravity="center_horizontal|bottom"
-                android:checked="false"
-                android:button="@null"
-                android:drawableRight="@drawable/abc_btn_radio_material"
-                android:textSize="20dp"
-                android:textColor="@color/colorPrimary"
-                android:textStyle="bold"
-                android:drawableTint="@color/colorPrimary" />
-        </RadioGroup>
-
+                android:layout_marginRight="4dp"
+                android:layout_marginBottom="-10dp" />
 
         </FrameLayout>
 
@@ -262,4 +160,31 @@
                 android:background="#0D47A1" />
         </FrameLayout>
         </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_reserved_crane0"
+        android:background="@color/colorWhite"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:backgroundTint="@color/colorWhite">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/reserved_cranes"
+                android:id="@+id/textView6"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary" />
+        </FrameLayout>
+    </android.support.v7.widget.CardView>
 </LinearLayout>
