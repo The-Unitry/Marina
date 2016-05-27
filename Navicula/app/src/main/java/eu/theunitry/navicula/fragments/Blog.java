@@ -2,10 +2,12 @@ package eu.theunitry.navicula.fragments;
 
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -38,6 +40,7 @@ public class Blog extends FragmentMain implements View.OnClickListener {
     public void onRequestCompleted(JSONArray response) {
         for (int i = 0; i < response.length(); i++) {
             try {
+                BlogItem blogItem = new BlogItem(this);
                 JSONObject post = response.getJSONObject(i);
                 System.out.println("Response: " + post.getInt("id"));
             } catch (JSONException e) {
@@ -47,6 +50,12 @@ public class Blog extends FragmentMain implements View.OnClickListener {
 
         FrameLayout post = (FrameLayout) getActivity().findViewById(R.id.frameLayout);
         post.setOnClickListener(this);
+    }
+
+    public void onItemCreated(BlogItem blogItem) {
+        LinearLayout postView = (LinearLayout) blogItem.getView();
+        ((LinearLayout) getActivity().findViewById(R.id.blogLayout)).addView(postView);
+        System.out.println("awugfsyue");
     }
 
     @Override
