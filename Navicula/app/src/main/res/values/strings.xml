@@ -88,7 +88,7 @@
     //Crane Rent
     <string name="crane_start_date">Start datum</string>
     <string name="reserve_crane_here">Reserveer hier uw kraan?</string>
-    <string name="reserved_cranes">Gereserveerde krane?</string>
+    <string name="reserved_cranes">Gereserveerde kranen?</string>
     <string name="crane_start_end_time">Van - Tot</string>
     <string name="crane_end_time">Eind tijd</string>
     <string name="crane_save">Opslaan</string>
