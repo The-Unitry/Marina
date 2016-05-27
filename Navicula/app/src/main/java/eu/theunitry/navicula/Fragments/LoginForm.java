@@ -50,14 +50,14 @@ public class LoginForm extends FragmentMain implements View.OnClickListener {
 
     public void handleLogin() {
 
-        //TODO: Handle Request
         HashMap<String, String> par = new HashMap<String, String>();
-        par.put("email", "a");
-        par.put("password", "a");
+        par.put("email", getStringValue(R.id.editTextUserName));
+        par.put("password", getStringValue(R.id.editTextPassword));
 
         WebRequest req = new WebRequest(this, "login.php", "POST", par);
         req.execute();
     }
+
     @Override
     public void onRequestCompleted(JSONArray jsonObject){
         try {
@@ -94,7 +94,7 @@ public class LoginForm extends FragmentMain implements View.OnClickListener {
                     getUserManager().setLoggedIn(true);
                 }
                 else{
-                    Toast.makeText(getActivity().getApplicationContext(), "@string/action_logIn_failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity().getApplicationContext(), getString(R.string.action_logIn_failed), Toast.LENGTH_SHORT).show();
                 }
 
             } // End Loop

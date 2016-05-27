@@ -4,6 +4,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.DrawerLayout;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -148,3 +149,4 @@ public class Splashscreen extends FragmentMain {
         }, time);
     }
 }
+
