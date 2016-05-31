@@ -82,10 +82,10 @@ public class BoatAdd extends FragmentMain implements View.OnClickListener {
 
                 JSONObject jObject = jsonObject.getJSONObject(i);
 
-                if (jObject.getBoolean("success") == true) {
+                if (jObject.getBoolean("success")) {
 
                     //Create login message
-                    Toast.makeText(getActivity().getApplicationContext(), "Boot geregistreerd", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity().getApplicationContext(), "@string/boat_add_success", Toast.LENGTH_SHORT).show();
                     getMainActivity().switchFragment(getMainActivity().getMenuItem(R.id.nav_myBoats));
 
                 }

@@ -76,6 +76,8 @@
     <string name="boat_add_radiobutton_otherboat">Overig</string>
     <string name="boat_add_boat_people">Aantal betrokkene mensen</string>
     <string name="boat_add_button_register">Registreer boot</string>
+    <string name="boat_add_success">Boot geregistreerd</string>
+
 
     //Box Rent
     <string name="rent_this_box">Box huren</string>
