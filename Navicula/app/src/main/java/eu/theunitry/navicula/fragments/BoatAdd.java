@@ -81,7 +81,7 @@ public class BoatAdd extends FragmentMain implements View.OnClickListener {
 
                 if (jObject.getBoolean("success")) {
 
-                    //Create login message
+                    //Create success message
                     Toast.makeText(getActivity().getApplicationContext(), getString(R.string.boat_add_success), Toast.LENGTH_SHORT).show();
                     getMainActivity().switchFragment(getMainActivity().getMenuItem(R.id.nav_myBoats));
 

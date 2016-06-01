@@ -80,6 +80,7 @@
 
     //User View
     <string name="user_view_button">Opslaan</string>
+    <string name="user_data_success">Gegevens gewijzigd</string>
 
     //Box Rent
     <string name="rent_this_box">Box huren</string>
