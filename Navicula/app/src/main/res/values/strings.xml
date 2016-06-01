@@ -56,7 +56,7 @@
     <string name="boat_add_title">Een boot registreren duurt maar een paar seconden d.m.v. een aantal van uw boot gegevens achter te laten</string>
     <string name="boat_add_boat_name">Naam boot</string>
     <string name="boat_add_boat_brand">Merk boot</string>
-    <string name="boat_add_boat_type">Type boot</string>
+    <string name="boat_add_boat_type">Type boot (Bijv. Kajuit)</string>
     <string name="boat_add_boat_color">Kleur boot</string>
     <string-array name="boat_add_boat_color">
         <item>Wit</item>
@@ -78,6 +78,8 @@
     <string name="boat_add_button_register">Registreer boot</string>
     <string name="boat_add_success">Boot geregistreerd</string>
 
+    //User View
+    <string name="user_view_button">Opslaan</string>
 
     //Box Rent
     <string name="rent_this_box">Box huren</string>

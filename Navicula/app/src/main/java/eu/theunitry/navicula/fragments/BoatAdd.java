@@ -1,13 +1,11 @@
 package eu.theunitry.navicula.fragments;
 
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -20,7 +18,6 @@ import org.json.JSONObject;
 import java.util.HashMap;
 
 import eu.theunitry.navicula.FragmentMain;
-import eu.theunitry.navicula.MenuManager;
 import eu.theunitry.navicula.R;
 import eu.theunitry.navicula.WebRequest;
 
@@ -65,13 +62,13 @@ public class BoatAdd extends FragmentMain implements View.OnClickListener {
         par.put("boatBrand", getStringValue(R.id.editTextBoatBrand));
         par.put("boatType", getStringValue(R.id.editTextBoatType));
         par.put("boatColor", spinnerText);
-        par.put("boatDimensionsLength", getStringValue(R.id.editTextDimensionsLength));
-        par.put("boatDimensionsWidth", getStringValue(R.id.editTextDimensionsWidth));
-        par.put("boatDimensionsHeigth", getStringValue(R.id.editTextDimensionsHeigth));
+        par.put("boatLength", getStringValue(R.id.editTextDimensionsLength));
+        par.put("boatWidth", getStringValue(R.id.editTextDimensionsWidth));
+        par.put("boatHeigth", getStringValue(R.id.editTextDimensionsHeigth));
         par.put("boatSpecies", radioButtontext);
         par.put("boatPeople", getStringValue(R.id.editTextBoatPeople));
 
-        WebRequest jsonAsync = new WebRequest(this, "api-example.json", "POST", par);
+        WebRequest jsonAsync = new WebRequest(this, "boatAdd.php", "POST", par);
         jsonAsync.execute();
     }
 
@@ -85,12 +82,12 @@ public class BoatAdd extends FragmentMain implements View.OnClickListener {
                 if (jObject.getBoolean("success")) {
 
                     //Create login message
-                    Toast.makeText(getActivity().getApplicationContext(), "@string/boat_add_success", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity().getApplicationContext(), getString(R.string.boat_add_success), Toast.LENGTH_SHORT).show();
                     getMainActivity().switchFragment(getMainActivity().getMenuItem(R.id.nav_myBoats));
 
                 }
                 else{
-                    Toast.makeText(getActivity().getApplicationContext(), "@string/action_logIn_failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity().getApplicationContext(), getString(R.string.action_logIn_failed), Toast.LENGTH_SHORT).show();
                 }
 
             } // End Loop

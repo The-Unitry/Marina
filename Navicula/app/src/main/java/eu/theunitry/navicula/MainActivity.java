@@ -28,6 +28,7 @@ import eu.theunitry.navicula.fragments.RegistrationForm;
 import eu.theunitry.navicula.fragments.RentBoxes;
 import eu.theunitry.navicula.fragments.ReserveCrane;
 import eu.theunitry.navicula.fragments.Splashscreen;
+import eu.theunitry.navicula.fragments.UserView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -125,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 fragment = new Post();
                 break;
             case R.id.nav_myInfo:
-                fragment = new Blog();
+                fragment = new UserView();
                 break;
             case R.id.nav_myBoats:
                 fragment = new BoatView();
