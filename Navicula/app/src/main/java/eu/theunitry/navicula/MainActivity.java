@@ -122,9 +122,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_home:
                 fragment = new Blog();
                 break;
-            case R.id.nav_post:
-                fragment = new Post();
-                break;
             case R.id.nav_myInfo:
                 fragment = new UserView();
                 break;

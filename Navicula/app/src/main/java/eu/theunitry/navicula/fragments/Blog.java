@@ -15,11 +15,16 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import eu.theunitry.navicula.FragmentMain;
 import eu.theunitry.navicula.R;
 import eu.theunitry.navicula.WebRequest;
 
 public class Blog extends FragmentMain implements View.OnClickListener {
+
+    private HashMap<LinearLayout, Integer> posts = new HashMap<LinearLayout, Integer>();
 
     public Blog() {
         setFAB(true);
@@ -50,6 +55,7 @@ public class Blog extends FragmentMain implements View.OnClickListener {
                 //System.out.println("Response: " + post.getInt("id"));
 
                 LinearLayout ll = (LinearLayout) LayoutInflater.from(getActivity().getApplicationContext()).inflate(R.layout.card_post, null, false);
+
                 myLayout.addView(ll);
 
                 TextView title = (TextView) ((RelativeLayout) ((CardView) ((FrameLayout) ll.getChildAt(0)).getChildAt(0)).getChildAt(0)).getChildAt(1);
@@ -60,6 +66,11 @@ public class Blog extends FragmentMain implements View.OnClickListener {
 
                 TextView content = (TextView) ((RelativeLayout) ((CardView) ((FrameLayout) ll.getChildAt(0)).getChildAt(0)).getChildAt(0)).getChildAt(2);
                 content.setText(post.getString("description"));
+
+                //FrameLayout post = (FrameLayout) getActivity().findViewById(R.id.frameLayout);
+                ll.setOnClickListener(this);
+
+                posts.put(ll, i);
 
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -79,6 +90,8 @@ public class Blog extends FragmentMain implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        getMainActivity().switchFragment(getMainActivity().getMenuItem(R.id.nav_post));
+
+        getActivity().getFragmentManager().beginTransaction().replace(R.id.content_frame, new Post(posts.get((LinearLayout) view))).commit();
+        //getMainActivity().switchFragment(getMainActivity().getMenuItem(R.id.nav_post));
     }
 }
