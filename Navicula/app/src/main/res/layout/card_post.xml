@@ -37,7 +37,8 @@
                     android:layout_alignParentEnd="true"
                     android:layout_marginRight="15dp"
                     android:textAlignment="textEnd"
-                    android:layout_marginTop="15dp" />
+                    android:layout_marginTop="15dp"
+                    android:textColor="@android:color/darker_gray" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -54,7 +55,8 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="15dp"
-                    android:maxWidth="260dp" />
+                    android:maxWidth="260dp"
+                    android:textColor="@android:color/primary_text_light" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -71,7 +73,8 @@
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
                     android:layout_marginRight="15dp"
-                    android:layout_marginTop="15dp" />
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/button_material_dark" />
 
             </RelativeLayout>
 

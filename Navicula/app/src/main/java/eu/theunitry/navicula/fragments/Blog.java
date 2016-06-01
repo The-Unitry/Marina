@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -35,27 +36,31 @@ public class Blog extends FragmentMain implements View.OnClickListener {
 
         WebRequest jsonAsync = new WebRequest(this, "api-example.json", "GET");
         jsonAsync.execute();
-
-        LinearLayout myLayout = (LinearLayout) getActivity().findViewById(R.id.blogLayout);
-
-//        TextView test = new TextView(getActivity().getApplicationContext());
-//        test.setText("!");
-
-        for (int i = 0; i < 5; i++){
-            View ll = (View) LayoutInflater.from(getActivity().getApplicationContext()).inflate(R.layout.card_post, null, false);
-
-            //((TextView) myLayout.findViewById(R.id.textViewPostTitle)).setText("Hello " + i);
-            myLayout.addView(ll);
-        }
     }
 
     @Override
     public void onRequestCompleted(JSONArray response) {
+
+        LinearLayout myLayout = (LinearLayout) getActivity().findViewById(R.id.blogLayout);
+
         for (int i = 0; i < response.length(); i++) {
             try {
                 //BlogItem blogItem = new BlogItem(this);
                 JSONObject post = response.getJSONObject(i);
-                System.out.println("Response: " + post.getInt("id"));
+                //System.out.println("Response: " + post.getInt("id"));
+
+                LinearLayout ll = (LinearLayout) LayoutInflater.from(getActivity().getApplicationContext()).inflate(R.layout.card_post, null, false);
+                myLayout.addView(ll);
+
+                TextView title = (TextView) ((RelativeLayout) ((CardView) ((FrameLayout) ll.getChildAt(0)).getChildAt(0)).getChildAt(0)).getChildAt(1);
+                title.setText(post.getString("title"));
+
+                TextView date = (TextView) ((RelativeLayout) ((CardView) ((FrameLayout) ll.getChildAt(0)).getChildAt(0)).getChildAt(0)).getChildAt(0);
+                date.setText(post.getString("created_at"));
+
+                TextView content = (TextView) ((RelativeLayout) ((CardView) ((FrameLayout) ll.getChildAt(0)).getChildAt(0)).getChildAt(0)).getChildAt(2);
+                content.setText(post.getString("description"));
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }
