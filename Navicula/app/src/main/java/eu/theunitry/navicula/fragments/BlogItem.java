@@ -33,7 +33,9 @@ public class BlogItem extends FragmentMain implements View.OnClickListener {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
 
-        this.blog.onItemCreated(this);
+        for (int i= 0; i < 5; i++){
+            this.blog.onItemCreated(this);
+        }
     }
 
     @Override

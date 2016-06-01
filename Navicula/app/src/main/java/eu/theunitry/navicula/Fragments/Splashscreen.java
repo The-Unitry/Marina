@@ -28,7 +28,6 @@ public class Splashscreen extends FragmentMain {
         getMainActivity().getSupportActionBar().hide();
 
         //Run progress bar
-
         runProgressBar(20);
 
         return inflater.inflate(R.layout.splashscreen, container, false);
@@ -71,6 +70,7 @@ public class Splashscreen extends FragmentMain {
                     icon.setY(icon.getY() - icon.getY() / 100);
 
                     int random = new Random().nextInt(8);
+                    String setText;
 
                     switch (random){
                         case 0:

@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -34,13 +35,25 @@ public class Blog extends FragmentMain implements View.OnClickListener {
 
         WebRequest jsonAsync = new WebRequest(this, "api-example.json", "GET");
         jsonAsync.execute();
+
+        LinearLayout myLayout = (LinearLayout) getActivity().findViewById(R.id.blogLayout);
+
+//        TextView test = new TextView(getActivity().getApplicationContext());
+//        test.setText("!");
+
+        for (int i = 0; i < 5; i++){
+            View ll = (View) LayoutInflater.from(getActivity().getApplicationContext()).inflate(R.layout.card_post, null, false);
+
+            //((TextView) myLayout.findViewById(R.id.textViewPostTitle)).setText("Hello " + i);
+            myLayout.addView(ll);
+        }
     }
 
     @Override
     public void onRequestCompleted(JSONArray response) {
         for (int i = 0; i < response.length(); i++) {
             try {
-                BlogItem blogItem = new BlogItem(this);
+                //BlogItem blogItem = new BlogItem(this);
                 JSONObject post = response.getJSONObject(i);
                 System.out.println("Response: " + post.getInt("id"));
             } catch (JSONException e) {
@@ -48,14 +61,15 @@ public class Blog extends FragmentMain implements View.OnClickListener {
             }
         }
 
-        FrameLayout post = (FrameLayout) getActivity().findViewById(R.id.frameLayout);
-        post.setOnClickListener(this);
+        //FrameLayout post = (FrameLayout) getActivity().findViewById(R.id.frameLayout);
+        //post.setOnClickListener(this);
     }
 
     public void onItemCreated(BlogItem blogItem) {
         LinearLayout postView = (LinearLayout) blogItem.getView();
         ((LinearLayout) getActivity().findViewById(R.id.blogLayout)).addView(postView);
-        System.out.println("awugfsyue");
+        System.out.println("Should work #BLOG58");
+
     }
 
     @Override
