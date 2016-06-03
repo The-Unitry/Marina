@@ -2,7 +2,7 @@
 
 namespace Navicula\Http\Controllers\Auth;
 
-use Navicula\User;
+use Navicula\Models\User;
 use Validator;
 use Navicula\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
