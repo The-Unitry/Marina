@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Navicula\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

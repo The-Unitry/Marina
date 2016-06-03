@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Navicula\Providers;
 
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -14,7 +14,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'App\Http\Controllers';
+    protected $namespace = 'Navicula\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -55,7 +55,13 @@ class RouteServiceProvider extends ServiceProvider
         $router->group([
             'namespace' => $this->namespace, 'middleware' => 'web',
         ], function ($router) {
-            require app_path('Http/routes.php');
+            $router->group([
+                'prefix' => 'admin'
+            ], function ($router) {
+                require app_path('Http/Routes/admin.php');
+            });
+
+            require app_path('Http/Routes/main.php');
         });
     }
 }
