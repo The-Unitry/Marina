@@ -2,7 +2,13 @@
 
 @section('content')
 <div class="container">
-    <h3>Create page</h3>
+    <h3>
+        @if ($method == 'POST')
+            Create page
+        @elseif ($method == 'PATCH')
+            Update page
+        @endif
+    </h3>
     <hr>
     @if(Session::has('message'))
         <div class="alert alert-success" id="alert" role="alert">
@@ -43,8 +49,8 @@
                 </div>
                 <div class="col-md-2">
                     <div class="list-group">
-                        <button type="submit" class="list-group-item bg-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i> Opslaan</button>
-                        <a href="../page" class="list-group-item"><span class="glyphicon glyphicon-triangle-left"></span> Terug</a>
+                        <button type="submit" class="list-group-item bg-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button>
+                        <a href="../page" class="list-group-item"><span class="glyphicon glyphicon-triangle-left"></span> Back</a>
                     </div>
                 </div>
             </div>
