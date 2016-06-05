@@ -20,3 +20,6 @@ Route::resource('box', 'Admin\BoxController');
 
 // Boats
 Route::resource('boat', 'Admin\BoatController');
+
+// Users
+Route::resource('user', 'Admin\UserController');
