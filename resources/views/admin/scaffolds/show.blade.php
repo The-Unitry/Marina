@@ -31,6 +31,7 @@
                         </div>
                     </div>
 
+                    @if(isset($scaffold))
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Boxes</label>
                         <div class="col-sm-10">
@@ -43,6 +44,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                 </div>
                 <div class="col-md-2">
                     <div class="list-group">
