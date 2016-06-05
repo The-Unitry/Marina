@@ -6,29 +6,25 @@
         Create boat
     </a>
     <h3>Boats</h3>
-    <table class="table table-striped">
+    <table class="table table-striped" id="datatable">
         <thead>
         <tr>
-            <th>#</th>
+            <th width="5%">#</th>
             <th>Title</th>
             <th>Owner</th>
-            <th></th>
         </tr>
         </thead>
         <tbody>
-        @foreach($boats as $boat)
-            <tr>
+        @foreach($boats as $i => $boat)
+            <tr data-href="/admin/boat/{{ $boat->id }}" class="clickable-row">
                 <td>
-                    {{ $boat->id }}
+                    {{ $i + 1 }}
                 </td>
                 <td>
                     {{ $boat->name }}
                 </td>
                 <td>
                     {{ $boat->owner->name }}
-                </td>
-                <td>
-                    <a href="/admin/boat/{{ $boat->id }}">View</a>
                 </td>
             </tr>
         @endforeach

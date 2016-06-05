@@ -6,25 +6,21 @@
         Create box
     </a>
     <h3>Boxes</h3>
-    <table class="table table-striped">
+    <table class="table table-striped" id="datatable">
         <thead>
         <tr>
-            <th>#</th>
+            <th width="5%">#</th>
             <th>Code</th>
-            <th></th>
         </tr>
         </thead>
         <tbody>
-        @foreach($boxes as $box)
-            <tr>
+        @foreach($boxes as $i => $box)
+            <tr data-href="/admin/box/{{ $box->id }}" class="clickable-row">
                 <td>
-                    {{ $box->id }}
+                    {{ $i + 1 }}
                 </td>
                 <td>
                     {{ $box->scaffold->code . $box->id }}
-                </td>
-                <td>
-                    <a href="/admin/box/{{ $box->id }}">View</a>
                 </td>
             </tr>
         @endforeach

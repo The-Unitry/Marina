@@ -6,29 +6,25 @@
             Create scaffold
         </a>
         <h3>Scaffolds</h3>
-        <table class="table table-striped">
+        <table class="table table-striped" id="datatable">
             <thead>
             <tr>
-                <th>#</th>
+                <th width="5%">#</th>
                 <th>Code</th>
                 <th>Boxes</th>
-                <th></th>
             </tr>
             </thead>
             <tbody>
-            @foreach($scaffolds as $scaffold)
-                <tr>
+            @foreach($scaffolds as $i => $scaffold)
+                <tr data-href="/admin/scaffold/{{ $scaffold->id }}" class="clickable-row">
                     <td>
-                        {{ $scaffold->id }}
+                        {{ $i + 1 }}
                     </td>
                     <td>
                         {{ $scaffold->code }}
                     </td>
                     <td>
                         {{ count($scaffold->boxes) }}
-                    </td>
-                    <td>
-                        <a href="/admin/scaffold/{{ $scaffold->id }}">View</a>
                     </td>
                 </tr>
             @endforeach

@@ -6,22 +6,21 @@
             Create reservation
         </a>
         <h3>Reservations</h3>
-        <table class="table table-striped">
+        <table class="table table-striped" id="datatable">
             <thead>
             <tr>
-                <th>#</th>
+                <th width="5%">#</th>
                 <th>Requester</th>
                 <th>Start date</th>
                 <th>End date</th>
                 <th>Approved</th>
-                <th></th>
             </tr>
             </thead>
             <tbody>
-            @foreach($reservations as $reservation)
-                <tr>
+            @foreach($reservations as $i => $reservation)
+                <tr data-href="/admin/reservation/{{ $reservation->id }}" class="clickable-row">
                     <td>
-                        {{ $reservation->id }}
+                        {{ $i + 1 }}
                     </td>
                     <td>
                         {{ $reservation->requester->name }}
@@ -34,9 +33,6 @@
                     </td>
                     <td>
                         {{ ($reservation->approved) ? 'Yes' : 'No' }}
-                    </td>
-                    <td>
-                        <a href="/admin/reservation/{{ $reservation->id }}">View</a>
                     </td>
                 </tr>
             @endforeach

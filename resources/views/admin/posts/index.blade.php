@@ -6,29 +6,25 @@
         Create post
     </a>
     <h3>Posts</h3>
-    <table class="table table-striped">
+    <table class="table table-striped" id="datatable">
         <thead>
             <tr>
-                <th>#</th>
+                <th width="5%">#</th>
                 <th>Title</th>
                 <th>Created</th>
-                <th></th>
             </tr>
         </thead>
         <tbody>
-            @foreach($posts as $post)
-                <tr>
+            @foreach($posts as $i => $post)
+                <tr data-href="/admin/post/{{ $post->id }}" class="clickable-row">
                     <td>
-                        {{ $post->id }}
+                        {{ $i + 1 }}
                     </td>
                     <td>
                         {{ $post->title }}
                     </td>
                     <td>
                         {{ $post->created_at }}
-                    </td>
-                    <td>
-                        <a href="/admin/post/{{ $post->id }}">View</a>
                     </td>
                 </tr>
             @endforeach

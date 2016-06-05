@@ -6,21 +6,20 @@
         Create user
     </a>
     <h3>Users</h3>
-    <table class="table table-striped">
+    <table class="table table-striped" id="datatable">
         <thead>
         <tr>
-            <th>#</th>
+            <th width="5%">#</th>
             <th>Name</th>
             <th>Mail</th>
             <th>Role</th>
-            <th></th>
         </tr>
         </thead>
         <tbody>
-        @foreach($users as $user)
-            <tr>
+        @foreach($users as $i => $user)
+            <tr data-href="/admin/user/{{ $user->id }}" class="clickable-row">
                 <td>
-                    {{ $user->id }}
+                    {{ $i + 1}}
                 </td>
                 <td>
                     {{ $user->name }}
@@ -30,9 +29,6 @@
                 </td>
                 <td>
                     {{ ucfirst($user->role->name) }}
-                </td>
-                <td>
-                    <a href="/admin/user/{{ $user->id }}">View</a>
                 </td>
             </tr>
         @endforeach
