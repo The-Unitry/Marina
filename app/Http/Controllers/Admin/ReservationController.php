@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use Navicula\Http\Requests;
 use Navicula\Http\Controllers\Controller;
+use Navicula\Models\Boat;
+use Navicula\Models\Box;
 use Navicula\Models\Reservation;
 
 class ReservationController extends AdminController
@@ -29,7 +31,11 @@ class ReservationController extends AdminController
      */
     public function create()
     {
-        //
+        return view('admin.reservations.show', [
+            'method' => 'POST',
+            'boats' => Boat::all(),
+            'boxes' => Box::all()
+        ]);
     }
 
     /**
@@ -40,7 +46,13 @@ class ReservationController extends AdminController
      */
     public function store(Request $request)
     {
-        //
+        $reservation = new Reservation($request->all());
+        $reservation->user_id = Boat::find($request->get('boat_id'))->owner->id;
+        $reservation->reservation_type_id = 1;
+
+        $reservation->save();
+
+        return back();
     }
 
     /**
@@ -51,7 +63,12 @@ class ReservationController extends AdminController
      */
     public function show(Reservation $reservation)
     {
-        //
+        return view('admin.reservations.show', [
+            'reservation' => $reservation,
+            'method' => 'PATCH',
+            'boats' => Boat::all(),
+            'boxes' => Box::all()
+        ]);
     }
 
     /**
@@ -62,7 +79,7 @@ class ReservationController extends AdminController
      */
     public function edit(Reservation $reservation)
     {
-        //
+        return $this->show($reservation);
     }
 
     /**
@@ -74,7 +91,9 @@ class ReservationController extends AdminController
      */
     public function update(Request $request, Reservation $reservation)
     {
-        //
+        $reservation->update($request->all());
+
+        return back();
     }
 
     /**
@@ -85,6 +104,8 @@ class ReservationController extends AdminController
      */
     public function destroy(Reservation $reservation)
     {
-        //
+        $reservation->delete();
+
+        return back();
     }
 }

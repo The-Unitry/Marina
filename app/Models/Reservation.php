@@ -6,6 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reservation extends Model
 {
+    protected $fillable = [
+        'user_id',
+        'box_id',
+        'reservation_type_id',
+        'amount_of_persons',
+        'start',
+        'end',
+        'boat_id',
+        'approved'
+    ];
+
     /**
      * Return the reservation requester.
      *

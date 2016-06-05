@@ -13,6 +13,7 @@
                 <th>Requester</th>
                 <th>Start date</th>
                 <th>End date</th>
+                <th>Approved</th>
                 <th></th>
             </tr>
             </thead>
@@ -32,7 +33,10 @@
                         {{ $reservation->end }}
                     </td>
                     <td>
-                        <a href="/admin/user/{{ $reservation->id }}">View</a>
+                        {{ ($reservation->approved) ? 'Yes' : 'No' }}
+                    </td>
+                    <td>
+                        <a href="/admin/reservation/{{ $reservation->id }}">View</a>
                     </td>
                 </tr>
             @endforeach

@@ -17,4 +17,14 @@ class Box extends Model
     {
         return $this->belongsTo(Scaffold::class, 'scaffold_id');
     }
+
+    /**
+     * Get the full box code, prefixed by the scaffold code.
+     *
+     * @return string
+     */
+    public function getFullCode()
+    {
+        return $this->scaffold->code . $this->id;
+    }
 }
