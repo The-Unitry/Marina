@@ -2,14 +2,11 @@
 
 namespace Navicula\Http\Controllers\Admin;
 
-use Auth;
 use Illuminate\Http\Request;
 
-use Navicula\Http\Controllers\Admin\AdminController;
 use Navicula\Http\Requests;
-use Navicula\Models\Post;
 
-class PostController extends AdminController
+class InvoiceController extends AdminController
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +15,7 @@ class PostController extends AdminController
      */
     public function index()
     {
-        return view('admin.posts.index', [
-            'posts' => Post::all()
-        ]);
+        //
     }
 
     /**
@@ -30,75 +25,62 @@ class PostController extends AdminController
      */
     public function create()
     {
-        return view('admin.posts.show', [
-            'method' => 'POST'
-        ]);
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  Request  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $post = new Post($request->all());
-        $post->user_id = Auth::user()->id;
-        $post->save();
-
-        return redirect('/admin/post/' . $post->id);
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param Post $post
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show($id)
     {
-        return view('admin.posts.show', [
-            'post' => $post,
-            'method' => 'PATCH'
-        ]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param Post $post
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit($id)
     {
-        $this->show($post);
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param Post $post
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, $id)
     {
-        $post->update($request->all());
-
-        return back();
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param Post $post
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy($id)
     {
-        $post->delete();
-
-        return back();
+        //
     }
 }

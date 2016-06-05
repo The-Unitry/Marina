@@ -1,6 +1,6 @@
 <?php
 
-namespace Navicula;
+namespace Navicula\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
