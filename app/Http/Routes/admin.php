@@ -17,3 +17,6 @@ Route::resource('reservation', 'Admin\ReservationController');
 
 // Boxes
 Route::resource('box', 'Admin\BoxController');
+
+// Boats
+Route::resource('boat', 'Admin\BoatController');
