@@ -9,9 +9,9 @@
     <table class="table table-striped">
         <thead>
         <tr>
-            <td>#</td>
-            <td>Title</td>
-            <td></td>
+            <th>#</th>
+            <th>Title</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>

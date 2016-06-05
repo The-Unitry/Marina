@@ -9,9 +9,10 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <td>#</td>
-                <td>Title</td>
-                <td></td>
+                <th>#</th>
+                <th>Title</th>
+                <th>Created</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -22,6 +23,9 @@
                     </td>
                     <td>
                         {{ $post->title }}
+                    </td>
+                    <td>
+                        {{ $post->created_at }}
                     </td>
                     <td>
                         <a href="/admin/post/{{ $post->id }}">View</a>
