@@ -23,13 +23,13 @@
                     {{ method_field($method) }}
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="title" class="col-sm-2 control-label">Titel</label>
+                        <label for="title" class="col-sm-2 control-label">Title</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" name="title" value="{{ $post->title or '' }}">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="description" class="col-sm-2 control-label">Omschrijving</label>
+                        <label for="description" class="col-sm-2 control-label">Description</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" name="description" value="{{ $post->description or '' }}">
                         </div>
@@ -41,7 +41,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="body" class="col-sm-2 control-label">Tekst</label>
+                        <label for="body" class="col-sm-2 control-label">Text</label>
                         <div class="col-sm-10">
                             <textarea id="messageArea" class="form-control" name="body">{{ $post->body or '' }}</textarea>
                         </div>
