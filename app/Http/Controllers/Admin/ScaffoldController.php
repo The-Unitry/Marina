@@ -6,9 +6,8 @@ use Illuminate\Http\Request;
 
 use Navicula\Http\Requests;
 use Navicula\Http\Controllers\Controller;
-use Navicula\Models\Box;
 
-class BoxController extends AdminController
+class ScaffoldController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +16,7 @@ class BoxController extends AdminController
      */
     public function index()
     {
-        return view('admin.boxes.index', [
-            'boxes' => Box::all()
-        ]);
+        //
     }
 
     /**
@@ -29,9 +26,7 @@ class BoxController extends AdminController
      */
     public function create()
     {
-        return view('admin.boxes.show', [
-            'method' => 'POST'
-        ]);
+        //
     }
 
     /**
@@ -48,35 +43,33 @@ class BoxController extends AdminController
     /**
      * Display the specified resource.
      *
-     * @param  Box $box
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Box $box)
+    public function show($id)
     {
-        return view('admin.boxes.show', [
-            'box' => $box
-        ]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  Box $box
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Box $box)
+    public function edit($id)
     {
-        return $this->show($box);
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  Box $box
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Box $box)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -84,13 +77,11 @@ class BoxController extends AdminController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  Box $box
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Box $box)
+    public function destroy($id)
     {
-        $box->delete();
-
-        return back();
+        //
     }
 }
