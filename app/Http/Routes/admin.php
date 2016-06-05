@@ -1,3 +1,3 @@
 <?php
 
-Route::auth();
+Route::get('/', 'Auth\AuthController@showLoginForm');
