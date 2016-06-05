@@ -1,5 +1,5 @@
 <div class="title-box">
-    @if(sizeof(Request::segments()) == 2)
+    @if(sizeof(Request::segments()) == 2 && $module != "setting")
         <a href="{{ $module }}/create" class="btn btn-primary pull-right">
             <span class="fa fa-plus"></span> Create {{ $module }}
         </a>

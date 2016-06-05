@@ -1,11 +1,10 @@
 @extends('layouts.admin')
 
+@section('title')
+    Settings
+@endsection
+
 @section('content')
-    <div class="title-box">
-        <h3>
-            Settings
-        </h3>
-    </div>
     <div class="row">
         <form class="form-horizontal" action="{{ '/admin/setting' }}" method="post">
             <div class="row">
