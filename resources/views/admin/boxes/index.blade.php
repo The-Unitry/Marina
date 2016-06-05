@@ -21,10 +21,10 @@
                     {{ $box->id }}
                 </td>
                 <td>
-                    {{ $box->code }}
+                    {{ $box->scaffold->code . $box->id }}
                 </td>
                 <td>
-                    <a href="/admin/page/{{ $box->id }}">View</a>
+                    <a href="/admin/box/{{ $box->id }}">View</a>
                 </td>
             </tr>
         @endforeach

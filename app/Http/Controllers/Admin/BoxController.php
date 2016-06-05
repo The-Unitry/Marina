@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Navicula\Http\Requests;
 use Navicula\Http\Controllers\Controller;
 use Navicula\Models\Box;
+use Navicula\Models\Scaffold;
 
 class BoxController extends AdminController
 {
@@ -30,7 +31,8 @@ class BoxController extends AdminController
     public function create()
     {
         return view('admin.boxes.show', [
-            'method' => 'POST'
+            'method' => 'POST',
+            'scaffolds' => Scaffold::all()
         ]);
     }
 
@@ -42,7 +44,9 @@ class BoxController extends AdminController
      */
     public function store(Request $request)
     {
-        //
+        $box = Box::create($request->all());
+
+        return redirect('/admin/box/' . $box->id);
     }
 
     /**
@@ -54,7 +58,9 @@ class BoxController extends AdminController
     public function show(Box $box)
     {
         return view('admin.boxes.show', [
-            'box' => $box
+            'box' => $box,
+            'scaffolds' => Scaffold::all(),
+            'method' => 'PATCH'
         ]);
     }
 
@@ -78,7 +84,9 @@ class BoxController extends AdminController
      */
     public function update(Request $request, Box $box)
     {
-        //
+        $box->update($request->all());
+
+        return back();
     }
 
     /**

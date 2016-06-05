@@ -34,6 +34,30 @@
                             <input type="text" class="form-control" name="email" id="email" value="{{ $user->email or '' }}">
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="phone" class="col-sm-2 control-label">Phone number</label>
+                        <div class="col-sm-10">
+                            <input type="tel" class="form-control" name="phone" id="phone" value="{{ $user->phone or '' }}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="city" class="col-sm-2 control-label">City</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="city" id="city" value="{{ $user->city or '' }}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="zip" class="col-sm-2 control-label">Zip code</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="zip" id="zip" value="{{ $user->zip or '' }}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address" class="col-sm-2 control-label">Address</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="address" id="address" value="{{ $user->address or '' }}">
+                        </div>
+                    </div>
                     @if ($method == 'POST')
                     <div class="form-group">
                         <label for="password" class="col-sm-2 control-label">Password</label>

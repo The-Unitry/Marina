@@ -28,7 +28,7 @@
                     {{ $boat->owner->name }}
                 </td>
                 <td>
-                    <a href="/admin/page/{{ $boat->id }}">View</a>
+                    <a href="/admin/boat/{{ $boat->id }}">View</a>
                 </td>
             </tr>
         @endforeach

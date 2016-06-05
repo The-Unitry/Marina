@@ -18,7 +18,7 @@ class RoleController extends Controller
      */
     public static function createRoles()
     {
-        foreach (config('roles') as $role) {
+        foreach (config('database_fields.roles') as $role) {
             Role::create($role);
         }
     }
