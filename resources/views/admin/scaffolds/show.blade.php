@@ -9,15 +9,6 @@
 @endsection
 
 @section('content')
-    <div class="title-box">
-        <h3>
-            @if ($method == 'POST')
-                Create scaffold
-            @elseif ($method == 'PATCH')
-                Update scaffold
-            @endif
-        </h3>
-    </div>
     <div class="row">
         <form class="form-horizontal" action="{{ ($method == 'POST') ? '/admin/scaffold' : '/admin/scaffold/' . $scaffold->id }}" method="post">
             <div class="row">
@@ -37,6 +28,19 @@
                                 <option value="0" selected>No</option>
                                 <option value="1" {{ (isset($scaffold) && $scaffold->on_land) ? 'selected' : ''  }}>Yes</option>
                             </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Boxes</label>
+                        <div class="col-sm-10">
+                            <div class="list-group">
+                                @foreach($scaffold->boxes as $box)
+                                    <a href="/admin/box/{{ $box->id }}" class="list-group-item">
+                                        {{ $box->getFullCode() }}
+                                    </a>
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                 </div>
