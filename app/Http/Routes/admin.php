@@ -1,3 +1,3 @@
 <?php
 
-Route::get('/', 'Auth\AuthController@showLoginForm');
+Route::get('/', 'Admin\AdminController@index');
