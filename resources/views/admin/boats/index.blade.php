@@ -11,6 +11,7 @@
             <tr>
                 <td>#</td>
                 <td>Title</td>
+                <td>Owner</td>
                 <td></td>
             </tr>
             </thead>
@@ -21,7 +22,10 @@
                         {{ $boat->id }}
                     </td>
                     <td>
-                        {{ $boat->title }}
+                        {{ $boat->name }}
+                    </td>
+                    <td>
+                        {{ $boat->owner->name }}
                     </td>
                     <td>
                         <a href="/admin/page/{{ $boat->id }}">View</a>
