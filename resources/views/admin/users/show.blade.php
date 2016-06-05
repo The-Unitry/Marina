@@ -2,14 +2,15 @@
 
 @section('content')
 <div class="container">
-    <h3>
-        @if ($method == 'POST')
-            Create user
-        @elseif ($method == 'PATCH')
-            Update user
-        @endif
-    </h3>
-    <hr>
+    <div class="title-box">
+        <h3>
+            @if ($method == 'POST')
+                Create user
+            @elseif ($method == 'PATCH')
+                Update user
+            @endif
+        </h3>
+    </div>
     @if(Session::has('message'))
         <div class="alert alert-success" id="alert" role="alert">
             <button type="button" class="close" data-dismiss="alert">x</button>
