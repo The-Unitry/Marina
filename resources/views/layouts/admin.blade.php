@@ -37,16 +37,9 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
-                <li><a href="{{ url('/admin') }}">Dashboard</a></li>
-                <li><a href="{{ url('/admin/post') }}">Posts</a></li>
-                <li><a href="{{ url('/admin/page') }}">Pages</a></li>
-                <li><a href="{{ url('/admin/invoice') }}">Invoices</a></li>
-                <li><a href="{{ url('/admin/reservation') }}">Reservations</a></li>
-                <li><a href="{{ url('/admin/box') }}">Boxes</a></li>
-                <li><a href="{{ url('/admin/boat') }}">Boats</a></li>
-                <li><a href="{{ url('/admin/user') }}">Users</a></li>
-                <li><a href="{{ url('/admin/scaffold') }}">Scaffolds</a></li>
-                <li><a href="{{ url('/admin/setting') }}">Settings</a></li>
+                @foreach(config('admin.menu_items') as $menu_item)
+                    <li><a href="{{ url('/admin/' . $menu_item['url']) }}">{{ trans('navigation.' . $menu_item['name']) }}</a></li>
+                @endforeach
             </ul>
 
             <!-- Right Side Of Navbar -->
@@ -57,7 +50,7 @@
                     </a>
 
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                        <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Logout</a></li>
                     </ul>
                 </li>
             </ul>
