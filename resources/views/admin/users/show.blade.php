@@ -1,16 +1,14 @@
 @extends('layouts.admin')
 
+@section('title')
+    @if ($method == 'POST')
+        Create user
+    @elseif ($method == 'PATCH')
+        Edit user
+    @endif
+@endsection
+
 @section('content')
-<div class="container">
-    <div class="title-box">
-        <h3>
-            @if ($method == 'POST')
-                Create user
-            @elseif ($method == 'PATCH')
-                Update user
-            @endif
-        </h3>
-    </div>
     <div class="row">
         <form class="form-horizontal" action="{{ ($method == 'POST') ? '/admin/user' : '/admin/user/' . $user->id }}" method="post">
             <div class="row">
@@ -83,5 +81,4 @@
             </div>
         </form>
     </div>
-</div>
 @endsection

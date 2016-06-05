@@ -1,13 +1,10 @@
 @extends('layouts.admin')
 
+@section('title')
+    Pages
+@endsection
+
 @section('content')
-<div class="container">
-    <div class="title-box">
-        <a href="/admin/page/create" class="btn btn-primary pull-right">
-            Create page
-        </a>
-        <h3>Pages</h3>
-    </div>
     <table class="table table-striped" id="datatable">
         <thead>
         <tr>
@@ -28,5 +25,4 @@
         @endforeach
         </tbody>
     </table>
-</div>
 @endsection

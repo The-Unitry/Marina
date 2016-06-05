@@ -1,13 +1,10 @@
 @extends('layouts.admin')
 
+@section('title')
+    Posts
+@endsection
+
 @section('content')
-<div class="container">
-    <div class="title-box">
-        <a href="/admin/post/create" class="btn btn-primary pull-right">
-            Create post
-        </a>
-        <h3>Posts</h3>
-    </div>
     <table class="table table-striped" id="datatable">
         <thead>
             <tr>
@@ -32,5 +29,4 @@
             @endforeach
         </tbody>
     </table>
-</div>
 @endsection

@@ -1,7 +1,14 @@
 @extends('layouts.admin')
 
+@section('title')
+    @if ($method == 'POST')
+        Create scaffold
+    @elseif ($method == 'PATCH')
+        Edit scaffold
+    @endif
+@endsection
+
 @section('content')
-<div class="container">
     <div class="title-box">
         <h3>
             @if ($method == 'POST')
@@ -42,5 +49,4 @@
             </div>
         </form>
     </div>
-</div>
 @endsection

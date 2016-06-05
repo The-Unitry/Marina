@@ -1,13 +1,10 @@
 @extends('layouts.admin')
 
+@section('title')
+    Boxes
+@endsection
+
 @section('content')
-<div class="container">
-    <div class="title-box">
-        <a href="/admin/box/create" class="btn btn-primary pull-right">
-            Create box
-        </a>
-        <h3>Boxes</h3>
-    </div>
     <table class="table table-striped" id="datatable">
         <thead>
         <tr>
@@ -28,5 +25,4 @@
         @endforeach
         </tbody>
     </table>
-</div>
 @endsection
