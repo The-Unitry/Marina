@@ -8,3 +8,6 @@ Route::resource('post', 'Admin\PostController');
 
 // Pages
 Route::resource('page', 'Admin\PageController');
+
+// Invoices
+Route::resource('invoice', 'Admin\InvoiceController');

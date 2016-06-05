@@ -6,7 +6,7 @@ use Auth;
 use Illuminate\Http\Request;
 
 use Navicula\Http\Requests;
-use Navicula\Page;
+use Navicula\Models\Page;
 
 class PageController extends AdminController
 {
