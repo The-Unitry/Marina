@@ -15,6 +15,16 @@ class UpdateReservationsTable extends Migration
         Schema::table('reservations', function ($table) {
             $table->integer('amount_of_persons');
         });
+        
+        Schema::table('reservations', function ($table) {
+            $table->integer('boat_id')->unsigned();
+            $table->foreign('boat_id')->references('id')->on('boats')->onDelete('cascade');
+        });
+
+        Schema::table('reservations', function ($table) {
+            $table->timestamp('start');
+            $table->timestamp('end');
+        });
     }
 
     /**
