@@ -2,9 +2,11 @@
 
 @section('content')
     <div class="container">
-        <h3>
-            Settings
-        </h3>
+        <div class="title-box">
+            <h3>
+                Settings
+            </h3>
+        </div>
         <hr>
         @if(Session::has('message'))
             <div class="alert alert-success" id="alert" role="alert">
@@ -28,7 +30,6 @@
                     <div class="col-md-2">
                         <div class="list-group">
                             <button type="submit" class="list-group-item bg-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button>
-                            <a href="../setting" class="list-group-item"><span class="fa fa-arrow-left"></span> Back</a>
                         </div>
                     </div>
                 </div>

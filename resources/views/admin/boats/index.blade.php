@@ -2,10 +2,12 @@
 
 @section('content')
 <div class="container">
-    <a href="/admin/boat/create" class="btn btn-primary">
-        Create boat
-    </a>
-    <h3>Boats</h3>
+    <div class="title-box">
+        <a href="/admin/boat/create" class="btn btn-primary pull-right">
+            Create boat
+        </a>
+        <h3>Boats</h3>
+    </div>
     <table class="table table-striped" id="datatable">
         <thead>
         <tr>

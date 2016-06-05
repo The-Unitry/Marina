@@ -2,10 +2,12 @@
 
 @section('content')
     <div class="container">
-        <a href="/admin/scaffold/create" class="btn btn-primary">
-            Create scaffold
-        </a>
-        <h3>Scaffolds</h3>
+        <div class="title-box">
+            <a href="/admin/scaffold/create" class="btn btn-primary pull-right">
+                Create scaffold
+            </a>
+            <h3>Scaffolds</h3>
+        </div>
         <table class="table table-striped" id="datatable">
             <thead>
             <tr>
