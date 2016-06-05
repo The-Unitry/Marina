@@ -47,6 +47,9 @@
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
                 <li><a href="{{ url('/admin') }}">Dashboard</a></li>
+                <li><a href="{{ url('/admin/post') }}">Posts</a></li>
+                <li><a href="{{ url('/admin/page') }}">Pages</a></li>
+                <li><a href="{{ url('/admin/invoice') }}">Invoices</a></li>
             </ul>
 
             <!-- Right Side Of Navbar -->
