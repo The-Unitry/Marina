@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use Navicula\Http\Requests;
 use Navicula\Http\Controllers\Controller;
+use Navicula\Models\Box;
 
 class BoxController extends Controller
 {
@@ -16,7 +17,9 @@ class BoxController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.boxes.index', [
+            'boxes' => Box::all()
+        ]);
     }
 
     /**

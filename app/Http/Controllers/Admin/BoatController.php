@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use Navicula\Http\Requests;
 use Navicula\Http\Controllers\Controller;
+use Navicula\Models\Boat;
 
 class BoatController extends Controller
 {
@@ -16,7 +17,9 @@ class BoatController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.boats.index', [
+            'boats' => Boat::all()
+        ]);
     }
 
     /**

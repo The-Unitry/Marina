@@ -5,7 +5,7 @@
     <a href="page/create" class="btn btn-primary">
         Create page
     </a>
-    <h3>Page</h3>
+    <h3>Pages</h3>
     <table class="table table-striped">
         <thead>
         <tr>
