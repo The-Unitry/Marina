@@ -65,7 +65,7 @@
                             <div class="col-sm-10">
                                 <select name="approved" id="approved" class="form-control">
                                     <option value="0">No</option>
-                                    <option value="1" {{ ($reservation->approved) ? 'selected' : '' }}>Yes</option>
+                                    <option value="1" {{ (isset($reservation) && ($reservation->approved)) ? 'selected' : '' }}>Yes</option>
                                 </select>
                             </div>
                         </div>

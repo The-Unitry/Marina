@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Navicula\Http\Requests;
 use Navicula\Http\Controllers\Controller;
 use Navicula\Models\Boat;
+use Navicula\Models\User;
 
 class BoatController extends AdminController
 {
@@ -29,7 +30,10 @@ class BoatController extends AdminController
      */
     public function create()
     {
-        //
+        return view('admin.boats.show', [
+            'method' => 'POST',
+            'users' => User::all()
+        ]);
     }
 
     /**
@@ -40,51 +44,61 @@ class BoatController extends AdminController
      */
     public function store(Request $request)
     {
-        //
+        $boat = Boat::create($request->all());
+
+        return redirect('/admin/boat/' . $boat->id);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Boat $boat
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Boat $boat)
     {
-        //
+        return view('admin.boats.show', [
+            'boat' => $boat,
+            'users' => User::all(),
+            'method' => 'PATCH'
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Boat $boat
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Boat $boat)
     {
-        //
+        $this->show($boat);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Boat $boat
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Boat $boat)
     {
-        //
+        $boat->update($request->all());
+
+        return back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Boat $boat
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Boat $boat)
     {
-        //
+        $boat->delete();
+
+        return back();
     }
 }
