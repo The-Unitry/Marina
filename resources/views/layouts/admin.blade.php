@@ -15,7 +15,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/u/bs/dt-1.10.12/datatables.min.css"/>
 </head>
-<body id="app-layout">
+<body>
 <nav class="navbar navbar-default navbar-static-top">
     <div class="container">
         <div class="navbar-header">
@@ -81,6 +81,7 @@
         @endif
         <h3>@yield('title')</h3>
     </div>
+
     @yield('content')
 </div>
 
@@ -89,20 +90,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/u/bs/dt-1.10.12/datatables.min.js"></script>
 
-<script>
-    $(document).ready(function(){
-        $('#datatable').DataTable();
-    });
-
-    $(document).ready (function(){
-        $(".clickable-row").click(function() {
-            window.document.location = $(this).data("href");
-        });
-
-        $("#alert").fadeTo(2000, 500).slideUp(500, function(){
-            $("#success-alert").alert('close');
-        });
-    });
-</script>
+<script src="{{ asset('js/admin.js') }}"></script>
 </body>
 </html>
