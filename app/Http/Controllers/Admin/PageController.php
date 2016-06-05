@@ -46,7 +46,7 @@ class PageController extends AdminController
         $page->user_id = Auth::user()->id;
         $page->save();
 
-        return redirect('/admin/page/' . $page->id);
+        return redirect('/admin/page/' . $page->id)->with('message', 'Created page.');;
     }
 
     /**
@@ -85,7 +85,7 @@ class PageController extends AdminController
     {
         $page->update($request->all());
 
-        return back();
+        return back()->with('message', 'Updated page.');
     }
 
     /**

@@ -47,7 +47,7 @@ class PostController extends AdminController
         $post->user_id = Auth::user()->id;
         $post->save();
 
-        return redirect('/admin/post/' . $post->id);
+        return redirect('/admin/post/' . $post->id)->with('message', 'Created post.');;
     }
 
     /**
@@ -86,7 +86,7 @@ class PostController extends AdminController
     {
         $post->update($request->all());
 
-        return back();
+        return back()->with('message', 'Updated post.');;
     }
 
     /**

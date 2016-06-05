@@ -52,7 +52,7 @@ class ReservationController extends AdminController
 
         $reservation->save();
 
-        return back();
+        return back()->with('message', 'Created reservation.');
     }
 
     /**
@@ -91,9 +91,9 @@ class ReservationController extends AdminController
      */
     public function update(Request $request, Reservation $reservation)
     {
-        $reservation->update($request->all());
+        $reservation->update($request->all())->with('message', 'Updated reservation.');;
 
-        return back();
+        return back()->with('message', 'Updated post.');;
     }
 
     /**

@@ -14,16 +14,6 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/u/bs/dt-1.10.12/datatables.min.css"/>
-
-    <style>
-        body {
-            font-family: 'Lato', sans-serif;
-        }
-
-        .fa-btn {
-            margin-right: 6px;
-        }
-    </style>
 </head>
 <body id="app-layout">
 <nav class="navbar navbar-default navbar-static-top">
@@ -75,6 +65,13 @@
     </div>
 </nav>
 
+@if(Session::has('message'))
+    <div class="alert alert-success" id="alert" role="alert">
+        <button type="button" class="close" data-dismiss="alert">x</button>
+        <span>{{ Session::get('message') }}</span>
+    </div>
+@endif
+
 @yield('content')
 
 <!-- JavaScripts -->
@@ -83,17 +80,15 @@
 <script type="text/javascript" src="https://cdn.datatables.net/u/bs/dt-1.10.12/datatables.min.js"></script>
 
 <script>
-    jQuery(document).ready(function($) {
-        $(".clickable-row").click(function() {
-            window.document.location = $(this).data("href");
-        });
-    });
-
     $(document).ready(function(){
         $('#datatable').DataTable();
     });
 
     $(document).ready (function(){
+        $(".clickable-row").click(function() {
+            window.document.location = $(this).data("href");
+        });
+
         $("#alert").fadeTo(2000, 500).slideUp(500, function(){
             $("#success-alert").alert('close');
         });

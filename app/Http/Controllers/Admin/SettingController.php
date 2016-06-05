@@ -34,6 +34,6 @@ class SettingController extends AdminController
             }
         }
 
-        return back();
+        return back()->with('message', 'Updated settings.');
     }
 }

@@ -11,12 +11,6 @@
             @endif
         </h3>
     </div>
-    @if(Session::has('message'))
-        <div class="alert alert-success" id="alert" role="alert">
-            <button type="button" class="close" data-dismiss="alert">x</button>
-            <span>{{ Session::get('message') }}</span>
-        </div>
-    @endif
     <div class="row">
         <form class="form-horizontal" action="{{ ($method == 'POST') ? '/admin/box' : '/admin/box/' . $box->id }}" method="post">
             <div class="row">

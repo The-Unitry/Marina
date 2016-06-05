@@ -17,7 +17,7 @@
         </thead>
         <tbody>
         @foreach($pages as $i => $page)
-            <tr data-href="/admin/page/{{ $page->id }}">
+            <tr data-href="/admin/page/{{ $page->id }}" class="clickable-row">
                 <td>
                     {{ $i + 1 }}
                 </td>
