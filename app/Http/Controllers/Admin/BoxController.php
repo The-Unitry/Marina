@@ -8,7 +8,7 @@ use Navicula\Http\Requests;
 use Navicula\Http\Controllers\Controller;
 use Navicula\Models\Box;
 
-class BoxController extends Controller
+class BoxController extends AdminController
 {
     /**
      * Display a listing of the resource.

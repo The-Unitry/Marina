@@ -5,9 +5,10 @@ namespace Navicula\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 
 use Navicula\Http\Requests;
-use Navicula\Http\Controllers\Controller;
+use Navicula\Models\Role;
+use Navicula\Models\User;
 
-class UserController extends Controller
+class UserController extends AdminController
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +17,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.users.index', [
+            'users' => User::all()
+        ]);
     }
 
     /**
@@ -26,7 +29,10 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.users.show', [
+            'method' => 'POST',
+            'roles' => Role::all()
+        ]);
     }
 
     /**
@@ -37,51 +43,64 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new User($request->all());
+        $user->password = bcrypt($request->get('password'));
+
+        $user->save();
+
+        return redirect('/admin/user/' . $user->id);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param User $user
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        //
+        return view('admin.users.show', [
+            'user' => $user,
+            'method' => 'PATCH',
+            'roles' => Role::all()
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param User $user
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        return $this->show($user);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  User $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        $user->update($request->all());
+
+        return back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int  User $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        $user->delete();
+
+        return back();
     }
 }
