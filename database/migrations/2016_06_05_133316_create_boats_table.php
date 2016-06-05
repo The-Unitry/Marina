@@ -23,6 +23,7 @@ class CreateBoatsTable extends Migration
             $table->integer('length');
             $table->integer('depth');
             $table->integer('width');
+            $table->string('image_path');
             $table->timestamps();
         });
 
