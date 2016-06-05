@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <a href="post/create" class="btn btn-primary">
+    <a href="/admin/post/create" class="btn btn-primary">
         Create post
     </a>
     <h3>Posts</h3>

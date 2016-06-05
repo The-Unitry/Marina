@@ -23,3 +23,6 @@ Route::resource('boat', 'Admin\BoatController');
 
 // Users
 Route::resource('user', 'Admin\UserController');
+
+// Scaffolds
+Route::resource('scaffold', 'Admin\ScaffoldController');

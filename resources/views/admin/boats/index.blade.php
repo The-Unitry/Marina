@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <a href="boat/create" class="btn btn-primary">
+    <a href="/admin/boat/create" class="btn btn-primary">
         Create boat
     </a>
     <h3>Boats</h3>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use Navicula\Http\Requests;
 use Navicula\Http\Controllers\Controller;
+use Navicula\Models\Scaffold;
 
 class ScaffoldController extends Controller
 {
@@ -16,7 +17,9 @@ class ScaffoldController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.scaffolds.index', [
+            'scaffolds' => Scaffold::all()
+        ]);
     }
 
     /**
@@ -26,7 +29,9 @@ class ScaffoldController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.scaffolds.show', [
+            'method' => 'POST'
+        ]);
     }
 
     /**
@@ -37,51 +42,60 @@ class ScaffoldController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $scaffold = Scaffold::create($request->all());
+
+        return redirect('/admin/scaffold/' . $scaffold->id);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Scaffold $scaffold
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Scaffold $scaffold)
     {
-        //
+        return view('admin.scaffolds.show', [
+            'scaffold' => $scaffold,
+            'method' => 'PATCH'
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Scaffold $scaffold
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Scaffold $scaffold)
     {
-        //
+        return $this->view($scaffold);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Scaffold $scaffold
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Scaffold $scaffold)
     {
-        //
+        $scaffold->update($request->all());
+
+        return back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Scaffold $scaffold
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Scaffold $scaffold)
     {
-        //
+        $scaffold->delete();
+
+        return back();
     }
 }
