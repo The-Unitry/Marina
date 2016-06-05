@@ -14,3 +14,6 @@ Route::resource('invoice', 'Admin\InvoiceController');
 
 // Reservations
 Route::resource('reservation', 'Admin\ReservationController');
+
+// Boxes
+Route::resource('box', 'Admin\BoxController');
