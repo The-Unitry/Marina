@@ -22,5 +22,11 @@ return [
             'id' => 5,
             'name' => 'visitor'
         ]
+    ],
+    'settings' => [
+        [
+            'key' => 'company_name',
+            'value' => 'Your company name',
+        ]
     ]
 ];

@@ -4,6 +4,7 @@ namespace Navicula\Console\Commands;
 
 use Illuminate\Console\Command;
 use Navicula\Http\Controllers\RoleController;
+use Navicula\Http\Controllers\SettingController;
 
 class Install extends Command
 {
@@ -39,5 +40,6 @@ class Install extends Command
     public function handle()
     {
         RoleController::createRoles();
+        SettingController::createSettings();
     }
 }

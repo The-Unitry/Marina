@@ -26,3 +26,7 @@ Route::resource('user', 'Admin\UserController');
 
 // Scaffolds
 Route::resource('scaffold', 'Admin\ScaffoldController');
+
+// Settings
+Route::get('setting', 'Admin\SettingController@index');
+Route::patch('setting', 'Admin\SettingController@update');
