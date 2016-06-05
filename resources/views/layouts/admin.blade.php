@@ -16,73 +16,14 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/u/bs/dt-1.10.12/datatables.min.css"/>
 </head>
 <body>
-<nav class="navbar navbar-default navbar-static-top">
+    @include('admin.partials.navbar')
+    @include('admin.partials.confirmation')
+
     <div class="container">
-        <div class="navbar-header">
-
-            <!-- Collapsed Hamburger -->
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                <span class="sr-only">Toggle Navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-
-            <!-- Branding Image -->
-            <a class="navbar-brand" href="{{ url('/admin') }}">
-                Navicula
-            </a>
-        </div>
-
-        <div class="collapse navbar-collapse" id="app-navbar-collapse">
-            <!-- Left Side Of Navbar -->
-            <ul class="nav navbar-nav">
-                @foreach(config('admin.menu_items') as $menu_item)
-                    <li><a href="{{ url('/admin/' . $menu_item['url']) }}">{{ trans('navigation.' . $menu_item['name']) }}</a></li>
-                @endforeach
-            </ul>
-
-            <!-- Right Side Of Navbar -->
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        {{ Auth::user()->name }} <span class="caret"></span>
-                    </a>
-
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Logout</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-@if(Session::has('message'))
-    <div class="alert alert-success" id="alert" role="alert">
-        <button type="button" class="close" data-dismiss="alert">x</button>
-        <span>{{ Session::get('message') }}</span>
-    </div>
-@endif
-
-<div class="container">
-    <div class="title-box">
-        @if(sizeof(Request::segments()) == 2)
-            <a href="{{ $module }}/create" class="btn btn-primary pull-right">
-                <span class="fa fa-plus"></span> Create {{ $module }}
-            </a>
-        @endif
-        <h3>@yield('title')</h3>
+        @include('admin.partials.title_box')
+        @yield('content')
     </div>
 
-    @yield('content')
-</div>
-
-<!-- JavaScripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/u/bs/dt-1.10.12/datatables.min.js"></script>
-
-<script src="{{ asset('js/admin.js') }}"></script>
+    @include('admin.partials.scripts')
 </body>
 </html>
