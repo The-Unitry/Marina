@@ -51,6 +51,8 @@
                 <li><a href="{{ url('/admin/page') }}">Pages</a></li>
                 <li><a href="{{ url('/admin/invoice') }}">Invoices</a></li>
                 <li><a href="{{ url('/admin/reservation') }}">Reservations</a></li>
+                <li><a href="{{ url('/admin/box') }}">Boxes</a></li>
+                <li><a href="{{ url('/admin/boat') }}">Boats</a></li>
             </ul>
 
             <!-- Right Side Of Navbar -->
