@@ -14,7 +14,15 @@ class CreateBoxesTable extends Migration
     {
         Schema::create('boxes', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('depth');
+            $table->integer('length');
+            $table->integer('width');
             $table->timestamps();
+        });
+
+        Schema::table('boxes', function ($table) {
+            $table->integer('scaffold_id')->unsigned();
+            $table->foreign('scaffold_id')->references('id')->on('scaffolds')->onDelete('cascade');
         });
     }
 
