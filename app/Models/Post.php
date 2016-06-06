@@ -2,6 +2,7 @@
 
 namespace Navicula\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
@@ -16,5 +17,17 @@ class Post extends Model
     public function author()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    /**
+     * Return the creation date.
+     *
+     * @return Carbon
+     */
+    public function date()
+    {
+        $date = new Carbon($this->created_at);
+
+        return $date->format('d-m-Y');
     }
 }

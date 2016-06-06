@@ -5,6 +5,9 @@
         <h3>
             {{ $post->title }}
         </h3>
+        <h5>
+            Geplaatst op {{ $post->date() }}
+        </h5>
         <br>
         <p>
             <b>

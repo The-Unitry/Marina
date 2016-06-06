@@ -16,7 +16,7 @@ class HomeController extends Controller
     public function index()
     {
         return view('welcome', [
-            'posts' => Post::all()
+            'posts' => Post::orderBy('created_at', 'desc')->get()
         ]);
     }
 }
