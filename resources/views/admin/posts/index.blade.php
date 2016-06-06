@@ -11,6 +11,7 @@
                 <th width="5%">#</th>
                 <th>Title</th>
                 <th>Created</th>
+                <th>Author</th>
             </tr>
         </thead>
         <tbody>
@@ -24,6 +25,9 @@
                     </td>
                     <td>
                         {{ $post->created_at }}
+                    </td>
+                    <td>
+                        {{ $post->author->name }}
                     </td>
                 </tr>
             @endforeach

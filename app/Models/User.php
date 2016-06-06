@@ -45,6 +45,11 @@ class User extends Authenticatable
         return $role === $this->role->name;
     }
 
+    /**
+     * Return true if the user is an admin.
+     *
+     * @return bool
+     */
     public function isAdmin()
     {
         if (strpos($this->role->name, 'admin') !== false)
