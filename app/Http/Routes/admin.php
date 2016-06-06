@@ -11,6 +11,7 @@ Route::resource('page', 'Admin\PageController');
 
 // Invoices
 Route::resource('invoice', 'Admin\InvoiceController');
+Route::get('invoice/{invoice}/view', 'Admin\InvoiceController@view');
 
 // Reservations
 Route::resource('reservation', 'Admin\ReservationController');

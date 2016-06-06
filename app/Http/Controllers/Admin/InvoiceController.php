@@ -97,4 +97,17 @@ class InvoiceController extends AdminController
 
         return back();
     }
+
+    /**
+     * View a PDF version of the invoice.
+     *
+     * @param Invoice $invoice
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function view(Invoice $invoice)
+    {
+        return view('admin.invoices.view', [
+            'invoice' => $invoice
+        ]);
+    }
 }

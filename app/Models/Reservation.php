@@ -2,6 +2,7 @@
 
 namespace Navicula\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Reservation extends Model
@@ -35,5 +36,28 @@ class Reservation extends Model
     public function boat()
     {
         return $this->belongsTo(Boat::class, 'boat_id');
+    }
+
+    /**
+     * Return the reservation's boat.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function box()
+    {
+        return $this->belongsTo(Box::class, 'box_id');
+    }
+
+    /**
+     * Return the amount of days between the start and end date.
+     *
+     * @return int
+     */
+    public function totalNights()
+    {
+        $start = Carbon::parse($this->start);
+        $end = Carbon::parse($this->end);
+
+        return $end->diffInDays($start);
     }
 }

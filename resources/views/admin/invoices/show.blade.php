@@ -28,8 +28,17 @@
                 </div>
                 <div class="col-md-2">
                     <div class="list-group">
-                        <button type="submit" class="list-group-item bg-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button>
-                        <a href="../invoice" class="list-group-item"><span class="fa fa-arrow-left"></span> Back</a>
+                        <button type="submit" class="list-group-item bg-primary">
+                            <i class="fa fa-floppy-o" aria-hidden="true"></i> Save
+                        </button>
+                        @if(isset($invoice))
+                        <a href="../invoice/{{ $invoice->id }}/view" class="list-group-item" target="_blank">
+                            <span class="fa fa-print"></span> Print
+                        </a>
+                        @endif
+                        <a href="../invoice" class="list-group-item">
+                            <span class="fa fa-arrow-left"></span> Back
+                        </a>
                     </div>
                 </div>
             </div>

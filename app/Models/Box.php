@@ -27,4 +27,24 @@ class Box extends Model
     {
         return $this->scaffold->code . $this->id;
     }
+
+    /**
+     * Return the formatted string of the price per night.
+     *
+     * @return string
+     */
+    public function pricePerNight()
+    {
+        return '&euro; ' . number_format($this->price_per_night / 100, 2, ',', '.');
+    }
+
+    public function getTotalPrice($nights)
+    {
+        return $this->price_per_night * $nights;
+    }
+
+    public function totalPrice($nights)
+    {
+        return '&euro; ' . number_format($this->getTotalPrice($nights) / 100, 2, ',', '.');
+    }
 }
