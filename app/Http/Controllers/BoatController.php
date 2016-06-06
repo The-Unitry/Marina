@@ -10,13 +10,23 @@ use Navicula\Models\Boat;
 
 class BoatController extends Controller
 {
+    /**
+     * View the overview of the logged in user's boats.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         return view('boats.index', [
             'boats' => Auth::user()->boats
         ]);
     }
-    
+
+    /**
+     * Show the form for creating a boat.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function create()
     {
         return view('boats.show', [
@@ -24,6 +34,12 @@ class BoatController extends Controller
         ]);
     }
 
+    /**
+     * Show the form for editing a boat.
+     *
+     * @param Boat $boat
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function edit(Boat $boat)
     {
         return view('boats.show', [
@@ -32,6 +48,13 @@ class BoatController extends Controller
         ]);
     }
 
+    /**
+     * Update the given boat in storage.
+     *
+     * @param Request $request
+     * @param Boat $boat
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function update(Request $request, Boat $boat)
     {
         $boat->update($request->all());
@@ -39,6 +62,12 @@ class BoatController extends Controller
         return back();
     }
 
+    /**
+     * Store a new boat in the storage.
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function store(Request $request)
     {
         $boat = new Boat($request->all());
