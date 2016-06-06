@@ -9,17 +9,25 @@
 		<thead>
 		<tr>
 			<th width="5%">#</th>
-			<th>Code</th>
+			<th>Customer</th>
+			<th>Price</th>
+			<th>Status</th>
 		</tr>
 		</thead>
 		<tbody>
 		@foreach($invoices as $i => $invoice)
-			<tr data-href="/admin/invoice/{{ $invoices->id }}" class="clickable-row">
+			<tr data-href="/admin/invoice/{{ $invoice->id }}" class="clickable-row">
 				<td>
 					{{ $i + 1 }}
 				</td>
 				<td>
-					{{ $invoice }}
+					{{ $invoice->reservation->requester->name }}
+				</td>
+				<td>
+					&euro; {{ $invoice->totalPrice() }}
+				</td>
+				<td>
+					{{ $invoice->status }}
 				</td>
 			</tr>
 		@endforeach
