@@ -44,7 +44,7 @@ class ScaffoldController extends Controller
     {
         $scaffold = Scaffold::create($request->all());
 
-        return redirect('/admin/scaffold/' . $scaffold->id)->with('message', 'Created scaffold.');;
+        return redirect('/admin/scaffold/' . $scaffold->id)->with('message', 'Created scaffold.');
     }
 
     /**

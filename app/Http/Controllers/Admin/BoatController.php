@@ -46,7 +46,7 @@ class BoatController extends AdminController
     {
         $boat = Boat::create($request->all());
 
-        return redirect('/admin/boat/' . $boat->id)->with('message', 'Created boat.');;
+        return redirect('/admin/boat/' . $boat->id)->with('message', 'Created boat.');
     }
 
     /**
@@ -86,7 +86,7 @@ class BoatController extends AdminController
     {
         $boat->update($request->all());
 
-        return back()->with('message', 'Updated boat.');;
+        return back()->with('message', 'Updated boat.');
     }
 
     /**
