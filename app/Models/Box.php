@@ -69,6 +69,11 @@ class Box extends Model
         }
 
         $reservations = Reservation::where('box_id', $this->id)->get();
+
+        if (!sizeof($reservations))
+        {
+            return true;
+        }
         
         foreach ($reservations as $reservation) {
             if (!$reservation->hasReservationForDay($date))

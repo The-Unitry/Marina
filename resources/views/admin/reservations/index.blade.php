@@ -12,6 +12,7 @@
             <th>Requester</th>
             <th>Start date</th>
             <th>End date</th>
+            <th>Box</th>
             <th>Approved</th>
         </tr>
         </thead>
@@ -29,6 +30,9 @@
                 </td>
                 <td>
                     {{ $reservation->end }}
+                </td>
+                <td>
+                    {{ $reservation->box->getFullCode() }}
                 </td>
                 <td>
                     {{ ($reservation->approved) ? 'Yes' : 'No' }}
