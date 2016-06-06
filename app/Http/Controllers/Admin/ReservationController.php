@@ -52,7 +52,7 @@ class ReservationController extends AdminController
 
         $reservation->save();
 
-        return back()->with('message', 'Created reservation.');
+        return redirect('/admin/reservation/' . $reservation->id)->with('message', 'Created reservation.');
     }
 
     /**
