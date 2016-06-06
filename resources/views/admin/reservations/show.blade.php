@@ -42,7 +42,9 @@
                         <div class="col-sm-10">
                             <select name="box_id" id="box_id" class="form-control">
                                 @foreach ($boxes as $box)
-                                    <option value="{{ $box->id }}">{{ $box->getFullCode() }}</option>
+                                    <option value="{{ $box->id }}" {{ (isset($box) && $box->id == $reservation->box->id) ? 'selected' : '' }}>
+                                        {{ $box->getFullCode() }}
+                                    </option>
                                 @endforeach
                             </select>
                         </div>
