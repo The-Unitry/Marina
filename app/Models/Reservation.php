@@ -60,4 +60,18 @@ class Reservation extends Model
 
         return $end->diffInDays($start);
     }
+
+    /**
+     * Check if a reservation is planned for the given day.
+     *
+     * @param Carbon $day
+     * @return bool
+     */
+    public function hasReservationAtBoxForDay(Carbon $day)
+    {
+        $start = new Carbon($this->start);
+        $end = new Carbon($this->end);
+
+        return $day->between($start, $end);
+    }
 }

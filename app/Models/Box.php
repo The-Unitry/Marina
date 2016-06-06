@@ -2,6 +2,7 @@
 
 namespace Navicula\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Box extends Model
@@ -38,11 +39,23 @@ class Box extends Model
         return '&euro; ' . number_format($this->price_per_night / 100, 2, ',', '.');
     }
 
+    /**
+     * Get the total price by the amount of nights.
+     *
+     * @param $nights
+     * @return mixed
+     */
     public function getTotalPrice($nights)
     {
         return $this->price_per_night * $nights;
     }
 
+    /**
+     * Get the formatted total price.
+     *
+     * @param $nights
+     * @return string
+     */
     public function totalPrice($nights)
     {
         return '&euro; ' . number_format($this->getTotalPrice($nights) / 100, 2, ',', '.');

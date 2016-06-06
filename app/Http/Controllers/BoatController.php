@@ -19,7 +19,24 @@ class BoatController extends Controller
     
     public function create()
     {
-        return view('boats.show');
+        return view('boats.show', [
+            'method' => 'POST'
+        ]);
+    }
+
+    public function edit(Boat $boat)
+    {
+        return view('boats.show', [
+            'boat' => $boat,
+            'method' => 'PATCH'
+        ]);
+    }
+
+    public function update(Request $request, Boat $boat)
+    {
+        $boat->update($request->all());
+
+        return back();
     }
 
     public function store(Request $request)

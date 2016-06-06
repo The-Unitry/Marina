@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use Navicula\Http\Requests;
 
-class ReserveController extends Controller
+class ReservationController extends Controller
 {
     public function index()
     {

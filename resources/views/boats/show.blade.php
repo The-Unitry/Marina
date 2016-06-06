@@ -6,8 +6,9 @@
             Boot toevoegen
         </h3>
         <br>
-        <form action="/mijn-boten" method="post" enctype="multipart/form-data">
+        <form action="{{ (!isset($boat)) ? '/mijn-boten' : '/mijn-boten/'. $boat->id }}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
+            {{ method_field($method) }}
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <p class="panel-title">Boot gegevens</p>
@@ -57,9 +58,9 @@
                             </td>
                             <td>
                                 <select name="type" id="type" class="form-control">
-                                    <option value="Motorboot">Motorboot</option>
-                                    <option value="Zeilboot">Zeilboot</option>
-                                    <option value="Anders">Anders</option>
+                                    <option value="Motorboot" {{ (isset($boat) && $boat->type == 'Motorboot' ? 'selected' : '') }}>Motorboot</option>
+                                    <option value="Zeilboot" {{ (isset($boat) && $boat->type == 'Zeilboot' ? 'selected' : '') }}>Zeilboot</option>
+                                    <option value="Anders" {{ (isset($boat) && $boat->type == 'Anders' ? 'selected' : '') }}>Anders</option>
                                 </select>
                             </td>
                         </tr>
@@ -79,7 +80,7 @@
                                 <label for="height">Hoogte (cm)</label>
                             </td>
                             <td>
-                                <input type="text" class="form-control" id="height" name="height"
+                                <input type="number" class="form-control" id="height" name="height"
                                        value="{{ $boat->height or '' }}">
                             </td>
                         </tr>
@@ -88,7 +89,7 @@
                                 <label for="length">Lengte (cm)</label>
                             </td>
                             <td>
-                                <input type="text" class="form-control" id="length" name="length"
+                                <input type="number" class="form-control" id="length" name="length"
                                        value="{{ $boat->length or '' }}">
                             </td>
                         </tr>
@@ -97,7 +98,7 @@
                                 <label for="depth">Diepte (cm)</label>
                             </td>
                             <td>
-                                <input type="text" class="form-control" id="depth" name="depth"
+                                <input type="number" class="form-control" id="depth" name="depth"
                                        value="{{ $boat->depth or '' }}">
                             </td>
                         </tr>
@@ -106,7 +107,7 @@
                                 <label for="width">Breedte (cm)</label>
                             </td>
                             <td>
-                                <input type="text" class="form-control" id="width" name="width"
+                                <input type="number" class="form-control" id="width" name="width"
                                        value="{{ $boat->width or '' }}">
                             </td>
                         </tr>
@@ -114,6 +115,7 @@
                     </table>
                 </div>
             </div>
+            <a href="/mijn-boten" class="btn btn-default"><span class="fa fa-arrow-left"></span> Terug naar overzicht</a>
             <button type="submit" class="btn btn-primary pull-right">Opslaan</button>
         </form>
     </div>

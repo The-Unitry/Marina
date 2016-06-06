@@ -10,7 +10,7 @@
         </h3>
         <br>
         @foreach($boats as $boat)
-            <div class="row">
+            <a class="row" href="/mijn-boten/{{ $boat->id }}">
                 <div class="col-md-2">
                     <img src="http://www.jenzen.nl/site/content/images/boot.jpg" alt="" width="100%">
                 </div>
@@ -22,7 +22,7 @@
                         {{ $boat->brand }} - {{ $boat->type }}
                     </h5>
                 </div>
-            </div>
+            </a>
             <hr>
         @endforeach
     </div>
