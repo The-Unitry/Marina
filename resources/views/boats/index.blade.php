@@ -2,6 +2,9 @@
 
 @section('content')
     <div class="container">
+        <a href="/mijn-boten/nieuw" class="btn btn-primary pull-right">
+            Boot toevoegen
+        </a>
         <h3>
             Mijn boten
         </h3>

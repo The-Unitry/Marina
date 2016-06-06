@@ -10,6 +10,6 @@ class ReserveController extends Controller
 {
     public function index()
     {
-        return view('reserve');
+        return view('reserve.index');
     }
 }
