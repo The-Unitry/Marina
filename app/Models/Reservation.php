@@ -79,4 +79,28 @@ class Reservation extends Model
 
         return $day->between($start, $end);
     }
+
+    /**
+     * Get start attribute.
+     *
+     * @param $value
+     * @return string
+     */
+    public function getStartAttribute($value)
+    {
+        $start = new Carbon($value);
+        return $start->format('Y-m-d');
+    }
+
+    /**
+     * Get end attribute.
+     *
+     * @param $value
+     * @return string
+     */
+    public function getEndAttribute($value)
+    {
+        $end = new Carbon($value);
+        return $end->format('Y-m-d');
+    }
 }
