@@ -13,6 +13,9 @@ Route::post('mijn-boten', 'BoatController@store');
 // Reserve
 Route::get('reserveren', 'ReservationController@index');
 
+// Posts
+Route::get('post/{slug}', 'PostController@show');
+
 // Contact Form
 Route::get('contact', 'ContactController@index');
 

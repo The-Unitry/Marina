@@ -45,6 +45,7 @@ class PostController extends AdminController
     {
         $post = new Post($request->all());
         $post->user_id = Auth::user()->id;
+        $post->slug = str_slug($request->get('title'));
         $post->save();
 
         return redirect('/admin/post/' . $post->id)->with('message', 'Created post.');
@@ -84,7 +85,11 @@ class PostController extends AdminController
      */
     public function update(Request $request, Post $post)
     {
-        $post->update($request->all());
+        $post = Post::find($post->id);
+        $post->fill($request->all());
+        $post->slug = str_slug($post->title);
+
+        $post->save();
 
         return back()->with('message', 'Updated post.');
     }
