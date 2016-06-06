@@ -3,3 +3,11 @@
 .no-padding {
   padding: 0;
 }
+
+.borderless {
+  border: none;
+
+  td {
+    border-top: none !important;
+  }
+}

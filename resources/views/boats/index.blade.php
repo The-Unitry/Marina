@@ -10,7 +10,7 @@
         </h3>
         <br>
         @foreach($boats as $boat)
-            <div>
+            <div class="row">
                 <div class="col-md-2">
                     <img src="http://www.jenzen.nl/site/content/images/boot.jpg" alt="" width="100%">
                 </div>
@@ -23,6 +23,7 @@
                     </h5>
                 </div>
             </div>
-        </div>
+            <hr>
         @endforeach
+    </div>
 @endsection

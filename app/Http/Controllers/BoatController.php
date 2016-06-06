@@ -24,6 +24,11 @@ class BoatController extends Controller
 
     public function store(Request $request)
     {
-        Boat::create($request->all());
+        $boat = new Boat($request->all());
+        $boat->user_id = Auth::id();
+
+        $boat->save();
+
+        return redirect('/mijn-boten');
     }
 }
