@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-static-top">
+<nav class="navbar navbar-inverse navbar-static-top">
     <div class="container">
         <div class="navbar-header">
 
@@ -20,7 +20,11 @@
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
                 @foreach(config('admin.menu_items') as $menu_item)
-                    <li><a href="{{ url('/admin/' . $menu_item['url']) }}">{{ trans('navigation.' . $menu_item['name']) }}</a></li>
+                    <li class="{{ ($menu_item['url'] == $module) ? 'active' : '' }}">
+                        <a href="{{ url('/admin/' . $menu_item['url']) }}">
+                            {{ trans('navigation.' . $menu_item['name']) }}
+                        </a>
+                    </li>
                 @endforeach
             </ul>
 

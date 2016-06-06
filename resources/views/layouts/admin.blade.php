@@ -14,6 +14,11 @@
     <!-- Styles -->
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/u/bs/dt-1.10.12/datatables.min.css"/>
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+    </style>
 </head>
 <body>
     @include('admin.partials.navbar')
