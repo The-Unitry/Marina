@@ -15,6 +15,9 @@ $(document).ready(function () {
     });
 });
 
+CKEDITOR.replace('body', {});
+CKEDITOR.replace('description', {});
+
 },{}]},{},[1]);
 
 //# sourceMappingURL=admin.js.map

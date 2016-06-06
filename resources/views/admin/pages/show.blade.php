@@ -22,21 +22,21 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="description" class="col-sm-2 control-label">Description</label>
+                        <label for="metatags" class="col-sm-2 control-label">Metatags</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="description" id="description" value="{{ $page->description or '' }}">
+                            <input type="text" class="form-control" name="metatags" id="metatags" value="{{ $page->metatags or '' }}">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="metatags" class="col-sm-2 control-label">Metatags</label>
+                        <label for="description" class="col-sm-2 control-label">Description</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="metatags" id="description" value="{{ $page->metatags or '' }}">
+                            <textarea class="form-control" name="description" id="description">{{ $page->description or '' }}</textarea>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="body" class="col-sm-2 control-label">Text</label>
                         <div class="col-sm-10">
-                            <textarea id="messageArea" class="form-control" id="body" name="body">{{ $page->body or '' }}</textarea>
+                            <textarea id="editor" class="form-control" name="body">{{ $page->body or '' }}</textarea>
                         </div>
                     </div>
                 </div>

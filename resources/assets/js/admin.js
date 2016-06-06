@@ -11,3 +11,6 @@ $(document).ready (function(){
         $("#success-alert").alert('close');
     });
 });
+
+CKEDITOR.replace('body', {});
+CKEDITOR.replace('description', {});
