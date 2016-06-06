@@ -30,7 +30,7 @@
                     <div class="form-group">
                         <label for="description" class="col-sm-2 control-label">Description</label>
                         <div class="col-sm-10">
-                            <textarea class="form-control" id="description" name="description">{{ $post->description or '' }}></textarea>
+                            <textarea class="form-control" id="description" name="description">{{ $post->description or '' }}</textarea>
                         </div>
                     </div>
                     <div class="form-group">
