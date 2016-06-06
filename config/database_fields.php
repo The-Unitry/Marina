@@ -27,6 +27,10 @@ return [
         [
             'key' => 'company_name',
             'value' => 'Your company name',
+        ],
+        [
+            'key' => 'company_mail',
+            'value' => 'info@example.com',
         ]
     ]
 ];

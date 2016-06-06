@@ -14,7 +14,13 @@
                     <div class="form-group">
                         <label for="company_name" class="col-sm-2 control-label">Company name</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="company_name" id="company_name" value="{{ Setting::getValueByKey('company_name') }}">
+                            <input type="text" class="form-control" name="company_name" id="company_name" value="{{ setting('company_name') }}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="company_mail" class="col-sm-2 control-label">Company mail</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="company_mail" id="company_mail" value="{{ setting('company_mail') }}">
                         </div>
                     </div>
                 </div>
