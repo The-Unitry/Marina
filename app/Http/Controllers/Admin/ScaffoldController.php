@@ -8,7 +8,7 @@ use Navicula\Http\Requests;
 use Navicula\Http\Controllers\Controller;
 use Navicula\Models\Scaffold;
 
-class ScaffoldController extends Controller
+class ScaffoldController extends AdminController
 {
     /**
      * Display a listing of the resource.
