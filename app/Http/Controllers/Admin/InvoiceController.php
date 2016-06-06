@@ -5,6 +5,7 @@ namespace Navicula\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 
 use Navicula\Http\Requests;
+use Navicula\Models\Invoice;
 
 class InvoiceController extends AdminController
 {
@@ -15,7 +16,9 @@ class InvoiceController extends AdminController
      */
     public function index()
     {
-        //
+        return view('admin.invoices.index', [
+            'invoices' => Invoice::all()
+        ]);
     }
 
     /**
