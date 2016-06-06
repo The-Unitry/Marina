@@ -3,14 +3,10 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Home</div>
-
-                <div class="panel-body">
-                    Welcome to {{ setting('company_name') }}
-                </div>
-            </div>
+        <div class="col-md-12 text-center">
+            <p style="margin: 0;">Welkom bij:</p>
+            <h3 style="margin: 0;">{{ setting('company_name') }}</h3>
+            <h1>Wij zijn in aanbouw.</h1>
         </div>
     </div>
 </div>
