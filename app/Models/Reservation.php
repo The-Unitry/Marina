@@ -67,10 +67,15 @@ class Reservation extends Model
      * @param Carbon $day
      * @return bool
      */
-    public function hasReservationAtBoxForDay(Carbon $day)
+    public function hasReservationForDay(Carbon $day)
     {
         $start = new Carbon($this->start);
         $end = new Carbon($this->end);
+
+        if (!$this->approved)
+        {
+            return false;
+        }
 
         return $day->between($start, $end);
     }

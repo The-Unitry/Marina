@@ -91,9 +91,9 @@ class ReservationController extends AdminController
      */
     public function update(Request $request, Reservation $reservation)
     {
-        $reservation->update($request->all())->with('message', 'Updated reservation.');
+        $reservation->update($request->all());
 
-        return back()->with('message', 'Updated post.');
+        return back()->with('message', 'Updated reservation.');
     }
 
     /**

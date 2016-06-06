@@ -10,6 +10,7 @@
         <tr>
             <th width="5%">#</th>
             <th>Code</th>
+            <th>Available</th>
         </tr>
         </thead>
         <tbody>
@@ -20,6 +21,9 @@
                 </td>
                 <td>
                     {{ $box->scaffold->code . $box->id }}
+                </td>
+                <td>
+                    {{ ($box->isAvailable()) ? 'Available' : 'Unavailable' }}
                 </td>
             </tr>
         @endforeach

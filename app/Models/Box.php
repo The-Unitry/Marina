@@ -60,4 +60,23 @@ class Box extends Model
     {
         return '&euro; ' . number_format($this->getTotalPrice($nights) / 100, 2, ',', '.');
     }
+    
+    public function isAvailable(Carbon $date = null)
+    {
+        if (is_null($date))
+        {
+            $date = Carbon::now();
+        }
+
+        $reservations = Reservation::where('box_id', $this->id)->get();
+        
+        foreach ($reservations as $reservation) {
+            if (!$reservation->hasReservationForDay($date))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
