@@ -44,26 +44,25 @@
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
-
-                <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{{ url('/') }}">Home</a></li>
-                    <!-- Authentication Links -->
-                    @if (Auth::guest())
+                    <li><a href="{{ url('/') }}">Reserveren</a></li>
+                    <li><a href="{{ url('/contact') }}">Contact</a></li>
+
+                    @if(Auth::guest())
                         <li><a href="{{ url('/login') }}">Mijn account</a></li>
-                    @else
+                    @endif
+
+                    @if(Auth::check())
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 Mijn account <span class="caret"></span>
                             </a>
-
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Uitloggen</a></li>
                             </ul>
                         </li>
-                        <li><a href="{{ url('/') }}">Reserveren</a></li>
                     @endif
-                    <li><a href="{{ url('/contact') }}">Contact</a></li>
                 </ul>
             </div>
         </div>
