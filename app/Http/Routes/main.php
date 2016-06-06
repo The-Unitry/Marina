@@ -1,7 +1,8 @@
 <?php
 
-Route::get('/', function() {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
+Route::get('mijn-boten', 'BoatController@index');
+Route::get('reserveren', 'ReserveController@index');
+Route::get('contact', 'ContactController@index');
 
 Route::auth();

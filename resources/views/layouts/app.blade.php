@@ -46,7 +46,10 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{{ url('/') }}">Home</a></li>
-                    <li><a href="{{ url('/') }}">Reserveren</a></li>
+                    <li><a href="{{ url('/reserveren') }}">Reserveren</a></li>
+                    @if(Auth::check())
+                        <li><a href="{{ url('/mijn-boten') }}">Mijn boten</a></li>
+                    @endif
                     <li><a href="{{ url('/contact') }}">Contact</a></li>
 
                     @if(Auth::guest())

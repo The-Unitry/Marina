@@ -59,4 +59,14 @@ class User extends Authenticatable
 
         return false;
     }
+
+    /**
+     * Get all boats by the user.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function boats()
+    {
+        return $this->hasMany(Boat::class, 'user_id');
+    }
 }
