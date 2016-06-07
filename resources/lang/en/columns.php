@@ -29,6 +29,7 @@ return [
     'print' => 'Print',
     'title' => 'Title',
     'available' => 'Available',
+    'price_per_night' => 'Price per night',
 
     'save' => 'Save',
     'back' => 'Back'
