@@ -24,7 +24,7 @@ class ReservationController extends Controller
      */
     public function index()
     {
-        return view('reserve.index', [
+        return view('reservation.index', [
             'boats' => Auth::user()->boats
         ]);
     }

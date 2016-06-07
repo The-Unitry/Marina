@@ -60,7 +60,13 @@ class Box extends Model
     {
         return '&euro; ' . number_format($this->getTotalPrice($nights) / 100, 2, ',', '.');
     }
-    
+
+    /**
+     * Check if a box is available.
+     * 
+     * @param Carbon|null $date
+     * @return bool
+     */
     public function isAvailable(Carbon $date = null)
     {
         if (is_null($date))
