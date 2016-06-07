@@ -44,7 +44,10 @@ class BoxController extends AdminController
      */
     public function store(Request $request)
     {
-        $box = Box::create($request->all());
+        $box = new Box($request->all());
+        $box->price_per_night = $box->price_per_night * 100;
+
+        $box->save();
 
         return redirect('/admin/box/' . $box->id)->with('message', 'Created box.');
     }
@@ -84,7 +87,10 @@ class BoxController extends AdminController
      */
     public function update(Request $request, Box $box)
     {
-        $box->update($request->all());
+        $box = Box::find($box->id);
+        $box->fill($request->all());
+        $box->price_per_night = $request->get('price_per_night') * 100;
+        $box->save();
 
         return back()->with('message', 'Updated box.');
     }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Box extends Model
 {
-    protected $fillable = ['id','depth','length','width', 'scaffold_id'];
+    protected $fillable = ['id','depth','length','width', 'scaffold_id', 'price_per_night'];
 
     /**
      * Get the scaffold where the box is located.
