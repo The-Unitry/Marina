@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="row">
-        <form class="form-horizontal" action="{{ '/admin/setting' }}" method="post">
+        <form class="form-horizontal" action="{{ '/admin/setting' }}" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-10">
                     {{ method_field($method) }}
@@ -57,6 +57,12 @@
                         <label for="tourist_tax" class="col-sm-2 control-label">Tourist tax (cents)</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" name="tourist_tax" id="tourist_tax" value="{{ setting('tourist_tax') }}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="logo" class="col-sm-2 control-label">Logo</label>
+                        <div class="col-sm-10">
+                            <input type="file" class="form-control" name="logo" id="logo">
                         </div>
                     </div>
                 </div>

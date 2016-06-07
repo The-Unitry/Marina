@@ -21,7 +21,7 @@
                 </button>
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <span class="hidden-sm hidden-md hidden-lg">{{ setting('company_name') }}</span>
-                    <img class="img-responsive hidden-xs" src="/img/emblem.png"/>
+                    <img class="img-responsive hidden-xs logo-img" src="/media/logo/logo.png"/>
                 </a>
             </div>
 
