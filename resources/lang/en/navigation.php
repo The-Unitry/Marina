@@ -9,6 +9,7 @@ return [
     'pages' => 'Pages',
 
     'invoices' => 'Invoices',
+    'invoice' => 'Invoice',
     'create_invoice' => 'Create invoice',
     'edit_invoice' => 'Edit invoice',
 

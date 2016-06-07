@@ -1,2 +1,23 @@
-!function e(r,t,n){function o(c,a){if(!t[c]){if(!r[c]){var u="function"==typeof require&&require;if(!a&&u)return u(c,!0);if(i)return i(c,!0);var f=new Error("Cannot find module '"+c+"'");throw f.code="MODULE_NOT_FOUND",f}var l=t[c]={exports:{}};r[c][0].call(l.exports,function(e){var t=r[c][1][e];return o(t?t:e)},l,l.exports,e,r,t,n)}return t[c].exports}for(var i="function"==typeof require&&require,c=0;c<n.length;c++)o(n[c]);return o}({1:[function(e,r,t){"use strict";$(document).ready(function(){$("#datatable").DataTable()}),$(document).ready(function(){$(".clickable-row").click(function(){window.document.location=$(this).data("href")}),$("#alert").fadeTo(2e3,500).slideUp(500,function(){$("#success-alert").alert("close")})}),CKEDITOR.replace("body",{}),CKEDITOR.replace("description",{})},{}]},{},[1]);
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+"use strict";
+
+$(document).ready(function () {
+    $('#datatable').DataTable();
+});
+
+$(document).ready(function () {
+    $(".clickable-row").click(function () {
+        window.document.location = $(this).data("href");
+    });
+
+    $("#alert").fadeTo(2000, 500).slideUp(500, function () {
+        $("#success-alert").alert('close');
+    });
+});
+
+CKEDITOR.replace('body', {});
+CKEDITOR.replace('description', {});
+
+},{}]},{},[1]);
+
 //# sourceMappingURL=admin.js.map

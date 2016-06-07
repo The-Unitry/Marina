@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Factuur (#{{ $invoice->id }})</title>
+    <title>{{ trans('navigation.invoice') }} (#{{ $invoice->id }})</title>
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 </head>
 <body id="invoice">
@@ -18,22 +18,22 @@
             </div>
             <div class="col-md-8">
                 <h1>
-                    Factuur (#{{ $invoice->id }})
+                    {{ trans('navigation.invoice') }} (#{{ $invoice->id }})
                 </h1>
             </div>
         </div>
         <p>
-            Hartelijk dank voor je reservering.
+            {{ trans('invoice.thank_you_reservation') }}
         </p>
         <table class="table">
             <thead>
                 <tr>
-                    <th>Box</th>
-                    <th>Start datum</th>
-                    <th>Eind datum</th>
-                    <th>Aantal nachten</th>
-                    <th>Prijs per nacht</th>
-                    <th>Totaal prijs</th>
+                    <th>{{ trans('invoice.box') }}</th>
+                    <th>{{ trans('invoice.start_date') }}</th>
+                    <th>{{ trans('invoice.end_date') }}</th>
+                    <th>{{ trans('invoice.amount_of_nights') }}</th>
+                    <th>{{ trans('columns.price_per_night') }}t</th>
+                    <th>{{ trans('invoice.total_price') }}</th>
                 </tr>
             </thead>
             <tbody>
@@ -49,9 +49,10 @@
         </table>
         <hr>
         <p>
-            Graag ontvangen we uw betaling binnen 10 werkdagen op rekening XXX t.a.v. {{ setting('company_name') }}.<br><br>
+        {{ trans('invoice.receive_payment_within_days', ['days' => '20', 'iban' => 'XXX']) }}
+            {{ setting('company_name') }}.<br><br>
 
-            Met vriendelijke groet, <br>
+            {{ trans('invoice.sign_off') }} <br>
             {{ setting('company_name') }}
         </p>
     </div>
