@@ -5,6 +5,7 @@ namespace Navicula\Http\Controllers\Admin;
 use Auth;
 use Illuminate\Http\Request;
 
+use Intervention\Image\Facades\Image;
 use Navicula\Http\Controllers\Admin\AdminController;
 use Navicula\Http\Requests;
 use Navicula\Models\Post;
@@ -46,6 +47,11 @@ class PostController extends AdminController
         $post = new Post($request->all());
         $post->user_id = Auth::user()->id;
         $post->slug = str_slug($request->get('title'));
+
+        if (isset($request->all()['header_path'])) {
+            $post->uploadHeader($request->all()['header_path']);
+        }
+        
         $post->save();
 
         return redirect('/admin/post/' . $post->id)->with('message', trans('confirmations.created_post'));
@@ -88,6 +94,10 @@ class PostController extends AdminController
         $post = Post::find($post->id);
         $post->fill($request->all());
         $post->slug = str_slug($post->title);
+
+        if (isset($request->all()['header_path'])) {
+            $post->uploadHeader($request->all()['header_path']);
+        }
 
         $post->save();
 

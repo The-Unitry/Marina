@@ -10,7 +10,7 @@
 
 @section('content')
     <div class="row">
-        <form class="form-horizontal" action="{{ ($method == 'POST') ? '/admin/post' : '/admin/post/' . $post->id }}" method="post">
+        <form class="form-horizontal" action="{{ ($method == 'POST') ? '/admin/post' : '/admin/post/' . $post->id }}" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-10">
                     {{ method_field($method) }}
@@ -37,6 +37,12 @@
                         <label for="body" class="col-sm-2 control-label">Body</label>
                         <div class="col-sm-10">
                             <textarea id="editor" class="form-control" id="body" name="body">{{ $post->body or '' }}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="header_path" class="col-sm-2 control-label">Header</label>
+                        <div class="col-sm-10">
+                            <input type="file" class="form-control" name="header_path" id="header_path">
                         </div>
                     </div>
                 </div>
