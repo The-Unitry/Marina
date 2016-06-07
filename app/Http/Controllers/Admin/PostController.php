@@ -48,7 +48,7 @@ class PostController extends AdminController
         $post->slug = str_slug($request->get('title'));
         $post->save();
 
-        return redirect('/admin/post/' . $post->id)->with('message', 'Created post.');
+        return redirect('/admin/post/' . $post->id)->with('message', trans('confirmations.created_post'));
     }
 
     /**
@@ -91,7 +91,7 @@ class PostController extends AdminController
 
         $post->save();
 
-        return back()->with('message', 'Updated post.');
+        return back()->with('message', trans('confirmations.updated_post'));
     }
 
     /**

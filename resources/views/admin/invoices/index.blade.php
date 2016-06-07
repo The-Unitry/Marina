@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-	Invoices
+	{{ trans('navigation.invoices') }}
 @endsection
 
 @section('content')

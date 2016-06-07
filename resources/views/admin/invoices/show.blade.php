@@ -2,9 +2,9 @@
 
 @section('title')
     @if ($method == 'POST')
-        Create invoice
+        {{ trans('navigation.create_invoice') }}
     @elseif ($method == 'PATCH')
-        Edit invoice
+        {{ trans('navigation.edit_invoice') }}
     @endif
 @endsection
 
@@ -16,12 +16,15 @@
                     {{ method_field($method) }}
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="status" class="col-sm-2 control-label">Status</label>
+                        <label for="status" class="col-sm-2 control-label">{{ trans('columns.status') }}</label>
                         <div class="col-sm-10">
                             <select name="status" id="status" class="form-control">
-                                <option value="Pending" {{ (isset($invoice) && $invoice->status == 'Pending') ? 'selected' : '' }}>Pending</option>
-                                <option value="Paid" {{ (isset($invoice) && $invoice->status == 'Paid') ? 'selected' : '' }}>Paid</option>
-                                <option value="Cancelled" {{ (isset($invoice) && $invoice->status == 'Cancelled') ? 'selected' : '' }}>Cancelled</option>
+                                <option value="Pending" {{ (isset($invoice) && $invoice->status == 'Pending') ? 'selected' : '' }}>
+                                {{ trans('columns.pending') }}</option>
+                                <option value="Paid" {{ (isset($invoice) && $invoice->status == 'Paid') ? 'selected' : '' }}>
+                                {{ trans('columns.paid') }}</option>
+                                <option value="Cancelled" {{ (isset($invoice) && $invoice->status == 'Cancelled') ? 'selected' : '' }}>
+                                {{ trans('columns.cancelled') }}</option>
                             </select>
                         </div>
                     </div>
@@ -29,15 +32,15 @@
                 <div class="col-md-2">
                     <div class="list-group">
                         <button type="submit" class="list-group-item bg-primary">
-                            <i class="fa fa-floppy-o" aria-hidden="true"></i> Save
+                            <i class="fa fa-floppy-o" aria-hidden="true"></i> {{ trans('columns.save') }}
                         </button>
                         @if(isset($invoice))
                         <a href="../invoice/{{ $invoice->id }}/view" class="list-group-item" target="_blank">
-                            <span class="fa fa-print"></span> Print
+                            <span class="fa fa-print"></span> {{ trans('columns.print') }}
                         </a>
                         @endif
                         <a href="../invoice" class="list-group-item">
-                            <span class="fa fa-arrow-left"></span> Back
+                            <span class="fa fa-arrow-left"></span> {{ trans('columns.back') }}
                         </a>
                     </div>
                 </div>

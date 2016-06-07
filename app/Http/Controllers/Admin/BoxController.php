@@ -46,7 +46,7 @@ class BoxController extends AdminController
     {
         $box = Box::create($request->all());
 
-        return redirect('/admin/box/' . $box->id)->with('message', 'Created box.');
+        return redirect('/admin/box/' . $box->id)->with('message', trans('confirmations.created_box'));
     }
 
     /**
@@ -86,7 +86,7 @@ class BoxController extends AdminController
     {
         $box->update($request->all());
 
-        return back()->with('message', 'Updated box.');
+        return back()->with('message', trans('confirmations.updated_box'));
     }
 
     /**
