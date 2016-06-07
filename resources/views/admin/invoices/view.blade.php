@@ -32,7 +32,7 @@
                     <th>{{ trans('invoice.start_date') }}</th>
                     <th>{{ trans('invoice.end_date') }}</th>
                     <th>{{ trans('invoice.amount_of_nights') }}</th>
-                    <th>{{ trans('columns.price_per_night') }}t</th>
+                    <th>{{ trans('columns.price_per_night') }}</th>
                     <th>{{ trans('invoice.total_price') }}</th>
                 </tr>
             </thead>
