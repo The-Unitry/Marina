@@ -11,6 +11,14 @@ use Navicula\Models\Boat;
 class BoatController extends Controller
 {
     /**
+     * BoatController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * View the overview of the logged in user's boats.
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View

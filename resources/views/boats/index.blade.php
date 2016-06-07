@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container content">
         <a href="/mijn-boten/nieuw" class="btn btn-primary pull-right">
             Boot toevoegen
         </a>

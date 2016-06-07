@@ -9,6 +9,14 @@ use Navicula\Http\Requests;
 class ReservationController extends Controller
 {
     /**
+     * ReservationController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * View the calendar for the reservations.
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View

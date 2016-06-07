@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container content">
         <h3>
             Boot toevoegen
         </h3>
