@@ -18,6 +18,7 @@ Route::get('post/{slug}', 'PostController@show');
 
 // Contact Form
 Route::get('contact', 'ContactController@index');
+Route::post('contact', 'ContactController@store');
 
 // Authentication
 Route::auth();
