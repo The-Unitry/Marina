@@ -7,6 +7,8 @@ return [
     'posts' => 'Posts',
 
     'pages' => 'Pages',
+    'create_page' => 'Create page',
+    'edit_page' => 'Edit page',
 
     'invoices' => 'Invoices',
     'invoice' => 'Invoice',

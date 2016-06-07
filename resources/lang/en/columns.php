@@ -30,6 +30,9 @@ return [
     'title' => 'Title',
     'available' => 'Available',
     'price_per_night' => 'Price per night',
+    'text' => 'Text',
+    'metatags' => 'Metatags',
+    'description' => 'Description',
 
     'save' => 'Save',
     'back' => 'Back'

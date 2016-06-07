@@ -1,7 +1,8 @@
+
 @extends('layouts.admin')
 
 @section('title')
-    Pages
+    {{ trans('navigation.pages') }}
 @endsection
 
 @section('content')
@@ -9,7 +10,7 @@
         <thead>
         <tr>
             <th width="5%">#</th>
-            <th>Title</th>
+            <th>{{ trans('columns.title') }}</th>
         </tr>
         </thead>
         <tbody>
