@@ -43,4 +43,19 @@ class Post extends Model
         $this->header_path = md5(uniqid());
         return Image::make($image)->save('img/upload/' . $this->header_path . '.png');
     }
+
+    /**
+     * Check if a post has a header.
+     *
+     * @return bool
+     */
+    public function hasHeader()
+    {
+        if (strlen($this->header_path)) {
+            return true;
+        }
+
+        return false;
+    }
+
 }

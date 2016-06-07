@@ -2,6 +2,7 @@
 
 namespace Navicula\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 
 use Navicula\Http\Requests;
@@ -23,6 +24,8 @@ class ReservationController extends Controller
      */
     public function index()
     {
-        return view('reserve.index');
+        return view('reserve.index', [
+            'boats' => Auth::user()->boats
+        ]);
     }
 }

@@ -45,6 +45,14 @@
                             <input type="file" class="form-control" name="header_path" id="header_path">
                         </div>
                     </div>
+                    @if(isset($post) && $post->hasHeader())
+                    <div class="form-group">
+                        <label for="header_path" class="col-sm-2 control-label">Current header</label>
+                        <div class="col-sm-10">
+                            <img src="/media/small/{{ $post->header_path }}.png" alt="">
+                        </div>
+                    </div>
+                    @endif
                 </div>
                 <div class="col-md-2">
                     <div class="list-group">
