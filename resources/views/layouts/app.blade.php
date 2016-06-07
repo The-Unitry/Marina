@@ -4,42 +4,24 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>{{ setting('company_name') }}</title>
-
-    <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
-
-    <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-    <style>
-        body {
-            font-family: 'Lato', sans-serif;
-        }
-
-        .fa-btn {
-            margin-right: 6px;
-        }
-    </style>
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
-
-                <!-- Collapsed Hamburger -->
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                     <span class="sr-only">Toggle Navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-
-                <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ setting('company_name') }}
+                    <span class="hidden-sm hidden-md hidden-lg">{{ setting('company_name') }}</span>
+                    <img class="img-responsive hidden-xs" src="/img/emblem.png"/>
                 </a>
             </div>
 
@@ -51,11 +33,9 @@
                         <li><a href="{{ url('/mijn-boten') }}">Mijn boten</a></li>
                     @endif
                     <li><a href="{{ url('/contact') }}">Contact</a></li>
-
                     @if(Auth::guest())
                         <li><a href="{{ url('/login') }}">Mijn account</a></li>
                     @endif
-
                     @if(Auth::check())
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -70,6 +50,47 @@
             </div>
         </div>
     </nav>
+
+    <div class="header">
+        <div class="container">
+            <div class="main-title">
+                <h1>Reserveer makkelijk &amp; online je box</h1>
+            </div>
+            <a href="#">
+                <div class="btn btn-signup">
+                    Reserveer
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="posts">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <img class="img-responsive anchor" src="/img/anchor.png"/>
+                    <h3>Lorem Ipsum</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img class="img-responsive anchor" src="/img/anchor.png"/>
+                    <h3>Lorem Ipsum</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img class="img-responsive anchor" src="/img/anchor.png"/>
+                    <h3>Lorem Ipsum</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     @yield('content')
 
