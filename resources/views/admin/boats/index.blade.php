@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Boats
+    {{ trans('navigation.boats') }}
 @endsection
 
 @section('content')
@@ -9,8 +9,8 @@
         <thead>
         <tr>
             <th width="5%">#</th>
-            <th>Title</th>
-            <th>Owner</th>
+            <th>{{ trans('columns.title') }}</th>
+            <th>{{ trans('columns.owner') }}</th>
         </tr>
         </thead>
         <tbody>

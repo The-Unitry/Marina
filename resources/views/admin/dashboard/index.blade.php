@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Dashboard
+    {{ trans('navigation.dashboard') }}
 @endsection
 
 @section('content')
