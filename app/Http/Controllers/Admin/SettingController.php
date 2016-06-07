@@ -34,6 +34,6 @@ class SettingController extends AdminController
             }
         }
 
-        return back()->with('message', 'Updated settings.');
+        return back()->with('message', trans('confirmations.updated_settings'));
     }
 }

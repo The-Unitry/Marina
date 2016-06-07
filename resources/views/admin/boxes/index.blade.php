@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Boxes
+    {{ trans('navigation.boxes') }}
 @endsection
 
 @section('content')
@@ -9,8 +9,8 @@
         <thead>
         <tr>
             <th width="5%">#</th>
-            <th>Code</th>
-            <th>Available</th>
+            <th>{{ trans('columns.code') }}</th>
+            <th>{{ trans('columns.available') }}</th>
         </tr>
         </thead>
         <tbody>

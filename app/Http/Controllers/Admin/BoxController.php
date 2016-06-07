@@ -49,7 +49,7 @@ class BoxController extends AdminController
 
         $box->save();
 
-        return redirect('/admin/box/' . $box->id)->with('message', 'Created box.');
+        return redirect('/admin/box/' . $box->id)->with('message', trans('confirmations.created_box'));
     }
 
     /**
@@ -92,7 +92,7 @@ class BoxController extends AdminController
         $box->price_per_night = $request->get('price_per_night') * 100;
         $box->save();
 
-        return back()->with('message', 'Updated box.');
+        return back()->with('message', trans('confirmations.updated_box'));
     }
 
     /**
