@@ -22,6 +22,12 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label for="price_per_night" class="col-sm-2 control-label">Price per night</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" name="price_per_night" id="price_per_night" value="{{ (isset($box)) ? $box->price_per_night / 100 : '' }}" step="0.01">
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="depth" class="col-sm-2 control-label">Depth (cm)</label>
                         <div class="col-sm-10">
                             <input type="number" class="form-control" name="depth" id="depth" value="{{ $box->depth or '' }}">
