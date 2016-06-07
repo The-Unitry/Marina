@@ -9,6 +9,7 @@ Route::get('mijn-boten/nieuw', 'BoatController@create');
 Route::get('mijn-boten/{boat}', 'BoatController@edit');
 Route::patch('mijn-boten/{boat}', 'BoatController@update');
 Route::post('mijn-boten', 'BoatController@store');
+Route::get('mijn-boten/{boat}/delete', 'BoatController@destroy');
 
 // Reserve
 Route::get('reserveren', 'ReservationController@index');

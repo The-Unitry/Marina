@@ -117,6 +117,9 @@
             </div>
             <a href="/mijn-boten" class="btn btn-default"><span class="fa fa-arrow-left"></span> Terug naar overzicht</a>
             <button type="submit" class="btn btn-primary pull-right">Opslaan</button>
+            @if(isset($boat))
+                <a href="/mijn-boten/{{ $boat->id }}/delete" class="btn btn-link pull-right">Boot verwijderen</a>
+            @endif
         </form>
     </div>
 @endsection

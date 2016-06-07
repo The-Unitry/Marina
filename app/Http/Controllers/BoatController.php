@@ -85,4 +85,18 @@ class BoatController extends Controller
 
         return redirect('/mijn-boten');
     }
+
+    /**
+     * Delete a boat.
+     *
+     * @param Boat $boat
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @throws \Exception
+     */
+    public function destroy(Boat $boat)
+    {
+        $boat->delete();
+
+        return redirect('mijn-boten')->with('message', 'Je boot is verwijderd.');
+    }
 }
