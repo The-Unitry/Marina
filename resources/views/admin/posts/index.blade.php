@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Posts
+    {{ trans('navigation.posts') }}
 @endsection
 
 @section('content')

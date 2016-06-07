@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Scaffolds
+    {{ trans('navigation.scaffolds') }}
 @endsection
 
 @section('content')

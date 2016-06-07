@@ -18,13 +18,13 @@
 		@foreach($invoices as $i => $invoice)
 			<tr data-href="/admin/invoice/{{ $invoice->id }}" class="clickable-row">
 				<td>
-					{{ $i + 1 }}
+					{{ $invoice->id }}
 				</td>
 				<td>
 					{{ $invoice->reservation->requester->name }}
 				</td>
 				<td>
-					&euro; {{ $invoice->totalPrice() }}
+					{{ $invoice->reservation->box->totalPrice($invoice->reservation->totalNights()) }}
 				</td>
 				<td>
 					{{ $invoice->status }}

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Settings
+    {{ trans('navigation.settings') }}
 @endsection
 
 @section('content')
