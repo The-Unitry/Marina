@@ -11,9 +11,9 @@
             <div class="col-md-4 text-right pull-right">
                 <h4>{{ setting('company_name') }}</h4>
                 <p>
-                    Hoofdstraat 1<br>
-                    1234 AB Amsterdam<br>
-                    020 - 123 456
+                    {{ setting('company_address') }}<br>
+                    {{ setting('company_zipcode') }} {{ setting('company_city') }}<br>
+                    {{ setting('company_phone') }}
                 </p>
             </div>
             <div class="col-md-8">

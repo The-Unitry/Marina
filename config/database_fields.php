@@ -31,6 +31,30 @@ return [
         [
             'key' => 'company_mail',
             'value' => 'info@example.com',
+        ],
+        [
+            'key' => 'company_address',
+            'value' => 'Straatnaam 1',
+        ],
+        [
+            'key' => 'company_zipcode',
+            'value' => '1234 AB',
+        ],
+        [
+            'key' => 'company_city',
+            'value' => 'Amsterdam',
+        ],
+        [
+            'key' => 'company_phone',
+            'value' => '020 123456',
+        ],
+        [
+            'key' => 'tax',
+            'value' => '21',
+        ],
+        [
+            'key' => 'tourist_tax',
+            'value' => '100',
         ]
     ]
 ];
