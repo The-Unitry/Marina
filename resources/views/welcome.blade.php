@@ -7,9 +7,9 @@
             <h1>Reserveer makkelijk &amp; online je box</h1>
         </div>
         <a href="#">
-            <div class="btn btn-signup">
+            <a href="/reserveren" class="btn btn-signup">
                 Reserveer
-            </div>
+            </a>
         </a>
     </div>
 </div>

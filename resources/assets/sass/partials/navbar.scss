@@ -1,23 +1,26 @@
 .navbar {
-    margin: 0;
-    height: 100px;
-    background-color: $white;
-    .nav {
-        padding-top: 25px;
-        padding-bottom: 25px;
-        a {
-            font-size: 14pt;
-            color: $text !important;
-        }
+  margin: 0;
+  height: 100px;
+  background-color: $white;
+
+  .nav {
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+    a {
+      font-size: 12pt;
+      color: $text;
     }
+  }
 }
 
 @media (max-width: 767px) {
-    .navbar {
-        height: 50px;
-        .nav {
-            padding-top: 0;
-            padding-bottom: 0;
-        }
+  .navbar {
+    height: 50px;
+
+    .nav {
+        padding-top: 0;
+        padding-bottom: 0;
     }
+  }
 }
