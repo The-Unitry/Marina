@@ -67,7 +67,7 @@ class BoatController extends Controller
     {
         $boat->update($request->all());
 
-        return back();
+        return back()->with('message', trans('confirmation.updated_boat'));
     }
 
     /**
@@ -83,7 +83,7 @@ class BoatController extends Controller
 
         $boat->save();
 
-        return redirect('/mijn-boten');
+        return redirect('/mijn-boten')->with('message', trans('confirmations.created_boat'));
     }
 
     /**

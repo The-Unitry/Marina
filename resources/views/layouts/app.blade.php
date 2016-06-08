@@ -11,11 +11,12 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body id="app-layout">
+    @include('admin.partials.confirmation')
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="sr-only">{{ trans('userinfo.toggle_navigation') }}</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -28,22 +29,22 @@
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{{ url('/') }}">Home</a></li>
-                    <li><a href="{{ url('/reserveren') }}">Reserveren</a></li>
+                    <li><a href="{{ url('/') }}">{{ trans('navigation.home') }}</a></li>
+                    <li><a href="{{ url('/reserveren') }}">{{ trans('navigation.reserve') }}</a></li>
                     @if(Auth::check())
-                        <li><a href="{{ url('/mijn-boten') }}">Mijn boten</a></li>
+                        <li><a href="{{ url('/mijn-boten') }}">{{ trans('navigation.my_boats') }}</a></li>
                     @endif
-                    <li><a href="{{ url('/contact') }}">Contact</a></li>
+                    <li><a href="{{ url('/contact') }}">{{ trans('navigation.contact') }}</a></li>
                     @if(Auth::guest())
-                        <li><a href="{{ url('/login') }}">Mijn account</a></li>
+                        <li><a href="{{ url('/login') }}">{{ trans('navigation.my_account') }}</a></li>
                     @endif
                     @if(Auth::check())
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                Mijn account <span class="caret"></span>
+                                {{ trans('navigation.my_account') }} <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Uitloggen</a></li>
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>{{ trans('navigation..log_out') }}</a></li>
                             </ul>
                         </li>
                     @endif
@@ -54,11 +55,6 @@
 
     @yield('content')
 
-    <!-- JavaScripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script src="{{ asset('plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
-    <script src="{{ asset('plugins/bootstrap-datepicker/locales/bootstrap-datepicker.nl.min.js') }}"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
+    @include('admin.partials.scripts')
 </body>
 </html>

@@ -3,7 +3,7 @@
 @section('content')
     <div class="container content">
         <h3>
-            Reserveren
+            {{ trans('navigation.reservation') }}
         </h3>
         <p class="text">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci aliquid aperiam beatae consequuntur eligendi expedita fugit, ipsa laudantium modi nemo officia officiis perspiciatis quaerat quas quo tempore ullam voluptas.
@@ -13,7 +13,7 @@
             <div class="steps col-md-8">
                 <div>
                     <h4>
-                        1. Kies uw boot
+                        1. {{ trans('reservation.choose_boat') }}
                     </h4>
                     <select name="boat_id" id="boat_id" class="form-control" autofocus>
                         @foreach($boats as $boat)
@@ -24,7 +24,7 @@
                 <hr>
                 <div>
                     <h4>
-                        2. Kies de periode
+                        2. {{ trans('reservation.choose_period') }}
                     </h4>
                     <div class="input-daterange input-group" id="datepicker">
                         <input type="text" class="input-sm form-control" name="start" />
@@ -35,22 +35,22 @@
                 <hr>
                 <div>
                     <h4>
-                        3. Kies de hoeveelheid personen <small>(incl. uzelf)</small>
+                        3. {{ trans('reservation.choose_amount_people') }} <small>{{ trans('reservation.including_yourself') }}</small>
                     </h4>
                     <input type="number" value="0" class="form-control">
                 </div>
                 <br>
                 <a href="" class="btn btn-primary pull-right">
-                    Volgende
+                    {{ trans('reservation.next') }}
                 </a>
             </div>
             <div class="col-md-4">
-                <h4>Uw zekerheden</h4>
+                <h4>{{ trans('reservation.certainties') }}</h4>
                 <ul class="list-unstyled">
-                    <li><span class="fa fa-check"></span> Lorem ipsum dolor</li>
-                    <li><span class="fa fa-check"></span> Consectetur adipisicing elit</li>
-                    <li><span class="fa fa-check"></span> Aperiam eligendi et eum</li>
-                    <li><span class="fa fa-check"></span> Omnis repellendus voluptatem</li>
+                    <li><span class="fa fa-check"></span> {{ trans('reservation.certainties_option_one') }}</li>
+                    <li><span class="fa fa-check"></span> {{ trans('reservation.certainties_option_two') }}</li>
+                    <li><span class="fa fa-check"></span> {{ trans('reservation.certainties_option_three') }}</li>
+                    <li><span class="fa fa-check"></span> {{ trans('reservation.certainties_option_four') }}</li>
                 </ul>
             </div>
         </div>
