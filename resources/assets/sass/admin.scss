@@ -1,4 +1,5 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "partials/alert";
 
 .clickable-row {
   cursor: pointer;
@@ -15,14 +16,6 @@
 
 .list-group .fa, .btn .fa {
   margin-right: 5px;
-}
-
-#alert {
-  width: 350px;
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  z-index: 9000;
 }
 
 #invoice {
