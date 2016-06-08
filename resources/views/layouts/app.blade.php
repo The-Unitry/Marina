@@ -21,7 +21,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/') }}">
+                <a class="navbar-brand" href="/">
                     <span class="hidden-sm hidden-md hidden-lg">{{ setting('company_name') }}</span>
                     <img class="img-responsive hidden-xs logo-img" src="/media/logo/logo.png"/>
                 </a>
