@@ -1,9 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    <div>
-        Nieuwsberichten
-    </div>
+    {{ trans('navigation.newsletters') }}
 @endsection
 
 @section('content')
@@ -12,8 +10,9 @@
     <tr>
         <th width="5%">#</th>
         <th>{{ trans('columns.sender') }}</th>
+        <th>{{ trans('columns.subject') }}</th>
         <th>{{ trans('columns.content') }}</th>
-        <th>{{ trans('columns.date') }}</th>
+        <th>{{ trans('columns.send_date') }}</th>
     </tr>
     </thead>
 </table>
