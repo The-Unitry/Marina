@@ -69,6 +69,6 @@
         </div>
     </div>
 
-    @include('admin.partials.scripts')
+    @include('partials.scripts')
 </body>
 </html>

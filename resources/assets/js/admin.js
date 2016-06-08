@@ -16,5 +16,5 @@ $(document).ready (function(){
     });
 });
 
-CKEDITOR.replace('body', {});
-CKEDITOR.replace('description', {});
+// CKEDITOR.replace('body', {});
+// CKEDITOR.replace('description', {});

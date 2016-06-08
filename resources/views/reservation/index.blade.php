@@ -3,17 +3,17 @@
 @section('content')
     <div class="container content">
         <h3>
-            {{ trans('navigation.reservation') }}
+            Reserveren
         </h3>
         <p class="text">
-            {{ trans('reservation.description') }}
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci aliquid aperiam beatae consequuntur eligendi expedita fugit, ipsa laudantium modi nemo officia officiis perspiciatis quaerat quas quo tempore ullam voluptas.
         </p>
         <hr>
         <div class="row">
             <div class="steps col-md-8">
                 <div>
                     <h4>
-                        1. {{ trans('reservation.choose_boat') }}
+                        1. Kies uw boot
                     </h4>
                     <select name="boat_id" id="boat_id" class="form-control" autofocus>
                         @foreach($boats as $boat)
@@ -24,33 +24,33 @@
                 <hr>
                 <div>
                     <h4>
-                        2. {{ trans('reservation.choose_period') }}
+                        2. Kies de periode
                     </h4>
                     <div class="input-daterange input-group" id="datepicker">
                         <input type="text" class="input-sm form-control" name="start" />
-                        <span class="input-group-addon">{{ trans('reservation.until') }}</span>
+                        <span class="input-group-addon">tot</span>
                         <input type="text" class="input-sm form-control" name="end" />
                     </div>
                 </div>
                 <hr>
                 <div>
                     <h4>
-                        3. {{ trans('reservation.choose_amount_people') }} <small>({{ trans('reservation.including_yourself') }})</small>
+                        3. Kies de hoeveelheid personen <small>(incl. uzelf)</small>
                     </h4>
                     <input type="number" value="0" class="form-control">
                 </div>
                 <br>
                 <a href="" class="btn btn-primary pull-right">
-                    {{ trans('reservation.next') }}
+                    Volgende
                 </a>
             </div>
             <div class="col-md-4">
-                <h4>{{ trans('reservation.certainties') }}</h4>
+                <h4>Uw zekerheden</h4>
                 <ul class="list-unstyled">
-                    <li><span class="fa fa-check"></span> {{ trans('reservation.certainties_option_one') }}</li>
-                    <li><span class="fa fa-check"></span> {{ trans('reservation.certainties_option_two') }}</li>
-                    <li><span class="fa fa-check"></span> {{ trans('reservation.certainties_option_three') }}</li>
-                    <li><span class="fa fa-check"></span> {{ trans('reservation.certainties_option_four') }}</li>
+                    <li><span class="fa fa-check"></span> Lorem ipsum dolor</li>
+                    <li><span class="fa fa-check"></span> Consectetur adipisicing elit</li>
+                    <li><span class="fa fa-check"></span> Aperiam eligendi et eum</li>
+                    <li><span class="fa fa-check"></span> Omnis repellendus voluptatem</li>
                 </ul>
             </div>
         </div>
