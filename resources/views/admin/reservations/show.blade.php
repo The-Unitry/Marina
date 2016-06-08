@@ -16,13 +16,13 @@
                     {{ method_field($method) }}
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="start" class="col-sm-2 control-label">{{ trans('reservation.start_date') }}</label>
+                        <label for="start" class="col-sm-2 control-label">{{ trans('regular.start_date') }}</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" name="start" id="start" value="{{ $reservation->start or '' }}">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="end" class="col-sm-2 control-label">{{ trans('reservation.end_date') }}</label>
+                        <label for="end" class="col-sm-2 control-label">{{ trans('regular.end_date') }}</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" name="end" id="end" value="{{ $reservation->end or '' }}">
                         </div>
@@ -38,7 +38,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="box_id" class="col-sm-2 control-label">{{ trans('reservation.box') }}</label>
+                        <label for="box_id" class="col-sm-2 control-label">{{ trans('regular.box') }}</label>
                         <div class="col-sm-10">
                             <select name="box_id" id="box_id" class="form-control">
                                 @foreach ($boxes as $box)
@@ -59,8 +59,8 @@
                         <label for="approved" class="col-sm-2 control-label">{{ trans('reservation.approved') }}</label>
                         <div class="col-sm-10">
                             <select name="approved" id="approved" class="form-control">
-                                <option value="0">{{ trans('reservation.no') }}</option>
-                                <option value="1" {{ (isset($reservation) && ($reservation->approved)) ? 'selected' : '' }}>{{ trans('reservation.yes') }}
+                                <option value="0">{{ trans('regular.no') }}</option>
+                                <option value="1" {{ (isset($reservation) && ($reservation->approved)) ? 'selected' : '' }}>{{ trans('regular.yes') }}
                                 </option>
                             </select>
                         </div>
@@ -69,8 +69,8 @@
                 <div class="col-md-2">
                     <div class="list-group">
                         <button type="submit" class="list-group-item bg-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i> 
-                        {{ trans('reservation.save') }}</button>
-                        <a href="../reservation" class="list-group-item"><span class="fa fa-arrow-left"></span> {{ trans('reservation.back') }}</a>
+                        {{ trans('regular.save') }}</button>
+                        <a href="../reservation" class="list-group-item"><span class="fa fa-arrow-left"></span> {{ trans('regular.back') }}</a>
                     </div>
                 </div>
             </div>

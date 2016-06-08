@@ -16,7 +16,7 @@
                     {{ method_field($method) }}
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="title" class="col-sm-2 control-label">{{ trans('column.title') }}</label>
+                        <label for="title" class="col-sm-2 control-label">{{ trans('regular.title') }}</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="title" name="title" value="{{ $post->title or '' }}">
                         </div>
@@ -57,8 +57,8 @@
                 <div class="col-md-2">
                     <div class="list-group">
                         <button type="submit" class="list-group-item bg-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i> 
-                        {{ trans('column.save') }}</button>
-                        <a href="../post" class="list-group-item"><span class="fa fa-arrow-left"></span> {{ trans('column.back') }}</a>
+                        {{ trans('regular.save') }}</button>
+                        <a href="../post" class="list-group-item"><span class="fa fa-arrow-left"></span> {{ trans('regular.back') }}</a>
                     </div>
                 </div>
             </div>

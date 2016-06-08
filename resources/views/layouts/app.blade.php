@@ -44,7 +44,7 @@
                                 {{ trans('navigation.my_account') }} <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>{{ trans('navigation..log_out') }}</a></li>
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>{{ trans('navigation.log_out') }}</a></li>
                             </ul>
                         </li>
                     @endif

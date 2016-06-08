@@ -17,7 +17,7 @@
                 <h4>{{ trans('contact.send_message') }}</h4>
                 <br>
                 <div class="form-group">
-                    <label for="name" class="col-sm-2 control-label">{{ trans('contact.name') }}</label>
+                    <label for="name" class="col-sm-2 control-label">{{ trans('regular.name') }}</label>
                     <div class="col-sm-10">
                         <input type="text"
                                class="form-control"
@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="email" class="col-sm-2 control-label">{{ trans('contact.email') }}</label>
+                    <label for="email" class="col-sm-2 control-label">{{ trans('regular.email') }}</label>
                     <div class="col-sm-10">
                         <input type="email"
                                class="form-control"

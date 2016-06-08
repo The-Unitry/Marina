@@ -6,7 +6,7 @@
             {{ trans('navigation.reservation') }}
         </h3>
         <p class="text">
-            {{ trans('reservation.description') }}
+            {{ trans('regular.description') }}
         </p>
         <hr>
         <div class="row">
@@ -41,7 +41,7 @@
                 </div>
                 <br>
                 <a href="" class="btn btn-primary pull-right">
-                    {{ trans('reservation.next') }}
+                    {{ trans('regular.next') }}
                 </a>
             </div>
             <div class="col-md-4">

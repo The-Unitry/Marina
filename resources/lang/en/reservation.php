@@ -19,7 +19,7 @@ return [
     'requester' => 'Requester',
     'approved' => 'Approved',
     'boat' => 'Boat',
-    'ammount_of_persons' => 'Ammount of persons',
+    'amount_of_persons' => 'Amount of persons',
 
     'until' => 'Until',
 
