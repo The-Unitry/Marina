@@ -53,7 +53,9 @@
         </div>
     </nav>
 
-    @yield('content')
+    <div class="wrap">
+        @yield('content')
+    </div>
 
     <div class="footer">
         <div class="container ">
