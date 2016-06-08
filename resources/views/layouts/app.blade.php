@@ -32,6 +32,7 @@
                     <li><a href="{{ url('/reserveren') }}">Reserveren</a></li>
                     @if(Auth::check())
                         <li><a href="{{ url('/mijn-boten') }}">Mijn boten</a></li>
+                        <li><a href="{{ url('/mijn-boxen') }}">Mijn boxen</a></li>
                     @endif
                     <li><a href="{{ url('/contact') }}">Contact</a></li>
                     @if(Auth::guest())
