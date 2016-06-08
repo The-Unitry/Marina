@@ -2,9 +2,9 @@
 
 @section('title')
     @if ($method == 'POST')
-        Create reservation
+        {{ trans('navigation.create_reservation') }}
     @elseif ($method == 'PATCH')
-        Edit reservation
+        {{ trans('navigation.edit_reservation') }}
     @endif
 @endsection
 
@@ -16,19 +16,19 @@
                     {{ method_field($method) }}
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="start" class="col-sm-2 control-label">Start date</label>
+                        <label for="start" class="col-sm-2 control-label">{{ trans('reservation.start_date') }}</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" name="start" id="start" value="{{ $reservation->start or '' }}">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="end" class="col-sm-2 control-label">End date</label>
+                        <label for="end" class="col-sm-2 control-label">{{ trans('reservation.end_date') }}</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" name="end" id="end" value="{{ $reservation->end or '' }}">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="boat_id" class="col-sm-2 control-label">Boat</label>
+                        <label for="boat_id" class="col-sm-2 control-label">{{ trans('reservation.boat') }}</label>
                         <div class="col-sm-10">
                             <select name="boat_id" id="boat_id" class="form-control">
                                 @foreach ($boats as $boat)
@@ -38,7 +38,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="box_id" class="col-sm-2 control-label">Box</label>
+                        <label for="box_id" class="col-sm-2 control-label">{{ trans('reservation.box') }}</label>
                         <div class="col-sm-10">
                             <select name="box_id" id="box_id" class="form-control">
                                 @foreach ($boxes as $box)
@@ -50,25 +50,27 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="amount_of_persons" class="col-sm-2 control-label">Amount of persons</label>
+                        <label for="amount_of_persons" class="col-sm-2 control-label">{{ trans('reservation.amount_of_persons') }}</label>
                         <div class="col-sm-10">
                             <input type="number" class="form-control" name="amount_of_persons" id="amount_of_persons" value="{{ $reservation->amount_of_persons or '' }}">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="approved" class="col-sm-2 control-label">Approved</label>
+                        <label for="approved" class="col-sm-2 control-label">{{ trans('reservation.approved') }}</label>
                         <div class="col-sm-10">
                             <select name="approved" id="approved" class="form-control">
-                                <option value="0">No</option>
-                                <option value="1" {{ (isset($reservation) && ($reservation->approved)) ? 'selected' : '' }}>Yes</option>
+                                <option value="0">{{ trans('reservation.no') }}</option>
+                                <option value="1" {{ (isset($reservation) && ($reservation->approved)) ? 'selected' : '' }}>{{ trans('reservation.yes') }}
+                                </option>
                             </select>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-2">
                     <div class="list-group">
-                        <button type="submit" class="list-group-item bg-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button>
-                        <a href="../reservation" class="list-group-item"><span class="fa fa-arrow-left"></span> Back</a>
+                        <button type="submit" class="list-group-item bg-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i> 
+                        {{ trans('reservation.save') }}</button>
+                        <a href="../reservation" class="list-group-item"><span class="fa fa-arrow-left"></span> {{ trans('reservation.back') }}</a>
                     </div>
                 </div>
             </div>

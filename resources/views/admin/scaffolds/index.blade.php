@@ -9,8 +9,8 @@
         <thead>
         <tr>
             <th width="5%">#</th>
-            <th>Code</th>
-            <th>Boxes</th>
+            <th>{{ trans('columns.code') }}</th>
+            <th>{{ trans('columns.box') }}</th>
         </tr>
         </thead>
         <tbody>

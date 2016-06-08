@@ -9,9 +9,9 @@
 		<thead>
 		<tr>
 			<th width="5%">#</th>
-			<th>Customer</th>
-			<th>Price</th>
-			<th>Status</th>
+			<th>{{ trans('invoice.customer') }}</th>
+			<th>{{ trans('invoice.price') }}</th>
+			<th>{{ trans('invoice.status') }}</th>
 		</tr>
 		</thead>
 		<tbody>

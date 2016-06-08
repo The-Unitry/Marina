@@ -9,11 +9,11 @@
         <thead>
         <tr>
             <th width="5%">#</th>
-            <th>Requester</th>
-            <th>Start date</th>
-            <th>End date</th>
-            <th>Box</th>
-            <th>Approved</th>
+            <th>{{ trans('reservation.requester') }}</th>
+            <th>{{ trans('reservation.start_date') }}</th>
+            <th>{{ trans('reservation.end_date') }}</th>
+            <th>{{ trans('reservation.box') }}</th>
+            <th>{{ trans('reservation.approved') }}</th>
         </tr>
         </thead>
         <tbody>
