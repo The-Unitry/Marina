@@ -5,7 +5,9 @@
 @endsection
 
 @section('content')
+    @if($post->hasHeader())
     <img src="/media/header/{{ $post->header_path }}.png" alt="" width="100%">
+    @endif
     <div class="container content">
         <br>
         <article>
