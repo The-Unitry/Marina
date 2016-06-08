@@ -52,5 +52,10 @@ return [
             'url' => 'setting',
             'icon' => ''
         ],
+        [
+            'name' => 'newsletters',
+            'url' => 'newsletter',
+            'icon' => ''
+        ],
     ]
 ];
