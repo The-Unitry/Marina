@@ -30,6 +30,7 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{{ url('/') }}">{{ trans('menu.home') }}</a></li>
+                    <li><a href="{{ url('/blog') }}">{{ trans('menu.blog') }}</a></li>
                     <li><a href="{{ url('/reserveren') }}">{{ trans('menu.reserve') }}</a></li>
                     @if(Auth::check())
                         <li><a href="{{ url('/mijn-boten') }}">{{ trans('menu.my_boats') }}</a></li>

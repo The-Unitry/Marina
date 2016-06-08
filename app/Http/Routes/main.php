@@ -18,7 +18,8 @@ Route::get('reserveren', 'ReservationController@index');
 Route::get('mijn-boxen', 'BoxController@index');
 
 // Posts
-Route::get('post/{slug}', 'PostController@show');
+Route::get('blog', 'BlogController@index');
+Route::get('blog/{slug}', 'BlogController@show');
 
 // Contact Form
 Route::get('contact', 'ContactController@index');

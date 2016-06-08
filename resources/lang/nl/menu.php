@@ -14,6 +14,7 @@ return [
     'settings' => 'Instellingen',
 
     'home' => 'Home',
+    'blog' => 'Blog',
     'reserve' => 'Reserveren',
     'my_boats' => 'Mijn boten',
     'crane_plan' => 'Kraanplan',
