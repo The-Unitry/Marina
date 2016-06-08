@@ -20,4 +20,8 @@ return [
     'receive_payment_within_days' => 'We would like to receive your payment within :days days on bank account: :iban in attn. of ' ,
     'sign_off' => 'Yours sincerely,',
 
+    'customer' => 'Customer',
+    'price' => 'Price',
+    'status' => 'Status',
+
 ];

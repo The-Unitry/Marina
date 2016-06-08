@@ -2,9 +2,9 @@
 
 @section('title')
     @if ($method == 'POST')
-        {{ trans('columns.create_box') }}
+        {{ trans('navigation.create_box') }}
     @elseif ($method == 'PATCH')
-        {{ trans('columns.edit_box') }}
+        {{ trans('navigation.edit_box') }}
     @endif
 @endsection
 

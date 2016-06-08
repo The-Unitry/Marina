@@ -5,6 +5,8 @@ return [
     'dashboard' => 'Dashboard',
 
     'posts' => 'Posts',
+    'create_post' => 'Create post',
+
 
     'pages' => 'Pages',
     'create_page' => 'Create page',
@@ -16,6 +18,9 @@ return [
     'edit_invoice' => 'Edit invoice',
 
     'reservations' => 'Reservations',
+    'reservation' => 'Reservation',
+    'reserve' => 'Reserve',
+    'create_reservation' => 'Create reservation',
 
     'boxes' => 'Boxes',
     'create_box' => 'Create box',
@@ -23,11 +28,21 @@ return [
 
     'boats' => 'Boats',
     'create_boat' => 'Create boat',
+    'add_boat' => 'Add boat',
     'edit_boat' => 'Edit boat',
+    'my_boats' => 'My boats',
 
     'users' => 'Users',
+    'edit_user' => 'Edit user',
+
+    'my_account' => 'My account',
+    'log_out' => 'Log out',
 
     'scaffolds' => 'Scaffolds',
+
+    'home' => 'Home',
+
+    'contact' => 'Contact',
 
     'settings' => 'Settings'
 

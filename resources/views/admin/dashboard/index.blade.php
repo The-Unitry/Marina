@@ -7,6 +7,6 @@
 @section('content')
     <div class="jumbotron">
         <h1>Navicula</h1>
-        <p style="font-weight: 300;">Harbour management made easy.</p>
+        <p style="font-weight: 300;">{{ trans('navigation.slogan') }}</p>
     </div>
 @endsection
