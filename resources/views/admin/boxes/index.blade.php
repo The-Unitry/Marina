@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    {{ trans('navigation.boxes') }}
+    {{ trans('menu.boxes') }}
 @endsection
 
 @section('content')
@@ -23,7 +23,7 @@
                     {{ $box->scaffold->code . $box->id }}
                 </td>
                 <td>
-                    {{ ($box->isAvailable()) ? 'Available' : 'Unavailable' }}
+                    {{ ($box->isAvailable()) ? trans('columns.available') : trans('columns.unavailable') }}
                 </td>
             </tr>
         @endforeach

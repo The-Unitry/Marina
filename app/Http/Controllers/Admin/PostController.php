@@ -54,7 +54,9 @@ class PostController extends AdminController
         
         $post->save();
 
-        return redirect('/admin/post/' . $post->id)->with('message', trans('confirmations.created_post'));
+        return redirect('/admin/post/' . $post->id)->with(
+            'message', trans('confirmations.created.post')
+        );
     }
 
     /**
@@ -101,7 +103,9 @@ class PostController extends AdminController
 
         $post->save();
 
-        return back()->with('message', trans('confirmations.updated_post'));
+        return back()->with(
+            'message', trans('confirmations.updated.post')
+        );
     }
 
     /**

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    {{ trans('navigation.posts') }}
+    {{ trans('menu.posts') }}
 @endsection
 
 @section('content')
@@ -9,9 +9,9 @@
         <thead>
             <tr>
                 <th width="5%">#</th>
-                <th>{{ trans('userinfo.title') }}</th>
-                <th>{{ trans('userinfo.created') }}</th>
-                <th>{{ trans('userinfo.author') }}</th>
+                <th>{{ trans('columns.title') }}</th>
+                <th>{{ trans('columns.created_at') }}</th>
+                <th>{{ trans('columns.author') }}</th>
             </tr>
         </thead>
         <tbody>

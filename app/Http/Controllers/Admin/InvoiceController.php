@@ -43,7 +43,9 @@ class InvoiceController extends AdminController
     {
         $invoice = Invoice::create($request->all());
 
-        return redirect('/admin/invoice' . $invoice->id);
+        return redirect('/admin/invoice' . $invoice->id)->with(
+            'message', trans('confirmations.updated.invoice')
+        );
     }
 
     /**
@@ -82,7 +84,9 @@ class InvoiceController extends AdminController
     {
         $invoice->update($request->all());
 
-        return back();
+        return back()->with(
+            'message', trans('confirmations.updated.invoice')
+        );
     }
 
     /**

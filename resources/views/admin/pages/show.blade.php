@@ -2,9 +2,9 @@
 
 @section('title')
     @if ($method == 'POST')
-        {{ trans('navigation.create_page') }}
+        {{ trans('actions.create.page') }}
     @elseif ($method == 'PATCH')
-        {{ trans('navigation.edit_page') }}
+        {{ trans('actions.edit.page') }}
     @endif
 @endsection
 
@@ -16,25 +16,25 @@
                     {{ method_field($method) }}
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="title" class="col-sm-2 control-label">{{ trans('regular.title') }}</label>
+                        <label for="title" class="col-sm-2 control-label">{{ trans('columns.title') }}</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" name="title" id="title" value="{{ $page->title or '' }}">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="metatags" class="col-sm-2 control-label">{{ trans('column.metatags') }}</label>
+                        <label for="metatags" class="col-sm-2 control-label">{{ trans('columns.metatags') }}</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" name="metatags" id="metatags" value="{{ $page->metatags or '' }}">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="description" class="col-sm-2 control-label">{{ trans('column.description') }}</label>
+                        <label for="description" class="col-sm-2 control-label">{{ trans('columns.description') }}</label>
                         <div class="col-sm-10">
                             <textarea class="form-control" name="description" id="description">{{ $page->description or '' }}</textarea>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="body" class="col-sm-2 control-label">{{ trans('column.text') }}</label>
+                        <label for="body" class="col-sm-2 control-label">{{ trans('columns.text') }}</label>
                         <div class="col-sm-10">
                             <textarea id="editor" class="form-control" name="body">{{ $page->body or '' }}</textarea>
                         </div>
@@ -42,10 +42,12 @@
                 </div>
                 <div class="col-md-2">
                     <div class="list-group">
-                        <button type="submit" class="list-group-item bg-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i> 
-                        {{ trans('regular.save') }}</button>
-                        <a href="../page" class="list-group-item"><span class="fa fa-arrow-left"></span> 
-                        {{ trans('regular.back') }}</a>
+                        <button type="submit" class="list-group-item bg-primary">
+                            <i class="fa fa-floppy-o" aria-hidden="true"></i> {{ trans('actions.save') }}
+                        </button>
+                        <a href="../page" class="list-group-item">
+                            <span class="fa fa-arrow-left"></span> {{ trans('actions.back') }}
+                        </a>
                     </div>
                 </div>
             </div>

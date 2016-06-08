@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ trans('navigation.invoice') }} (#{{ $invoice->id }})</title>
+    <title>Factuur (#{{ $invoice->id }})</title>
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 </head>
 <body id="invoice">
@@ -18,22 +18,22 @@
             </div>
             <div class="col-md-8">
                 <h1>
-                    {{ trans('navigation.invoice') }} (#{{ $invoice->id }})
+                    Factuur (#{{ $invoice->id }})
                 </h1>
             </div>
         </div>
         <p>
-            {{ trans('invoice.thank_you_reservation') }}
+            Bedankt voor uw reservering!
         </p>
         <table class="table">
             <thead>
                 <tr>
-                    <th>{{ trans('invoice.box') }}</th>
-                    <th>{{ trans('invoice.start_date') }}</th>
-                    <th>{{ trans('invoice.end_date') }}</th>
-                    <th>{{ trans('invoice.amount_of_nights') }}</th>
+                    <th>{{ trans('columns.box') }}</th>
+                    <th>{{ trans('columns.start_date') }}</th>
+                    <th>{{ trans('columns.end_date') }}</th>
+                    <th>{{ trans('columns.amount_of_nights') }}</th>
                     <th>{{ trans('columns.price_per_night') }}</th>
-                    <th>{{ trans('invoice.total_price') }}</th>
+                    <th>{{ trans('columns.total_price') }}</th>
                 </tr>
             </thead>
             <tbody>
@@ -49,10 +49,9 @@
         </table>
         <hr>
         <p>
-        {{ trans('invoice.receive_payment_within_days', ['days' => '20', 'iban' => 'XXX']) }}
-            {{ setting('company_name') }}.<br><br>
+        Graag ontvangen we uw betaling binnen 10 werkdagen op rekeningnummer XXX t.a.v. {{ setting('company_name') }}.<br><br>
 
-            {{ trans('invoice.sign_off') }} <br>
+            Met vriendelijke groet, <br>
             {{ setting('company_name') }}
         </p>
     </div>

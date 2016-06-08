@@ -22,7 +22,7 @@
                 @foreach(config('admin.menu_items') as $menu_item)
                     <li class="{{ ($menu_item['url'] == $module) ? 'active' : '' }}">
                         <a href="{{ url('/admin/' . $menu_item['url']) }}">
-                            {{ trans('navigation.' . $menu_item['name']) }}
+                            {{ trans('menu.' . $menu_item['name']) }}
                         </a>
                     </li>
                 @endforeach

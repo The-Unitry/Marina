@@ -2,7 +2,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    {{ trans('navigation.pages') }}
+    {{ trans('menu.pages') }}
 @endsection
 
 @section('content')

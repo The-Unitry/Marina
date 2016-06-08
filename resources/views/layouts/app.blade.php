@@ -29,22 +29,22 @@
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{{ url('/') }}">{{ trans('navigation.home') }}</a></li>
-                    <li><a href="{{ url('/reserveren') }}">{{ trans('navigation.reserve') }}</a></li>
+                    <li><a href="{{ url('/') }}">{{ trans('menu.home') }}</a></li>
+                    <li><a href="{{ url('/reserveren') }}">{{ trans('menu.reserve') }}</a></li>
                     @if(Auth::check())
-                        <li><a href="{{ url('/mijn-boten') }}">{{ trans('navigation.my_boats') }}</a></li>
+                        <li><a href="{{ url('/mijn-boten') }}">{{ trans('menu.my_boats') }}</a></li>
                     @endif
-                    <li><a href="{{ url('/contact') }}">{{ trans('navigation.contact') }}</a></li>
+                    <li><a href="{{ url('/contact') }}">{{ trans('menu.contact') }}</a></li>
                     @if(Auth::guest())
-                        <li><a href="{{ url('/login') }}">{{ trans('navigation.my_account') }}</a></li>
+                        <li><a href="{{ url('/login') }}">{{ trans('menu.my_account') }}</a></li>
                     @endif
                     @if(Auth::check())
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ trans('navigation.my_account') }} <span class="caret"></span>
+                                {{ trans('menu.my_account') }} <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>{{ trans('navigation.log_out') }}</a></li>
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> {{ trans('menu.log_out') }}</a></li>
                             </ul>
                         </li>
                     @endif
@@ -61,8 +61,6 @@
         <div class="container ">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h3>Docking With A Breeze</h3>
-                    <hr>
                     <small class="copyright">Copyright &copy; LINK 2016 | Alle rechten voorbehouden</small>
                 </div>
             </div>

@@ -13,4 +13,11 @@ return [
     'scaffolds' => 'Steigers',
     'settings' => 'Instellingen',
 
+    'home' => 'Home',
+    'reserve' => 'Reserveren',
+    'my_boats' => 'Mijn boten',
+    'contact' => 'Contact',
+    'my_account' => 'Mijn account',
+    'log_out' => 'Uitloggen',
+
 ];

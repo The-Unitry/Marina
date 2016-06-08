@@ -44,7 +44,9 @@ class ScaffoldController extends AdminController
     {
         $scaffold = Scaffold::create($request->all());
 
-        return redirect('/admin/scaffold/' . $scaffold->id)->with('message', trans('confirmations.created_scaffold'));
+        return redirect('/admin/scaffold/' . $scaffold->id)->with(
+            'message', trans('confirmations.created.scaffold')
+        );
     }
 
     /**
@@ -83,7 +85,9 @@ class ScaffoldController extends AdminController
     {
         $scaffold->update($request->all());
 
-        return back()->with('message', trans('confirmations.updated_scaffold'));
+        return back()->with(
+            'message', trans('confirmations.updated.scaffold')
+        );
     }
 
     /**

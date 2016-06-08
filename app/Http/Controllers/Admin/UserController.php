@@ -48,7 +48,9 @@ class UserController extends AdminController
 
         $user->save();
 
-        return redirect('/admin/user/' . $user->id)->with('message', trans('confirmations.created_user'));
+        return redirect('/admin/user/' . $user->id)->with(
+            'message', trans('confirmations.created.user')
+        );
     }
 
     /**
@@ -88,7 +90,9 @@ class UserController extends AdminController
     {
         $user->update($request->all());
 
-        return back()->with('message', trans('confirmations.updated_user'));
+        return back()->with(
+            'message', trans('confirmations.updated.user')
+        );
     }
 
     /**

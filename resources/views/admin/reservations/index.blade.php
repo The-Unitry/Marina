@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    {{ trans('navigation.reservations') }}
+    {{ trans('menu.reservations') }}
 @endsection
 
 @section('content')
@@ -9,11 +9,11 @@
         <thead>
         <tr>
             <th width="5%">#</th>
-            <th>{{ trans('reservation.requester') }}</th>
-            <th>{{ trans('reservation.start_date') }}</th>
-            <th>{{ trans('reservation.end_date') }}</th>
-            <th>{{ trans('reservation.box') }}</th>
-            <th>{{ trans('reservation.approved') }}</th>
+            <th>{{ trans('columns.requester') }}</th>
+            <th>{{ trans('columns.start_date') }}</th>
+            <th>{{ trans('columns.end_date') }}</th>
+            <th>{{ trans('columns.box') }}</th>
+            <th>{{ trans('columns.approved') }}</th>
         </tr>
         </thead>
         <tbody>

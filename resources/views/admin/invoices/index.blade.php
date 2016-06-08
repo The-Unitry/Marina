@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-	{{ trans('navigation.invoices') }}
+	{{ trans('menu.invoices') }}
 @endsection
 
 @section('content')
@@ -9,9 +9,9 @@
 		<thead>
 		<tr>
 			<th width="5%">#</th>
-			<th>{{ trans('invoice.customer') }}</th>
-			<th>{{ trans('invoice.price') }}</th>
-			<th>{{ trans('invoice.status') }}</th>
+			<th>{{ trans('columns.customer') }}</th>
+			<th>{{ trans('columns.price') }}</th>
+			<th>{{ trans('columns.status') }}</th>
 		</tr>
 		</thead>
 		<tbody>
@@ -27,7 +27,7 @@
 					{{ $invoice->reservation->box->totalPrice($invoice->reservation->totalNights()) }}
 				</td>
 				<td>
-					{{ $invoice->status }}
+					{{ trans('columns.' . strtolower($invoice->status)) }}
 				</td>
 			</tr>
 		@endforeach

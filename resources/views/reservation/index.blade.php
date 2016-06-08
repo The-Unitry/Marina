@@ -6,7 +6,7 @@
             Reserveren
         </h3>
         <p class="text">
-            {{ trans('regular.description') }}
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci deleniti doloribus eligendi temporibus, tenetur voluptatum. Adipisci aperiam at autem blanditiis enim facere facilis harum id, minima obcaecati perferendis quod ut.
         </p>
         <hr>
         <div class="row">
@@ -41,7 +41,7 @@
                 </div>
                 <br>
                 <a href="" class="btn btn-primary pull-right">
-                    {{ trans('regular.next') }}
+                    {{ trans('actions.next') }}
                 </a>
             </div>
             <div class="col-md-4">

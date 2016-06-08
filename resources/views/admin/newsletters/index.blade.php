@@ -3,7 +3,7 @@
 @section('content')
 <div class="container content">
     <h3>
-        {{ trans('navigation.send_newsletter') }}
+        {{ trans('menu.send_newsletter') }}
     </h3>
     <br>
     <div class="row">

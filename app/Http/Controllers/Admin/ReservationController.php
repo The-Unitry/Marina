@@ -52,7 +52,9 @@ class ReservationController extends AdminController
 
         $reservation->save();
 
-        return redirect('/admin/reservation/' . $reservation->id)->with('message', trans('confirmations.created_reservation'));
+        return redirect('/admin/reservation/' . $reservation->id)->with(
+            'message', trans('confirmations.created.reservation')
+        );
     }
 
     /**
@@ -93,7 +95,9 @@ class ReservationController extends AdminController
     {
         $reservation->update($request->all());
 
-        return back()->with('message', trans('confirmations.updated_reservation'));
+        return back()->with(
+            'message', trans('confirmations.updated.reservation')
+        );
     }
 
     /**
