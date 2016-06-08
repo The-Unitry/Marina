@@ -16,15 +16,15 @@
                     {{ method_field($method) }}
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="status" class="col-sm-2 control-label">{{ trans('columns.status') }}</label>
+                        <label for="status" class="col-sm-2 control-label">{{ trans('regular.status') }}</label>
                         <div class="col-sm-10">
                             <select name="status" id="status" class="form-control">
                                 <option value="Pending" {{ (isset($invoice) && $invoice->status == 'Pending') ? 'selected' : '' }}>
-                                {{ trans('columns.pending') }}</option>
+                                {{ trans('column.pending') }}</option>
                                 <option value="Paid" {{ (isset($invoice) && $invoice->status == 'Paid') ? 'selected' : '' }}>
-                                {{ trans('columns.paid') }}</option>
+                                {{ trans('column.paid') }}</option>
                                 <option value="Cancelled" {{ (isset($invoice) && $invoice->status == 'Cancelled') ? 'selected' : '' }}>
-                                {{ trans('columns.cancelled') }}</option>
+                                {{ trans('column.cancelled') }}</option>
                             </select>
                         </div>
                     </div>
@@ -32,15 +32,15 @@
                 <div class="col-md-2">
                     <div class="list-group">
                         <button type="submit" class="list-group-item bg-primary">
-                            <i class="fa fa-floppy-o" aria-hidden="true"></i> {{ trans('columns.save') }}
+                            <i class="fa fa-floppy-o" aria-hidden="true"></i> {{ trans('regular.save') }}
                         </button>
                         @if(isset($invoice))
                         <a href="../invoice/{{ $invoice->id }}/view" class="list-group-item" target="_blank">
-                            <span class="fa fa-print"></span> {{ trans('columns.print') }}
+                            <span class="fa fa-print"></span> {{ trans('column.print') }}
                         </a>
                         @endif
                         <a href="../invoice" class="list-group-item">
-                            <span class="fa fa-arrow-left"></span> {{ trans('columns.back') }}
+                            <span class="fa fa-arrow-left"></span> {{ trans('regular.back') }}
                         </a>
                     </div>
                 </div>

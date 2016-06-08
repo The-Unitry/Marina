@@ -16,13 +16,13 @@
                     {{ method_field($method) }}
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">{{ trans('userinfo.name') }}</label>
+                        <label for="name" class="col-sm-2 control-label">{{ trans('regular.name') }}</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" name="name" id="name" value="{{ $user->name or '' }}">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="email" class="col-sm-2 control-label">{{ trans('userinfo.email') }}</label>
+                        <label for="email" class="col-sm-2 control-label">{{ trans('regular.email') }}</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" name="email" id="email" value="{{ $user->email or '' }}">
                         </div>

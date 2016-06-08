@@ -9,9 +9,9 @@
         <thead>
         <tr>
             <th width="5%">#</th>
-            <th>{{ trans('columns.name') }}</th>
-            <th>{{ trans('columns.email') }}</th>
-            <th>{{ trans('columns.role') }}</th>
+            <th>{{ trans('regular.name') }}</th>
+            <th>{{ trans('regular.email') }}</th>
+            <th>{{ trans('userinfo.role') }}</th>
         </tr>
         </thead>
         <tbody>

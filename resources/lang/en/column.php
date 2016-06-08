@@ -22,11 +22,8 @@ return [
     'price_per_night' => 'Price per night',
     'text' => 'Text',
     'metatags' => 'Metatags',
-<<<<<<< HEAD
-=======
     'description' => 'Description',
->>>>>>> fefea37a06ff79fbc92e54fa199c0be06fe3e578
     'header' => 'Header',
-    'body' => 'Body',
+    'body' => 'Body'
 
 ];
