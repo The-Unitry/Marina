@@ -18,7 +18,7 @@ class ScaffoldController extends AdminController
     public function index()
     {
         return view('admin.scaffolds.index', [
-            'scaffolds' => Scaffold::all()
+            'scaffolds' => Scaffold::where('hidden', 0)->get()
         ]);
     }
 
@@ -101,5 +101,21 @@ class ScaffoldController extends AdminController
         $scaffold->delete();
 
         return back();
+    }
+
+    /**
+     * Create a hidden scaffold, which is used when creating a new request.
+     *
+     * @return static
+     */
+    public static function createHiddenScaffold()
+    {
+        if (!Scaffold::where('code', 'not_approved')->exists())
+        {
+            Scaffold::create([
+                'code' => 'not_approved',
+                'hidden' => '1'
+            ]);
+        }
     }
 }

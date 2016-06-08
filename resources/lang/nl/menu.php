@@ -7,6 +7,7 @@ return [
     'pages' => 'Pagina\'s',
     'invoices' => 'Facturen',
     'reservations' => 'Reserveringen',
+    'requests' => 'Aanvragen',
     'boxes' => 'Boxen',
     'boats' => 'Boten',
     'users' => 'Gebruikers',

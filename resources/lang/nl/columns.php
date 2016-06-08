@@ -49,6 +49,7 @@ return [
     'start_date' => 'Startdatum',
     'end_date' => 'Einddatum',
     'amount_of_nights' => 'Aantal nachten',
+    'amount_of_persons' => 'Aantal personen',
     'total_price' => 'Totaal prijs',
     'boat' => 'Boot',
     'customer' => 'Klant',

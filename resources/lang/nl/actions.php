@@ -6,6 +6,7 @@ return [
     'back' => 'Terug',
     'cancel' => 'Annuleren',
     'print' => 'Printen',
+    'approve' => 'Goedkeuren',
     'next' => 'Volgende',
 
     'create' => [
@@ -14,6 +15,7 @@ return [
         'page' => 'Pagina maken',
         'invoice' => 'Factuur maken',
         'reservation' => 'Reservering toevoegen',
+        'request' => 'Aanvraag toevoegen',
         'box' => 'Box toevoegen',
         'boat' => 'Boot toevoegen',
         'user' => 'Gebruiker toevoegen',
@@ -27,6 +29,7 @@ return [
         'page' => 'Pagina bewerken',
         'invoice' => 'Factuur bewerken',
         'reservation' => 'Reservering bewerken',
+        'request' => 'Aanvraag verwerken',
         'box' => 'Box bewerken',
         'boat' => 'Boot bewerken',
         'user' => 'Gebruiker bewerken',
