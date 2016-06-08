@@ -68,7 +68,7 @@
                 </div>
                 <div class="col-md-2">
                     <div class="list-group">
-                        <button type="submit" class="list-group-item bg-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i> {{ trans('columns.send_save') }}</button>
+                        <button type="submit" class="list-group-item bg-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i> {{ trans('columns.save') }}</button>
                     </div>
                 </div>
             </div>

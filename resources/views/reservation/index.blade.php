@@ -35,7 +35,7 @@
                 <hr>
                 <div>
                     <h4>
-                        3. {{ trans('reservation.choose_amount_people') }} <small>{{ trans('reservation.including_yourself') }}</small>
+                        3. {{ trans('reservation.choose_amount_people') }} <small>({{ trans('reservation.including_yourself') }})</small>
                     </h4>
                     <input type="number" value="0" class="form-control">
                 </div>
