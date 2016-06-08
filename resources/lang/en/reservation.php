@@ -11,27 +11,17 @@ return [
     |
     */
 
-    'description' => 'Description',
     'choose_boat' => 'Choose boat',
     'choose_period' => 'Choose period',
     'choose_amount_people' => 'Choose amount of people',
     'including_yourself' => 'including yourself',
 
     'requester' => 'Requester',
-    'start_date' => 'Start date',
-    'end_date' => 'End date',
-    'box' => 'Box',
     'approved' => 'Approved',
     'boat' => 'Boat',
     'ammount_of_persons' => 'Ammount of persons',
 
-
-    'no' => 'No',
-    'yes' => 'Yes',
     'until' => 'Until',
-    'next' => 'Next',
-    'save' => 'Save',
-    'back' => 'Back',
 
     'certainties' => 'Certainties',
     'certainties_option_one' => 'Option 1',

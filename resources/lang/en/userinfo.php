@@ -11,8 +11,6 @@ return [
     |
     */
 
-    'name' => 'Name',
-    'email' => 'Email',
     'phone_number' => 'Phone number',
     'city' => 'City',
     'zip_code' => 'Zip code',
