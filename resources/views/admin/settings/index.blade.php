@@ -36,7 +36,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="company_city" class="col-sm-2 control-label">{{ trans('columns.company_city) }}</label>
+                        <label for="company_city" class="col-sm-2 control-label">{{ trans('columns.company_city') }}</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" name="company_city" id="company_city" value="{{ setting('company_city') }}">
                         </div>
