@@ -4,3 +4,4 @@
 <script type="text/javascript" src="https://cdn.datatables.net/u/bs/dt-1.10.12/datatables.min.js"></script>
 <script src="//cdn.ckeditor.com/4.5.9/basic/ckeditor.js"></script>
 <script src="{{ asset('js/admin.js') }}"></script>
+<script src="{{ asset('js/app.js') }}"></script>

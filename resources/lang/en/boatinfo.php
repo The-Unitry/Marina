@@ -11,6 +11,13 @@ return [
     |
     */
 
-    'name' => 'Name',
+    'owner' => 'Owner',
+    'brand' => 'Brand',
+    'type' => 'Type',
+    'color' => 'Color',
+    'height' => 'Height (cm)',
+    'length' => 'Length (cm)',
+    'depth' => 'Depth (cm)',
+    'width' => 'Width (cm)'
 
 ];
