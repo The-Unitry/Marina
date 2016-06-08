@@ -1,25 +1,23 @@
 @extends('layouts.admin')
 
+@section('title')
+    {{ trans('navigation.boats') }}
+@endsection
+
 @section('content')
-<div class="container">
-    <a href="/admin/boat/create" class="btn btn-primary">
-        Create boat
-    </a>
-    <h3>Boats</h3>
-    <table class="table table-striped">
+    <table class="table table-striped" id="datatable">
         <thead>
         <tr>
-            <th>#</th>
-            <th>Title</th>
-            <th>Owner</th>
-            <th></th>
+            <th width="5%">#</th>
+            <th>{{ trans('columns.title') }}</th>
+            <th>{{ trans('columns.owner') }}</th>
         </tr>
         </thead>
         <tbody>
-        @foreach($boats as $boat)
-            <tr>
+        @foreach($boats as $i => $boat)
+            <tr data-href="/admin/boat/{{ $boat->id }}" class="clickable-row">
                 <td>
-                    {{ $boat->id }}
+                    {{ $i + 1 }}
                 </td>
                 <td>
                     {{ $boat->name }}
@@ -27,12 +25,8 @@
                 <td>
                     {{ $boat->owner->name }}
                 </td>
-                <td>
-                    <a href="/admin/boat/{{ $boat->id }}">View</a>
-                </td>
             </tr>
         @endforeach
         </tbody>
     </table>
-</div>
 @endsection

@@ -4,65 +4,47 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Navicula</title>
-
-    <!-- Fonts -->
+    <title>{{ setting('company_name') }}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
-
-    <!-- Styles -->
+    <link rel="stylesheet" href="{{ asset('plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css') }}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-    <style>
-        body {
-            font-family: 'Lato', sans-serif;
-        }
-
-        .fa-btn {
-            margin-right: 6px;
-        }
-    </style>
 </head>
 <body id="app-layout">
+    @include('admin.partials.confirmation')
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
-
-                <!-- Collapsed Hamburger -->
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="sr-only">{{ trans('userinfo.toggle_navigation') }}</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-
-                <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Navicula
+                    <span class="hidden-sm hidden-md hidden-lg">{{ setting('company_name') }}</span>
+                    <img class="img-responsive hidden-xs logo-img" src="/media/logo/logo.png"/>
                 </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/') }}">Home</a></li>
-                </ul>
-
-                <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
-                    <!-- Authentication Links -->
-                    @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
-                    @else
+                    <li><a href="{{ url('/') }}">{{ trans('navigation.home') }}</a></li>
+                    <li><a href="{{ url('/reserveren') }}">{{ trans('navigation.reserve') }}</a></li>
+                    @if(Auth::check())
+                        <li><a href="{{ url('/mijn-boten') }}">{{ trans('navigation.my_boats') }}</a></li>
+                    @endif
+                    <li><a href="{{ url('/contact') }}">{{ trans('navigation.contact') }}</a></li>
+                    @if(Auth::guest())
+                        <li><a href="{{ url('/login') }}">{{ trans('navigation.my_account') }}</a></li>
+                    @endif
+                    @if(Auth::check())
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
+                                {{ trans('navigation.my_account') }} <span class="caret"></span>
                             </a>
-
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>{{ trans('navigation.log_out') }}</a></li>
                             </ul>
                         </li>
                     @endif
@@ -71,11 +53,22 @@
         </div>
     </nav>
 
-    @yield('content')
+    <div class="wrap">
+        @yield('content')
+    </div>
 
-    <!-- JavaScripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+    <div class="footer">
+        <div class="container ">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h3>Docking With A Breeze</h3>
+                    <hr>
+                    <small class="copyright">Copyright &copy; LINK 2016 | Alle rechten voorbehouden</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @include('partials.scripts')
 </body>
 </html>

@@ -8,7 +8,7 @@ use Navicula\Http\Requests;
 use Navicula\Http\Controllers\Controller;
 use Navicula\Models\Scaffold;
 
-class ScaffoldController extends Controller
+class ScaffoldController extends AdminController
 {
     /**
      * Display a listing of the resource.
@@ -44,7 +44,7 @@ class ScaffoldController extends Controller
     {
         $scaffold = Scaffold::create($request->all());
 
-        return redirect('/admin/scaffold/' . $scaffold->id);
+        return redirect('/admin/scaffold/' . $scaffold->id)->with('message', trans('confirmations.created_scaffold'));
     }
 
     /**
@@ -83,7 +83,7 @@ class ScaffoldController extends Controller
     {
         $scaffold->update($request->all());
 
-        return back();
+        return back()->with('message', trans('confirmations.updated_scaffold'));
     }
 
     /**

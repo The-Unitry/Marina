@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateReservationsTable extends Migration
+class UpdateBoatsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,8 @@ class UpdateReservationsTable extends Migration
      */
     public function up()
     {
-        Schema::table('reservations', function ($table) {
-            $table->timestamp('start');
-            $table->timestamp('end');
+        Schema::table('boats', function($table) {
+            $table->softDeletes();
         });
     }
 

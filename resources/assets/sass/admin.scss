@@ -1,0 +1,28 @@
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "partials/alert";
+
+.clickable-row {
+  cursor: pointer;
+}
+
+.title-box {
+  padding-top: 5px;
+  padding-bottom: 40px;
+
+  .btn {
+    margin-top: 13px;
+  }
+}
+
+.list-group .fa, .btn .fa {
+  margin-right: 5px;
+}
+
+#invoice {
+  margin-top: 50px;
+
+  h1,h2,h3,h4,h5 {
+    margin: 0;
+    padding: 0;
+  }
+}

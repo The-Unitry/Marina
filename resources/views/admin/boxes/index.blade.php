@@ -1,34 +1,32 @@
 @extends('layouts.admin')
 
+@section('title')
+    {{ trans('navigation.boxes') }}
+@endsection
+
 @section('content')
-<div class="container">
-    <a href="/admin/box/create" class="btn btn-primary">
-        Create box
-    </a>
-    <h3>Boxes</h3>
-    <table class="table table-striped">
+    <table class="table table-striped" id="datatable">
         <thead>
         <tr>
-            <th>#</th>
-            <th>Code</th>
-            <th></th>
+            <th width="5%">#</th>
+            <th>{{ trans('columns.code') }}</th>
+            <th>{{ trans('columns.available') }}</th>
         </tr>
         </thead>
         <tbody>
-        @foreach($boxes as $box)
-            <tr>
+        @foreach($boxes as $i => $box)
+            <tr data-href="/admin/box/{{ $box->id }}" class="clickable-row">
                 <td>
-                    {{ $box->id }}
+                    {{ $i + 1 }}
                 </td>
                 <td>
                     {{ $box->scaffold->code . $box->id }}
                 </td>
                 <td>
-                    <a href="/admin/box/{{ $box->id }}">View</a>
+                    {{ ($box->isAvailable()) ? 'Available' : 'Unavailable' }}
                 </td>
             </tr>
         @endforeach
         </tbody>
     </table>
-</div>
 @endsection

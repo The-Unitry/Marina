@@ -1,25 +1,24 @@
 @extends('layouts.admin')
 
+@section('title')
+    {{ trans('navigation.posts') }}
+@endsection
+
 @section('content')
-<div class="container">
-    <a href="/admin/post/create" class="btn btn-primary">
-        Create post
-    </a>
-    <h3>Posts</h3>
-    <table class="table table-striped">
+    <table class="table table-striped" id="datatable">
         <thead>
             <tr>
-                <th>#</th>
-                <th>Title</th>
-                <th>Created</th>
-                <th></th>
+                <th width="5%">#</th>
+                <th>{{ trans('userinfo.title') }}</th>
+                <th>{{ trans('userinfo.created') }}</th>
+                <th>{{ trans('userinfo.author') }}</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($posts as $post)
-                <tr>
+            @foreach($posts as $i => $post)
+                <tr data-href="/admin/post/{{ $post->id }}" class="clickable-row">
                     <td>
-                        {{ $post->id }}
+                        {{ $i + 1 }}
                     </td>
                     <td>
                         {{ $post->title }}
@@ -28,11 +27,10 @@
                         {{ $post->created_at }}
                     </td>
                     <td>
-                        <a href="/admin/post/{{ $post->id }}">View</a>
+                        {{ $post->author->name }}
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-</div>
 @endsection

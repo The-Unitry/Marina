@@ -1,26 +1,24 @@
 @extends('layouts.admin')
 
+@section('title')
+    {{ trans('navigation.users') }}
+@endsection
+
 @section('content')
-<div class="container">
-    <a href="user/create" class="btn btn-primary">
-        Create user
-    </a>
-    <h3>Users</h3>
-    <table class="table table-striped">
+    <table class="table table-striped" id="datatable">
         <thead>
         <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Mail</th>
-            <th>Role</th>
-            <th></th>
+            <th width="5%">#</th>
+            <th>{{ trans('regular.name') }}</th>
+            <th>{{ trans('regular.email') }}</th>
+            <th>{{ trans('userinfo.role') }}</th>
         </tr>
         </thead>
         <tbody>
-        @foreach($users as $user)
-            <tr>
+        @foreach($users as $i => $user)
+            <tr data-href="/admin/user/{{ $user->id }}" class="clickable-row">
                 <td>
-                    {{ $user->id }}
+                    {{ $i + 1}}
                 </td>
                 <td>
                     {{ $user->name }}
@@ -31,12 +29,8 @@
                 <td>
                     {{ ucfirst($user->role->name) }}
                 </td>
-                <td>
-                    <a href="/admin/user/{{ $user->id }}">View</a>
-                </td>
             </tr>
         @endforeach
         </tbody>
     </table>
-</div>
 @endsection

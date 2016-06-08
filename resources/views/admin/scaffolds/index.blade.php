@@ -1,38 +1,32 @@
 @extends('layouts.admin')
 
+@section('title')
+    {{ trans('navigation.scaffolds') }}
+@endsection
+
 @section('content')
-    <div class="container">
-        <a href="/admin/scaffold/create" class="btn btn-primary">
-            Create scaffold
-        </a>
-        <h3>Scaffolds</h3>
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>Code</th>
-                <th>Boxes</th>
-                <th></th>
+    <table class="table table-striped" id="datatable">
+        <thead>
+        <tr>
+            <th width="5%">#</th>
+            <th>{{ trans('column.code') }}</th>
+            <th>{{ trans('regular.box') }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach($scaffolds as $i => $scaffold)
+            <tr data-href="/admin/scaffold/{{ $scaffold->id }}" class="clickable-row">
+                <td>
+                    {{ $i + 1 }}
+                </td>
+                <td>
+                    {{ $scaffold->code }}
+                </td>
+                <td>
+                    {{ count($scaffold->boxes) }}
+                </td>
             </tr>
-            </thead>
-            <tbody>
-            @foreach($scaffolds as $scaffold)
-                <tr>
-                    <td>
-                        {{ $scaffold->id }}
-                    </td>
-                    <td>
-                        {{ $scaffold->code }}
-                    </td>
-                    <td>
-                        {{ count($scaffold->boxes) }}
-                    </td>
-                    <td>
-                        <a href="/admin/scaffold/{{ $scaffold->id }}">View</a>
-                    </td>
-                </tr>
-            @endforeach
-            </tbody>
-        </table>
-    </div>
+        @endforeach
+        </tbody>
+    </table>
 @endsection

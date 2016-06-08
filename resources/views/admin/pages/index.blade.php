@@ -1,34 +1,29 @@
+
 @extends('layouts.admin')
 
+@section('title')
+    {{ trans('navigation.pages') }}
+@endsection
+
 @section('content')
-<div class="container">
-    <a href="/admin/page/create" class="btn btn-primary">
-        Create page
-    </a>
-    <h3>Pages</h3>
-    <table class="table table-striped">
+    <table class="table table-striped" id="datatable">
         <thead>
         <tr>
-            <th>#</th>
-            <th>Title</th>
-            <th></th>
+            <th width="5%">#</th>
+            <th>{{ trans('columns.title') }}</th>
         </tr>
         </thead>
         <tbody>
-        @foreach($pages as $page)
-            <tr>
+        @foreach($pages as $i => $page)
+            <tr data-href="/admin/page/{{ $page->id }}" class="clickable-row">
                 <td>
-                    {{ $page->id }}
+                    {{ $i + 1 }}
                 </td>
                 <td>
                     {{ $page->title }}
-                </td>
-                <td>
-                    <a href="/admin/page/{{ $page->id }}">View</a>
                 </td>
             </tr>
         @endforeach
         </tbody>
     </table>
-</div>
 @endsection

@@ -11,6 +11,7 @@ Route::resource('page', 'Admin\PageController');
 
 // Invoices
 Route::resource('invoice', 'Admin\InvoiceController');
+Route::get('invoice/{invoice}/view', 'Admin\InvoiceController@view');
 
 // Reservations
 Route::resource('reservation', 'Admin\ReservationController');
@@ -26,3 +27,7 @@ Route::resource('user', 'Admin\UserController');
 
 // Scaffolds
 Route::resource('scaffold', 'Admin\ScaffoldController');
+
+// Settings
+Route::get('setting', 'Admin\SettingController@index');
+Route::patch('setting', 'Admin\SettingController@update');

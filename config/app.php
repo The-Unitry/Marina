@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'nl',
 
     /*
     |--------------------------------------------------------------------------
@@ -149,12 +149,18 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
-         * Application Service Providers...
+         * Application Service Providers
          */
         Navicula\Providers\AppServiceProvider::class,
         Navicula\Providers\AuthServiceProvider::class,
         Navicula\Providers\EventServiceProvider::class,
         Navicula\Providers\RouteServiceProvider::class,
+
+        /*
+         * Third party Service Providers
+         */
+        Intervention\Image\ImageServiceProvider::class
+
 
     ],
 
@@ -201,6 +207,12 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Setting' => \Navicula\Models\Setting::class,
+
+        /*
+         * Third party aliases
+         */
+        'Image' => Intervention\Image\Facades\Image::class
 
     ],
 
