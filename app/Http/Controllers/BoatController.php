@@ -83,7 +83,7 @@ class BoatController extends Controller
 
         $boat->save();
 
-        return redirect('/mijn-boten');
+        return redirect('/mijn-boten')->with('message', trans('confirmations.created_boat'));
     }
 
     /**
