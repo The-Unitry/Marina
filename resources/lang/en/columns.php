@@ -45,7 +45,7 @@ return [
     'text' => 'Text',
     'metatags' => 'Metatags',
     'description' => 'Description',
-    'header' => 'Header'
+    'header' => 'Header',
     'body' => 'Body',
 
     'company_name' => 'Company name',
