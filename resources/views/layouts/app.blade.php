@@ -33,6 +33,7 @@
                     <li><a href="{{ url('/reserveren') }}">{{ trans('navigation.reserve') }}</a></li>
                     @if(Auth::check())
                         <li><a href="{{ url('/mijn-boten') }}">{{ trans('navigation.my_boats') }}</a></li>
+                        <li><a href="{{ url('/mijn-boxen') }}">{{ trans('navigation.my_boxes') }}</a></li>
                     @endif
                     <li><a href="{{ url('/contact') }}">{{ trans('navigation.contact') }}</a></li>
                     @if(Auth::guest())

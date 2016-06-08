@@ -14,6 +14,9 @@ Route::get('mijn-boten/{boat}/delete', 'BoatController@destroy');
 // Reserve
 Route::get('reserveren', 'ReservationController@index');
 
+// Boxes
+Route::get('mijn-boxen', 'BoxController@index');
+
 // Posts
 Route::get('post/{slug}', 'PostController@show');
 
