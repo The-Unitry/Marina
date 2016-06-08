@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Reserveren
+@endsection
+
 @section('content')
     <div class="container content">
         <h3>

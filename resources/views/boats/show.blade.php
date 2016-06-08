@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    {{ $boat->name or 'Nieuwe boot' }}
+@endsection
+
 @section('content')
     <div class="container content">
         <h3>

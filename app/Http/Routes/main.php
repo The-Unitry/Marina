@@ -24,5 +24,8 @@ Route::get('post/{slug}', 'PostController@show');
 Route::get('contact', 'ContactController@index');
 Route::post('contact', 'ContactController@store');
 
+// Events
+Route::get('evenementen', 'EventController@index');
+
 // Authentication
 Route::auth();
