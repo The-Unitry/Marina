@@ -95,7 +95,11 @@ class BoatController extends Controller
      */
     public function destroy(Boat $boat)
     {
-        $boat->delete();
+        if (Auth::user() == $boat->owner) {
+            $boat->delete();
+        } else {
+            abort(403);
+        }
 
         return redirect('mijn-boten')->with('message', 'Je boot is verwijderd.');
     }
