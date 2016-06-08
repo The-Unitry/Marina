@@ -9,9 +9,9 @@
         <thead>
             <tr>
                 <th width="5%">#</th>
-                <th>Title</th>
-                <th>Created</th>
-                <th>Author</th>
+                <th>{{ trans('userinfo.title') }}</th>
+                <th>{{ trans('userinfo.created') }}</th>
+                <th>{{ trans('userinfo.author') }}</th>
             </tr>
         </thead>
         <tbody>

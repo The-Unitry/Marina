@@ -2,9 +2,9 @@
 
 @section('title')
     @if ($method == 'POST')
-        Create scaffold
+        {{ trans('navigation.create_scaffold') }}
     @elseif ($method == 'PATCH')
-        Edit scaffold
+        {{ trans('navigation.edit_scaffold') }}
     @endif
 @endsection
 
@@ -16,24 +16,24 @@
                     {{ method_field($method) }}
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="code" class="col-sm-2 control-label">Code</label>
+                        <label for="code" class="col-sm-2 control-label">{{ trans('columns.code') }}</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" name="code" id="code" value="{{ $scaffold->code or '' }}">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="on_land" class="col-sm-2 control-label">On land</label>
+                        <label for="on_land" class="col-sm-2 control-label">{{ trans('columns.on_land') }}</label>
                         <div class="col-sm-10">
                             <select name="on_land" id="on_land" class="form-control">
-                                <option value="0" selected>No</option>
-                                <option value="1" {{ (isset($scaffold) && $scaffold->on_land) ? 'selected' : ''  }}>Yes</option>
+                                <option value="0" selected>{{ trans('columns.no') }}</option>
+                                <option value="1" {{ (isset($scaffold) && $scaffold->on_land) ? 'selected' : ''  }}>{{ trans('columns.yes') }}</option>
                             </select>
                         </div>
                     </div>
 
                     @if(isset($scaffold))
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Boxes</label>
+                        <label class="col-sm-2 control-label">{{ trans('columns.boxes') }}</label>
                         <div class="col-sm-10">
                             <div class="list-group">
                                 @foreach($scaffold->boxes as $box)
@@ -48,8 +48,9 @@
                 </div>
                 <div class="col-md-2">
                     <div class="list-group">
-                        <button type="submit" class="list-group-item bg-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button>
-                        <a href="../scaffold" class="list-group-item"><span class="fa fa-arrow-left"></span> Back</a>
+                        <button type="submit" class="list-group-item bg-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i> 
+                        {{ trans('columns.save') }}</button>
+                        <a href="../scaffold" class="list-group-item"><span class="fa fa-arrow-left"></span> {{ trans('columns.back') }}</a>
                     </div>
                 </div>
             </div>

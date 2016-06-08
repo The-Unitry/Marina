@@ -6,7 +6,7 @@
             {{ trans('navigation.reservation') }}
         </h3>
         <p class="text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci aliquid aperiam beatae consequuntur eligendi expedita fugit, ipsa laudantium modi nemo officia officiis perspiciatis quaerat quas quo tempore ullam voluptas.
+            {{ trans('reservation.description') }}
         </p>
         <hr>
         <div class="row">
@@ -28,7 +28,7 @@
                     </h4>
                     <div class="input-daterange input-group" id="datepicker">
                         <input type="text" class="input-sm form-control" name="start" />
-                        <span class="input-group-addon">tot</span>
+                        <span class="input-group-addon">{{ trans('reservation.until') }}</span>
                         <input type="text" class="input-sm form-control" name="end" />
                     </div>
                 </div>
