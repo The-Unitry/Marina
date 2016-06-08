@@ -43,12 +43,6 @@
                             <input type="number" class="form-control" name="amount_of_persons" id="amount_of_persons" value="{{ $reservation->amount_of_persons or '' }}">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="amount_of_persons" class="col-sm-2 control-label">{{ trans('columns.created_at') }}</label>
-                        <div class="col-sm-10">
-                            <input type="number" class="form-control" id="amount_of_persons" value="{{ $reservation->created_at }}">
-                        </div>
-                    </div>
                 </div>
                 <div class="col-md-2">
                     <div class="list-group">
