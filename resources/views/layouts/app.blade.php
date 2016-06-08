@@ -33,7 +33,9 @@
                     <li><a href="{{ url('/reserveren') }}">{{ trans('menu.reserve') }}</a></li>
                     @if(Auth::check())
                         <li><a href="{{ url('/mijn-boten') }}">{{ trans('menu.my_boats') }}</a></li>
+                        <li><a href="{{ url('/kraanplan') }}">{{ trans('menu.crane_plan') }}</a></li>
                     @endif
+                    <li><a href="{{ url('/evenementen') }}">{{ trans('menu.events') }}</a></li>
                     <li><a href="{{ url('/contact') }}">{{ trans('menu.contact') }}</a></li>
                     @if(Auth::guest())
                         <li><a href="{{ url('/login') }}">{{ trans('menu.my_account') }}</a></li>

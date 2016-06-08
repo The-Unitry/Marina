@@ -16,6 +16,8 @@ return [
     'home' => 'Home',
     'reserve' => 'Reserveren',
     'my_boats' => 'Mijn boten',
+    'crane_plan' => 'Kraanplan',
+    'events' => 'Evenementen',
     'contact' => 'Contact',
     'my_account' => 'Mijn account',
     'log_out' => 'Uitloggen',

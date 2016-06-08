@@ -27,5 +27,8 @@ Route::post('contact', 'ContactController@store');
 // Events
 Route::get('evenementen', 'EventController@index');
 
+// Crane planning
+Route::get('kraanplan', 'CraneController@index');
+
 // Authentication
 Route::auth();
