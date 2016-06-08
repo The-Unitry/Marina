@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    {{ trans('navigation.boxes') }}
+    {{ trans('navigation.boxenpm install gulps') }}
 @endsection
 
 @section('content')
