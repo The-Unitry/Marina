@@ -35,7 +35,7 @@
                     {{ $reservation->box->getFullCode() }}
                 </td>
                 <td>
-                    {{ ($reservation->approved) ? 'Yes' : 'No' }}
+                    {{ ($reservation->approved) ? trans('columns.yes') : trans('columns.no') }}
                 </td>
             </tr>
         @endforeach
