@@ -59,6 +59,7 @@ return [
     'updated_at' => 'Bijgewerkt op',
     'tax' => 'Belasting',
     'tourist_tax' => 'Toeristenbelasting (centen)',
+    'bank_account' => 'Rekeningnummer',
     'author' => 'Auteur',
     'approved' => 'Goedgekeurd',
     'contact_form' => 'Contactformulier',

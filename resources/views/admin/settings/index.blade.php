@@ -60,6 +60,12 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label for="bank_account" class="col-sm-2 control-label">{{ trans('columns.bank_account') }}</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="bank_account" id="bank_account" value="{{ setting('bank_account') }}">
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="logo" class="col-sm-2 control-label">{{ trans('columns.logo') }}</label>
                         <div class="col-sm-10">
                             <input type="file" class="form-control" name="logo" id="logo">

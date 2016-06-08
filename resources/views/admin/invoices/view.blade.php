@@ -23,8 +23,9 @@
             </div>
         </div>
         <p>
-            Bedankt voor uw reservering!
+            Bedankt voor uw reservering en graag tot ziens.
         </p>
+        <br>
         <table class="table">
             <thead>
                 <tr>
@@ -49,7 +50,7 @@
         </table>
         <hr>
         <p>
-        Graag ontvangen we uw betaling binnen 10 werkdagen op rekeningnummer XXX t.a.v. {{ setting('company_name') }}.<br><br>
+        Graag ontvangen we uw betaling binnen 10 werkdagen op rekeningnummer <b>{{ setting('bank_account') }}</b> t.a.v. <b>{{ setting('company_name') }}</b>.<br><br>
 
             Met vriendelijke groet, <br>
             {{ setting('company_name') }}

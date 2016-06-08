@@ -55,6 +55,10 @@ return [
         [
             'key' => 'tourist_tax',
             'value' => '100',
+        ],
+        [
+            'key' => 'bank_account',
+            'value' => 'NL01 INGB 0000 0000 00',
         ]
     ]
 ];
