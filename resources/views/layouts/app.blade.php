@@ -55,6 +55,29 @@
 
     @yield('content')
 
+    <div class="footer">
+        <div class="container ">
+            <div class="row">
+                <div class="col-md-4">
+
+                </div>
+                <div class="col-md-4">
+
+                </div>
+                <div class="col-md-4">
+                    <span class="company_info">
+                        {{ setting('company_name') }} <br>
+                        <a href="">{{ setting('company_mail') }}</a> <br>
+                        {{ setting('company_address') }} <br>
+                        {{ setting('company_zipcode') }} <br>
+                        {{ setting('company_city') }} <br>
+                        {{ setting('company_phone') }} <br>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     @include('admin.partials.scripts')
 </body>
 </html>

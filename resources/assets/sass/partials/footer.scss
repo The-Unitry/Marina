@@ -1,0 +1,18 @@
+.footer {
+    background-color: $text;
+    .container {
+        height: 100%;
+        padding: 15px;
+        h4 {
+            color: $white;
+        }
+
+        .company_info {
+            color: $white;
+            font-size: 12pt;
+            a {
+                color: $blue;
+            }
+        }
+    }
+}
