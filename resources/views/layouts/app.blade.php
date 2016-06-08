@@ -21,7 +21,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="/') }}">
                     <span class="hidden-sm hidden-md hidden-lg">{{ setting('company_name') }}</span>
                     <img class="img-responsive hidden-xs logo-img" src="/media/logo/logo.png"/>
                 </a>
@@ -29,25 +29,34 @@
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{{ url('/') }}">{{ trans('menu.home') }}</a></li>
-                    <li><a href="{{ url('/blog') }}">{{ trans('menu.blog') }}</a></li>
-                    <li><a href="{{ url('/reserveren') }}">{{ trans('menu.reserve') }}</a></li>
+                    <!-- Main menu items -->
+                    <li><a href="/">{{ trans('menu.home') }}</a></li>
+                    <li><a href="/blog">{{ trans('menu.blog') }}</a></li>
+                    <li><a href="/reserveren">{{ trans('menu.reserve') }}</a></li>
+
+                    <!-- Authenticated routes -->
                     @if(Auth::check())
-                        <li><a href="{{ url('/mijn-boten') }}">{{ trans('menu.my_boats') }}</a></li>
-                        <li><a href="{{ url('/kraanplan') }}">{{ trans('menu.crane_plan') }}</a></li>
+                        <li><a href="/mijn-boten">{{ trans('menu.my_boats') }}</a></li>
+                        <li><a href="/kraanplan">{{ trans('menu.crane_plan') }}</a></li>
                     @endif
-                    <li><a href="{{ url('/evenementen') }}">{{ trans('menu.events') }}</a></li>
-                    <li><a href="{{ url('/contact') }}">{{ trans('menu.contact') }}</a></li>
+
+                    <!-- Main menu items -->
+                    <li><a href="/evenementen">{{ trans('menu.events') }}</a></li>
+                    <li><a href="/contact">{{ trans('menu.contact') }}</a></li>
+
+                    <!-- Login item-->
                     @if(Auth::guest())
-                        <li><a href="{{ url('/login') }}">{{ trans('menu.my_account') }}</a></li>
+                        <li><a href="/login">{{ trans('menu.my_account') }}</a></li>
                     @endif
+
+                    <!-- My account -->
                     @if(Auth::check())
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 {{ trans('menu.my_account') }} <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> {{ trans('menu.log_out') }}</a></li>
+                                <li><a href="/logout"><i class="fa fa-btn fa-sign-out"></i> {{ trans('menu.log_out') }}</a></li>
                             </ul>
                         </li>
                     @endif
