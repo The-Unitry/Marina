@@ -20,6 +20,7 @@ return [
     'password' => 'Password',
     'role' => 'Role',
 
+    'create' => 'Create',
     'create_post' => 'Create post',
     'create_page' => 'Create page',
     'create_invoice' => 'Create invoice',
