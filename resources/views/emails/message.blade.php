@@ -1,12 +1,12 @@
-<b>Naam:</b>
+<b>{{ trans('contact.name') }}:</b>
 <p>
     {{ $name }}
 </p>
-<b>Mail:</b>
+<b>{{ trans('contact.email') }}:</b>
 <p>
     {{ $mail }}
 </p>
-<b>Bericht:</b>
+<b>{{ trans('contact.message') }}:</b>
 <p>
     {{ $body }}
 </p>

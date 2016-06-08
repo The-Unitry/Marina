@@ -3,7 +3,7 @@
 @section('content')
     <div class="container content">
         <a href="/mijn-boten/nieuw" class="btn btn-primary pull-right">
-            Boot toevoegen
+            {{ trans('navigation.add_boat') }}
         </a>
         <h3>
             Mijn boten
