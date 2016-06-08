@@ -7,6 +7,15 @@
 @import "partials/alert";
 @import "partials/footer";
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 137px;
+}
+
 .posts {
   padding: 80px 0;
   .anchor {
