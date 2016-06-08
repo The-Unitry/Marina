@@ -58,21 +58,10 @@
     <div class="footer">
         <div class="container ">
             <div class="row">
-                <div class="col-md-4">
-
-                </div>
-                <div class="col-md-4">
-
-                </div>
-                <div class="col-md-4">
-                    <span class="company_info">
-                        {{ setting('company_name') }} <br>
-                        <a href="">{{ setting('company_mail') }}</a> <br>
-                        {{ setting('company_address') }} <br>
-                        {{ setting('company_zipcode') }} <br>
-                        {{ setting('company_city') }} <br>
-                        {{ setting('company_phone') }} <br>
-                    </span>
+                <div class="col-md-12 text-center">
+                    <h3>Docking With A Breeze</h3>
+                    <hr>
+                    <small class="copyright">Copyright &copy; LINK 2016 | Alle rechten voorbehouden</small>
                 </div>
             </div>
         </div>
