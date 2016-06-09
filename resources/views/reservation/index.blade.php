@@ -9,9 +9,11 @@
         <h3>
             {{ trans('menu.reservations') }}
         </h3>
-        <p class="text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci deleniti doloribus eligendi temporibus, tenetur voluptatum. Adipisci aperiam at autem blanditiis enim facere facilis harum id, minima obcaecati perferendis quod ut.
-        </p>
+        <div class="row">
+            <p class="text col-md-8">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci deleniti doloribus eligendi temporibus, tenetur voluptatum. Adipisci aperiam at autem blanditiis enim facere facilis harum id, minima obcaecati perferendis quod ut.
+            </p>
+        </div>
         <hr>
         <div class="row">
             <div class="steps col-md-8">
