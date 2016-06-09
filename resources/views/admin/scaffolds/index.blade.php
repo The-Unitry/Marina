@@ -10,7 +10,7 @@
         <tr>
             <th width="5%">#</th>
             <th>{{ trans('columns.code') }}</th>
-            <th>{{ trans('columns.boxes') }}</th>
+            <th>{{ trans('columns.assigned_boxes') }}</th>
         </tr>
         </thead>
         <tbody>

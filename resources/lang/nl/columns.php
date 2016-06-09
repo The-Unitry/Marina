@@ -4,7 +4,7 @@ return [
 
     'code' => 'Code',
     'boxes' => 'Ligplaatsen',
-    'no_boxes' => 'Geen ligplaatsen',
+    'no_boxes' => 'Geen ligplaatsen toegewezen',
     'scaffold' => 'Steiger',
     'on_land' => 'Op land',
     'pending' => 'Wachtend',
@@ -59,7 +59,7 @@ return [
     'created_at' => 'Gemaakt op',
     'updated_at' => 'Bijgewerkt op',
     'tax' => 'Belasting',
-    'tourist_tax' => 'Toeristenbelasting (centen)',
+    'tourist_tax' => 'Toeristenbelasting',
     'bank_account' => 'Rekeningnummer',
     'author' => 'Auteur',
     'approved' => 'Goedgekeurd',
@@ -67,6 +67,7 @@ return [
     'register'=>'Registreren',
     'password_confirm'=>'Wachtwoord bevestigen',
     'send_register'=>'Registratie bevestigen',
+    'assigned_boxes'=>'Toegewezen ligplaatsen',
 
     'sizes' => [
 
