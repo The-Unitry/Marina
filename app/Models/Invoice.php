@@ -29,4 +29,14 @@ class Invoice extends Model
 
         return number_format($totalPrice, 2, ',', '.');
     }
+
+    /**
+     * Return all products from this invoice.
+     *
+     * @return hasMany
+     */
+    public function products()
+    {
+        return $this->hasMany(Product::class, 'invoice_id');
+    }
 }

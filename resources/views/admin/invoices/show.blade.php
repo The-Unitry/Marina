@@ -28,6 +28,25 @@
                             </select>
                         </div>
                     </div>
+                    @if(isset($invoice) && sizeof($invoice->products))
+                    <div class="form-group">
+                        <label for="status" class="col-sm-2 control-label">Products</label>
+                        <div class="col-sm-10">
+                            @foreach($invoice->products as $product)
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input type="text"
+                                           class="form-control"
+                                           name="[products][{{ $product->id }}][description]"
+                                           value="{{ $product->description }}"
+                                           placeholder="Description" 
+                                    >
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    @endif
                 </div>
                 <div class="col-md-2">
                     <div class="list-group">
