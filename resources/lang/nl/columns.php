@@ -9,7 +9,7 @@ return [
     'on_land' => 'Op land',
     'pending' => 'Wachtend',
     'paid' => 'Betaald',
-    'cancelled' => 'Creditnota',
+    'cancelled' => 'Geannuleerd',
     'print' => 'Printen',
     'available' => 'Beschikbaar',
     'unavailable' => 'Niet beschikbaar',
