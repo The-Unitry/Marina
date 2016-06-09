@@ -16,7 +16,7 @@ return [
 
     'home' => 'Home',
     'blog' => 'Nieuwsberichten',
-    'reserve' => 'Boeken ligplaats',
+    'reserve' => 'Ligplaats boeken',
     'my_boats' => 'Mijn boten',
     'crane_plan' => 'Kraanplan',
     'events' => 'Evenementen',
