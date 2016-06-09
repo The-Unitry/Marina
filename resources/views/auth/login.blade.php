@@ -3,10 +3,10 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2" style="margin-top: 50px">
+        <div class="col-md-8" style="margin-top: 50px">
             <div class="panel panel-default">
                 <div class="panel-heading">Inloggen</div>
-                <div class="panel-body">
+                <div class="panel-body login-panel">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
 
@@ -58,6 +58,21 @@
                             </div>
                         </div>
                     </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4" style="margin-top: 50px">
+            <div class="panel panel-default">
+                <div class="panel-heading">Registreren</div>
+                <div class="panel-body register-panel">
+                    <p class="col-md-10">
+                        Door een account aan te maken kunt u het proces om een ligplaats te registreren sneller doorlopen, meerdere boten toevoegen, wijzigen en bekijken.
+                    </p>
+                    <a href="/register" class="btn btn-primary register">
+                        <i class="fa fa-btn fa-sign-in"></i> Registreer
+                    </a>
+                    </div>
                 </div>
             </div>
         </div>
