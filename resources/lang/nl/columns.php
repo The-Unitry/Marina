@@ -3,13 +3,13 @@
 return [
 
     'code' => 'Code',
-    'boxes' => 'Boxen',
-    'no_boxes' => 'Geen boxen',
+    'boxes' => 'Ligplaatsen',
+    'no_boxes' => 'Geen ligplaatsen toegewezen',
     'scaffold' => 'Steiger',
     'on_land' => 'Op land',
     'pending' => 'Wachtend',
     'paid' => 'Betaald',
-    'cancelled' => 'Geannuleerd',
+    'cancelled' => 'Creditnota',
     'print' => 'Printen',
     'available' => 'Beschikbaar',
     'unavailable' => 'Niet beschikbaar',
@@ -40,11 +40,11 @@ return [
     'yes' => 'Ja',
     'no' => 'Nee',
     'name' => 'Naam',
-    'boat_info' => 'Boot gegevens',
-    'boat_size' => 'Boot formaat',
+    'boat_info' => 'Gegevens',
+    'boat_size' => 'Formaat',
     'email' => 'E-mail adres',
     'message' => 'Uw bericht',
-    'box' => 'Box',
+    'box' => 'Ligplaats',
     'status' => 'Status',
     'start_date' => 'Startdatum',
     'end_date' => 'Einddatum',
@@ -59,18 +59,22 @@ return [
     'created_at' => 'Gemaakt op',
     'updated_at' => 'Bijgewerkt op',
     'tax' => 'Belasting',
-    'tourist_tax' => 'Toeristenbelasting (centen)',
+    'tourist_tax' => 'Toeristenbelasting',
     'bank_account' => 'Rekeningnummer',
     'author' => 'Auteur',
     'approved' => 'Goedgekeurd',
     'contact_form' => 'Contactformulier',
+    'register'=>'Registreren',
+    'password_confirm'=>'Wachtwoord bevestigen',
+    'send_register'=>'Registratie bevestigen',
+    'assigned_boxes'=>'Toegewezen ligplaatsen',
 
     'sizes' => [
 
-        'height' => 'Hoogte (cm)',
-        'length' => 'Lengte (cm)',
-        'depth' => 'Diepte (cm)',
-        'width' => 'Breedte (cm)',
+        'height' => 'Hoogte (m)',
+        'length' => 'Lengte (m)',
+        'depth' => 'Diepte (m)',
+        'width' => 'Breedte (m)',
 
     ],
 
@@ -81,7 +85,6 @@ return [
         'manager' => 'Manager',
         'user' => 'Gebruiker',
         'visitor' => 'Bezoeker',
-
     ]
 
 ];

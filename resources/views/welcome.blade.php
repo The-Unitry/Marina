@@ -4,11 +4,11 @@
 <div class="header">
     <div class="container">
         <div class="main-title">
-            <h1>Reserveer makkelijk en online je box</h1>
+            <h1>Boek makkelijk en online je ligplaats</h1>
         </div>
         <a href="#">
             <a href="/reserveren" class="btn btn-signup">
-                Reserveren
+                Boeken
             </a>
         </a>
     </div>
