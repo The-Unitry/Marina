@@ -3,13 +3,13 @@
 return [
 
     'code' => 'Code',
-    'boxes' => 'Boxen',
-    'no_boxes' => 'Geen boxen',
+    'boxes' => 'Ligplaatsen',
+    'no_boxes' => 'Geen ligplaatsen',
     'scaffold' => 'Steiger',
     'on_land' => 'Op land',
     'pending' => 'Wachtend',
     'paid' => 'Betaald',
-    'cancelled' => 'Geannuleerd',
+    'cancelled' => 'Creditnota',
     'print' => 'Printen',
     'available' => 'Beschikbaar',
     'unavailable' => 'Niet beschikbaar',
@@ -44,7 +44,7 @@ return [
     'boat_size' => 'Boot formaat',
     'email' => 'E-mail adres',
     'message' => 'Uw bericht',
-    'box' => 'Box',
+    'box' => 'Ligplaats',
     'status' => 'Status',
     'start_date' => 'Startdatum',
     'end_date' => 'Einddatum',
@@ -67,10 +67,10 @@ return [
 
     'sizes' => [
 
-        'height' => 'Hoogte (cm)',
-        'length' => 'Lengte (cm)',
-        'depth' => 'Diepte (cm)',
-        'width' => 'Breedte (cm)',
+        'height' => 'Hoogte (m)',
+        'length' => 'Lengte (m)',
+        'depth' => 'Diepte (m)',
+        'width' => 'Breedte (m)',
 
     ],
 
@@ -81,7 +81,6 @@ return [
         'manager' => 'Manager',
         'user' => 'Gebruiker',
         'visitor' => 'Bezoeker',
-
     ]
 
 ];

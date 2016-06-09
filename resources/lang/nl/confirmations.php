@@ -6,10 +6,10 @@ return [
         
         'scaffold' => 'Steiger is aangemaakt',
         'boat' => 'Boot is aangemaakt',
-        'box' => 'Box is aangemaakt',
+        'box' => 'Ligplaats is aangemaakt',
         'page' => 'Pagina is aangemaakt',
-        'post' => 'Post is aangemaakt',
-        'reservation' => 'Reservering is aangemaakt',
+        'post' => 'Nieuwsbericht is aangemaakt',
+        'reservation' => 'Boeking is aangemaakt',
         'user' => 'Gebruiker is aangemaakt',
         'invoice' => 'Factuur is aangemaakt',
 
@@ -19,10 +19,10 @@ return [
         
         'scaffold' => 'Steiger is bijgewerkt',
         'boat' => 'Boot is bijgewerkt',
-        'box' => 'Box is bijgewerkt',
+        'box' => 'Ligplaats is bijgewerkt',
         'page' => 'Pagina is bijgewerkt',
-        'post' => 'Post is bijgewerkt',
-        'reservation' => 'Reservering is bijgewerkt',
+        'post' => 'Nieuwsbericht is bijgewerkt',
+        'reservation' => 'Boeking is bijgewerkt',
         'user' => 'Gebruiker is bijgewerkt',
         'settings' => 'Instellingen zijn bijgewerkt',
         'invoice' => 'Factuur is bijgewerkt',
