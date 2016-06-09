@@ -8,7 +8,7 @@
     @if($post->hasHeader())
         <img src="/media/header/{{ $post->header_path }}.png" alt="" width="100%">
     @else
-        <div class="header"></div>
+        <div class="header" style="height: 420px !important; margin-bottom: 30px;"></div>
     @endif
     <div class="container content">
         <article>
