@@ -1,8 +1,9 @@
 $(document).ready(function () {
+	var date = new Date();
 
-	var date = new Date()
     $('.input-daterange').datepicker({
         language: "nl",
-        todayHighlight: true
+        todayHighlight: true,
+        startDate: date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear()
     });
 });
