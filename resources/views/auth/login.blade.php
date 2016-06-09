@@ -51,7 +51,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-sign-in"></i> Login
+                                    <i class="fa fa-btn fa-sign-in"></i> Inloggen
                                 </button>
 
                                 <a class="btn btn-link" href="{{ url('/password/reset') }}">{{ trans('columns.forgot_password') }}</a>
@@ -66,12 +66,15 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Registreren</div>
                 <div class="panel-body register-panel">
-                    <p>
-                        Met een account kunt u makkelijk een ligplaats registreren, heeft u een handig overzicht van al uw boten en blijft u op de hoogte van onze jachthaven.
-                    </p>
-                    <a href="/register" class="btn btn-primary">
-                        <i class="fa fa-btn fa-sign-in"></i> Registeren
-                    </a>
+                    <div class="row">
+                        <div class="col-md-10">
+                            <p>
+                                Met een account kunt u makkelijk een ligplaats registreren, heeft u een handig overzicht van al uw boten en blijft u op de hoogte van onze jachthaven.
+                            </p>
+                            <a href="/register" class="btn btn-primary">
+                                <i class="fa fa-btn fa-sign-in"></i> Registreren
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
