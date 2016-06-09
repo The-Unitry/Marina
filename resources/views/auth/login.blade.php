@@ -66,11 +66,11 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Registreren</div>
                 <div class="panel-body register-panel">
-                    <p class="col-md-10">
-                        Door een account aan te maken kunt u het proces om een ligplaats te registreren sneller doorlopen, meerdere boten toevoegen, wijzigen en bekijken.
+                    <p>
+                        Met een account kunt u makkelijk een ligplaats registreren, heeft u een handig overzicht van al uw boten en blijft u op de hoogte van onze jachthaven.
                     </p>
-                    <a href="/register" class="btn btn-primary register">
-                        <i class="fa fa-btn fa-sign-in"></i> Registreer
+                    <a href="/register" class="btn btn-primary">
+                        <i class="fa fa-btn fa-sign-in"></i> Registeren
                     </a>
                     </div>
                 </div>
