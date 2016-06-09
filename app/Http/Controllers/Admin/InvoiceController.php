@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use Navicula\Http\Requests;
 use Navicula\Models\Invoice;
+use Navicula\Models\Product;
 
 class InvoiceController extends AdminController
 {
@@ -109,5 +110,20 @@ class InvoiceController extends AdminController
         return view('admin.invoices.view', [
             'invoice' => $invoice
         ]);
+    }
+
+    /**
+     * Add empty product to the given invoice.
+     *
+     * @param Invoice $invoice
+     * @return void
+     */
+    public function addProduct(Invoice $invoice)
+    {
+        Product::create([
+            'invoice_id' => $invoice->id
+        ]);
+
+        return redirect('/admin/invoice/' . $invoice->id);
     }
 }
