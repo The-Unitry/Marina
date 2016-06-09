@@ -12,11 +12,11 @@ return [
             'url' => 'post',
             'icon' => ''
         ],
-        [
+        /*[
             'name' => 'pages',
             'url' => 'page',
             'icon' => ''
-        ],
+        ],*/
         [
             'name' => 'invoices',
             'url' => 'invoice',
@@ -25,6 +25,11 @@ return [
         [
             'name' => 'reservations',
             'url' => 'reservation',
+            'icon' => ''
+        ],
+        [
+            'name' => 'requests',
+            'url' => 'request',
             'icon' => ''
         ],
         [

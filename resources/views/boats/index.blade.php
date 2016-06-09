@@ -1,9 +1,13 @@
 @extends('layouts.app')
 
+@section('title')
+    Mijn boten
+@endsection
+
 @section('content')
     <div class="container content">
         <a href="/mijn-boten/nieuw" class="btn btn-primary pull-right">
-            Boot toevoegen
+            {{ trans('actions.create.boat') }}
         </a>
         <h3>
             Mijn boten

@@ -54,6 +54,8 @@ class SettingController extends AdminController
             Image::make($request->all()['logo'])->save('img/upload/logo.png');
         }
 
-        return back()->with('message', trans('confirmations.updated_settings'));
+        return back()->with(
+            'message', trans('confirmations.updated.settings')
+        );
     }
 }

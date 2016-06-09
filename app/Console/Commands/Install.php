@@ -3,6 +3,7 @@
 namespace Navicula\Console\Commands;
 
 use Illuminate\Console\Command;
+use Navicula\Http\Controllers\Admin\ScaffoldController;
 use Navicula\Http\Controllers\RoleController;
 use Navicula\Http\Controllers\SettingController;
 
@@ -41,5 +42,6 @@ class Install extends Command
     {
         RoleController::createRoles();
         SettingController::createSettings();
+        ScaffoldController::createHiddenScaffold();
     }
 }

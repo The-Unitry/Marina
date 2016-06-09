@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    {{ trans('navigation.boxenpm install gulps') }}
+    {{ trans('menu.boxes') }}
 @endsection
 
 @section('content')
@@ -15,6 +15,7 @@
         </thead>
         <tbody>
         @foreach($boxes as $i => $box)
+            @if(!$box->scaffold->hidden)
             <tr data-href="/admin/box/{{ $box->id }}" class="clickable-row">
                 <td>
                     {{ $i + 1 }}
@@ -23,9 +24,10 @@
                     {{ $box->scaffold->code . $box->id }}
                 </td>
                 <td>
-                    {{ ($box->isAvailable()) ? 'Available' : 'Unavailable' }}
+                    {{ ($box->isAvailable()) ? trans('columns.available') : trans('columns.unavailable') }}
                 </td>
             </tr>
+            @endif
         @endforeach
         </tbody>
     </table>

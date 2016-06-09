@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    {{ trans('navigation.scaffolds') }}
+    {{ trans('menu.scaffolds') }}
 @endsection
 
 @section('content')
@@ -9,8 +9,8 @@
         <thead>
         <tr>
             <th width="5%">#</th>
-            <th>Code</th>
-            <th>Boxes</th>
+            <th>{{ trans('columns.code') }}</th>
+            <th>{{ trans('columns.boxes') }}</th>
         </tr>
         </thead>
         <tbody>

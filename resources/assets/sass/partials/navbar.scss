@@ -1,7 +1,8 @@
 .navbar {
   margin: 0;
   height: 100px;
-  background-color: $white;
+  background-color: #FFFFFF;
+  box-shadow: 0 1px 8px 0 rgba(50, 50, 50, 0.10);
 
   .nav {
     padding-top: 25px;
@@ -18,7 +19,7 @@
   }
 
   .navbar-collapse {
-    background-color: $white;
+    background-color: #FFFFFF;
   }
 }
 

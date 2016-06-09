@@ -58,4 +58,13 @@ class Post extends Model
         return false;
     }
 
+    /**
+     * Return the amount of days since the creation date.
+     *
+     * @return int
+     */
+    public function daysSinceCreated()
+    {
+        return Carbon::parse($this->created_at)->diffInDays();
+    }
 }

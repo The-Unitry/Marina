@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    {{ trans('navigation.users') }}
+    {{ trans('menu.users') }}
 @endsection
 
 @section('content')
@@ -9,9 +9,9 @@
         <thead>
         <tr>
             <th width="5%">#</th>
-            <th>Name</th>
-            <th>Mail</th>
-            <th>Role</th>
+            <th>{{ trans('columns.name') }}</th>
+            <th>{{ trans('columns.email') }}</th>
+            <th>{{ trans('columns.role') }}</th>
         </tr>
         </thead>
         <tbody>
@@ -27,7 +27,7 @@
                     {{ $user->email }}
                 </td>
                 <td>
-                    {{ ucfirst($user->role->name) }}
+                    {{ trans('columns.roles.' . $user->role->name) }}
                 </td>
             </tr>
         @endforeach

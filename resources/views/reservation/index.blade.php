@@ -1,12 +1,16 @@
 @extends('layouts.app')
 
+@section('title')
+    Reserveren
+@endsection
+
 @section('content')
     <div class="container content">
         <h3>
             Reserveren
         </h3>
         <p class="text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci aliquid aperiam beatae consequuntur eligendi expedita fugit, ipsa laudantium modi nemo officia officiis perspiciatis quaerat quas quo tempore ullam voluptas.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci deleniti doloribus eligendi temporibus, tenetur voluptatum. Adipisci aperiam at autem blanditiis enim facere facilis harum id, minima obcaecati perferendis quod ut.
         </p>
         <hr>
         <div class="row">
@@ -41,7 +45,7 @@
                 </div>
                 <br>
                 <a href="" class="btn btn-primary pull-right">
-                    Volgende
+                    {{ trans('actions.next') }}
                 </a>
             </div>
             <div class="col-md-4">

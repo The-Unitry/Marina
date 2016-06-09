@@ -46,7 +46,9 @@ class PageController extends AdminController
         $page->user_id = Auth::user()->id;
         $page->save();
 
-        return redirect('/admin/page/' . $page->id)->with('message', trans('confirmations.created_page'));
+        return redirect('/admin/page/' . $page->id)->with(
+            'message', trans('confirmations.created.page')
+        );
     }
 
     /**
@@ -85,14 +87,17 @@ class PageController extends AdminController
     {
         $page->update($request->all());
 
-        return back()->with('message', trans('confirmations.updated_page'));
+        return back()->with(
+            'message', trans('confirmations.updated.page')
+        );
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param Page $page
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
     public function destroy(Page $page)
     {

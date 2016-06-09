@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Scaffold extends Model
 {
-    protected $fillable = ['code', 'on_land'];
+    protected $fillable = ['code', 'on_land', 'hidden'];
 
     /**
      * Get the boxes on this scaffold.

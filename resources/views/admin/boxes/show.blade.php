@@ -2,9 +2,9 @@
 
 @section('title')
     @if ($method == 'POST')
-        {{ trans('columns.create_box') }}
+        {{ trans('actions.create.box') }}
     @elseif ($method == 'PATCH')
-        {{ trans('columns.edit_box') }}
+        {{ trans('actions.edit.box') }}
     @endif
 @endsection
 
@@ -28,19 +28,19 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="depth" class="col-sm-2 control-label">{{ trans('columns.depth') }}</label>
+                        <label for="depth" class="col-sm-2 control-label">{{ trans('columns.sizes.depth') }}</label>
                         <div class="col-sm-10">
                             <input type="number" class="form-control" name="depth" id="depth" value="{{ $box->depth or '' }}">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="length" class="col-sm-2 control-label">{{ trans('columns.length') }}</label>
+                        <label for="length" class="col-sm-2 control-label">{{ trans('columns.sizes.length') }}</label>
                         <div class="col-sm-10">
                             <input type="number" class="form-control" name="length" id="length" value="{{ $box->length or '' }}">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="width" class="col-sm-2 control-label">{{ trans('columns.width') }}</label>
+                        <label for="width" class="col-sm-2 control-label">{{ trans('columns.sizes.width') }}</label>
                         <div class="col-sm-10">
                             <input type="number" class="form-control" name="width" id="width" value="{{ $box->width or '' }}">
                         </div>
@@ -61,8 +61,8 @@
                 <div class="col-md-2">
                     <div class="list-group">
                         <button type="submit" class="list-group-item bg-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i> 
-                        {{ trans('columns.save') }}</button>
-                        <a href="../box" class="list-group-item"><span class="fa fa-arrow-left"></span> {{ trans('columns.back') }}</a>
+                        {{ trans('actions.save') }}</button>
+                        <a href="../box" class="list-group-item"><span class="fa fa-arrow-left"></span> {{ trans('actions.back') }}</a>
                     </div>
                 </div>
             </div>

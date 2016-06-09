@@ -1,9 +1,13 @@
 @extends('layouts.app')
 
+@section('title')
+    {{ $boat->name or 'Nieuwe boot' }}
+@endsection
+
 @section('content')
     <div class="container content">
         <h3>
-            Boot toevoegen
+            {{ trans('actions.create.boat') }}
         </h3>
         <br>
         <form action="{{ (!isset($boat)) ? '/mijn-boten' : '/mijn-boten/'. $boat->id }}" method="post" enctype="multipart/form-data">
@@ -11,14 +15,14 @@
             {{ method_field($method) }}
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <p class="panel-title">Boot gegevens</p>
+                    <p class="panel-title">{{ trans('columns.boat_info') }}</p>
                 </div>
                 <div class="panel-body">
                     <table class="table borderless">
                         <tbody>
                         <tr>
                             <td width="15%">
-                                <label for="name">Naam</label>
+                                <label for="name">{{ trans('columns.name') }}</label>
                             </td>
                             <td>
                                 <input type="text" class="form-control" id="name" name="name"
@@ -27,7 +31,7 @@
                         </tr>
                         <tr>
                             <td width="15%">
-                                <label for="brand">Merk</label>
+                                <label for="brand">{{ trans('columns.brand') }}</label>
                             </td>
                             <td>
                                 <input type="text" class="form-control" id="brand" name="brand"
@@ -36,7 +40,7 @@
                         </tr>
                         <tr>
                             <td width="15%">
-                                <label for="model">Model</label>
+                                <label for="model">{{ trans('columns.model') }}</label>
                             </td>
                             <td>
                                 <input type="text" class="form-control" id="model" name="model"
@@ -45,7 +49,7 @@
                         </tr>
                         <tr>
                             <td width="15%">
-                                <label for="color">Kleur</label>
+                                <label for="color">{{ trans('columns.color') }}</label>
                             </td>
                             <td>
                                 <input type="text" class="form-control" id="color" name="color"
@@ -54,13 +58,13 @@
                         </tr>
                         <tr>
                             <td width="15%">
-                                <label for="type">Type</label>
+                                <label for="type">{{ trans('columns.type') }}</label>
                             </td>
                             <td>
                                 <select name="type" id="type" class="form-control">
-                                    <option value="Motorboot" {{ (isset($boat) && $boat->type == 'Motorboot' ? 'selected' : '') }}>Motorboot</option>
-                                    <option value="Zeilboot" {{ (isset($boat) && $boat->type == 'Zeilboot' ? 'selected' : '') }}>Zeilboot</option>
-                                    <option value="Anders" {{ (isset($boat) && $boat->type == 'Anders' ? 'selected' : '') }}>Anders</option>
+                                    <option value="Motorboot" {{ (isset($boat) && $boat->type == 'Motorboot' ? 'selected' : '') }}>{{ $boat->type }}</option>
+                                    <option value="Zeilboot" {{ (isset($boat) && $boat->type == 'Zeilboot' ? 'selected' : '') }}>{{ $boat->type }}</option>
+                                    <option value="Anders" {{ (isset($boat) && $boat->type == 'Anders' ? 'selected' : '') }}>{{ $boat->type }}</option>
                                 </select>
                             </td>
                         </tr>
@@ -70,14 +74,14 @@
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <p class="panel-title">Afmetingen</p>
+                    <p class="panel-title">{{ trans('columns.boat_size') }}</p>
                 </div>
                 <div class="panel-body">
                     <table class="table borderless">
                         <tbody>
                         <tr>
                             <td width="15%">
-                                <label for="height">Hoogte (cm)</label>
+                                <label for="height">{{ trans('columns.sizes.height') }}</label>
                             </td>
                             <td>
                                 <input type="number" class="form-control" id="height" name="height"
@@ -86,7 +90,7 @@
                         </tr>
                         <tr>
                             <td width="15%">
-                                <label for="length">Lengte (cm)</label>
+                                <label for="length">{{ trans('columns.sizes.length') }}</label>
                             </td>
                             <td>
                                 <input type="number" class="form-control" id="length" name="length"
@@ -95,7 +99,7 @@
                         </tr>
                         <tr>
                             <td width="15%">
-                                <label for="depth">Diepte (cm)</label>
+                                <label for="depth">{{ trans('columns.sizes.depth') }}</label>
                             </td>
                             <td>
                                 <input type="number" class="form-control" id="depth" name="depth"
@@ -104,7 +108,7 @@
                         </tr>
                         <tr>
                             <td width="15%">
-                                <label for="width">Breedte (cm)</label>
+                                <label for="width">{{ trans('columns.sizes.width') }}</label>
                             </td>
                             <td>
                                 <input type="number" class="form-control" id="width" name="width"
@@ -115,10 +119,10 @@
                     </table>
                 </div>
             </div>
-            <a href="/mijn-boten" class="btn btn-default"><span class="fa fa-arrow-left"></span> Terug naar overzicht</a>
+            <a href="/mijn-boten" class="btn btn-default"><span class="fa fa-arrow-left"></span> {{ trans('actions.back') }}</a>
             <button type="submit" class="btn btn-primary pull-right">Opslaan</button>
             @if(isset($boat))
-                <a href="/mijn-boten/{{ $boat->id }}/delete" class="btn btn-link pull-right">Boot verwijderen</a>
+                <a href="/mijn-boten/{{ $boat->id }}/delete" class="btn btn-link pull-right"> {{ trans('actions.delete.boat') }}</a>
             @endif
         </form>
     </div>
