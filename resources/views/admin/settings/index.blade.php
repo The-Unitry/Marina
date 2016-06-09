@@ -50,13 +50,19 @@
                     <div class="form-group">
                         <label for="tax" class="col-sm-2 control-label">{{ trans('columns.tax') }}</label>
                         <div class="col-sm-10">
+                          <div class="input-group">
                             <input type="text" class="form-control" name="tax" id="tax" value="{{ setting('tax') }}">
+                            <span class="input-group-addon">&#37;</span>
+                          </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="tourist_tax" class="col-sm-2 control-label">{{ trans('columns.tourist_tax') }}</label>
                         <div class="col-sm-10">
+                          <div class="input-group">
+                            <span class="input-group-addon">&euro;</span>
                             <input type="text" class="form-control" name="tourist_tax" id="tourist_tax" value="{{ setting('tourist_tax') }}">
+                          </div>
                         </div>
                     </div>
                     <div class="form-group">

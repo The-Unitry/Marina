@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Contact
+    {{ trans('menu.contact') }}
 @endsection
 
 @section('content')

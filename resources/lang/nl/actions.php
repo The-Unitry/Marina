@@ -11,12 +11,12 @@ return [
 
     'create' => [
 
-        'post' => 'Post maken',
+        'post' => 'Nieuwsbericht maken',
         'page' => 'Pagina maken',
         'invoice' => 'Factuur maken',
-        'reservation' => 'Reservering toevoegen',
+        'reservation' => 'Boeking toevoegen',
         'request' => 'Aanvraag toevoegen',
-        'box' => 'Box toevoegen',
+        'box' => 'Ligplaats toevoegen',
         'boat' => 'Boot toevoegen',
         'user' => 'Gebruiker toevoegen',
         'scaffold' => 'Steiger toevoegen'
@@ -25,12 +25,12 @@ return [
 
     'edit' => [
 
-        'post' => 'Post bewerken',
+        'post' => 'Nieuwsbericht bewerken',
         'page' => 'Pagina bewerken',
         'invoice' => 'Factuur bewerken',
-        'reservation' => 'Reservering bewerken',
+        'reservation' => 'Boeking bewerken',
         'request' => 'Aanvraag verwerken',
-        'box' => 'Box bewerken',
+        'box' => 'Ligplaats bewerken',
         'boat' => 'Boot bewerken',
         'user' => 'Gebruiker bewerken',
         'scaffold' => 'Steiger bewerken',
@@ -39,11 +39,11 @@ return [
 
     'delete' => [
 
-        'post' => 'Post verwijderen',
+        'post' => 'Nieuwsbericht verwijderen',
         'page' => 'Pagina verwijderen',
         'invoice' => 'Factuur verwijderen',
-        'reservation' => 'Reservering verwijderen',
-        'box' => 'Box verwijderen',
+        'reservation' => 'Boeking verwijderen',
+        'box' => 'Ligplaats verwijderen',
         'boat' => 'Boot verwijderen',
         'user' => 'Gebruiker verwijderen',
         'scaffold' => 'Steiger verwijderen',

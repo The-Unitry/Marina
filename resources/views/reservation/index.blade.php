@@ -1,17 +1,19 @@
 @extends('layouts.app')
 
 @section('title')
-    Reserveren
+    {{ trans('menu.reservations') }}
 @endsection
 
 @section('content')
     <div class="container content">
         <h3>
-            Reserveren
+            {{ trans('menu.reservations') }}
         </h3>
-        <p class="text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci deleniti doloribus eligendi temporibus, tenetur voluptatum. Adipisci aperiam at autem blanditiis enim facere facilis harum id, minima obcaecati perferendis quod ut.
-        </p>
+        <div class="row">
+            <p class="text col-md-8">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci deleniti doloribus eligendi temporibus, tenetur voluptatum. Adipisci aperiam at autem blanditiis enim facere facilis harum id, minima obcaecati perferendis quod ut.
+            </p>
+        </div>
         <hr>
         <div class="row">
             <div class="steps col-md-8">
@@ -31,7 +33,7 @@
                         2. Kies de periode
                     </h4>
                     <div class="input-daterange input-group" id="datepicker">
-                        <input type="text" class="input-sm form-control" name="start" />
+                        <input type="text" class="input-sm form-control" name="start" value="{{ date('d-m-Y') }}" />
                         <span class="input-group-addon">tot</span>
                         <input type="text" class="input-sm form-control" name="end" />
                     </div>
@@ -39,7 +41,7 @@
                 <hr>
                 <div>
                     <h4>
-                        3. Kies de hoeveelheid personen <small>(incl. uzelf)</small>
+                        3. Kies het aantal personen <small>(incl. uzelf)</small>
                     </h4>
                     <input type="number" value="0" class="form-control">
                 </div>
