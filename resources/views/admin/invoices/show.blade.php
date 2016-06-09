@@ -28,25 +28,83 @@
                             </select>
                         </div>
                     </div>
-                    @if(isset($invoice) && sizeof($invoice->products))
                     <div class="form-group">
                         <label for="status" class="col-sm-2 control-label">Products</label>
                         <div class="col-sm-10">
-                            @foreach($invoice->products as $product)
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <input type="text"
-                                           class="form-control"
-                                           name="[products][{{ $product->id }}][description]"
-                                           value="{{ $product->description }}"
-                                           placeholder="Description" 
-                                    >
-                                </div>
-                            </div>
-                            @endforeach
+                            <table class="table">
+                                @if(isset($invoice) && sizeof($invoice->products))
+                                <thead>
+                                    <tr>
+                                        <th>Description</th>
+                                        <th>Amount</th>
+                                        <th>Price</th>
+                                        <th colspan="2">VAT</th>
+                                    </tr>
+                                </thead>
+                                @endif
+                                <tbody>
+                                    @if(isset($invoice) && sizeof($invoice->products))
+                                    @foreach($invoice->products as $product)
+                                    <tr>
+                                        <td class="col-sm-5">
+                                            <input type="text"
+                                                   class="form-control"
+                                                   name="[products][{{ $product->id }}][description]"
+                                                   value="{{ $product->description }}"
+                                                   placeholder="Description" 
+                                            >
+                                        </td>
+                                        <td class="col-sm-2">
+                                            <input type="number"
+                                                   class="form-control"
+                                                   name="[products][{{ $product->id }}][amount]"
+                                                   value="{{ $product->amount }}"
+                                                   placeholder="Amount" 
+                                            >
+                                        </td>
+                                        <td class="col-sm-2">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">&euro;</span>
+                                                <input type="text"
+                                                       class="form-control"
+                                                       name="[products][{{ $product->id }}][price]"
+                                                       value="{{ $product->price }}"
+                                                       placeholder="Price" 
+                                                >
+                                            </div>
+                                        </td>
+                                        <td class="col-sm-2">
+                                            <div class="input-group">
+                                                <input type="number"
+                                                       class="form-control"
+                                                       name="[products][{{ $product->id }}][vat]"
+                                                       value="{{ $product->vat }}"
+                                                       placeholder="VAT" 
+                                                >
+                                                <span class="input-group-addon">%</span>
+                                            </div>
+                                        </td>
+                                        <td class="col-sm-1 text-center">
+                                            <a  class="label label-danger" 
+                                                href="../invoice/{{ $invoice->id }}/remove-product/{{ $product->id }}"
+                                            >
+                                                <i class="fa fa-minus"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                    @endif
+                                    <tr>
+                                        <td colspan="5">
+                                            <a class="btn btn-default" href="../invoice/{{ $invoice->id }}/add-product">
+                                                <span class="fa fa-plus"></span> Add product
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                    @endif
                 </div>
                 <div class="col-md-2">
                     <div class="list-group">

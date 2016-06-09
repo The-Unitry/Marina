@@ -19,6 +19,16 @@ class Invoice extends Model
     }
 
     /**
+     * Get the user.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    /**
      * Return a formatted string with the total price of an invoice.
      *
      * @return string
