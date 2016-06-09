@@ -67,7 +67,7 @@ class BoatController extends Controller
     {
         $boat->update($request->all());
 
-        return back()->with('message', trans('confirmation.updated_boat'));
+        return back()->with('message', trans('confirmations.updated.boat'));
     }
 
     /**

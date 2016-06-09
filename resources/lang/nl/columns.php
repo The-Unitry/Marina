@@ -76,7 +76,7 @@ return [
 
     'roles' => [
 
-        'superadmin' => 'Admin',
+        'superadmin' => 'Superadmin',
         'admin' => 'Admin',
         'manager' => 'Manager',
         'user' => 'Gebruiker',

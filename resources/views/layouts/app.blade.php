@@ -44,6 +44,11 @@
                     <li><a href="/evenementen">{{ trans('menu.events') }}</a></li>
                     <li><a href="/contact">{{ trans('menu.contact') }}</a></li>
 
+                    <!-- Admin -->
+                    @if(Auth::check() && Auth::user()->isAdmin())
+                        <li><a href="/admin" target="_blank">Admin</a></li>
+                    @endif
+
                     <!-- Login item-->
                     @if(Auth::guest())
                         <li><a href="/login">{{ trans('menu.my_account') }}</a></li>
