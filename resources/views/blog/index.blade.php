@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('title')
-    Blog
+    Nieuws
 @endsection
 
 @section('content')
     <div class="container content">
         <h3>
-            Blog
+            Nieuws
         </h3>
         <br>
         <div>
@@ -21,11 +21,10 @@
                         @endif
                     </div>
                     <div class="col-md-10">
-                        <a href="/blog/{{ $post->slug }}">
-                            <h4>{{ $post->title }}</h4>
-                        </a>
-                        <h5>{{ trans_choice('date.days_since', $post->daysSinceCreated(), ['days' => $post->daysSinceCreated()]) }}</h5>
+                        <h3 class="article-title">{{ $post->title }}</h3>
+                        <h5 class="article-time">{{ trans_choice('date.days_since', $post->daysSinceCreated(), ['days' => $post->daysSinceCreated()]) }}</h5>
                         <p>{!! $post->description !!}</p>
+                        <a href="/blog/{{ $post->slug }}" class="btn btn-primary pull-right">Lees meer</a>
                     </div>
                 </article>
                 <hr>

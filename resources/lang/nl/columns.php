@@ -4,7 +4,7 @@ return [
 
     'code' => 'Code',
     'boxes' => 'Ligplaatsen',
-    'no_boxes' => 'Geen ligplaatsen',
+    'no_boxes' => 'Geen ligplaatsen toegewezen',
     'scaffold' => 'Steiger',
     'on_land' => 'Op land',
     'pending' => 'Wachtend',
@@ -40,8 +40,8 @@ return [
     'yes' => 'Ja',
     'no' => 'Nee',
     'name' => 'Naam',
-    'boat_info' => 'Boot gegevens',
-    'boat_size' => 'Boot formaat',
+    'boat_info' => 'Gegevens',
+    'boat_size' => 'Formaat',
     'email' => 'E-mail adres',
     'message' => 'Uw bericht',
     'box' => 'Ligplaats',
@@ -59,11 +59,15 @@ return [
     'created_at' => 'Gemaakt op',
     'updated_at' => 'Bijgewerkt op',
     'tax' => 'Belasting',
-    'tourist_tax' => 'Toeristenbelasting (centen)',
+    'tourist_tax' => 'Toeristenbelasting',
     'bank_account' => 'Rekeningnummer',
     'author' => 'Auteur',
     'approved' => 'Goedgekeurd',
     'contact_form' => 'Contactformulier',
+    'register'=>'Registreren',
+    'password_confirm'=>'Wachtwoord bevestigen',
+    'send_register'=>'Registratie bevestigen',
+    'assigned_boxes'=>'Toegewezen ligplaatsen',
 
     'sizes' => [
 

@@ -44,11 +44,6 @@
                     <li><a href="/evenementen">{{ trans('menu.events') }}</a></li>
                     <li><a href="/contact">{{ trans('menu.contact') }}</a></li>
 
-                    <!-- Admin -->
-                    @if(Auth::check() && Auth::user()->isAdmin())
-                        <li><a href="/admin" target="_blank">Admin</a></li>
-                    @endif
-
                     <!-- Login item-->
                     @if(Auth::guest())
                         <li><a href="/login">{{ trans('menu.my_account') }}</a></li>
@@ -61,6 +56,10 @@
                                 {{ trans('menu.my_account') }} <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" role="menu">
+                                <!-- Admin -->
+                                @if(Auth::check() && Auth::user()->isAdmin())
+                                    <li><a href="/admin" target="_blank"><i class="fa fa-lock" aria-hidden="true"></i> Admin</a></li>
+                                @endif
                                 <li><a href="/logout"><i class="fa fa-btn fa-sign-out"></i> {{ trans('menu.log_out') }}</a></li>
                             </ul>
                         </li>

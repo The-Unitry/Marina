@@ -54,7 +54,7 @@
                 </div>
                 <div class="col-md-2">
                     <div class="list-group">
-                        <button type="submit" class="list-group-item bg-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i> 
+                        <button type="submit" class="list-group-item bg-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i>
                         {{ trans('actions.save') }}</button>
                         <a href="../scaffold" class="list-group-item"><span class="fa fa-arrow-left"></span> {{ trans('actions.back') }}</a>
                     </div>
