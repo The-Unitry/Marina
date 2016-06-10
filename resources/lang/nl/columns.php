@@ -71,10 +71,10 @@ return [
 
     'sizes' => [
 
-        'height' => 'Hoogte (m)',
-        'length' => 'Lengte (m)',
-        'depth' => 'Diepte (m)',
-        'width' => 'Breedte (m)',
+        'height' => 'Hoogte (cm)',
+        'length' => 'Lengte (cm)',
+        'depth' => 'Diepte (cm)',
+        'width' => 'Breedte (cm)',
 
     ],
 
