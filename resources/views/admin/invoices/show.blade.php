@@ -25,18 +25,24 @@
                                 {{ trans('columns.paid') }}</option>
                                 <option value="Cancelled" {{ (isset($invoice) && $invoice->status == 'Cancelled') ? 'selected' : '' }}>
                                 {{ trans('columns.cancelled') }}</option>
+                                <option value="Sent" {{ (isset($invoice) && $invoice->status == 'Sent') ? 'selected' : '' }}>
+                                {{ trans('columns.sent') }}</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="user_id" class="col-sm-2 control-label">{{ trans('columns.customer') }}</label>
                         <div class="col-sm-10">
+                        @if(isset($invoice) && $invoice->status == 'Pending')
                             @foreach ($users as $user)
                             <select name="user_id" id="user_id" class="form-control">
                                 <option value="{{ $user->id }}" {{ (isset($invoice) && $invoice->user_id == $user->id) ? 'selected' : '' }}>
                                 {{ $user->name }}</option>
                             </select>
                             @endforeach
+                        @else
+                            <input type="text" class="form-control" value="{{ $invoice->user->name }}" readonly>
+                        @endif
                         </div>
                     </div>
                     @if(isset($invoice))
