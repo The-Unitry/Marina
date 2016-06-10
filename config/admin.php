@@ -12,24 +12,9 @@ return [
             'url' => 'post',
             'icon' => ''
         ],
-        /*[
-            'name' => 'pages',
-            'url' => 'page',
-            'icon' => ''
-        ],*/
         [
-            'name' => 'invoices',
-            'url' => 'invoice',
-            'icon' => ''
-        ],
-        [
-            'name' => 'reservations',
-            'url' => 'reservation',
-            'icon' => ''
-        ],
-        [
-            'name' => 'requests',
-            'url' => 'request',
+            'name' => 'scaffolds',
+            'url' => 'scaffold',
             'icon' => ''
         ],
         [
@@ -43,19 +28,35 @@ return [
             'icon' => ''
         ],
         [
+            'name' => 'requests',
+            'url' => 'request',
+            'icon' => ''
+        ],
+        [
+            'name' => 'reservations',
+            'url' => 'reservation',
+            'icon' => ''
+        ],
+        [
+            'name' => 'invoices',
+            'url' => 'invoice',
+            'icon' => ''
+        ],
+        [
             'name' => 'users',
             'url' => 'user',
             'icon' => ''
         ],
-        [
-            'name' => 'scaffolds',
-            'url' => 'scaffold',
-            'icon' => ''
-        ],
+
         [
             'name' => 'settings',
             'url' => 'setting',
             'icon' => ''
         ],
+        /*[
+            'name' => 'pages',
+            'url' => 'page',
+            'icon' => ''
+        ],*/
     ]
 ];
