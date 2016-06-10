@@ -16,7 +16,12 @@ $(document).ready(function () {
         	$(this).wrap('<div class="frame-wrapper"></div>');
         	$(this).after('<div class="frame-loader"></div>');
         	$(this).on('load', function() {
-	            $(this).parent().find('.frame-loader').remove();
+	            $(this).parent().find('.frame-loader').animate({
+	            	opacity: 0,
+	            	backgroundSize: '100px'
+	            }, 500, function() {
+	            	$(this).remove();
+	            });
 	        })
         });
 	});
