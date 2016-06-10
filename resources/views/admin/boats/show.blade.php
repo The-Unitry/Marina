@@ -25,7 +25,7 @@
                         <label for="user_id" class="col-sm-2 control-label">{{ trans('columns.owner') }}</label>
                         <div class="col-sm-10">
                             <select name="user_id" id="user_id" class="form-control">
-                                <option disabled selected>-- {{ trans('boatinfo.owner') }} --</option>
+                                <option disabled selected>-- {{ trans('columns.owner') }} --</option>
                                 @foreach ($users as $user)
                                     <option value="{{ $user->id }}" {{ (isset($boat) && $boat->owner == $user) ? 'selected' : '' }}>
                                         {{ $user->name }}
