@@ -14,11 +14,9 @@
             @foreach($posts as $post)
                 <article class="row">
                     <div class="col-md-2">
-                        @if($post->hasHeader())
                         <a href="/blog/{{ $post->slug }}">
-                            <img src="/media/small/{{ $post->header_path }}.png" alt="" width="100%" class="img-responsive">
+                            <img src="/media/small/{{ ($post->hasHeader()) ? $post->header_path : 'anchor_placeholder' }}.png" alt="" width="100%" class="img-responsive">
                         </a>
-                        @endif
                     </div>
                     <div class="col-md-10">
                         <h3 class="article-title">{{ $post->title }}</h3>

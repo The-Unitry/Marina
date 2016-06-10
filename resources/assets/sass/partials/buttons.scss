@@ -1,26 +1,25 @@
 @import "variables";
 
 .btn-primary {
-  background-color: $blue;
-  border-color: $blue;
+    background-color: $blue;
+    border-color: $blue;
 }
 
 .btn-signup {
-  background-color: #fff;
-  font-size: 14pt;
-  color: $blue;
-  border-radius: 5px;
-  padding: 10px 20px 13px;
-  margin-top: 135px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-
-  &:hover {
-    color: darken($blue, 10);
-  }
+    background-color: #fff;
+    font-size: 14pt;
+    color: $blue;
+    border-radius: 5px;
+    padding: 10px 20px 13px;
+    margin-top: 135px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    &:hover {
+        color: darken($blue, 10);
+    }
 }
 
 @media (max-width: 767px) {
-  .btn-signup {
-    margin-top: 50px;
-  }
+    .btn-signup {
+        margin-top: 50px;
+    }
 }

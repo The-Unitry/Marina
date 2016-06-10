@@ -1,28 +1,27 @@
 .header {
-  background: url(/img/header.jpg) center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height: 575px;
-  text-align: center;
+    background: url(/img/header.jpg) center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 575px;
+    text-align: center;
 }
 
 .main-title {
-  font-family: "Lato", -apple-system, sans-serif;
-  font-weight: bold;
-  text-align: center;
-  padding-top: 240px;
-  color: #fff;
-  font-size: 30pt;
+    font-family: "Lato", -apple-system, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 240px;
+    color: #fff;
+    font-size: 30pt;
 }
 
 @media (max-width: 767px) {
-  .header {
-    height: 400px;
-  }
-
-  .main-title {
-    padding-top: 80px;
-  }
+    .header {
+        height: 400px;
+    }
+    .main-title {
+        padding-top: 80px;
+    }
 }
