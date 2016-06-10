@@ -23,5 +23,6 @@ return [
     'contact' => 'Contact',
     'my_account' => 'Mijn account',
     'log_out' => 'Uitloggen',
+    'view_site' => 'Bekijk website',
 
 ];
