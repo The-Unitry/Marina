@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function() {
     $('#datatable').DataTable({
         'language': {
             'url': '//cdn.datatables.net/plug-ins/1.10.11/i18n/Dutch.json'
@@ -6,7 +6,7 @@ $(document).ready(function(){
     });
 });
 
-$(document).ready (function(){
+$(document).ready(function() {
     $('.clickable-row').click(function() {
         window.document.location = $(this).data('href');
     });

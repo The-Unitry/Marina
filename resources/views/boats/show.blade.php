@@ -122,7 +122,7 @@
             <a href="/mijn-boten" class="btn btn-default"><span class="fa fa-arrow-left"></span> {{ trans('actions.back') }}</a>
             <button type="submit" class="btn btn-primary pull-right">Opslaan</button>
             @if(isset($boat))
-                <a href="/mijn-boten/{{ $boat->id }}/delete" class="btn btn-link pull-right"> {{ trans('actions.delete.boat') }}</a>
+                <a href="/mijn-boten/{{ $boat->id }}/delete" class="btn btn-link pull-right"><i class="fa fa-trash" style="font-size: 15pt;"></i></a>
             @endif
         </form>
     </div>
