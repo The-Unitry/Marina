@@ -36,7 +36,7 @@
                     </a>
 
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="{{ url('/') }}"><i class="fa fa-btn fa-university"></i> {{ trans('menu.view_site') }} </a></li>
+                        <li><a href="{{ url('/') }}"><i class="fa fa-btn fa-desktop"></i> {{ trans('menu.view_site') }} </a></li>
                         <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> {{ trans('menu.log_out') }} </a></li>
                     </ul>
                 </li>
