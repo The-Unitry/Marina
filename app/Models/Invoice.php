@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Invoice extends Model
 {
-    protected $fillable = ['status', 'price', 'tax'];
+    protected $fillable = ['status', 'price', 'tax', 'user_id'];
+
+    private $totalPrice;
 
     /**
      * Get the reservation.
@@ -35,9 +37,12 @@ class Invoice extends Model
      */
     public function totalPrice()
     {
-        $totalPrice = ($this->price + $this->tax) / 100;
+        $this->totalPrice = 0;
+        foreach ($this->products as $product) {
+            $this->totalPrice += $product->price * $product->amount;
+        }
 
-        return number_format($totalPrice, 2, ',', '.');
+        return number_format($this->totalPrice / 100, 2, ',', '.');
     }
 
     /**

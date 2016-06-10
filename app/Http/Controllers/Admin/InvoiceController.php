@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Navicula\Http\Requests;
 use Navicula\Models\Invoice;
 use Navicula\Models\Product;
+use Navicula\Models\User;
 
 class InvoiceController extends AdminController
 {
@@ -30,7 +31,8 @@ class InvoiceController extends AdminController
     public function create()
     {
         return view('admin.invoices.show', [
-            'method' => 'POST'
+            'method' => 'POST',
+            'users' => User::all()
         ]);
     }
 
@@ -44,7 +46,7 @@ class InvoiceController extends AdminController
     {
         $invoice = Invoice::create($request->all());
 
-        return redirect('/admin/invoice' . $invoice->id)->with(
+        return redirect('/admin/invoice/' . $invoice->id)->with(
             'message', trans('confirmations.updated.invoice')
         );
     }
@@ -59,6 +61,7 @@ class InvoiceController extends AdminController
     {
         return view('admin.invoices.show', [
             'invoice' => $invoice,
+            'users' => User::all(),
             'method' => 'PATCH'
         ]);
     }

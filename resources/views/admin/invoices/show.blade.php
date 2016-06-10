@@ -29,10 +29,22 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label for="user_id" class="col-sm-2 control-label">{{ trans('columns.customer') }}</label>
+                        <div class="col-sm-10">
+                            @foreach ($users as $user)
+                            <select name="user_id" id="user_id" class="form-control">
+                                <option value="{{ $user->id }}" {{ (isset($invoice) && $invoice->user_id == $user->id) ? 'selected' : '' }}>
+                                {{ $user->name }}</option>
+                            </select>
+                            @endforeach
+                        </div>
+                    </div>
+                    @if(isset($invoice))
+                    <div class="form-group">
                         <label for="status" class="col-sm-2 control-label">Products</label>
                         <div class="col-sm-10">
                             <table class="table">
-                                @if(isset($invoice) && sizeof($invoice->products))
+                                @if(sizeof($invoice->products))
                                 <thead>
                                     <tr>
                                         <th>Description</th>
@@ -43,7 +55,6 @@
                                 </thead>
                                 @endif
                                 <tbody>
-                                    @if(isset($invoice) && sizeof($invoice->products))
                                     @foreach($invoice->products as $product)
                                     <tr>
                                         <td class="col-sm-5">
@@ -93,7 +104,6 @@
                                         </td>
                                     </tr>
                                     @endforeach
-                                    @endif
                                     <tr>
                                         <td colspan="5">
                                             <a class="btn btn-default" href="../invoice/{{ $invoice->id }}/add-product">
@@ -105,6 +115,7 @@
                             </table>
                         </div>
                     </div>
+                    @endif
                 </div>
                 <div class="col-md-2">
                     <div class="list-group">

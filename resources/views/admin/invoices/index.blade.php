@@ -21,10 +21,10 @@
 					{{ $invoice->id }}
 				</td>
 				<td>
-					{{ $invoice->reservation->requester->name }}
+					{{ $invoice->user->name }}
 				</td>
 				<td>
-					{{ $invoice->reservation->box->totalPrice($invoice->reservation->totalNights()) }}
+					&euro; {{ $invoice->totalPrice() }}
 				</td>
 				<td>
 					{{ trans('columns.' . strtolower($invoice->status)) }}

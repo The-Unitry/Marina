@@ -62,12 +62,12 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($invoice->products as $index => $product)
+                @foreach ($invoice->products as $i => $product)
                 <tr>
-                    <td>{{ ++$index }}</td>
+                    <td>{{ $i + 1 }}</td>
                     <td>{{ $product->amount }}</td>
                     <td>{{ $product->description }}</td>
-                    <td>{{ $product->period() }}</td>
+                    <td>{{ (strtotime($product->start) != null) ? $product->period() : '' }}</td>
                     <td>&euro; {{ number_format($product->price / 100, 2, ',', '.') }}</td>
                     <td>{{ $product->vat }} %</td>
                     <td>&euro; {{ number_format($product->price * $product->amount / 100, 2, ',', '.') }}</td>
