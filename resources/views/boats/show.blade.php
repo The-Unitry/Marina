@@ -62,9 +62,12 @@
                             </td>
                             <td>
                                 <select name="type" id="type" class="form-control">
-                                    <option value="Motorboot" {{ (isset($boat) && $boat->type == 'Motorboot' ? 'selected' : '') }}>{{ $boat->type }}</option>
-                                    <option value="Zeilboot" {{ (isset($boat) && $boat->type == 'Zeilboot' ? 'selected' : '') }}>{{ $boat->type }}</option>
-                                    <option value="Anders" {{ (isset($boat) && $boat->type == 'Anders' ? 'selected' : '') }}>{{ $boat->type }}</option>
+                                    <option value="Motorboat" {{ (isset($boat) && $boat->type == 'Motorboat' ? 'selected' : '') }}>
+                                    {{ trans('columns.motorboat') }}</option>
+                                    <option value="Sailboat" {{ (isset($boat) && $boat->type == 'Sailboat' ? 'selected' : '') }}>
+                                    {{ trans('columns.sailboat') }}</option>
+                                    <option value="Different" {{ (isset($boat) && $boat->type == 'Different' ? 'selected' : '') }}>
+                                    {{ trans('columns.different') }}</option>
                                 </select>
                             </td>
                         </tr>
