@@ -17,7 +17,7 @@
                 </div>
             @else
             <form action="/contact" class="form-horizontal col-md-8" role="form" method="POST">
-                <i><h4 class="">{{ (isset($page)) ? $page->description : '' }}</h4></i>
+                <i><h4 class="">{!! (isset($page)) ? $page->description : '' !!}</h4></i>
                 {{ csrf_field() }}
                 <br />
                 <h4>{{ trans('columns.contact_form') }}</h4>
