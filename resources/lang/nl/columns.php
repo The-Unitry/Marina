@@ -70,10 +70,10 @@ return [
     'author' => 'Auteur',
     'approved' => 'Goedgekeurd',
     'contact_form' => 'Contactformulier',
-    'register'=>'Registreren',
-    'password_confirm'=>'Wachtwoord bevestigen',
-    'send_register'=>'Registratie bevestigen',
-    'assigned_boxes'=>'Toegewezen ligplaatsen',
+    'register' => 'Registreren',
+    'password_confirm' => 'Wachtwoord bevestigen',
+    'send_register' => 'Registeren',
+    'assigned_boxes' => 'Toegewezen ligplaatsen',
 
     'sizes' => [
 
