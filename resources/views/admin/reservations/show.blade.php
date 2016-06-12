@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="amount_of_persons" class="col-sm-2 control-label">{{ trans('columns.amount_of_nights') }}</label>
+                        <label for="amount_of_persons" class="col-sm-2 control-label">{{ trans('columns.amount_of_persons') }}</label>
                         <div class="col-sm-10">
                             <input type="number" class="form-control" name="amount_of_persons" id="amount_of_persons" value="{{ $reservation->amount_of_persons or '' }}">
                         </div>
