@@ -17,7 +17,7 @@
                 </div>
             @else
             <form action="/contact" class="form-horizontal col-md-8" role="form" method="POST">
-                <i><h4 class="">{!! $page->description !!}</h4></i>
+                <i><h4 class="">{{ (isset($page)) ? $page->description : '' }}</h4></i>
                 {{ csrf_field() }}
                 <br />
                 <h4>{{ trans('columns.contact_form') }}</h4>
@@ -29,7 +29,7 @@
                                class="form-control"
                                id="name"
                                name="name"
-                               placeholder="Uw voor en achternaam"
+                               placeholder="{{ trans('columns.your_name') }}"
                                value="{{ (Auth::check()) ? Auth::user()->name : '' }}"
                         >
                     </div>
@@ -41,14 +41,14 @@
                                class="form-control"
                                id="email"
                                name="email"
-                               placeholder="Uw e-mailadres"
+                               placeholder="{{ trans('columns.your_email') }}"
                                value="{{ (Auth::check()) ? Auth::user()->email : '' }}">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="body" class="col-sm-2 control-label">{{ trans('columns.message') }}</label>
                     <div class="col-sm-10">
-                        <textarea class="form-control" rows="4" name="body" placeholder="{{ trans('columns.message') }}"></textarea>
+                        <textarea class="form-control" rows="4" name="body" placeholder="{{ trans('columns.your_message') }}"></textarea>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary pull-right">{{ trans('actions.send.message') }}</button>
