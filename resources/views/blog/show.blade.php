@@ -18,11 +18,6 @@
             <h5 class="article-time">
                 {{ trans_choice('date.days_since', $post->daysSinceCreated(), ['days' => $post->daysSinceCreated()]) }}
             </h5>
-            {{-- <p>
-                <b class="article-description">
-                    {!! $post->description !!}
-                </b>
-            </p> --}}
             <div class="row">
                 <div class="col-md-8">
                     {!! $post->body!!}
