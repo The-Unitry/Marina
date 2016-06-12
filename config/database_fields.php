@@ -26,11 +26,11 @@ return [
     'settings' => [
         [
             'key' => 'company_name',
-            'value' => 'Your company name',
+            'value' => 'Bedrijfsnaam',
         ],
         [
             'key' => 'company_mail',
-            'value' => 'info@example.com',
+            'value' => 'info@bedrijfsnaam.nl',
         ],
         [
             'key' => 'company_address',
@@ -46,7 +46,7 @@ return [
         ],
         [
             'key' => 'company_phone',
-            'value' => '020 123456',
+            'value' => '020-1234567',
         ],
         [
             'key' => 'tax',
@@ -54,7 +54,7 @@ return [
         ],
         [
             'key' => 'tourist_tax',
-            'value' => '100',
+            'value' => '1,00',
         ],
         [
             'key' => 'bank_account',
