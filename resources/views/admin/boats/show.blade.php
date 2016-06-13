@@ -10,7 +10,7 @@
 
 @section('content')
     <div class="row">
-        <form class="form-horizontal" action="{{ ($method == 'POST') ? '/admin/boat' : '/admin/boat/' . $boat->id }}" method="post">
+        <form class="form-horizontal" action="{{ ($method == 'POST') ? '/admin/boat' : '/admin/boat/' . $boat->id }}" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-10">
                     {{ method_field($method) }}
@@ -76,6 +76,20 @@
                             <input type="number" class="form-control" name="width" id="width" value="{{ $boat->width or '' }}">
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="width" class="col-sm-2 control-label">{{ trans('columns.boat_image') }}</label>
+                        <div class="col-sm-10">
+                            <input type="file" class="form-control" name="image_path" id="image_path">
+                        </div>
+                    </div>
+                    @if(isset($boat) && $boat->hasImage())
+                    <div class="form-group">
+                        <label for="width" class="col-sm-2 control-label">{{ trans('columns.current_image') }}</label>
+                        <div class="col-sm-10">
+                            <img src="/media/small/{{ $boat->image_path }}.png" alt="">
+                        </div>
+                    </div>
+                    @endif
                 </div>
                 <div class="col-md-2">
                     <div class="list-group">

@@ -5,6 +5,7 @@ namespace Navicula\Http\Controllers;
 use Auth;
 use Illuminate\Http\Request;
 
+use Intervention\Image\Facades\Image;
 use Navicula\Http\Requests;
 use Navicula\Models\Boat;
 
@@ -67,6 +68,12 @@ class BoatController extends Controller
     {
         $boat->update($request->all());
 
+        if (isset($request->all()['image_path'])) {
+            $boat->uploadImage($request->all()['image_path']);
+        }
+
+        $boat->save();
+
         return back()->with('message', trans('confirmations.updated.boat'));
     }
 
@@ -80,6 +87,10 @@ class BoatController extends Controller
     {
         $boat = new Boat($request->all());
         $boat->user_id = Auth::id();
+
+        if (isset($request->all()['image_path'])) {
+            $boat->uploadImage($request->all()['image_path']);
+        }
 
         $boat->save();
 

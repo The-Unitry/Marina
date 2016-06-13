@@ -122,6 +122,35 @@
                     </table>
                 </div>
             </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <p class="panel-title">{{ trans('columns.image') }}</p>
+                </div>
+                <div class="panel-body">
+                    <table class="table borderless">
+                        <tbody>
+                        <tr>
+                            <td width="15%">
+                                <label for="image_path">{{ trans('columns.boat_image') }}</label>
+                            </td>
+                            <td>
+                                <input type="file" class="form-control" name="image_path" id="image_path" accept=".png,.jpg">
+                            </td>
+                        </tr>
+                        @if(isset($boat) && $boat->hasImage())
+                        <tr>
+                            <td width="15%">
+                                <label for="image_path">{{ trans('columns.current_image') }}</label>
+                            </td>
+                            <td>
+                                <img src="/media/small/{{ $boat->image_path }}.png" alt="">
+                            </td>
+                        </tr>
+                        @endif
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             <a href="/mijn-boten" class="btn btn-default"><span class="fa fa-arrow-left"></span> {{ trans('actions.back') }}</a>
             <button type="submit" class="btn btn-primary pull-right">Opslaan</button>
             @if(isset($boat))
