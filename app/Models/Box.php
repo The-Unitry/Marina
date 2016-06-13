@@ -107,11 +107,11 @@ class Box extends Model
         for ($i = 0; $i < $end->diffInDays($start); $i++) {
             $day = $start->addDay();
 
-            if ($this->isAvailable($day)) {
-                return true;
+            if (!$this->isAvailable($day)) {
+                return false;
             }
 
-            return false;
+            return true;
         }
     }
 }
