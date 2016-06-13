@@ -61,6 +61,7 @@ return [
     'customer' => 'Klant',
     'price' => 'Prijs',
     'company_name' => 'Bedrijfsnaam',
+    'company_phone' => 'Uw telefoon nummer moet uit 10 tekens bestaan.',
     'logo' => 'Logo',
     'created_at' => 'Gemaakt op',
     'updated_at' => 'Bijgewerkt op',
