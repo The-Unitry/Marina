@@ -16,7 +16,7 @@
         @foreach($boats as $boat)
             <a class="row" href="/mijn-boten/{{ $boat->id }}">
                 <div class="col-md-2">
-                    <img src="http://www.jenzen.nl/site/content/images/boot.jpg" alt="" width="100%">
+                    <img src="/media/medium/{{ $boat->image_path }}.png" alt="" width="100%">
                 </div>
                 <div class="col-md-10">
                     <h3>

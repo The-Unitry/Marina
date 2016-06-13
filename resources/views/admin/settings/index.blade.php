@@ -44,7 +44,7 @@
                     <div class="form-group">
                         <label for="company_phone" class="col-sm-2 control-label">{{ trans('columns.phone_number') }}</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="company_phone" id="company_phone" value="{{ setting('company_phone') }}">
+                            <input type="text" minlength="10" maxlength="10" pattern="\b\d{3}[-.]?\d{3}[-.]?\d{4}\b" title="{{ trans('columns.company_phone') }}" class="form-control" name="company_phone" id="company_phone" value="{{ setting('company_phone') }}">
                         </div>
                     </div>
                     <div class="form-group">

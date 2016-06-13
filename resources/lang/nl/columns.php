@@ -57,10 +57,15 @@ return [
     'amount_of_nights' => 'Aantal nachten',
     'amount_of_persons' => 'Aantal personen',
     'total_price' => 'Totaal prijs',
+    'image' => 'Afbeelding',
+    'boat_image' => 'Boot afbeelding',
+    'current_image' => 'Huidige afbeelding',
     'boat' => 'Boot',
+    'boats' => 'Boot|Boten',
     'customer' => 'Klant',
     'price' => 'Prijs',
     'company_name' => 'Bedrijfsnaam',
+    'company_phone' => 'Uw telefoon nummer moet uit 10 tekens bestaan.',
     'logo' => 'Logo',
     'created_at' => 'Gemaakt op',
     'updated_at' => 'Bijgewerkt op',
@@ -74,6 +79,9 @@ return [
     'password_confirm' => 'Wachtwoord bevestigen',
     'send_register' => 'Registeren',
     'assigned_boxes' => 'Toegewezen ligplaatsen',
+    'berth_holders' => 'Vaste ligplaatshouder|Vaste ligplaatshouders',
+    'transients' => 'Passant|Passanten',
+    'users' => 'Gebruiker|Gebruikers',
 
     'sizes' => [
 

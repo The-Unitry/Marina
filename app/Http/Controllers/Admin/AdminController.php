@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use Navicula\Http\Controllers\Controller;
 use Navicula\Http\Requests;
+use Navicula\Models\Boat;
+use Navicula\Models\User;
 
 class AdminController extends Controller
 {
@@ -24,6 +26,11 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard.index');
+        return view('admin.dashboard.index', [
+            'transients' => sizeof(User::all()),
+            'berth_holders' => sizeof(User::all()),
+            'boats' => sizeof(Boat::all()),
+            'users' => sizeof(User::all())
+        ]);
     }
 }

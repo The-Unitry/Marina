@@ -4,6 +4,7 @@ namespace Navicula\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
+use Intervention\Image\Facades\Image;
 use Navicula\Http\Requests;
 use Navicula\Http\Controllers\Controller;
 use Navicula\Models\Boat;
@@ -46,6 +47,12 @@ class BoatController extends AdminController
     {
         $boat = Boat::create($request->all());
 
+        if (isset($request->all()['image_path'])) {
+            $boat->uploadImage($request->all()['image_path']);
+        }
+        
+        $post->save();
+
         return redirect('/admin/boat/' . $boat->id)->with(
             'message', trans('confirmations.created.boat')
         );
@@ -87,6 +94,12 @@ class BoatController extends AdminController
     public function update(Request $request, Boat $boat)
     {
         $boat->update($request->all());
+
+        if (isset($request->all()['image_path'])) {
+            $boat->uploadImage($request->all()['image_path']);
+        }
+
+        $boat->save();
 
         return back()->with(
             'message', trans('confirmations.updated.boat')
