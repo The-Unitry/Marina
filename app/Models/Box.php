@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Box extends Model
 {
     protected $fillable = ['id','depth','length','width', 'scaffold_id', 'price_per_night'];
+    protected $hidden = ['created_at', 'updated_at'];
 
     /**
      * Get the scaffold where the box is located.
@@ -89,5 +90,28 @@ class Box extends Model
         }
 
         return false;
+    }
+
+    /**
+     * Check if a box is available between two dates.
+     * 
+     * @param $start
+     * @param $end
+     * @return boolean
+     */
+    public function isAvailableBetween($start, $end)
+    {
+        $start = new Carbon($start);
+        $end = new Carbon($end);
+
+        for ($i = 0; $i < $end->diffInDays($start); $i++) {
+            $day = $start->addDay();
+
+            if ($this->isAvailable($day)) {
+                return true;
+            }
+
+            return false;
+        }
     }
 }
