@@ -58,6 +58,7 @@ return [
     'amount_of_persons' => 'Aantal personen',
     'total_price' => 'Totaal prijs',
     'boat' => 'Boot',
+    'boats' => 'Boot|Boten',
     'customer' => 'Klant',
     'price' => 'Prijs',
     'company_name' => 'Bedrijfsnaam',
@@ -74,6 +75,9 @@ return [
     'password_confirm' => 'Wachtwoord bevestigen',
     'send_register' => 'Registeren',
     'assigned_boxes' => 'Toegewezen ligplaatsen',
+    'berth_holders' => 'Vaste ligplaatshouder|Vaste ligplaatshouders',
+    'transients' => 'Passant|Passanten',
+    'users' => 'Gebruiker|Gebruikers',
 
     'sizes' => [
 
