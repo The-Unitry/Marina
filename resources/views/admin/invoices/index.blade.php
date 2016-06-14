@@ -27,7 +27,8 @@
 					&euro; {{ $invoice->totalPrice() }}
 				</td>
 				<td>
-					{{ trans('columns.' . strtolower($invoice->status)) }}
+					<span class="{{ ($invoice->status == 'credited') ? 'text text-danger' : '' }}">
+					{{ trans('columns.' . $invoice->status) }}</span>
 				</td>
 			</tr>
 		@endforeach

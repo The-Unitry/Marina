@@ -13,9 +13,11 @@ Route::resource('page', 'Admin\PageController');
 Route::resource('invoice', 'Admin\InvoiceController');
 Route::get('invoice/{invoice}/view', 'Admin\InvoiceController@view');
 Route::get('invoice/{invoice}/add-product', 'Admin\InvoiceController@addProduct');
+Route::get('invoice/{invoice}/credit', 'Admin\InvoiceController@credit');
 
 // Reservations
 Route::resource('reservation', 'Admin\ReservationController');
+Route::get('reservation/{reservation}/create-invoice', 'Admin\ReservationController@createInvoice');
 
 // Boxes
 Route::resource('box', 'Admin\BoxController');

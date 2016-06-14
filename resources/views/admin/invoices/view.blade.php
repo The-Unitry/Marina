@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Factuur (#{{ $invoice->id }})</title>
+    <title>Factuur (#{{ $invoice->number() }})</title>
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 </head>
 <body id="invoice">
@@ -18,7 +18,7 @@
             </div>
             <div class="col-md-8">
                 <h1>
-                    Factuur (#{{ $invoice->id }})
+                    Factuur (#{{ $invoice->number() }})
                 </h1>
             </div>
         </div>
@@ -36,7 +36,7 @@
                 <table style="width: 60%;">
                     <tr>
                         <td>Factuurnummer:</td>
-                        <td>{{ $invoice->id }}</td>
+                        <td>{{ $invoice->number() }}</td>
                     </tr>
                     <tr>
                         <td>Datum:</td>
@@ -68,11 +68,20 @@
                     <td>{{ $product->amount }}</td>
                     <td>{{ $product->description }}</td>
                     <td>{{ (strtotime($product->start) != null) ? $product->period() : '' }}</td>
-                    <td>&euro; {{ number_format($product->price / 100, 2, ',', '.') }}</td>
+                    <td>&euro; {{ $product->formattedPrice() }}</td>
                     <td>{{ $product->vat }} %</td>
-                    <td>&euro; {{ number_format($product->price * $product->amount / 100, 2, ',', '.') }}</td>
+                    <td>&euro; {{ $product->formattedTotalPrice() }}</td>
                 </tr>
                 @endforeach
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>&euro; {{ $invoice->totalPrice() }}</td>
+                </tr>
             </tbody>
         </table>
         <hr>

@@ -70,6 +70,7 @@
                     <div class="list-group">
                         <button type="submit" class="list-group-item bg-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i> 
                         {{ trans('actions.save') }}</button>
+                        <a href="../reservation/{{ $reservation->id }}/create-invoice" class="list-group-item"><span class="fa fa-money"></span> {{ trans('actions.create.invoice') }}</a>
                         <a href="../reservation" class="list-group-item"><span class="fa fa-arrow-left"></span> {{ trans('actions.back') }}</a>
                     </div>
                 </div>

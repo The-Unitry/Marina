@@ -11,16 +11,6 @@ class Invoice extends Model
     private $totalPrice;
 
     /**
-     * Get the reservation.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function reservation()
-    {
-        return $this->belongsTo(Reservation::class, 'reservation_id');
-    }
-
-    /**
      * Get the user.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -28,6 +18,11 @@ class Invoice extends Model
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function number()
+    {
+        return sprintf('%06d', $this->id);
     }
 
     /**

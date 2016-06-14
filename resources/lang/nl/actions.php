@@ -6,6 +6,7 @@ return [
     'back' => 'Terug',
     'cancel' => 'Annuleren',
     'print' => 'Printen',
+    'credit' => 'Crediteren',
     'approve' => 'Goedkeuren',
     'next' => 'Volgende',
 

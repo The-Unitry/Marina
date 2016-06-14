@@ -133,4 +133,29 @@ class InvoiceController extends AdminController
 
         return redirect('/admin/invoice/' . $invoice->id);
     }
+
+    public function credit(Invoice $invoice)
+    {
+        $invoice->status = 'credited';
+        $invoice->save();
+
+        $credit = Invoice::create([
+            'status' => 'credit_note',
+            'user_id' => $invoice->user_id
+        ]);
+
+        foreach ($invoice->products as $product) {
+            Product::create([
+                'invoice_id' => $credit->id,
+                'amount' => $product->amount,
+                'description' => $product->description,
+                'vat' => $product->vat,
+                'price' => -$product->price,
+                'start' => $product->start,
+                'end' => $product->end
+            ]);
+        }
+
+        return redirect('/admin/invoice/' . $credit->id);
+    }
 }
