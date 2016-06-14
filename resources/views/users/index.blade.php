@@ -11,31 +11,33 @@
     </h3>
     <br>
     <div class="row">
-        <form class="form-horizontal" action="{{ '/user' }}" method="post" enctype="multipart/form-data">
+        <form class="form-horizontal" action="{{ url('/voorkeuren') }}" method="post" enctype="multipart/form-data">
+            {{ csrf_field() }}
+            {{ method_field('PATCH') }}
             <div class="row">
                 <div class="col-md-10">
                     <div class="form-group">
-                        <label for="user_adress" class="col-sm-2 control-label">{{ trans('columns.user_adress') }}</label>
-                        <div class="col-sm-5">
-                            <input type="text" class="form-control" name="user_adress" id="user_adress" value="{{ $user->address }}">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="user_city" class="col-sm-2 control-label">{{ trans('columns.user_city') }}</label>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control" name="user_city" id="user_city" value="{{ $user->city }}">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone_number" class="col-sm-2 control-label">{{ trans('columns.phone_number') }}</label>
+                        <label for="address" class="col-sm-2 control-label">{{ trans('columns.user_adress') }}</label>
                         <div class="col-sm-10">
-                            <input type="" class="form-control" name="phone_number" id="phone_number" value="{{ $user->phone }}">
+                            <input type="text" class="form-control" name="address" id="address" value="{{ $user->address }}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="city" class="col-sm-2 control-label">{{ trans('columns.user_city') }}</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="city" id="city" value="{{ $user->city }}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="col-sm-2 control-label">{{ trans('columns.phone_number') }}</label>
+                        <div class="col-sm-10">
+                            <input type="" class="form-control" name="phone" id="phone" value="{{ $user->phone }}">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="user_mail" class="col-sm-2 control-label">{{ trans('columns.user_mail') }}</label>
                         <div class="col-sm-10">
-                            <input type="E-mail" class="form-control" name="user_mail" id="user_mail" value="{{ $user->email }}">
+                            <input type="E-mail" class="form-control" name="email" id="user_mail" value="{{ $user->email }}">
                         </div>
                     </div>
                 </div>

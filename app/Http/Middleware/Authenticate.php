@@ -20,9 +20,10 @@ class Authenticate
         if (Auth::guard($guard)->guest()) {
             if ($request->ajax() || $request->wantsJson()) {
                 return response('Unauthorized.', 401);
-            } else {
-                return redirect()->guest('login')->with('message', 'Om deze pagina te bezoeken moet u eerst ingelogd zijn.');
             }
+            return redirect()->guest('login')->with(
+                'unauthorized', 'Om deze pagina te bezoeken moet u eerst ingelogd zijn.'
+            );
         }
 
         return $next($request);
