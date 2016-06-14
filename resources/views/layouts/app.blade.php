@@ -60,7 +60,9 @@
                                 @if(Auth::check() && Auth::user()->isAdmin())
                                     <li><a href="/admin" target="_blank"><i class="fa fa-lock" aria-hidden="true"></i> Admin</a></li>
                                 @endif
+                                <li><a href="/user"><i class="fa fa-btn fa-cog"></i> {{ trans('menu.preferences') }}</a></li>
                                 <li><a href="/logout"><i class="fa fa-btn fa-sign-out"></i> {{ trans('menu.log_out') }}</a></li>
+
                             </ul>
                         </li>
                     @endif
