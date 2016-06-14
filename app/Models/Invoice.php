@@ -6,16 +6,23 @@ use Illuminate\Database\Eloquent\Model;
 
 class Invoice extends Model
 {
-    protected $fillable = ['status', 'price', 'tax'];
+    protected $fillable = ['status', 'price', 'tax', 'user_id'];
+
+    private $totalPrice;
 
     /**
-     * Get the reservation.
+     * Get the user.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function reservation()
+    public function user()
     {
-        return $this->belongsTo(Reservation::class, 'reservation_id');
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function number()
+    {
+        return sprintf('%06d', $this->id);
     }
 
     /**
@@ -25,8 +32,21 @@ class Invoice extends Model
      */
     public function totalPrice()
     {
-        $totalPrice = ($this->price + $this->tax) / 100;
+        $this->totalPrice = 0;
+        foreach ($this->products as $product) {
+            $this->totalPrice += $product->price * $product->amount;
+        }
 
-        return number_format($totalPrice, 2, ',', '.');
+        return number_format($this->totalPrice / 100, 2, ',', '.');
+    }
+
+    /**
+     * Return all products from this invoice.
+     *
+     * @return hasMany
+     */
+    public function products()
+    {
+        return $this->hasMany(Product::class, 'invoice_id');
     }
 }

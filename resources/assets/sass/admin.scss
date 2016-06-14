@@ -1,5 +1,9 @@
+// Third party
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Partials
 @import "partials/alert";
+@import "partials/icons";
 
 .clickable-row {
   cursor: pointer;

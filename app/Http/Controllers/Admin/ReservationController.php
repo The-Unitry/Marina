@@ -9,6 +9,9 @@ use Navicula\Http\Controllers\Controller;
 use Navicula\Models\Boat;
 use Navicula\Models\Box;
 use Navicula\Models\Reservation;
+use Navicula\Models\Invoice;
+use Navicula\Models\Product;
+use Auth;
 
 class ReservationController extends AdminController
 {
@@ -52,7 +55,9 @@ class ReservationController extends AdminController
 
         $reservation->save();
 
-        return redirect('/admin/reservation/' . $reservation->id)->with('message', trans('confirmations.created_reservation'));
+        return redirect('/admin/reservation/' . $reservation->id)->with(
+            'message', trans('confirmations.created.reservation')
+        );
     }
 
     /**
@@ -93,7 +98,9 @@ class ReservationController extends AdminController
     {
         $reservation->update($request->all());
 
-        return back()->with('message', trans('confirmations.updated_reservation'));
+        return back()->with(
+            'message', trans('confirmations.updated.reservation')
+        );
     }
 
     /**
@@ -107,5 +114,39 @@ class ReservationController extends AdminController
         $reservation->delete();
 
         return back();
+    }
+
+    /**
+     * Create invoice.
+     *
+     * @param Reservation $reservation
+     * @return void
+     */
+    public function createInvoice(Reservation $reservation)
+    {
+        $invoice = Invoice::create([
+            'status' => 'pending',
+            'user_id' => Auth::id()
+        ]);
+
+        Product::create([
+            'invoice_id' => $invoice->id,
+            'amount' => 1,
+            'description' => 'Ligplaats ' . $reservation->box->getFullCode(),
+            'vat' => setting('tax'),
+            'price' => $reservation->totalNights() * $reservation->price,
+            'start' => $reservation->start,
+            'end' => $reservation->end
+        ]);
+
+        Product::create([
+            'invoice_id' => $invoice->id,
+            'amount' => $reservation->amount_of_persons,
+            'description' => 'Toeristen belasting ',
+            'vat' => 0,
+            'price' => $reservation->amount_of_persons * setting('tourist_tax')
+        ]);
+
+        return redirect('/admin/invoice/' . $invoice->id);
     }
 }

@@ -1,0 +1,33 @@
+@extends('layouts.app')
+
+@section('title')
+    Nieuws
+@endsection
+
+@section('content')
+    <div class="container content">
+        <h3>
+            Nieuws
+        </h3>
+        <br>
+        <div>
+            @foreach($posts as $post)
+                <article class="row">
+                    <div class="col-md-2">
+                        <a href="/nieuws/{{ $post->slug }}">
+                            <img src="/media/small/{{ ($post->hasHeader()) ? $post->header_path : 'anchor_placeholder' }}.png" alt="" width="100%" class="img-responsive">
+                        </a>
+                    </div>
+                    <div class="col-md-10">
+                        <h3 class="article-title">
+                            <a href="/nieuws/{{ $post->slug }}">{{ $post->title }}</a>
+                        </h3>
+                        <h5 class="article-time">{{ trans_choice('date.days_since', $post->daysSinceCreated(), ['days' => $post->daysSinceCreated()]) }}</h5>
+                        <p>{!! $post->description !!}</p>
+                    </div>
+                </article>
+                <hr>
+            @endforeach
+        </div>
+    </div>
+@endsection

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use Navicula\Http\Requests;
 use Navicula\Models\Invoice;
+use Navicula\Models\Product;
+use Navicula\Models\User;
 
 class InvoiceController extends AdminController
 {
@@ -29,7 +31,8 @@ class InvoiceController extends AdminController
     public function create()
     {
         return view('admin.invoices.show', [
-            'method' => 'POST'
+            'method' => 'POST',
+            'users' => User::all()
         ]);
     }
 
@@ -43,7 +46,9 @@ class InvoiceController extends AdminController
     {
         $invoice = Invoice::create($request->all());
 
-        return redirect('/admin/invoice' . $invoice->id);
+        return redirect('/admin/invoice/' . $invoice->id)->with(
+            'message', trans('confirmations.updated.invoice')
+        );
     }
 
     /**
@@ -56,6 +61,7 @@ class InvoiceController extends AdminController
     {
         return view('admin.invoices.show', [
             'invoice' => $invoice,
+            'users' => User::all(),
             'method' => 'PATCH'
         ]);
     }
@@ -82,7 +88,9 @@ class InvoiceController extends AdminController
     {
         $invoice->update($request->all());
 
-        return back();
+        return back()->with(
+            'message', trans('confirmations.updated.invoice')
+        );
     }
 
     /**
@@ -109,5 +117,45 @@ class InvoiceController extends AdminController
         return view('admin.invoices.view', [
             'invoice' => $invoice
         ]);
+    }
+
+    /**
+     * Add empty product to the given invoice.
+     *
+     * @param Invoice $invoice
+     * @return void
+     */
+    public function addProduct(Invoice $invoice)
+    {
+        Product::create([
+            'invoice_id' => $invoice->id
+        ]);
+
+        return redirect('/admin/invoice/' . $invoice->id);
+    }
+
+    public function credit(Invoice $invoice)
+    {
+        $invoice->status = 'credited';
+        $invoice->save();
+
+        $credit = Invoice::create([
+            'status' => 'credit_note',
+            'user_id' => $invoice->user_id
+        ]);
+
+        foreach ($invoice->products as $product) {
+            Product::create([
+                'invoice_id' => $credit->id,
+                'amount' => $product->amount,
+                'description' => $product->description,
+                'vat' => $product->vat,
+                'price' => -$product->price,
+                'start' => $product->start,
+                'end' => $product->end
+            ]);
+        }
+
+        return redirect('/admin/invoice/' . $credit->id);
     }
 }

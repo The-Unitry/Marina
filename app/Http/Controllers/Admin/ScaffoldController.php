@@ -18,7 +18,7 @@ class ScaffoldController extends AdminController
     public function index()
     {
         return view('admin.scaffolds.index', [
-            'scaffolds' => Scaffold::all()
+            'scaffolds' => Scaffold::where('hidden', 0)->get()
         ]);
     }
 
@@ -44,7 +44,9 @@ class ScaffoldController extends AdminController
     {
         $scaffold = Scaffold::create($request->all());
 
-        return redirect('/admin/scaffold/' . $scaffold->id)->with('message', trans('confirmations.created_scaffold'));
+        return redirect('/admin/scaffold/' . $scaffold->id)->with(
+            'message', trans('confirmations.created.scaffold')
+        );
     }
 
     /**
@@ -83,7 +85,9 @@ class ScaffoldController extends AdminController
     {
         $scaffold->update($request->all());
 
-        return back()->with('message', trans('confirmations.updated_scaffold'));
+        return back()->with(
+            'message', trans('confirmations.updated.scaffold')
+        );
     }
 
     /**
@@ -97,5 +101,21 @@ class ScaffoldController extends AdminController
         $scaffold->delete();
 
         return back();
+    }
+
+    /**
+     * Create a hidden scaffold, which is used when creating a new request.
+     *
+     * @return static
+     */
+    public static function createHiddenScaffold()
+    {
+        if (!Scaffold::where('code', 'not_approved')->exists())
+        {
+            Scaffold::create([
+                'code' => 'not_approved',
+                'hidden' => '1'
+            ]);
+        }
     }
 }

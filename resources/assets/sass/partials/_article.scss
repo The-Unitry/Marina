@@ -1,0 +1,22 @@
+article {
+  padding-top: 20px;
+
+  .article-title {
+    margin: 0;
+  }
+
+  .article-time {
+    margin: 15px 0;
+    font-style: italic;
+    color: lighten($text, 0.9);
+  }
+
+  p {
+    font-size: 12pt;
+    line-height: 1.8;
+  }
+
+  .description {
+    font-size: 13pt;
+  }
+}

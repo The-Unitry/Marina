@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    {{ trans('navigation.boats') }}
+    {{ trans('menu.boats') }}
 @endsection
 
 @section('content')

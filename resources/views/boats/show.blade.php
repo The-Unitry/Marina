@@ -1,9 +1,13 @@
 @extends('layouts.app')
 
+@section('title')
+    {{ $boat->name or 'Nieuwe boot' }}
+@endsection
+
 @section('content')
     <div class="container content">
         <h3>
-            {{ trans('navigation.add_boat') }}
+            {{ trans('actions.create.boat') }}
         </h3>
         <br>
         <form action="{{ (!isset($boat)) ? '/mijn-boten' : '/mijn-boten/'. $boat->id }}" method="post" enctype="multipart/form-data">
@@ -11,14 +15,14 @@
             {{ method_field($method) }}
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <p class="panel-title">{{ trans('boatinfo.data') }}</p>
+                    <p class="panel-title">{{ trans('columns.boat_info') }}</p>
                 </div>
                 <div class="panel-body">
                     <table class="table borderless">
                         <tbody>
                         <tr>
                             <td width="15%">
-                                <label for="name">{{ trans('boatinfo.name') }}</label>
+                                <label for="name">{{ trans('columns.name') }}</label>
                             </td>
                             <td>
                                 <input type="text" class="form-control" id="name" name="name"
@@ -27,7 +31,7 @@
                         </tr>
                         <tr>
                             <td width="15%">
-                                <label for="brand">{{ trans('boatinfo.brand') }}</label>
+                                <label for="brand">{{ trans('columns.brand') }}</label>
                             </td>
                             <td>
                                 <input type="text" class="form-control" id="brand" name="brand"
@@ -36,7 +40,7 @@
                         </tr>
                         <tr>
                             <td width="15%">
-                                <label for="model">{{ trans('boatinfo.model') }}</label>
+                                <label for="model">{{ trans('columns.model') }}</label>
                             </td>
                             <td>
                                 <input type="text" class="form-control" id="model" name="model"
@@ -45,7 +49,7 @@
                         </tr>
                         <tr>
                             <td width="15%">
-                                <label for="color">{{ trans('boatinfo.color') }}</label>
+                                <label for="color">{{ trans('columns.color') }}</label>
                             </td>
                             <td>
                                 <input type="text" class="form-control" id="color" name="color"
@@ -54,13 +58,16 @@
                         </tr>
                         <tr>
                             <td width="15%">
-                                <label for="type">{{ trans('boatinfo.type') }}</label>
+                                <label for="type">{{ trans('columns.type') }}</label>
                             </td>
                             <td>
                                 <select name="type" id="type" class="form-control">
-                                    <option value="Motorboot" {{ (isset($boat) && $boat->type == 'Motorboot' ? 'selected' : '') }}>{{ trans('boatinfo.motorboat') }}</option>
-                                    <option value="Zeilboot" {{ (isset($boat) && $boat->type == 'Zeilboot' ? 'selected' : '') }}>{{ trans('boatinfo.sailboat') }}</option>
-                                    <option value="Anders" {{ (isset($boat) && $boat->type == 'Anders' ? 'selected' : '') }}>{{ trans('boatinfo.otherboat') }}</option>
+                                    <option value="Motorboat" {{ (isset($boat) && $boat->type == 'Motorboat' ? 'selected' : '') }}>
+                                    {{ trans('columns.motorboat') }}</option>
+                                    <option value="Sailboat" {{ (isset($boat) && $boat->type == 'Sailboat' ? 'selected' : '') }}>
+                                    {{ trans('columns.sailboat') }}</option>
+                                    <option value="Different" {{ (isset($boat) && $boat->type == 'Different' ? 'selected' : '') }}>
+                                    {{ trans('columns.different') }}</option>
                                 </select>
                             </td>
                         </tr>
@@ -70,14 +77,14 @@
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <p class="panel-title">{{ trans('boatinfo.dimensions') }}</p>
+                    <p class="panel-title">{{ trans('columns.boat_size') }}</p>
                 </div>
                 <div class="panel-body">
                     <table class="table borderless">
                         <tbody>
                         <tr>
                             <td width="15%">
-                                <label for="height">{{ trans('boatinfo.dimensions_height') }}</label>
+                                <label for="height">{{ trans('columns.sizes.height') }}</label>
                             </td>
                             <td>
                                 <input type="number" class="form-control" id="height" name="height"
@@ -86,7 +93,7 @@
                         </tr>
                         <tr>
                             <td width="15%">
-                                <label for="length">{{ trans('boatinfo.dimensions_length') }}</label>
+                                <label for="length">{{ trans('columns.sizes.length') }}</label>
                             </td>
                             <td>
                                 <input type="number" class="form-control" id="length" name="length"
@@ -95,7 +102,7 @@
                         </tr>
                         <tr>
                             <td width="15%">
-                                <label for="depth">{{ trans('boatinfo.dimensions_depth') }}</label>
+                                <label for="depth">{{ trans('columns.sizes.depth') }}</label>
                             </td>
                             <td>
                                 <input type="number" class="form-control" id="depth" name="depth"
@@ -104,7 +111,7 @@
                         </tr>
                         <tr>
                             <td width="15%">
-                                <label for="width">{{ trans('boatinfo.data') }}</label>
+                                <label for="width">{{ trans('columns.sizes.width') }}</label>
                             </td>
                             <td>
                                 <input type="number" class="form-control" id="width" name="width"
@@ -115,11 +122,63 @@
                     </table>
                 </div>
             </div>
-            <a href="/mijn-boten" class="btn btn-default"><span class="fa fa-arrow-left"></span>{{ trans('boatinfo.back_to_view') }}</a>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <p class="panel-title">{{ trans('columns.image') }}</p>
+                </div>
+                <div class="panel-body">
+                    <table class="table borderless">
+                        <tbody>
+                        <tr>
+                            <td width="15%">
+                                <label for="image_path">{{ trans('columns.boat_image') }}</label>
+                            </td>
+                            <td>
+                                <input type="file" class="form-control" name="image_path" id="image_path" accept=".png,.jpg">
+                            </td>
+                        </tr>
+                        @if(isset($boat) && $boat->hasImage())
+                        <tr>
+                            <td width="15%">
+                                <label for="image_path">{{ trans('columns.current_image') }}</label>
+                            </td>
+                            <td>
+                                <img src="/media/small/{{ $boat->image_path }}.png" alt="">
+                            </td>
+                        </tr>
+                        @endif
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <a href="/mijn-boten" class="btn btn-default"><span class="fa fa-arrow-left"></span> {{ trans('actions.back') }}</a>
             <button type="submit" class="btn btn-primary pull-right">Opslaan</button>
             @if(isset($boat))
-                <a href="/mijn-boten/{{ $boat->id }}/delete" class="btn btn-link pull-right">{{ trans('boatinfo.delete_boat') }}</a>
+                <a type="button" data-toggle="modal" data-target="#myModal" class="btn btn-link pull-right"><i class="fa fa-trash" style="font-size: 15pt;"></i></a>
             @endif
         </form>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title text-danger" id="myModalLabel"><strong>Let op!</strong></h3>
+                </div>
+                <div class="modal-body">
+                    <h4>
+                        U staat op het punt uw boot te verwijderen! Wilt u doorgaan?
+                    </h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
+                    @if(isset($boat))
+                        <a href="/mijn-boten/{{ $boat->id }}/delete" class="btn btn-danger">Verwijder</a>
+                    @endif
+                </div>
+            </div>
+        </div>
     </div>
 @endsection

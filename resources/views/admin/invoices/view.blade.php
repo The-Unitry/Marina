@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ trans('navigation.invoice') }} (#{{ $invoice->id }})</title>
+    <title>Factuur (#{{ $invoice->number() }})</title>
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 </head>
 <body id="invoice">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 text-right pull-right">
+            <div class="col-md-4 text-left pull-right">
                 <h4>{{ setting('company_name') }}</h4>
                 <p>
                     {{ setting('company_address') }}<br>
@@ -18,41 +18,77 @@
             </div>
             <div class="col-md-8">
                 <h1>
-                    {{ trans('navigation.invoice') }} (#{{ $invoice->id }})
+                    Factuur (#{{ $invoice->number() }})
                 </h1>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-4 pull-left">
+                <p>
+                    {{ $invoice->user->name }}<br>
+                    {{ $invoice->user->address }}<br>
+                    {{ $invoice->user->zip }} {{ $invoice->user->city }}<br>
+                    {{ $invoice->user->phone }}<br>
+                    {{ $invoice->user->email }}
+                </p>
+            </div>
+            <div class="col-md-4 pull-right">
+                <table style="width: 60%;">
+                    <tr>
+                        <td>Factuurnummer:</td>
+                        <td>{{ $invoice->number() }}</td>
+                    </tr>
+                    <tr>
+                        <td>Datum:</td>
+                        <td>{{ date('d-m-Y', strtotime($invoice->created_at)) }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
         <p>
-            {{ trans('invoice.thank_you_reservation') }}
+            Bedankt voor uw reservering en graag tot ziens.
         </p>
+        <br>
         <table class="table">
             <thead>
                 <tr>
-                    <th>{{ trans('invoice.box') }}</th>
-                    <th>{{ trans('invoice.start_date') }}</th>
-                    <th>{{ trans('invoice.end_date') }}</th>
-                    <th>{{ trans('invoice.amount_of_nights') }}</th>
-                    <th>{{ trans('columns.price_per_night') }}</th>
-                    <th>{{ trans('invoice.total_price') }}</th>
+                    <th class="col-sm-1" style="width: 4%;">#</th>
+                    <th class="col-sm-1">Amount</th>
+                    <th class="col-sm-3">Description</th>
+                    <th class="col-sm-3">Period</th>
+                    <th class="col-sm-1">Price</th>
+                    <th class="col-sm-2">VAT</th>
+                    <th class="col-sm-2">{{ trans('columns.total_price') }}</th>
                 </tr>
             </thead>
             <tbody>
+                @foreach ($invoice->products as $i => $product)
                 <tr>
-                    <td>{{ $invoice->reservation->box->getFullCode() }}</td>
-                    <td>{{ $invoice->reservation->start }}</td>
-                    <td>{{ $invoice->reservation->end }}</td>
-                    <td>{{ $invoice->reservation->totalNights() }}</td>
-                    <td>{{ $invoice->reservation->box->pricePerNight() }}</td>
-                    <td>{{ $invoice->reservation->box->totalPrice($invoice->reservation->totalNights()) }}</td>
+                    <td>{{ $i + 1 }}</td>
+                    <td>{{ $product->amount }}</td>
+                    <td>{{ $product->description }}</td>
+                    <td>{{ (strtotime($product->start) != null) ? $product->period() : '' }}</td>
+                    <td>&euro; {{ $product->formattedPrice() }}</td>
+                    <td>{{ $product->vat }} %</td>
+                    <td>&euro; {{ $product->formattedTotalPrice() }}</td>
+                </tr>
+                @endforeach
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>&euro; {{ $invoice->totalPrice() }}</td>
                 </tr>
             </tbody>
         </table>
         <hr>
         <p>
-        {{ trans('invoice.receive_payment_within_days', ['days' => '20', 'iban' => 'XXX']) }}
-            {{ setting('company_name') }}.<br><br>
+        Graag ontvangen we uw betaling binnen 10 werkdagen op rekeningnummer <b>{{ setting('bank_account') }}</b> t.a.v. <b>{{ setting('company_name') }}</b>.<br><br>
 
-            {{ trans('invoice.sign_off') }} <br>
+            Met vriendelijke groet, <br>
             {{ setting('company_name') }}
         </p>
     </div>

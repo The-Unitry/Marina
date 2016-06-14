@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Mail;
 use Navicula\Http\Requests;
+use Navicula\Models\Page;
 
 class ContactController extends Controller
 {
@@ -16,7 +17,9 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('contact.index');
+      return view('contact.index', [
+          'page' => Page::where('id', 1)->first()
+      ]);
     }
 
     /**

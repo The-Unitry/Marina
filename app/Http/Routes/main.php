@@ -18,11 +18,22 @@ Route::get('reserveren', 'ReservationController@index');
 Route::get('mijn-boxen', 'BoxController@index');
 
 // Posts
-Route::get('post/{slug}', 'PostController@show');
+Route::get('nieuws', 'BlogController@index');
+Route::get('nieuws/{slug}', 'BlogController@show');
 
 // Contact Form
 Route::get('contact', 'ContactController@index');
 Route::post('contact', 'ContactController@store');
 
+// Events
+Route::get('evenementen', 'EventController@index');
+
+// Crane planning
+Route::get('kraanplan', 'CraneController@index');
+
 // Authentication
 Route::auth();
+
+// User preferences
+Route::get('voorkeuren', 'UserController@index');
+Route::patch('voorkeuren', 'UserController@update');
