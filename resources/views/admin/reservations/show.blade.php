@@ -18,13 +18,13 @@
                     <div class="form-group">
                         <label for="start" class="col-sm-2 control-label">{{ trans('columns.start_date') }}</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="start" id="start" value="{{ $reservation->start or '' }}">
+                            <input type="text" class="form-control datepicker" name="start" id="start" value="{{ $reservation->start or '' }}">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="end" class="col-sm-2 control-label">{{ trans('columns.end_date') }}</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="end" id="end" value="{{ $reservation->end or '' }}">
+                            <input type="text" class="form-control datepicker" name="end" id="end" value="{{ $reservation->end or '' }}">
                         </div>
                     </div>
                     <div class="form-group">
