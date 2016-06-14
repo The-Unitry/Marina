@@ -54,7 +54,7 @@
             position: relative;
             margin-bottom: 20px;
             background-color: #EEE;
-            color: #000000;
+            color: rgb(51, 51, 51);
             text-align: center;
         }
 
@@ -65,7 +65,7 @@
         .widget-panel h2 {
             font-weight: 600;
             font-size: 32px;
-            margin: 0;
+            margin-top: 5px;
         }
 
         .widget-panel i {
