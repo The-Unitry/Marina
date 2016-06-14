@@ -21,7 +21,7 @@ class Authenticate
             if ($request->ajax() || $request->wantsJson()) {
                 return response('Unauthorized.', 401);
             } else {
-                return redirect()->guest('login');
+                return redirect()->guest('login')->with('message', 'Om deze pagina te bezoeken moet u eerst ingelogd zijn.');
             }
         }
 

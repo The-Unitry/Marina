@@ -4,6 +4,9 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8" style="margin-top: 50px">
+            @if(Session::has('message'))
+                <div class="alert alert-info" role="alert">{{ Session::get('message') }}</div>
+            @endif
             <div class="panel panel-default">
                 <div class="panel-heading">Inloggen</div>
                 <div class="panel-body login-panel">
