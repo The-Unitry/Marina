@@ -19,10 +19,11 @@
                         </a>
                     </div>
                     <div class="col-md-10">
-                        <h3 class="article-title">{{ $post->title }}</h3>
+                        <h3 class="article-title">
+                            <a href="/blog/{{ $post->slug }}">{{ $post->title }}</a>
+                        </h3>
                         <h5 class="article-time">{{ trans_choice('date.days_since', $post->daysSinceCreated(), ['days' => $post->daysSinceCreated()]) }}</h5>
                         <p>{!! $post->description !!}</p>
-                        <a href="/blog/{{ $post->slug }}" class="btn btn-primary pull-right">Lees meer</a>
                     </div>
                 </article>
                 <hr>

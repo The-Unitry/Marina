@@ -64,4 +64,8 @@ body {
 
 a {
   color: $primary;
+
+  &:hover {
+    color: darken($primary, 4);
+  }
 }
