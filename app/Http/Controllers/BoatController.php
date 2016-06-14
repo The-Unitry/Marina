@@ -51,10 +51,16 @@ class BoatController extends Controller
      */
     public function edit(Boat $boat)
     {
-        return view('boats.show', [
-            'boat' => $boat,
-            'method' => 'PATCH'
-        ]);
+        if (Auth::user() == $boat->owner) {
+            return view('boats.show', [
+                'boat' => $boat,
+                'method' => 'PATCH'
+            ]);
+        }
+
+        return redirect('/mijn-boten')->with(
+            'message', 'Je hebt geen toegang tot deze pagina.'
+        );
     }
 
     /**
