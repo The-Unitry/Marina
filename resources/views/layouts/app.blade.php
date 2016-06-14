@@ -79,7 +79,7 @@
         <div class="container ">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <small class="copyright">Copyright &copy; LINK 2016 | Alle rechten voorbehouden</small>
+                    <small>&copy; {{ setting('company_name') }} {{ date('Y') }}</small>
                 </div>
             </div>
         </div>

@@ -4,6 +4,7 @@
   width: 100%;
   height: $footer-height;
   background-color: #252525;
+  color: $white;
 
   .container {
     height: 100%;
@@ -19,10 +20,6 @@
       margin-top: 10px;
       margin-bottom: 10px;
       border-color: $hr;
-    }
-
-    .copyright {
-      color: $white;
     }
   }
 }
