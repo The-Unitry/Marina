@@ -11,7 +11,7 @@
         </h3>
         <div class="row">
             <p class="text col-md-8">
-                Bedankt voor uw reservering, we nemen zo spoedig mogelijk contact met je op.
+                Bedankt voor uw reservering, we nemen zo spoedig mogelijk contact met u op.
             </p>
         </div>
     </div>
