@@ -23,7 +23,7 @@
                         {{ $boat->name }}
                     </h3>
                     <h5>
-                        {{ $boat->brand }} - {{ $boat->type }}
+                        {{ $boat->brand }} - {{ trans('columns.' . strtolower($boat->type)) }}
                     </h5>
                 </div>
             </a>
