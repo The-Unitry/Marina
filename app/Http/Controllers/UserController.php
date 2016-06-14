@@ -10,7 +10,6 @@ use Navicula\Models\User;
 
 class UserController extends Controller
 {
-
     /**
      * UserController constructor.
      */
