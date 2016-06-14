@@ -4,6 +4,11 @@ namespace Navicula\Http\Controllers;
 
 use Auth;
 use Illuminate\Http\Request;
+use Navicula\Http\Controllers\Api;
+use Navicula\Models\Boat;
+use Navicula\Models\Box;
+use Navicula\Models\Reservation;
+use Carbon\Carbon;
 
 use Navicula\Http\Requests;
 
@@ -24,8 +29,39 @@ class ReservationController extends Controller
      */
     public function index()
     {
-        return view('reservation.index', [
+        return view('reservations.index', [
             'boats' => Auth::user()->boats
         ]);
+    }
+
+    public function boxes(Request $request)
+    {
+        $boat = Boat::findOrFail($request->get('boat_id'));
+
+        return view('reservations.available_boxes', [
+            'boxes' => Api\BoxController::getAvailableBoxes($boat, $request->get('start'), $request->get('end')),
+            'filled' => $request->all()
+        ]);
+    }
+
+    public function store(Boat $boat, $start, $end, $amountOfPersons, Box $box)
+    {
+        Reservation::create([
+            'approved' => 0,
+            'user_id' => Auth::id(),
+            'box_id' => $box->id,
+            'reservation_type_id' => 1,
+            'amount_of_persons', $amountOfPersons,
+            'boat_id' => $boat->id,
+            'start' => new Carbon($start),
+            'end' => new Carbon($end)
+        ]);
+
+        return redirect('/reserveren/bedankt');
+    }
+
+    public function thanks()
+    {
+        return view('reservations.success');
     }
 }

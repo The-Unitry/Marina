@@ -13,6 +13,9 @@ Route::get('mijn-boten/{boat}/delete', 'BoatController@destroy');
 
 // Reserve
 Route::get('reserveren', 'ReservationController@index');
+Route::get('reserveren/bedankt', 'ReservationController@thanks');
+Route::post('reserveren', 'ReservationController@boxes');
+Route::get('reserveren/store/{boat}/{start}/{end}/{amount_of_persons}/{box}', 'ReservationController@store');
 
 // Boxes
 Route::get('mijn-boxen', 'BoxController@index');

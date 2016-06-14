@@ -20,7 +20,7 @@ class BoxController extends Controller
 	 * @param string $end
 	 * @return array
 	 */
-    public function getAvailableBoxes(Boat $boat, $start = null, $end = null)
+    public static function getAvailableBoxes(Boat $boat, $start = null, $end = null)
     {
     	$boxes = Box::orderBy('scaffold_id')->get();
     	$start = new Carbon($start);
