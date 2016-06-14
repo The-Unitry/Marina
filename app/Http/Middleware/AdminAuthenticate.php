@@ -18,7 +18,7 @@ class AdminAuthenticate
     public function handle($request, Closure $next, $guard = null)
     {
         if (!Auth::check() || !Auth::user()->isAdmin()) {
-            return redirect('/login');
+            return redirect('/login')->with('message', 'Je hebt geen toegang tot deze pagina.');
         }
 
         return $next($request);
