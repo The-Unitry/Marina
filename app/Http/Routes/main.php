@@ -33,3 +33,7 @@ Route::get('kraanplan', 'CraneController@index');
 
 // Authentication
 Route::auth();
+
+// Users
+Route::get('user', 'UserController@index');
+// Route::patch('user', 'UserController@update');

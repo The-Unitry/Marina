@@ -31,7 +31,7 @@ Route::resource('user', 'Admin\UserController');
 // Scaffolds
 Route::resource('scaffold', 'Admin\ScaffoldController');
 
-// Rqquests
+// Requests
 Route::resource('request', 'Admin\RequestController');
 
 // Settings

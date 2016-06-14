@@ -85,6 +85,11 @@ return [
     'berth_holders' => 'Vaste ligplaatshouder|Vaste ligplaatshouders',
     'transients' => 'Passant|Passanten',
     'users' => 'Gebruiker|Gebruikers',
+    'user_name' => 'Naam',
+    'user_adress' => 'Adres',
+    'phone_number' => 'Telefoonnummer',
+    'user_mail' => 'E-mailadres',
+    'user_city' => 'Woonplaats',
 
     'sizes' => [
 
