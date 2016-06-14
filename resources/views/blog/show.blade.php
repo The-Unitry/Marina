@@ -20,11 +20,11 @@
             </h5>
             <div class="row">
                 <div class="col-md-8">
-                    {!! $post->body!!}
+                    {!! $post->body !!}
                 </div>
             </div>
             <br>
-            <a href="/blog">
+            <a href="/nieuws">
                 <span class="fa fa-arrow-left"></span> Terug naar overzicht
             </a>
         </article>

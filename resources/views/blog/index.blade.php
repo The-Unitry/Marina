@@ -14,13 +14,13 @@
             @foreach($posts as $post)
                 <article class="row">
                     <div class="col-md-2">
-                        <a href="/blog/{{ $post->slug }}">
+                        <a href="/nieuws/{{ $post->slug }}">
                             <img src="/media/small/{{ ($post->hasHeader()) ? $post->header_path : 'anchor_placeholder' }}.png" alt="" width="100%" class="img-responsive">
                         </a>
                     </div>
                     <div class="col-md-10">
                         <h3 class="article-title">
-                            <a href="/blog/{{ $post->slug }}">{{ $post->title }}</a>
+                            <a href="/nieuws/{{ $post->slug }}">{{ $post->title }}</a>
                         </h3>
                         <h5 class="article-time">{{ trans_choice('date.days_since', $post->daysSinceCreated(), ['days' => $post->daysSinceCreated()]) }}</h5>
                         <p>{!! $post->description !!}</p>

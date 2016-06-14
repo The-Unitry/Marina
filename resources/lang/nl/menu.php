@@ -18,7 +18,7 @@ return [
 
     /* Front */
     'home' => 'Home',
-    'blog' => 'Nieuws',
+    'news' => 'Nieuws',
     'reserve' => 'Ligplaats boeken',
     'my_boats' => 'Mijn boten',
     'crane_plan' => 'Kraanplan',
