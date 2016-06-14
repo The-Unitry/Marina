@@ -136,8 +136,9 @@ class InvoiceController extends AdminController
 
     public function credit(Invoice $invoice)
     {
-        $invoice->status = 'credited';
-        $invoice->save();
+        $invoice->update([
+            'status' => 'credited'
+        ]);
 
         $credit = Invoice::create([
             'status' => 'credit_note',
