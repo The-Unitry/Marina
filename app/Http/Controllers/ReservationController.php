@@ -34,6 +34,11 @@ class ReservationController extends Controller
         ]);
     }
 
+    /**
+     * ShowForm() for the available boxes.
+     * 
+     * @return view
+     */
     public function boxes(Request $request)
     {
         $boat = Boat::findOrFail($request->get('boat_id'));
@@ -44,6 +49,11 @@ class ReservationController extends Controller
         ]);
     }
 
+    /**
+     * Create a new reservation with the given data.
+     * 
+     * @return redirect
+     */
     public function store(Boat $boat, $start, $end, $amountOfPersons, Box $box)
     {
         Reservation::create([
@@ -60,6 +70,10 @@ class ReservationController extends Controller
         return redirect('/reserveren/bedankt');
     }
 
+    /**
+     * Show the thanks page.
+     * @return View
+     */
     public function thanks()
     {
         return view('reservations.success');
