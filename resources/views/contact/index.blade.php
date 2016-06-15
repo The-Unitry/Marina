@@ -48,7 +48,7 @@
                 <div class="form-group">
                     <label for="body" class="col-sm-2 control-label">{{ trans('columns.message') }}</label>
                     <div class="col-sm-10">
-                        <textarea class="form-control" rows="4" name="body" placeholder="{{ trans('columns.your_message') }}"></textarea>
+                        <textarea class="form-control" rows="4" name="body" placeholder="{{ trans('columns.your_message') }}">{{ $_GET['message'] or '' }}</textarea>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary pull-right">{{ trans('actions.send.message') }}</button>

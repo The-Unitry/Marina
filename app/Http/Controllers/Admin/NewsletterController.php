@@ -14,6 +14,6 @@ class NewsletterController extends AdminController
      */
     public function index()
     {
-        //
+        return view('admin.newsletters.index');
     }
 }

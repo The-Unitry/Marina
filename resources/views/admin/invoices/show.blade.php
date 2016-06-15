@@ -40,7 +40,7 @@
                     <div class="form-group">
                         <label for="user_id" class="col-sm-2 control-label">{{ trans('columns.customer') }}</label>
                         <div class="col-sm-10">
-                        @if(!isset($invoice) || isset($invoice) && $invoice->status == 'Pending')
+                        @if(!isset($invoice) || isset($invoice) && $invoice->status == 'pending')
                             @foreach ($users as $user)
                             <select name="user_id" id="user_id" class="form-control">
                                 <option value="{{ $user->id }}" {{ (isset($invoice) && $invoice->user_id == $user->id) ? 'selected' : '' }}>
@@ -52,18 +52,34 @@
                         @endif
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="user_id" class="col-sm-2 control-label">{{ trans('columns.due_days') }}</label>
+                        <div class="col-sm-10">
+                        @if(!isset($invoice) || isset($invoice) && $invoice->status == 'pending')
+                            <div class="input-group">
+                                <input type="number" class="form-control" value="3">
+                                <span class="input-group-addon">{{ trans('columns.days') }}</span>
+                            </div>
+                        @else
+                            <div class="input-group">
+                                <input type="number" class="form-control" value="{{ $invoice->due_days }}" disabled>
+                                <span class="input-group-addon">{{ trans('columns.days') }}</span>
+                            </div>
+                        @endif
+                        </div>
+                    </div>
                     @if(isset($invoice))
                     <div class="form-group">
-                        <label for="status" class="col-sm-2 control-label">Products</label>
+                        <label for="status" class="col-sm-2 control-label">{{ trans('columns.products') }}</label>
                         <div class="col-sm-10">
                             <table class="table">
                                 @if(sizeof($invoice->products))
                                 <thead>
                                     <tr>
-                                        <th>Description</th>
-                                        <th>Amount</th>
-                                        <th>Price</th>
-                                        <th colspan="2">VAT</th>
+                                        <th>{{ trans('columns.description') }}</th>
+                                        <th>{{ trans('columns.amount') }}</th>
+                                        <th>{{ trans('columns.price') }}</th>
+                                        <th colspan="2">{{ trans('columns.vat') }}</th>
                                     </tr>
                                 </thead>
                                 @endif
@@ -76,7 +92,7 @@
                                                    class="form-control"
                                                    name="[products][{{ $product->id }}][description]"
                                                    value="{{ $product->description }}"
-                                                   placeholder="Description" 
+                                                   placeholder="Description"
                                             >
                                             @else
                                             {{ $product->description }}
@@ -88,7 +104,7 @@
                                                    class="form-control"
                                                    name="[products][{{ $product->id }}][amount]"
                                                    value="{{ $product->amount }}"
-                                                   placeholder="Amount" 
+                                                   placeholder="Amount"
                                             >
                                             @else
                                             {{ $product->amount }}
@@ -102,7 +118,7 @@
                                                        class="form-control"
                                                        name="[products][{{ $product->id }}][price]"
                                                        value="{{ $product->price }}"
-                                                       placeholder="Price" 
+                                                       placeholder="Price"
                                                 >
                                                 @else
                                                 &euro; {{ $product->price }}
@@ -116,7 +132,7 @@
                                                        class="form-control"
                                                        name="[products][{{ $product->id }}][vat]"
                                                        value="{{ $product->vat }}"
-                                                       placeholder="VAT" 
+                                                       placeholder="VAT"
                                                 >
                                                 <span class="input-group-addon">%</span>
                                                 @else
@@ -126,7 +142,7 @@
                                         </td>
                                         <td class="col-sm-1 text-center">
                                             @if($invoice->status == 'pending')
-                                            <a  class="label label-danger" 
+                                            <a  class="label label-danger"
                                                 href="../invoice/{{ $invoice->id }}/remove-product/{{ $product->id }}"
                                             >
                                                 <i class="fa fa-minus"></i>

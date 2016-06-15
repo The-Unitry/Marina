@@ -16,12 +16,14 @@ return [
     'scaffolds' => 'Steigers',
     'settings' => 'Instellingen',
     'view_site' => 'Bekijk website',
+    'newsletters' => 'Nieuwsbrieven',
 
     /* Front */
     'home' => 'Home',
     'news' => 'Nieuws',
     'reserve' => 'Ligplaats boeken',
     'my_boats' => 'Mijn boten',
+    'my_reservations' => 'Mijn reserveringen',
     'crane_plan' => 'Kraanplan',
     'events' => 'Evenementen',
     'contact' => 'Contact',

@@ -52,19 +52,17 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th class="col-sm-1" style="width: 4%;">#</th>
-                    <th class="col-sm-1">Amount</th>
-                    <th class="col-sm-3">Description</th>
-                    <th class="col-sm-3">Period</th>
-                    <th class="col-sm-1">Price</th>
-                    <th class="col-sm-2">VAT</th>
+                    <th class="col-sm-1">{{ trans('columns.amount') }}</th>
+                    <th class="col-sm-3">{{ trans('columns.description') }}</th>
+                    <th class="col-sm-3">{{ trans('columns.period') }}</th>
+                    <th class="col-sm-1">{{ trans('columns.price') }}</th>
+                    <th class="col-sm-2">{{ trans('columns.vat') }}</th>
                     <th class="col-sm-2">{{ trans('columns.total_price') }}</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($invoice->products as $i => $product)
                 <tr>
-                    <td>{{ $i + 1 }}</td>
                     <td>{{ $product->amount }}</td>
                     <td>{{ $product->description }}</td>
                     <td>{{ (strtotime($product->start) != null) ? $product->period() : '' }}</td>
@@ -79,14 +77,13 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
                     <td>&euro; {{ $invoice->totalPrice() }}</td>
                 </tr>
             </tbody>
         </table>
         <hr>
         <p>
-        Graag ontvangen we uw betaling binnen 30 dagen op rekeningnummer <b>{{ setting('bank_account') }}</b> t.a.v. <b>{{ setting('company_name') }}</b>.<br><br>
+        Graag ontvangen we uw betaling binnen {{ $invoice->due_days }} dagen op rekeningnummer <b>{{ setting('bank_account') }}</b> t.a.v. <b>{{ setting('company_name') }}</b>.<br><br>
 
             Met vriendelijke groet, <br>
             {{ setting('company_name') }}

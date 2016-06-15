@@ -40,6 +40,7 @@
                         <li class=""><a href="{{ url('/admin/user') }}"><i class="fa fa-fw fa-users"></i> {{ trans('menu.users') }}</a></li>
                         <li class=""><a href="{{ url('/admin/reservation') }}"><i class="fa fa-fw fa-calendar-o"></i> {{ trans('menu.reservations') }}</a></li>
                         <li class=""><a href="{{ url('/admin/invoice') }}"><i class="fa fa-fw fa-money"></i> {{ trans('menu.invoices') }}</a></li>
+                        <li class=""><a href="{{ url('/admin/newsletter/send') }}"><i class="fa fa-fw fa-envelope-o"></i> {{ trans('menu.newsletters') }}</a></li>
                     </ul>
                 </li>
 
