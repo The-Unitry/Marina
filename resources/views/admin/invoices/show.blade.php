@@ -53,11 +53,11 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="user_id" class="col-sm-2 control-label">{{ trans('columns.due_days') }}</label>
+                        <label for="due_days" class="col-sm-2 control-label">{{ trans('columns.due_days') }}</label>
                         <div class="col-sm-10">
                         @if(!isset($invoice) || isset($invoice) && $invoice->status == 'pending')
                             <div class="input-group">
-                                <input type="number" class="form-control" value="3">
+                                <input type="number" class="form-control" name="due_days" id="due_days" value="{{ (isset($invoice)) ? $invoice->due_days : 3 }}">
                                 <span class="input-group-addon">{{ trans('columns.days') }}</span>
                             </div>
                         @else
@@ -90,9 +90,9 @@
                                             @if($invoice->status == 'pending')
                                             <input type="text"
                                                    class="form-control"
-                                                   name="[products][{{ $product->id }}][description]"
+                                                   name="products[{{ $product->id }}][description]"
                                                    value="{{ $product->description }}"
-                                                   placeholder="Description"
+                                                   placeholder="{{ trans('columns.description') }}"
                                             >
                                             @else
                                             {{ $product->description }}
@@ -102,9 +102,9 @@
                                             @if($invoice->status == 'pending')
                                             <input type="number"
                                                    class="form-control"
-                                                   name="[products][{{ $product->id }}][amount]"
+                                                   name="products[{{ $product->id }}][amount]"
                                                    value="{{ $product->amount }}"
-                                                   placeholder="Amount"
+                                                   placeholder="{{ trans('columns.amount') }}"
                                             >
                                             @else
                                             {{ $product->amount }}
@@ -116,9 +116,9 @@
                                                 <span class="input-group-addon">&euro;</span>
                                                 <input type="text"
                                                        class="form-control"
-                                                       name="[products][{{ $product->id }}][price]"
-                                                       value="{{ $product->price }}"
-                                                       placeholder="Price"
+                                                       name="products[{{ $product->id }}][price]"
+                                                       value="{{ euro($product->price / 100) }}"
+                                                       placeholder="{{ trans('columns.price') }}"
                                                 >
                                                 @else
                                                 &euro; {{ $product->price }}
@@ -130,9 +130,9 @@
                                                 @if($invoice->status == 'pending')
                                                 <input type="number"
                                                        class="form-control"
-                                                       name="[products][{{ $product->id }}][vat]"
+                                                       name="products[{{ $product->id }}][vat]"
                                                        value="{{ $product->vat }}"
-                                                       placeholder="VAT"
+                                                       placeholder="{{ trans('columns.vat') }}"
                                                 >
                                                 <span class="input-group-addon">%</span>
                                                 @else
@@ -143,7 +143,7 @@
                                         <td class="col-sm-1 text-center">
                                             @if($invoice->status == 'pending')
                                             <a  class="label label-danger"
-                                                href="../invoice/{{ $invoice->id }}/remove-product/{{ $product->id }}"
+                                                href="../invoice/{{ $invoice->id }}/delete/{{ $product->id }}"
                                             >
                                                 <i class="fa fa-minus"></i>
                                             </a>
@@ -154,7 +154,7 @@
                                     @if($invoice->status == 'pending')
                                     <tr>
                                         <td colspan="5">
-                                            <a class="btn btn-default" href="../invoice/{{ $invoice->id }}/add-product">
+                                            <a class="btn btn-default" href="../invoice/{{ $invoice->id }}/add">
                                                 <span class="fa fa-plus"></span> Add product
                                             </a>
                                         </td>

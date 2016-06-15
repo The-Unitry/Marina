@@ -15,15 +15,31 @@ class Product extends Model
      */
     public function period()
     {
-        if (!empty($this->start) && !empty($this->end))
-        {
-
+        if (!empty($this->start) && !empty($this->end)) {
             return date('d-m-Y', strtotime($this->start)) . ' - ' . date('d-m-Y', strtotime($this->end));
-        }
-        else
-        {
+        } else {
             return '';
         }
+    }
+
+    /**
+     * Return the total VAT.
+     *
+     * @return float
+     */
+    public function totalVat()
+    {
+        return ($this->price * $this->amount) * ($this->vat / 100);
+    }
+
+    /**
+     * Return the total price.
+     *
+     * @return float
+     */
+    public function totalPrice()
+    {
+        return ($this->price * $this->amount) + $this->totalVat();
     }
 
     /**
@@ -33,7 +49,7 @@ class Product extends Model
      */
     public function formattedPrice()
     {
-        return number_format($this->price / 100, 2, ',', '.');
+        return euro($this->price / 100);
     }
 
     /**
@@ -43,6 +59,6 @@ class Product extends Model
      */
     public function formattedTotalPrice()
     {
-        return number_format($this->price * $this->amount / 100, 2, ',', '.');
+        return euro($this->price * $this->amount / 100);
     }
 }

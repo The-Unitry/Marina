@@ -12,7 +12,8 @@ Route::resource('page', 'Admin\PageController');
 // Invoices
 Route::resource('invoice', 'Admin\InvoiceController');
 Route::get('invoice/{invoice}/view', 'Admin\InvoiceController@view');
-Route::get('invoice/{invoice}/add-product', 'Admin\InvoiceController@addProduct');
+Route::get('invoice/{invoice}/add', 'Admin\InvoiceController@addProduct');
+Route::get('invoice/{invoice}/delete/{product}', 'Admin\InvoiceController@destroyProduct');
 Route::get('invoice/{invoice}/credit', 'Admin\InvoiceController@credit');
 
 // Reservations

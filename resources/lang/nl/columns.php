@@ -75,6 +75,7 @@ return [
     'tax' => 'Belasting',
     'tourist_tax' => 'Toeristenbelasting',
     'bank_account' => 'Rekeningnummer',
+    'subtotal_price' => 'Totaal prijs excl. BTW',
     'author' => 'Auteur',
     'approved' => 'Goedgekeurd',
     'contact_form' => 'Contactformulier',
@@ -96,7 +97,7 @@ return [
     'amount' => 'Aantal',
     'price' => 'Prijs',
     'vat' => 'BTW',
-    'days' => 'Dagen',
+    'days' => 'dagen',
     'period' => 'Periode',  
 
     'sizes' => [

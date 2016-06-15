@@ -126,6 +126,7 @@ class ReservationController extends AdminController
     {
         $invoice = Invoice::create([
             'status' => 'pending',
+            'due_days' => 3,
             'user_id' => Auth::id()
         ]);
 
@@ -142,7 +143,7 @@ class ReservationController extends AdminController
         Product::create([
             'invoice_id' => $invoice->id,
             'amount' => $reservation->amount_of_persons,
-            'description' => 'Toeristen belasting ',
+            'description' => 'Toeristen belasting',
             'vat' => 0,
             'price' => $reservation->amount_of_persons * setting('tourist_tax')
         ]);

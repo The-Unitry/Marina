@@ -88,6 +88,10 @@ class InvoiceController extends AdminController
     {
         $invoice->update($request->all());
 
+        foreach ($request->get('products') as $i => $product) {
+            Product::find($i)->update($product);
+        }
+
         return back()->with(
             'message', trans('confirmations.updated.invoice')
         );
@@ -132,6 +136,19 @@ class InvoiceController extends AdminController
         ]);
 
         return redirect('/admin/invoice/' . $invoice->id);
+    }
+
+    /**
+     * Delete product.
+     *
+     * @param Product $product
+     * @return void
+     */
+    public function destroyProduct(Invoice $invoice, Product $product)
+    {
+        $product->delete();
+
+        return back();
     }
 
     public function credit(Invoice $invoice)

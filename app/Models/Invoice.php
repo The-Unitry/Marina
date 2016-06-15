@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Invoice extends Model
 {
-    protected $fillable = ['status', 'price', 'tax', 'user_id'];
+    protected $fillable = ['status', 'price', 'tax', 'user_id', 'due_days'];
 
-    private $totalPrice;
+    private $totalPrice, $subtotalPrice, $totalVat;
 
     /**
      * Get the user.
@@ -20,11 +20,6 @@ class Invoice extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function number()
-    {
-        return sprintf('%06d', $this->id);
-    }
-
     /**
      * Return a formatted string with the total price of an invoice.
      *
@@ -34,10 +29,40 @@ class Invoice extends Model
     {
         $this->totalPrice = 0;
         foreach ($this->products as $product) {
-            $this->totalPrice += $product->price * $product->amount;
+            $this->totalPrice += $product->totalPrice();
         }
 
-        return number_format($this->totalPrice / 100, 2, ',', '.');
+        return euro($this->totalPrice / 100);
+    }
+
+    /**
+     * Return a formatted string with the total price of an invoice.
+     *
+     * @return string
+     */
+    public function totalVat()
+    {
+        $this->totalVat = 0;
+        foreach ($this->products as $product) {
+            $this->totalVat += $product->totalVat();
+        }
+
+        return euro($this->totalVat / 100);
+    }
+
+    /**
+     * Return a formatted string with the total price of an invoice.
+     *
+     * @return string
+     */
+    public function subtotalPrice()
+    {
+        $this->subtotalPrice = 0;
+        foreach ($this->products as $product) {
+            $this->subtotalPrice += ($product->price * $product->amount);
+        }
+
+        return euro($this->subtotalPrice / 100);
     }
 
     /**
