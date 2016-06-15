@@ -15,6 +15,7 @@ Route::get('document', 'Admin\DocumentController@index');
 // Invoices
 Route::get('invoice/export', 'Admin\InvoiceExportController@index');
 Route::get('invoice/export/{start}/{end}', 'Admin\InvoiceExportController@export');
+Route::get('invoice/vat', 'Admin\TaxController@index');
 Route::resource('invoice', 'Admin\InvoiceController');
 Route::get('invoice/{invoice}/view', 'Admin\InvoiceController@view');
 Route::get('invoice/{invoice}/add', 'Admin\InvoiceController@addProduct');
