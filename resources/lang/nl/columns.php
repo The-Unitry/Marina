@@ -90,6 +90,14 @@ return [
     'phone_number' => 'Telefoonnummer',
     'user_mail' => 'E-mailadres',
     'user_city' => 'Woonplaats',
+    'due_days' => 'Betalingstermijn',
+    'products' => 'Producten',
+    'description' => 'Omschrijving',
+    'amount' => 'Aantal',
+    'price' => 'Prijs',
+    'vat' => 'BTW',
+    'days' => 'Dagen',
+    'period' => 'Periode',  
 
     'sizes' => [
 
