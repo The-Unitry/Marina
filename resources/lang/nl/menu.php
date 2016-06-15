@@ -17,6 +17,7 @@ return [
     'settings' => 'Instellingen',
     'view_site' => 'Bekijk website',
     'newsletters' => 'Nieuwsbrief',
+    'statistics' => 'Statistieken',
 
     /* Front */
     'home' => 'Home',
