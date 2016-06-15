@@ -40,6 +40,7 @@ Route::resource('request', 'Admin\RequestController');
 
 // Newsletters
 Route::get('newsletter/send', 'Admin\NewsletterController@index');
+Route::post('newsletter/send', 'Admin\NewsletterController@store');
 
 // Settings
 Route::get('setting', 'Admin\SettingController@index');
