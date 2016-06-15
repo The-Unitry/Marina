@@ -41,12 +41,13 @@
                         <label for="user_id" class="col-sm-2 control-label">{{ trans('columns.customer') }}</label>
                         <div class="col-sm-10">
                         @if(!isset($invoice) || isset($invoice) && $invoice->status == 'pending')
+                        <select name="user_id" id="user_id" class="form-control">
                             @foreach ($users as $user)
-                            <select name="user_id" id="user_id" class="form-control">
                                 <option value="{{ $user->id }}" {{ (isset($invoice) && $invoice->user_id == $user->id) ? 'selected' : '' }}>
-                                {{ $user->name }}</option>
-                            </select>
+                                    {{ $user->name }}
+                                </option>    
                             @endforeach
+                        </select>
                         @else
                             <input type="text" class="form-control" value="{{ $invoice->user->name }}" readonly>
                         @endif

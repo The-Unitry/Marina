@@ -55,9 +55,9 @@
                     <th class="col-sm-1">{{ trans('columns.amount') }}</th>
                     <th class="col-sm-4">{{ trans('columns.description') }}</th>
                     <th class="col-sm-3">{{ trans('columns.period') }}</th>
-                    <th class="col-sm-1">{{ trans('columns.price') }}</th>
+                    <th class="col-sm-1"></th>
                     <th class="col-sm-2">{{ trans('columns.vat') }}</th>
-                    <th class="col-sm-1">{{ trans('columns.total_price') }}</th>
+                    <th class="col-sm-1">{{ trans('columns.price') }}</th>
                 </tr>
             </thead>
             <tbody>
@@ -66,33 +66,25 @@
                     <td>{{ $product->amount }}</td>
                     <td>{{ $product->description }}</td>
                     <td>{{ (strtotime($product->start) != null) ? $product->period() : '' }}</td>
-                    <td>&euro; {{ $product->formattedPrice() }}</td>
-                    <td>{{ $product->vat }} %</td>
+                    <td></td>
+                    <td>{{ $product->vat }}%</td>
                     <td>&euro; {{ $product->formattedTotalPrice() }}</td>
                 </tr>
                 @endforeach
                 <tr>
-<<<<<<< HEAD
                     <td colspan="4"></td>
                     <td>{{ trans('columns.subtotal_price') }}</td>
                     <td>&euro; {{ $invoice->subtotalPrice() }}</td>
                 </tr>
                 <tr>
                     <td colspan="4"></td>
-                    <td>{{ trans('columns.vat') }}</td>
+                    <td>{{ trans('columns.vat') }} ({{ setting('tax') }}%)</td>
                     <td>&euro; {{ $invoice->totalVat() }}</td>
                 </tr>
                 <tr>
                     <td colspan="4"></td>
-                    <td>{{ trans('columns.total_price') }}</td>
-=======
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
->>>>>>> a5ebb8d624a6b4de0bce226eff8aa89f8d6115ac
-                    <td>&euro; {{ $invoice->totalPrice() }}</td>
+                    <td><b>{{ trans('columns.total_price') }}</b></td>
+                    <td><b>&euro; {{ $invoice->totalPrice() }}</td></td>
                 </tr>
             </tbody>
         </table>
