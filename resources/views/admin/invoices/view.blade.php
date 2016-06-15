@@ -52,7 +52,6 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th class="col-sm-1" style="width: 4%;">#</th>
                     <th class="col-sm-1">{{ trans('columns.amount') }}</th>
                     <th class="col-sm-3">{{ trans('columns.description') }}</th>
                     <th class="col-sm-3">{{ trans('columns.period') }}</th>
@@ -64,7 +63,6 @@
             <tbody>
                 @foreach ($invoice->products as $i => $product)
                 <tr>
-                    <td>{{ $i + 1 }}</td>
                     <td>{{ $product->amount }}</td>
                     <td>{{ $product->description }}</td>
                     <td>{{ (strtotime($product->start) != null) ? $product->period() : '' }}</td>
@@ -74,7 +72,6 @@
                 </tr>
                 @endforeach
                 <tr>
-                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
