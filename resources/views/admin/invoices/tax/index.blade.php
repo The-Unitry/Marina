@@ -15,7 +15,6 @@
             url: '/admin/invoice/tax/' + start + '/' + end,
             context: document.body
         }).done(function(data) {
-            console.log(data);
             document.getElementById('revenue').innerHTML = data['revenue'];
             document.getElementById('vat').innerHTML = data['vat'];
             document.getElementById('tourist_tax').innerHTML = data['tourist_tax'];
