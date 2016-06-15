@@ -86,7 +86,7 @@
         </table>
         <hr>
         <p>
-        Graag ontvangen we uw betaling binnen 10 werkdagen op rekeningnummer <b>{{ setting('bank_account') }}</b> t.a.v. <b>{{ setting('company_name') }}</b>.<br><br>
+        Graag ontvangen we uw betaling binnen 30 dagen op rekeningnummer <b>{{ setting('bank_account') }}</b> t.a.v. <b>{{ setting('company_name') }}</b>.<br><br>
 
             Met vriendelijke groet, <br>
             {{ setting('company_name') }}
