@@ -24,7 +24,10 @@
                     <div class="form-group">
                         <label for="price_per_night" class="col-sm-2 control-label">{{ trans('columns.price_per_night') }}</label>
                         <div class="col-sm-10">
+                          <div class="input-group">
+                            <span class="input-group-addon">&euro;</span>
                             <input type="number" class="form-control" name="price_per_night" id="price_per_night" value="{{ (isset($box)) ? $box->price_per_night / 100 : '' }}" step="0.01">
+                          </div>
                         </div>
                     </div>
                     <div class="form-group">
@@ -60,7 +63,7 @@
                 </div>
                 <div class="col-md-2">
                     <div class="list-group">
-                        <button type="submit" class="list-group-item bg-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i> 
+                        <button type="submit" class="list-group-item bg-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i>
                         {{ trans('actions.save') }}</button>
                         <a href="../box" class="list-group-item"><span class="fa fa-arrow-left"></span> {{ trans('actions.back') }}</a>
                     </div>
