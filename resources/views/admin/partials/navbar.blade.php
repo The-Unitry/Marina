@@ -34,8 +34,8 @@
                     </a>
 
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="{{ url('/admin/box') }}"><i class="fa fa-fw fa-th"></i> {{ trans('menu.boxes') }}</a></li>
                         <li><a href="{{ url('/admin/scaffold') }}"><i class="fa fa-fw fa-map-signs"></i> {{ trans('menu.scaffolds') }}</a></li>
+                        <li><a href="{{ url('/admin/box') }}"><i class="fa fa-fw fa-th"></i> {{ trans('menu.boxes') }}</a></li>
                         <li><a href="{{ url('/admin/boat') }}"><i class="fa fa-fw fa-ship"></i> {{ trans('menu.boats') }}</a></li>
                     </ul>
                 </li>
