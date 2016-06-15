@@ -40,6 +40,7 @@
                         <li class=""><a href="{{ url('/admin/user') }}"><i class="fa fa-fw fa-users"></i> {{ trans('menu.users') }}</a></li>
                         <li class=""><a href="{{ url('/admin/reservation') }}"><i class="fa fa-fw fa-calendar-o"></i> {{ trans('menu.reservations') }}</a></li>
                         <li class=""><a href="{{ url('/admin/invoice') }}"><i class="fa fa-fw fa-money"></i> {{ trans('menu.invoices') }}</a></li>
+                        <li class=""><a href="{{ url('/admin/newsletter/send') }}"><i class="fa fa-fw fa-envelope-o"></i> {{ trans('menu.newsletters') }}</a></li>
                     </ul>
                 </li>
 
@@ -52,6 +53,7 @@
                     <ul class="dropdown-menu" role="menu">
                         <li class=""><a href="{{ url('/admin/page') }}"><i class="fa fa-fw fa-file"></i> {{ trans('menu.pages') }}</a></li>
                         <li class=""><a href="{{ url('/admin/post') }}"><i class="fa fa-fw fa-newspaper-o"></i> {{ trans('menu.posts') }}</a></li>
+                        <li class=""><a href="{{ url('/admin/document') }}"><i class="fa fa-fw fa-file-o"></i> {{ trans('menu.documents') }}</a></li>
                     </ul>
                 </li>
 

@@ -36,7 +36,7 @@ class ReservationController extends Controller
 
     /**
      * ShowForm() for the available boxes.
-     * 
+     *
      * @return view
      */
     public function boxes(Request $request)
@@ -51,12 +51,12 @@ class ReservationController extends Controller
 
     /**
      * Create a new reservation with the given data.
-     * 
+     *
      * @return redirect
      */
     public function store(Boat $boat, $start, $end, $amountOfPersons, Box $box)
     {
-        Reservation::create([
+        $reservation = Reservation::create([
             'approved' => 0,
             'user_id' => Auth::id(),
             'box_id' => $box->id,
@@ -66,6 +66,19 @@ class ReservationController extends Controller
             'start' => new Carbon($start),
             'end' => new Carbon($end)
         ]);
+
+        Mail::send('emails.reservation', [
+            'name' => Auth::user()->name,
+            'box' => $reservation->box->getFullCode(),
+            'amount_of_persons' => $reservation->amount_of_persons,
+            'company_name' => setting('company_name'),
+            'start' => $reservation->start,
+            'end' => $reservation->end,
+        ], function ($m) use ($request) {
+            $m->from(setting('company_mail'), setting('company_name'));
+            $m->to(Auth::user()->email);
+            $m->subject('Bedankt voor uw boeking!');
+        });
 
         return redirect('/reserveren/bedankt');
     }

@@ -9,6 +9,9 @@ Route::resource('post', 'Admin\PostController');
 // Pages
 Route::resource('page', 'Admin\PageController');
 
+// Boxes
+Route::get('document', 'Admin\DocumentController@index');
+
 // Invoices
 Route::resource('invoice', 'Admin\InvoiceController');
 Route::get('invoice/{invoice}/view', 'Admin\InvoiceController@view');
@@ -33,6 +36,9 @@ Route::resource('scaffold', 'Admin\ScaffoldController');
 
 // Requests
 Route::resource('request', 'Admin\RequestController');
+
+// Newsletters
+Route::get('newsletter/send', 'Admin\NewsletterController@index');
 
 // Settings
 Route::get('setting', 'Admin\SettingController@index');

@@ -70,21 +70,18 @@ class Box extends Model
      */
     public function isAvailable(Carbon $date = null)
     {
-        if (is_null($date))
-        {
+        if (is_null($date)) {
             $date = Carbon::now();
         }
 
         $reservations = Reservation::where('box_id', $this->id)->get();
 
-        if (count($reservations) == 0)
-        {
+        if (count($reservations) == 0) {
             return true;
         }
         
         foreach ($reservations as $reservation) {
-            if (!$reservation->hasReservationForDay($date))
-            {
+            if (!$reservation->hasReservationForDay($date)) {
                 return false;
             }
         }
