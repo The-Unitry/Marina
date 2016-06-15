@@ -31,7 +31,7 @@
                             <td>
                                 <input type="text" class="form-control" id="name" name="name"
                                         {{ ($method == 'POST') ? '' : 'disabled' }}
-                                        value="{{ $boat->name or '' }}">
+                                        value="{{ $boat->name or '' }}" required>
                             </td>
                         </tr>
                         <tr>
@@ -41,7 +41,7 @@
                             <td>
                                 <input type="text" class="form-control" id="brand" name="brand"
                                         {{ ($method == 'POST') ? '' : 'disabled' }}
-                                        value="{{ $boat->brand or '' }}">
+                                        value="{{ $boat->brand or '' }}" required>
                             </td>
                         </tr>
                         <tr>
@@ -51,7 +51,7 @@
                             <td>
                                 <input type="text" class="form-control" id="model" name="model"
                                         {{ ($method == 'POST') ? '' : 'disabled' }}
-                                        value="{{ $boat->model or '' }}">
+                                        value="{{ $boat->model or '' }}" required>
                             </td>
                         </tr>
                         <tr>
@@ -61,7 +61,7 @@
                             <td>
                                 <input type="text" class="form-control" id="color" name="color"
                                         {{ ($method == 'POST') ? '' : 'disabled' }}
-                                        value="{{ $boat->color or '' }}">
+                                        value="{{ $boat->color or '' }}" required>
                             </td>
                         </tr>
                         <tr>
@@ -69,7 +69,7 @@
                                 <label for="type">{{ trans('columns.type') }}</label>
                             </td>
                             <td>
-                                <select name="type" id="type" class="form-control" {{ ($method == 'POST') ? '' : 'disabled' }}>
+                                <select name="type" id="type" class="form-control" {{ ($method == 'POST') ? '' : 'disabled' }} required>
                                     <option value="Motorboat" {{ (isset($boat) && $boat->type == 'Motorboat' ? 'selected' : '') }}>
                                     {{ trans('columns.motorboat') }}</option>
                                     <option value="Sailboat" {{ (isset($boat) && $boat->type == 'Sailboat' ? 'selected' : '') }}>
@@ -97,7 +97,7 @@
                             <td>
                                 <input type="number" class="form-control" id="height" name="height"
                                         {{ ($method == 'POST') ? '' : 'disabled' }}
-                                        value="{{ $boat->height or '' }}">
+                                        value="{{ $boat->height or '' }}" required>
                             </td>
                         </tr>
                         <tr>
@@ -107,7 +107,7 @@
                             <td>
                                 <input type="number" class="form-control" id="length" name="length"
                                         {{ ($method == 'POST') ? '' : 'disabled' }}
-                                        value="{{ $boat->length or '' }}">
+                                        value="{{ $boat->length or '' }}" required>
                             </td>
                         </tr>
                         <tr>
@@ -117,7 +117,7 @@
                             <td>
                                 <input type="number" class="form-control" id="depth" name="depth"
                                         {{ ($method == 'POST') ? '' : 'disabled' }}
-                                        value="{{ $boat->depth or '' }}">
+                                        value="{{ $boat->depth or '' }}" required>
                             </td>
                         </tr>
                         <tr>
@@ -127,7 +127,7 @@
                             <td>
                                 <input type="number" class="form-control" id="width" name="width"
                                         {{ ($method == 'POST') ? '' : 'disabled' }}
-                                        value="{{ $boat->width or '' }}">
+                                        value="{{ $boat->width or '' }}" required>
                             </td>
                         </tr>
                         </tbody>
