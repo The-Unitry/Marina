@@ -20,6 +20,9 @@
             font-family: 'Lato', sans-serif;
         }
     </style>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/img/static/favicon.png" />
 </head>
 <body>
     @include('admin.partials.navbar')
