@@ -8,7 +8,7 @@ use Navicula\Http\Requests;
 use Navicula\Http\Controllers\Controller;
 use Navicula\Models\Invoice;
 
-class StatisticsController extends Controller
+class StatisticsController extends AdminController
 {
     /**
      * Display the statistics page.

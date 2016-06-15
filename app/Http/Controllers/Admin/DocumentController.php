@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Navicula\Http\Requests;
 use Navicula\Http\Controllers\Controller;
 
-class DocumentController extends Controller
+class DocumentController extends AdminController
 {
     /**
      * Display a listing of the resource.

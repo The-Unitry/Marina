@@ -9,7 +9,7 @@ use Navicula\Http\Controllers\Controller;
 use Navicula\Models\Invoice;
 use Carbon\Carbon;
 
-class InvoiceExportController extends Controller
+class InvoiceExportController extends AdminController
 {
     /**
      * Display a listing of the resource.
