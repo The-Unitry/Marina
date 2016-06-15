@@ -156,7 +156,7 @@
                                     <tr>
                                         <td colspan="5">
                                             <a class="btn btn-default" href="../invoice/{{ $invoice->id }}/add">
-                                                <span class="fa fa-plus"></span> Add product
+                                                <span class="fa fa-plus"></span> {{ trans('actions.create.product') }}
                                             </a>
                                         </td>
                                     </tr>

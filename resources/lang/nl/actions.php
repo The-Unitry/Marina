@@ -21,7 +21,8 @@ return [
         'boat' => 'Boot toevoegen',
         'user' => 'Gebruiker toevoegen',
         'scaffold' => 'Steiger toevoegen',
-        'newsletter' => 'Nieuwsbrief aanmaken'
+        'newsletter' => 'Nieuwsbrief aanmaken',
+        'product' => 'Product toevoegen',
 
     ],
 
@@ -36,7 +37,7 @@ return [
         'boat' => 'Boot bewerken',
         'user' => 'Gebruiker bewerken',
         'scaffold' => 'Steiger bewerken',
-        'newsletter' => 'Nieuwsbrief bewerken'
+        'newsletter' => 'Nieuwsbrief bewerken',
 
     ],
 
@@ -57,7 +58,7 @@ return [
     'send' => [
 
         'message' => 'Stuur bericht',
-        'newsletter' => 'Verstuur nieuwsbrief'
+        'newsletter' => 'Verstuur nieuwsbrief',
 
     ]
 
