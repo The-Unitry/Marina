@@ -77,7 +77,7 @@ class Box extends Model
 
         $reservations = Reservation::where('box_id', $this->id)->get();
 
-        if (!sizeof($reservations))
+        if (count($reservations) == 0)
         {
             return true;
         }
@@ -85,11 +85,11 @@ class Box extends Model
         foreach ($reservations as $reservation) {
             if (!$reservation->hasReservationForDay($date))
             {
-                return true;
+                return false;
             }
         }
 
-        return false;
+        return true;
     }
 
     /**
