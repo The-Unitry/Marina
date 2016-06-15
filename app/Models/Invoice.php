@@ -3,6 +3,7 @@
 namespace Navicula\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 class Invoice extends Model
 {
@@ -73,5 +74,23 @@ class Invoice extends Model
     public function products()
     {
         return $this->hasMany(Product::class, 'invoice_id');
+    }
+
+    /**
+     * Get the total revenue for a month.
+     * 
+     * @return float
+     */
+    public static function getRevenueForMonth($month)
+    {
+        $total = 0;
+
+        foreach(self::where(DB::raw('MONTH(created_at)'), '=', $month)->get() as $invoice) {
+            foreach($invoice->products as $product) {
+                $total += $product->price;
+            }
+        }
+
+        return number_format($total * 100, 2, '.', ',');
     }
 }
