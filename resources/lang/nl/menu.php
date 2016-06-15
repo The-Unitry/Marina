@@ -6,6 +6,7 @@ return [
     'dashboard' => 'Dashboard',
     'posts' => 'Nieuws',
     'pages' => 'Pagina\'s',
+    'documents' => 'Documenten',
     'invoices' => 'Facturen',
     'reservations' => 'Boekingen',
     'requests' => 'Aanvragen',
@@ -15,6 +16,7 @@ return [
     'scaffolds' => 'Steigers',
     'settings' => 'Instellingen',
     'view_site' => 'Bekijk website',
+    'newsletters' => 'Nieuwsbrieven',
 
     /* Front */
     'home' => 'Home',

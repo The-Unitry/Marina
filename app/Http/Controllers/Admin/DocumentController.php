@@ -3,9 +3,11 @@
 namespace Navicula\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Navicula\Http\Requests;
 
-class NewsletterController extends AdminController
+use Navicula\Http\Requests;
+use Navicula\Http\Controllers\Controller;
+
+class DocumentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,6 +16,6 @@ class NewsletterController extends AdminController
      */
     public function index()
     {
-        return view('admin.newsletters.index');
+        return view('admin.documents.index');
     }
 }

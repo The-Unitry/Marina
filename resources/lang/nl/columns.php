@@ -97,8 +97,16 @@ return [
     'amount' => 'Aantal',
     'price' => 'Prijs',
     'vat' => 'BTW',
+<<<<<<< HEAD
     'days' => 'dagen',
     'period' => 'Periode',  
+=======
+    'days' => 'Dagen',
+    'period' => 'Periode',
+    'newsletter' => 'Nieuwsbrief',
+    'subject' => 'Onderwerp',
+    'to' => 'Aan',
+>>>>>>> a5ebb8d624a6b4de0bce226eff8aa89f8d6115ac
 
     'sizes' => [
 

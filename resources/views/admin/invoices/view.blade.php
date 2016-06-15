@@ -72,6 +72,7 @@
                 </tr>
                 @endforeach
                 <tr>
+<<<<<<< HEAD
                     <td colspan="4"></td>
                     <td>{{ trans('columns.subtotal_price') }}</td>
                     <td>&euro; {{ $invoice->subtotalPrice() }}</td>
@@ -84,6 +85,13 @@
                 <tr>
                     <td colspan="4"></td>
                     <td>{{ trans('columns.total_price') }}</td>
+=======
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+>>>>>>> a5ebb8d624a6b4de0bce226eff8aa89f8d6115ac
                     <td>&euro; {{ $invoice->totalPrice() }}</td>
                 </tr>
             </tbody>
