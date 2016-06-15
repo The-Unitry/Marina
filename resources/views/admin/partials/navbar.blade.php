@@ -52,6 +52,7 @@
                     <ul class="dropdown-menu" role="menu">
                         <li class=""><a href="{{ url('/admin/page') }}"><i class="fa fa-fw fa-file"></i> {{ trans('menu.pages') }}</a></li>
                         <li class=""><a href="{{ url('/admin/post') }}"><i class="fa fa-fw fa-newspaper-o"></i> {{ trans('menu.posts') }}</a></li>
+                        <li class=""><a href="{{ url('/admin/document') }}"><i class="fa fa-fw fa-file-o"></i> {{ trans('menu.documents') }}</a></li>
                     </ul>
                 </li>
 

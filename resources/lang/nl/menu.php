@@ -6,6 +6,7 @@ return [
     'dashboard' => 'Dashboard',
     'posts' => 'Nieuws',
     'pages' => 'Pagina\'s',
+    'documents' => 'Documenten',
     'invoices' => 'Facturen',
     'reservations' => 'Boekingen',
     'requests' => 'Aanvragen',

@@ -9,6 +9,9 @@ Route::resource('post', 'Admin\PostController');
 // Pages
 Route::resource('page', 'Admin\PageController');
 
+// Boxes
+Route::get('document', 'Admin\DocumentController@index');
+
 // Invoices
 Route::resource('invoice', 'Admin\InvoiceController');
 Route::get('invoice/{invoice}/view', 'Admin\InvoiceController@view');
