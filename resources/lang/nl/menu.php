@@ -16,7 +16,7 @@ return [
     'scaffolds' => 'Steigers',
     'settings' => 'Instellingen',
     'view_site' => 'Bekijk website',
-    'newsletters' => 'Nieuwsbrieven',
+    'newsletters' => 'Nieuwsbrief',
 
     /* Front */
     'home' => 'Home',
