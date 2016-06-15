@@ -30,7 +30,8 @@
                             </td>
                             <td>
                                 <input type="text" class="form-control" id="name" name="name"
-                                       value="{{ $boat->name or '' }}">
+                                        {{ ($method == 'POST') ? '' : 'disabled' }}
+                                        value="{{ $boat->name or '' }}">
                             </td>
                         </tr>
                         <tr>

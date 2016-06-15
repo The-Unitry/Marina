@@ -51,7 +51,7 @@ class BoatController extends AdminController
             $boat->uploadImage($request->all()['image_path']);
         }
         
-        $post->save();
+        $boat->save();
 
         return redirect('/admin/boat/' . $boat->id)->with(
             'message', trans('confirmations.created.boat')
