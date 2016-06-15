@@ -7,7 +7,11 @@
 @section('content')
     <div class="container content">
         <h3>
-            {{ trans('actions.create.boat') }}
+            @if ($method == 'POST')
+                {{ trans('actions.create.boat') }}
+            @elseif ($method == 'PATCH')
+                {{ trans('actions.edit.boat') }}
+            @endif
         </h3>
         <br>
         <form action="{{ (!isset($boat)) ? '/mijn-boten' : '/mijn-boten/'. $boat->id }}" method="post" enctype="multipart/form-data">
