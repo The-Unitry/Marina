@@ -97,7 +97,10 @@ return [
     'price' => 'Prijs',
     'vat' => 'BTW',
     'days' => 'Dagen',
-    'period' => 'Periode',  
+    'period' => 'Periode',
+    'newsletter' => 'Nieuwsbrief',
+    'subject' => 'Onderwerp',
+    'to' => 'Aan',
 
     'sizes' => [
 
