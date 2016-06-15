@@ -55,7 +55,7 @@
                 </form>
                 @else
                   <h4>U heeft nog geen boat toegevoegd!</h4>
-                  <h4>Klik op <a href="/mijn-boten">hier</a> om een boot toe te voegen.</h4>
+                  <h4>Klik <a href="/mijn-boten">hier</a> om een boot toe te voegen.</h4>
                 @endif
             </div>
             <div class="col-md-4 visible-lg visible-md">
