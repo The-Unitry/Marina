@@ -22,4 +22,6 @@
     <br>
     <a class="btn btn-primary" onclick="location.href = '/admin/invoice/export/' + document.getElementById('start').value + '/' + document.getElementById('end').value;">Download</a>
 </form>
+<br><br>
+<a href="../invoice"><span class="fa fa-arrow-left"></span> Terug naar alle facturen</a>
 @endsection
