@@ -96,7 +96,8 @@ return [
     'amount' => 'Aantal',
     'price' => 'Prijs',
     'vat' => 'BTW',
-    'days' => 'Dagen',    
+    'days' => 'Dagen',
+    'period' => 'Periode',  
 
     'sizes' => [
 

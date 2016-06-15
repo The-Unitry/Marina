@@ -53,11 +53,11 @@
             <thead>
                 <tr>
                     <th class="col-sm-1" style="width: 4%;">#</th>
-                    <th class="col-sm-1">Amount</th>
-                    <th class="col-sm-3">Description</th>
-                    <th class="col-sm-3">Period</th>
-                    <th class="col-sm-1">Price</th>
-                    <th class="col-sm-2">VAT</th>
+                    <th class="col-sm-1">{{ trans('columns.amount') }}</th>
+                    <th class="col-sm-3">{{ trans('columns.description') }}</th>
+                    <th class="col-sm-3">{{ trans('columns.period') }}</th>
+                    <th class="col-sm-1">{{ trans('columns.price') }}</th>
+                    <th class="col-sm-2">{{ trans('columns.vat') }}</th>
                     <th class="col-sm-2">{{ trans('columns.total_price') }}</th>
                 </tr>
             </thead>
