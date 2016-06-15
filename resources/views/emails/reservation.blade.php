@@ -2,13 +2,10 @@
     Beste {{ $name }},
 </p>
 <p>
-  Uw Boeking is succesvol goedgekeurd voor de boat : {{ $boat_name }} , op de box {{ $box }} voor {{ $amount_of_persons }} personen van {{ $start }} tot {{ $end }}.
+  De box {{ $box }} is gereserveerd voor je boot '{{ $boat->name }}', van {{ $start }} tot en met {{ $end }}.
 </p>
 <p>
-  Als u de boeking wilt wijzigen , kunt u contact met ons opnemen via de contact pagina op de website of App.
-</p>
-<p>
-  Hieronder vind u de gegevens van uw Boeking:
+  Als u de boeking wilt wijzigen, kunt u contact met ons opnemen via de contact pagina.
 </p>
 <p>
   Met vriendelijke groet,

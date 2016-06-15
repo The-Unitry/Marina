@@ -9,6 +9,7 @@ use Navicula\Models\Boat;
 use Navicula\Models\Box;
 use Navicula\Models\Reservation;
 use Carbon\Carbon;
+use Mail;
 
 use Navicula\Http\Requests;
 
@@ -74,7 +75,8 @@ class ReservationController extends Controller
             'company_name' => setting('company_name'),
             'start' => $reservation->start,
             'end' => $reservation->end,
-        ], function ($m) use ($request) {
+            'boat' => $reservation->boat
+        ], function ($m) {
             $m->from(setting('company_mail'), setting('company_name'));
             $m->to(Auth::user()->email);
             $m->subject('Bedankt voor uw boeking!');
