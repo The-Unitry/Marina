@@ -6,7 +6,7 @@
 
 @section('content')
     <a href="invoice/export" class="btn btn-default"><span class="fa fa-download"></span> Exporteren</a>
-    <a href="invoice/tax" class="btn btn-default"><span class="fa fa-money"></span> BTW overzicht</a>
+    <a href="invoice/tax" class="btn btn-default"><span class="fa fa-money"></span> Belastingoverzicht</a>
     <br><br>
     <table class="table table-striped" id="datatable">
         <thead>
