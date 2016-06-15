@@ -17,7 +17,7 @@
             <div class="row">
                 <div class="col-md-2">
                     <a href="/mijn-boten/{{ $boat->id }}">
-                        <img src="/media/medium/{{ $boat->image_path }}.png" alt="" width="100%">
+                        <img src="/media/medium/{{ ($boat->image_path) ? : '../small/anchor_placeholder' }}.png" alt="" width="100%">
                     </a>
                 </div>
                 <div class="col-md-10">
