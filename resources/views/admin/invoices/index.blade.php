@@ -5,6 +5,8 @@
 @endsection
 
 @section('content')
+    <a href="invoice/export" class="btn btn-default"><span class="fa fa-download"></span> Exporteren</a>
+    <br><br>
     <table class="table table-striped" id="datatable">
         <thead>
         <tr>
