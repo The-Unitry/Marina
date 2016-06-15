@@ -17,6 +17,7 @@
         <hr>
         <div class="row">
             <div class="steps col-md-8">
+              @if(count(Auth::user()->boats))
                 <form action="/reserveren" method="post">
                     {{ csrf_field() }}
                     <div>
@@ -52,6 +53,10 @@
                         {{ trans('actions.next') }}
                     </a>
                 </form>
+                @else
+                  <h4>U heeft nog geen boat toegevoegd!</h4>
+                  <h4>Klik op <a href="/mijn-boten">hier</a> om een boot toe te voegen.</h4>
+                @endif
             </div>
             <div class="col-md-4 visible-lg visible-md">
                 <h4>Uw zekerheden</h4>
