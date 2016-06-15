@@ -59,4 +59,14 @@ class Boat extends Model
 
         return false;
     }
+
+    /**
+     * Return the boat description.
+     * 
+     * @return string
+     */
+    public function description()
+    {
+        return $this->name . ' (' . $this->length . ' m)';
+    }
 }

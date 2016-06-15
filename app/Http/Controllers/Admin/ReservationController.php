@@ -133,7 +133,7 @@ class ReservationController extends AdminController
         Product::create([
             'invoice_id' => $invoice->id,
             'amount' => 1,
-            'description' => $reservation->box->getFullCode() . ' (' . $reservation->boat->name . ' ' . $reservation->boat->length . 'm)',
+            'description' => $reservation->box->getFullCode() . ' - ' . $reservation->boat->description(),
             'vat' => setting('tax'),
             'price' => $reservation->totalNights() * $reservation->price,
             'start' => $reservation->start,
