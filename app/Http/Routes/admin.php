@@ -34,6 +34,9 @@ Route::resource('scaffold', 'Admin\ScaffoldController');
 // Requests
 Route::resource('request', 'Admin\RequestController');
 
+// Newsletters
+Route::get('newsletter/send', 'Admin\NewsletterController@index');
+
 // Settings
 Route::get('setting', 'Admin\SettingController@index');
 Route::patch('setting', 'Admin\SettingController@update');
