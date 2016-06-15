@@ -17,6 +17,9 @@ Route::get('reserveren/bedankt', 'ReservationController@thanks');
 Route::post('reserveren', 'ReservationController@boxes');
 Route::get('reserveren/store/{boat}/{start}/{end}/{amount_of_persons}/{box}', 'ReservationController@store');
 
+// My Reservations
+Route::get('mijn-reserveringen', 'MyReservationController@index');
+
 // Boxes
 Route::get('mijn-boxen', 'BoxController@index');
 

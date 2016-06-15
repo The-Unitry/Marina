@@ -37,6 +37,7 @@
                     <!-- Authenticated routes -->
                     @if(Auth::check())
                         <li><a href="/mijn-boten">{{ trans('menu.my_boats') }}</a></li>
+                        <li><a href="/mijn-reserveringen">{{ trans('menu.my_reservations') }}</a></li>
                         <li><a href="/kraanplan">{{ trans('menu.crane_plan') }}</a></li>
                     @endif
 
