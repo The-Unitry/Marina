@@ -146,7 +146,7 @@
                                 <label for="image_path">{{ trans('columns.boat_image') }}</label>
                             </td>
                             <td>
-                                <input type="file" class="form-control" name="image_path" id="image_path" accept=".png,.jpg">
+                                <input type="file" class="form-control" name="image_path" id="image_path" accept="image/*">
                             </td>
                         </tr>
                         @if(isset($boat) && $boat->hasImage())
