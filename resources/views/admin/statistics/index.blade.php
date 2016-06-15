@@ -187,7 +187,20 @@
                             pointHoverBorderWidth: 2,
                             pointRadius: 1,
                             pointHitRadius: 10,
-                            data: [100, 110, 120, 130, 140, 150, 230, 310, 390, 470, 550, 630, 710],
+                            data: [
+                                {{ $users['january'] }},
+                                {{ $users['february'] }},
+                                {{ $users['march'] }},
+                                {{ $users['april'] }},
+                                {{ $users['may'] }},
+                                {{ $users['june'] }},
+                                {{ $users['july'] }},
+                                {{ $users['august'] }},
+                                {{ $users['september'] }},
+                                {{ $users['october'] }},
+                                {{ $users['november'] }},
+                                {{ $users['december'] }}
+                            ],
                         },
 
                     ]

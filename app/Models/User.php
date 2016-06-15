@@ -3,6 +3,7 @@
 namespace Navicula\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use DB;
 
 class User extends Authenticatable
 {
@@ -68,5 +69,21 @@ class User extends Authenticatable
     public function boats()
     {
         return $this->hasMany(Boat::class, 'user_id');
+    }
+
+    /**
+     * Get the total of created users in the given month
+     * 
+     * @return int
+     */
+    public static function getTotalUsersForMonth($month)
+    {
+        $total = 0;
+
+        foreach(self::where(DB::raw('MONTH(created_at)'), '=', $month)->get() as $user) {
+            $total++;
+        }
+
+        return $total;
     }
 }
