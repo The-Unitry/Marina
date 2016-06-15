@@ -2,9 +2,11 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 // Partials
+@import "partials/variables";
 @import "partials/alert";
 @import "partials/icons";
 @import "partials/iframe";
+@import "partials/buttons";
 
 .clickable-row {
   cursor: pointer;
@@ -30,4 +32,17 @@
     margin: 0;
     padding: 0;
   }
+}
+
+a {
+  color: $blue;
+
+  &:hover {
+    color: darken($blue, 4);
+  }
+}
+
+.pagination > .active > a {
+  background: $blue;
+  border-color: $blue;
 }

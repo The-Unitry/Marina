@@ -8,6 +8,11 @@
     background-color: darken($blue, 5);
     border-color: darken($blue, 5);
   }
+
+  &:focus, &:active:focus {
+    background-color: darken($blue, 8);
+    border-color: darken($blue, 8);
+  }
 }
 
 .btn-signup {

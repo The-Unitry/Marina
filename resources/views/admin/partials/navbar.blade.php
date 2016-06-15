@@ -64,7 +64,7 @@
                         <li><a href="{{ url('/admin/invoice') }}"><i class="fa fa-fw fa-money"></i> {{ trans('menu.invoices') }}</a></li>
                         <li><a href="{{ url('/admin/user') }}"><i class="fa fa-fw fa-users"></i> {{ trans('menu.users') }}</a></li>
                         <li><a href="{{ url('/admin/reservation') }}"><i class="fa fa-fw fa-calendar-o"></i> {{ trans('menu.reservations') }}</a></li>
-                        <li><a href="{{ url('/admin/statistics') }}"><i class="fa fa-area-chart"></i> {{ trans('menu.statistics') }}</a></li>
+                        <li><a href="{{ url('/admin/statistics') }}"><i class="fa fa-fw fa-area-chart"></i> {{ trans('menu.statistics') }}</a></li>
                     </ul>
                 </li>
 

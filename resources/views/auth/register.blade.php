@@ -112,8 +112,7 @@
                             <label for="phone" class="col-md-4 control-label">{{ trans('columns.phone_number') }}</label>
 
                             <div class="col-md-6">
-                                <input id="phone" type="text" class="form-control" name="phone" value="{{ old('phone') }}">
-
+                                <input type="text" minlength="10" maxlength="10" pattern="\b\d{3}[-.]?\d{3}[-.]?\d{4}\b" id="phone"  class="form-control" name="phone" value="{{ old('phone') }}">
                                 @if ($errors->has('phone'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('phone') }}</strong>
