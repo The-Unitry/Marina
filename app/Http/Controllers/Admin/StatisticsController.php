@@ -10,7 +10,7 @@ use Navicula\Http\Controllers\Controller;
 class StatisticsController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display the statistics page.
      *
      * @return \Illuminate\Http\Response
      */

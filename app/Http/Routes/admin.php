@@ -34,8 +34,8 @@ Route::resource('boat', 'Admin\BoatController');
 // Users
 Route::resource('user', 'Admin\UserController');
 
-// Users
-Route::resource('statistics', 'Admin\StatisticsController');
+// Statistics
+Route::get('statistics', 'Admin\StatisticsController@index');
 
 // Scaffolds
 Route::resource('scaffold', 'Admin\ScaffoldController');
