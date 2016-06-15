@@ -53,7 +53,7 @@
                     </a>
                 </form>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 visible-lg visible-md">
                 <h4>Uw zekerheden</h4>
                 <ul class="list-unstyled">
                     <li><span class="fa fa-check"></span> Lorem ipsum dolor</li>
