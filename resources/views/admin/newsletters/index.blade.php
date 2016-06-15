@@ -8,6 +8,7 @@
 <form action="/admin/newsletter/send" class="form-horizontal col-md-12" role="form" method="POST">
     <div class="container content"> 
         <div class="row">
+        <div class="col-md-11">
             {{ csrf_field() }}
             <div class="form-group">
                 <label for="subject" class="col-sm-2 control-label">{{ trans('columns.subject') }}</label>
@@ -18,12 +19,13 @@
             <div class="form-group">
                 <label for="body" class="col-sm-2 control-label">{{ trans('columns.message') }}</label>
                 <div class="col-sm-10">
-                    <textarea class="form-control" rows="4" name="body"></textarea>
+                    <textarea class="form-control" name="body"></textarea>
                 </div>
             </div>
             <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary pull-right">
                 {{ trans('actions.send.newsletter') }}
             </button>
+            </div>
         </div>
     </div>
 
@@ -41,8 +43,8 @@
                     </h4>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
-                    <button type="submit" class="btn btn-primary">Verstuur</a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Toch niet</button>
+                    <button type="submit" class="btn btn-primary">Bevestigen</a>
                 </div>
             </div>
         </div>
