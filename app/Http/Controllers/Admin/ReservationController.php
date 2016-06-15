@@ -23,7 +23,7 @@ class ReservationController extends AdminController
     public function index()
     {
         return view('admin.reservations.index', [
-            'reservations' => Reservation::all()
+            'reservations' => Reservation::orderBy('created_at', 'DESC')->get()
         ]);
     }
 
