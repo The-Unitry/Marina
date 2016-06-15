@@ -143,7 +143,7 @@ class ReservationController extends AdminController
         Product::create([
             'invoice_id' => $invoice->id,
             'amount' => $reservation->amount_of_persons,
-            'description' => 'Toeristen belasting',
+            'description' => 'Toeristenbelasting',
             'vat' => 0,
             'price' => $reservation->amount_of_persons * setting('tourist_tax')
         ]);
