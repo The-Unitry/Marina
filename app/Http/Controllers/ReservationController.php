@@ -79,6 +79,7 @@ class ReservationController extends Controller
         ], function ($m) {
             $m->from(setting('company_mail'), setting('company_name'));
             $m->to(Auth::user()->email);
+            $m->bcc(setting('company_mail'), setting('company_name'));
             $m->subject('Bedankt voor uw boeking!');
         });
 
