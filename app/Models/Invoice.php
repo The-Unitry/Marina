@@ -87,10 +87,10 @@ class Invoice extends Model
 
         foreach(self::where(DB::raw('MONTH(created_at)'), '=', $month)->get() as $invoice) {
             foreach($invoice->products as $product) {
-                $total += $product->amount * $product->price;
+                $total += $product->totalPrice() / 100;
             }
         }
 
-        return number_format($total, 2, '.', '');
+        return $total;
     }
 }

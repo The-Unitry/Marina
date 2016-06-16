@@ -28,18 +28,18 @@ class TaxController extends AdminController
 
         foreach($invoices as $invoice) {
             foreach($invoice->products as $product) {
+                $revenue += $product->totalPrice();
+                $vat += $product->totalVat();
+
                 if($product->description == 'Toeristenbelasting') {
                     $tourist_tax += ($product->amount * $product->price);
-                } else {
-                    $revenue += $product->amount * $product->price;
-                    $vat += ($product->amount * $product->price) * ($product->vat / 100);
                 }
             }
         }
 
         return [
-            'revenue' => euro($revenue),
-            'vat' => euro($vat),
+            'revenue' => euro($revenue / 100),
+            'vat' => euro($vat / 100),
             'tourist_tax' => euro($tourist_tax / 100),
             'payments' => count($invoices),
         ];
