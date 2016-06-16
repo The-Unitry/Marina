@@ -16,9 +16,9 @@
                     {{ method_field($method) }}
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="id" class="col-sm-2 control-label">{{ trans('columns.code') }}</label>
+                        <label for="code" class="col-sm-2 control-label">{{ trans('columns.code') }}</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="id" id="id" value="{{ $box->id or '' }}">
+                            <input type="text" class="form-control" name="code" id="code" value="{{ $box->code or '' }}">
                         </div>
                     </div>
                     <div class="form-group">

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Box extends Model
 {
-    protected $fillable = ['id','depth','length','width', 'scaffold_id', 'price_per_night'];
+    protected $fillable = ['depth', 'length', 'width', 'scaffold_id', 'price_per_night', 'code'];
     protected $hidden = ['created_at', 'updated_at'];
 
     /**
@@ -27,7 +27,7 @@ class Box extends Model
      */
     public function getFullCode()
     {
-        return $this->scaffold->code . $this->id;
+        return $this->scaffold->code . $this->code;
     }
 
     /**
