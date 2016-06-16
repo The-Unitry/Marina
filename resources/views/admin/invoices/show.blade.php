@@ -45,7 +45,7 @@
                             @foreach ($users as $user)
                                 <option value="{{ $user->id }}" {{ (isset($invoice) && $invoice->user_id == $user->id) ? 'selected' : '' }}>
                                     {{ $user->name }}
-                                </option>    
+                                </option>
                             @endforeach
                         </select>
                         @else
@@ -174,7 +174,7 @@
                             <i class="fa fa-floppy-o" aria-hidden="true"></i> {{ trans('actions.save') }}
                         </button>
                         @endif
-                        @if(isset($invoice))
+                        @if(isset($invoice) && $invoice->status != 'pending')
                         <a href="../invoice/{{ $invoice->id }}/view" class="list-group-item" target="_blank">
                             <span class="fa fa-print"></span> {{ trans('actions.print') }}
                         </a>
