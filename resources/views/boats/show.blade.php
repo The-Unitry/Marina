@@ -95,7 +95,7 @@
                                 <label for="height">{{ trans('columns.sizes.height') }}</label>
                             </td>
                             <td>
-                                <input type="number" class="form-control" id="height" name="height"
+                                <input type="number" min="0" class="form-control" id="height" name="height"
                                         {{ ($method == 'POST') ? '' : 'disabled' }}
                                         value="{{ $boat->height or '' }}" required>
                             </td>
@@ -105,7 +105,7 @@
                                 <label for="length">{{ trans('columns.sizes.length') }}</label>
                             </td>
                             <td>
-                                <input type="number" class="form-control" id="length" name="length"
+                                <input type="number" min="0" class="form-control" id="length" name="length"
                                         {{ ($method == 'POST') ? '' : 'disabled' }}
                                         value="{{ $boat->length or '' }}" required>
                             </td>
@@ -115,7 +115,7 @@
                                 <label for="depth">{{ trans('columns.sizes.depth') }}</label>
                             </td>
                             <td>
-                                <input type="number" class="form-control" id="depth" name="depth"
+                                <input type="number" min="0" class="form-control" id="depth" name="depth"
                                         {{ ($method == 'POST') ? '' : 'disabled' }}
                                         value="{{ $boat->depth or '' }}" required>
                             </td>
@@ -125,7 +125,7 @@
                                 <label for="width">{{ trans('columns.sizes.width') }}</label>
                             </td>
                             <td>
-                                <input type="number" class="form-control" id="width" name="width"
+                                <input type="number" min="0" class="form-control" id="width" name="width"
                                         {{ ($method == 'POST') ? '' : 'disabled' }}
                                         value="{{ $boat->width or '' }}" required>
                             </td>
