@@ -129,12 +129,17 @@
                                         <td class="col-sm-2">
                                             <div class="input-group">
                                                 @if($invoice->status == 'pending')
-                                                <input type="number"
+                                                <select class="form-control" name="products[{{ $product->id }}][vat]" value="{{ $product->vat }}" placeholder="{{ trans('columns.vat') }}">
+                                                  <option value="0">0</option>
+                                                  <option value="6">6</option>
+                                                  <option value="21">21</option>
+                                                </select>
+                                                <!-- <input type="number"
                                                        class="form-control"
                                                        name="products[{{ $product->id }}][vat]"
                                                        value="{{ $product->vat }}"
                                                        placeholder="{{ trans('columns.vat') }}"
-                                                >
+                                                > -->
                                                 <span class="input-group-addon">%</span>
                                                 @else
                                                 {{ $product->vat }} %
