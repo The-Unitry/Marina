@@ -16,6 +16,18 @@
                     {{ method_field($method) }}
                     {{ csrf_field() }}
                     <div class="form-group">
+                        <label for="scaffold_id" class="col-sm-2 control-label">{{ trans('columns.scaffold') }}</label>
+                        <div class="col-sm-10">
+                            <select name="scaffold_id" id="scaffold_id" class="form-control">
+                                @foreach ($scaffolds as $scaffold)
+                                    <option value="{{ $scaffold->id }}" {{ (isset($box) && $box->scaffold_id == $scaffold->id) ? 'selected' : '' }}>
+                                        {{ $scaffold->code }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="code" class="col-sm-2 control-label">{{ trans('columns.code') }}</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" name="code" id="code" value="{{ $box->code or '' }}">
@@ -46,18 +58,6 @@
                         <label for="width" class="col-sm-2 control-label">{{ trans('columns.sizes.width') }}</label>
                         <div class="col-sm-10">
                             <input type="number" class="form-control" name="width" id="width" value="{{ $box->width or '' }}">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="scaffold_id" class="col-sm-2 control-label">{{ trans('columns.scaffold') }}</label>
-                        <div class="col-sm-10">
-                            <select name="scaffold_id" id="scaffold_id" class="form-control">
-                                @foreach ($scaffolds as $scaffold)
-                                    <option value="{{ $scaffold->id }}" {{ (isset($box) && $box->scaffold_id == $scaffold->id) ? 'selected' : '' }}>
-                                        {{ $scaffold->code }}
-                                    </option>
-                                @endforeach
-                            </select>
                         </div>
                     </div>
                 </div>
