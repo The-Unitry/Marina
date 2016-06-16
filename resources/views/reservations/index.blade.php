@@ -46,7 +46,7 @@
                         <h4>
                             3. Kies het aantal personen <small>(incl. uzelf)</small>
                         </h4>
-                        <input type="number" value="1§" name="amount_of_persons" class="form-control" min="0" max="100">
+                        <input type="number" value="1" name="amount_of_persons" class="form-control" min="0" max="100">
                     </div>
                     <br>
                     <button type="submit" class="btn btn-primary pull-right">
@@ -61,7 +61,7 @@
             <div class="col-md-4 visible-lg visible-md">
                 <h4>Uw zekerheden</h4>
                 <ul class="list-unstyled">
-                    <li><span class="fa fa-check"></span> Makkelijk box boeken</li>
+                    <li><span class="fa fa-check"></span> Snel en makkelijk je box boeken</li>
                     <li><span class="fa fa-check"></span> Handig overzicht van je reserveringen</li>
                     <li><span class="fa fa-check"></span> Online je boeking annuleren</li>
                     <li><span class="fa fa-check"></span> Snel en simpel contact met de jachthaven</li>
