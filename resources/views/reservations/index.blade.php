@@ -46,7 +46,7 @@
                         <h4>
                             3. Kies het aantal personen <small>(incl. uzelf)</small>
                         </h4>
-                        <input type="number" value="0" name="amount_of_persons" class="form-control" min="0" max="100">
+                        <input type="number" value="1" name="amount_of_persons" class="form-control" min="0" max="100">
                     </div>
                     <br>
                     <button type="submit" class="btn btn-primary pull-right">
