@@ -89,6 +89,7 @@ class InvoiceController extends AdminController
         $invoice->update($request->all());
 
         foreach ($request->get('products') as $i => $product) {
+            $product['price'] = str_replace(',', '.', $product['price']) * 100;
             Product::find($i)->update($product);
         }
 

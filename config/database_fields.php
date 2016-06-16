@@ -54,7 +54,7 @@ return [
         ],
         [
             'key' => 'tourist_tax',
-            'value' => '1,00',
+            'value' => '1.00',
         ],
         [
             'key' => 'bank_account',
