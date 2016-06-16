@@ -30,7 +30,7 @@
                     <div class="form-group">
                         <label for="phone" class="col-sm-2 control-label">{{ trans('columns.phone_number') }}</label>
                         <div class="col-sm-10">
-                            <input type="tel" class="form-control" name="phone" id="phone" value="{{ $user->phone or '' }}">
+                            <input type="text" minlength="10" maxlength="10" pattern="\b\d{3}[-.]?\d{3}[-.]?\d{4}\b" title="Het moet minimaal 10 nummers bevatten!" class="form-control" name="phone" id="phone" value="{{ $user->phone or '' }}">
                         </div>
                     </div>
                     <div class="form-group">
