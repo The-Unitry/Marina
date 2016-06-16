@@ -104,7 +104,7 @@
                 yAxes: [{
                     scaleLabel: {
                         display: true,
-                        labelString: 'Omzet'
+                        labelString: 'Omzet   €'
                     }
                 }],
                 xAxes: [{
