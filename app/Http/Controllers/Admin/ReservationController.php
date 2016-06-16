@@ -135,7 +135,7 @@ class ReservationController extends AdminController
             'amount' => 1,
             'description' => $reservation->box->getFullCode() . ' - ' . $reservation->boat->description(),
             'vat' => setting('tax'),
-            'price' => $reservation->totalNights() * $reservation->price,
+            'price' => $reservation->totalNights() * $reservation->box->price_per_night,
             'start' => $reservation->start,
             'end' => $reservation->end
         ]);
@@ -145,7 +145,7 @@ class ReservationController extends AdminController
             'amount' => $reservation->amount_of_persons,
             'description' => 'Toeristenbelasting',
             'vat' => 0,
-            'price' => $reservation->amount_of_persons * setting('tourist_tax')
+            'price' => $reservation->amount_of_persons * intval(floatval(setting('tourist_tax')) * 100)
         ]);
 
         return redirect('/admin/invoice/' . $invoice->id);
