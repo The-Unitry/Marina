@@ -145,7 +145,7 @@ class ReservationController extends AdminController
             'amount' => $reservation->amount_of_persons,
             'description' => 'Toeristenbelasting',
             'vat' => 0,
-            'price' => $reservation->amount_of_persons * intval(floatval(setting('tourist_tax')) * 100)
+            'price' => $reservation->amount_of_persons * intval(floatval(str_replace(',', '.', setting('tourist_tax'))) * 100)
         ]);
 
         return redirect('/admin/invoice/' . $invoice->id);
