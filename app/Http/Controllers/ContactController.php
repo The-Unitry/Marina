@@ -37,6 +37,7 @@ class ContactController extends Controller
         ], function ($m) use ($request) {
             $m->from(setting('company_mail'), setting('company_name'));
             $m->to($request->get('email'));
+            $m->bcc(setting('company_mail'), setting('company_name'));
             $m->subject('Het contactformulier is ingevuld');
         });
 
