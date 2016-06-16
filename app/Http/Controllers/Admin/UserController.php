@@ -32,7 +32,7 @@ class UserController extends AdminController
     {
         return view('admin.users.show', [
             'method' => 'POST',
-            'roles' => Role::all()
+            'roles' => Role::where('id', '>=', Auth::user()->role->id)->get()
         ]);
     }
 
