@@ -72,8 +72,6 @@ class BoatController extends Controller
      */
     public function update(Request $request, Boat $boat)
     {
-        $boat->update($request->all());
-
         if (isset($request->all()['image_path'])) {
             $boat->uploadImage($request->all()['image_path']);
         }
