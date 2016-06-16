@@ -36,10 +36,10 @@
             <div class="col-md-4">
                 <h4>Uw zekerheden</h4>
                 <ul class="list-unstyled">
-                    <li><span class="fa fa-check"></span> Lorem ipsum dolor</li>
-                    <li><span class="fa fa-check"></span> Consectetur adipisicing elit</li>
-                    <li><span class="fa fa-check"></span> Aperiam eligendi et eum</li>
-                    <li><span class="fa fa-check"></span> Omnis repellendus voluptatem</li>
+                    <li><span class="fa fa-check"></span> Makkelijk box boeken</li>
+                    <li><span class="fa fa-check"></span> Handig overzicht van je reserveringen</li>
+                    <li><span class="fa fa-check"></span> Online je boeking annuleren</li>
+                    <li><span class="fa fa-check"></span> Snel en simpel contact met de jachthaven</li>
                 </ul>
             </div>
         </div>

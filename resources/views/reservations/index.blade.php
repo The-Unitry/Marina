@@ -11,7 +11,7 @@
         </h3>
         <div class="row">
             <p class="text col-md-8">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci deleniti doloribus eligendi temporibus, tenetur voluptatum. Adipisci aperiam at autem blanditiis enim facere facilis harum id, minima obcaecati perferendis quod ut.
+                Boek met ons handige filter een box die geschikt is voor jouw boot en beschikbaar is tussen de door jou opgegeven datums.
             </p>
         </div>
         <hr>
@@ -46,7 +46,7 @@
                         <h4>
                             3. Kies het aantal personen <small>(incl. uzelf)</small>
                         </h4>
-                        <input type="number" value="1" name="amount_of_persons" class="form-control" min="0" max="100">
+                        <input type="number" value="1§" name="amount_of_persons" class="form-control" min="0" max="100">
                     </div>
                     <br>
                     <button type="submit" class="btn btn-primary pull-right">
@@ -61,10 +61,10 @@
             <div class="col-md-4 visible-lg visible-md">
                 <h4>Uw zekerheden</h4>
                 <ul class="list-unstyled">
-                    <li><span class="fa fa-check"></span> Lorem ipsum dolor</li>
-                    <li><span class="fa fa-check"></span> Consectetur adipisicing elit</li>
-                    <li><span class="fa fa-check"></span> Aperiam eligendi et eum</li>
-                    <li><span class="fa fa-check"></span> Omnis repellendus voluptatem</li>
+                    <li><span class="fa fa-check"></span> Makkelijk box boeken</li>
+                    <li><span class="fa fa-check"></span> Handig overzicht van je reserveringen</li>
+                    <li><span class="fa fa-check"></span> Online je boeking annuleren</li>
+                    <li><span class="fa fa-check"></span> Snel en simpel contact met de jachthaven</li>
                 </ul>
             </div>
         </div>
