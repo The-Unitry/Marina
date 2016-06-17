@@ -8,13 +8,13 @@ use Navicula\Http\Requests;
 use Navicula\Http\Controllers\Controller;
 use Navicula\Models\Box;
 use Navicula\Models\Boat;
-use Carbon\Carbon;	
+use Carbon\Carbon;
 
 class BoxController extends Controller
 {
 	/**
 	 * A hacky way to get all available boxes for a boat between the given dates. Not proud of this one :(
-	 * 
+	 *
 	 * @param Boat $boat
 	 * @param string $start
 	 * @param string $end
@@ -28,7 +28,7 @@ class BoxController extends Controller
     	$availableBoxes = [];
 
     	foreach ($boxes as $box) {
-			if ($box->isAvailableBetween($start, $end)) {
+			if ($box->isAvailableBetween($start, $end) && $box->length >= $boat->length && $box->width >= $boat->width) {
     			$box->code = $box->getFullCode();
     			array_push($availableBoxes, $box);
     		}
