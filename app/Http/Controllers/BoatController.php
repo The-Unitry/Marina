@@ -52,12 +52,6 @@ class BoatController extends Controller
     public function edit(Boat $boat)
     {
         if (Auth::user() == $boat->owner) {
-
-            $boat->length /= 100;
-            $boat->height /= 100;
-            $boat->depth  /= 100;
-            $boat->width  /= 100;
-
             return view('boats.show', [
                 'boat' => $boat,
                 'method' => 'PATCH'
@@ -82,11 +76,6 @@ class BoatController extends Controller
             $boat->uploadImage($request->all()['image_path']);
         }
 
-        $boat->length *= 100;
-        $boat->height *= 100;
-        $boat->depth  *= 100;
-        $boat->width  *= 100;
-
         $boat->save();
 
         return back()->with('message', trans('confirmations.updated.boat'));
@@ -106,11 +95,6 @@ class BoatController extends Controller
         if (isset($request->all()['image_path'])) {
             $boat->uploadImage($request->all()['image_path']);
         }
-
-        $boat->length *= 100;
-        $boat->height *= 100;
-        $boat->depth  *= 100;
-        $boat->width  *= 100;
 
         $boat->save();
 

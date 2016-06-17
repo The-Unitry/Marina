@@ -47,10 +47,6 @@ class BoxController extends AdminController
         $box = new Box($request->all());
         $box->price_per_night = $box->price_per_night * 100;
 
-        $box->length *= 100;
-        $box->depth *= 100;
-        $box->width *= 100;
-
         $box->save();
 
         return redirect('/admin/box/' . $box->id)->with(
@@ -66,11 +62,6 @@ class BoxController extends AdminController
      */
     public function show(Box $box)
     {
-
-        $box->length /= 100;
-        $box->depth  /= 100;
-        $box->width  /= 100;
-
         return view('admin.boxes.show', [
             'box' => $box,
             'scaffolds' => Scaffold::all(),
@@ -101,10 +92,6 @@ class BoxController extends AdminController
         $box = Box::find($box->id);
         $box->fill($request->all());
         $box->price_per_night = $request->get('price_per_night') * 100;
-
-        $box->length *= 100;
-        $box->depth  *= 100;
-        $box->width  *= 100;
 
         $box->save();
 

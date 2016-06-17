@@ -11,6 +11,72 @@ class Box extends Model
     protected $hidden = ['created_at', 'updated_at'];
 
     /**
+     * Get width attribute.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function getWidthAttribute($value)
+    {
+        return $value / 100;
+    }
+
+    /**
+     * Get length attribute.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function getLengthAttribute($value)
+    {
+        return $value / 100;
+    }
+
+    /**
+     * Get depth attribute.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function getDepthAttribute($value)
+    {
+        return $value / 100;
+    }
+
+    /**
+     * Set width attribute.
+     *
+     * @param  string  $value
+     * @return void
+     */
+    public function setWidthAttribute($value)
+    {
+        $this->attributes['width'] = $value * 100;
+    }
+
+    /**
+     * Set length attribute.
+     *
+     * @param  string  $value
+     * @return void
+     */
+    public function setLengthAttribute($value)
+    {
+        $this->attributes['length'] = $value * 100;
+    }
+
+    /**
+     * Set depth attribute.
+     *
+     * @param  string  $value
+     * @return void
+     */
+    public function setDepthAttribute($value)
+    {
+        $this->attributes['depth'] = $value * 100;
+    }
+
+    /**
      * Get the scaffold where the box is located.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -110,5 +176,20 @@ class Box extends Model
 
             return true;
         }
+    }
+
+    /**
+     * Check if a boat fits in this box.
+     * 
+     * @param Boat $boat
+     * @return boolean
+     */
+    public function fits(Boat $boat)
+    {
+        if ($this->width >= $boat->width && $this->length >= $boat->length) {
+            return true;
+        }
+
+        return false;
     }
 }

@@ -28,7 +28,7 @@ class BoxController extends Controller
     	$availableBoxes = [];
 
     	foreach ($boxes as $box) {
-			if ($box->isAvailableBetween($start, $end) && $box->length >= $boat->length && $box->width >= $boat->width) {
+			if ($box->isAvailableBetween($start, $end) && $box->fits($boat)) {
     			$box->code = $box->getFullCode();
     			array_push($availableBoxes, $box);
     		}
