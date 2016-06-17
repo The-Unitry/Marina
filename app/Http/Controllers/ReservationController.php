@@ -43,7 +43,6 @@ class ReservationController extends Controller
     public function boxes(Request $request)
     {
         $boat = Boat::findOrFail($request->get('boat_id'));
-
         return view('reservations.available_boxes', [
             'boxes' => Api\BoxController::getAvailableBoxes($boat, $request->get('start'), $request->get('end')),
             'filled' => $request->all()
