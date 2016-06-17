@@ -20,6 +20,11 @@
                 <form action="/reserveren" method="post">
                     {{ csrf_field() }}
                     <div class="list-group">
+                        @if(!count($boxes))
+                            <div class="list-group-item">
+                                Er zijn helaas geen beschikbare boxen beschikbaar. Neem <a href="/contact">contact</a> op met de Jachthaven of zoek op <a href="/reserveren">een andere periode</a>.
+                            </div>
+                        @endif
                         @foreach($boxes as $box)
                             <div class="list-group-item">
                                 {{ $box->code }} <small>(&euro; {{ euro($box->price_per_night / 100) }} per nacht)</small> <small>(Lengte:{{ $box->length / 100 }}m x  Breedte: {{ $box->width / 100 }}m )</small>
