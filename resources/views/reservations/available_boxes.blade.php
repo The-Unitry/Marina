@@ -22,7 +22,7 @@
                     <div class="list-group">
                         @foreach($boxes as $box)
                             <div class="list-group-item">
-                                {{ $box->code }} <small>(&euro; {{ euro($box->price_per_night / 100) }} per nacht)</small>
+                                {{ $box->code }} <small>(&euro; {{ euro($box->price_per_night / 100) }} per nacht)</small> <small>(Lengte:{{ $box->length }}m x  Breedte: {{ $box->width }}m )</small>
                                 <span class="pull-right">
                                     <a href="/reserveren/store/{{ $filled['boat_id'] }}/{{ $filled['start'] }}/{{ $filled['end'] }}/{{ $filled['amount_of_persons'] }}/{{ $box->id }}">
                                     Boeking bevestigen
