@@ -69,7 +69,7 @@
             <div class="col-md-3 col-sm-6">
                 <div class="widget-panel">
                     <h2 class="text-white" id="payments"></h2>
-                    <div class="text-white">Aantal betalingen</div>
+                    <div class="text-white">Aantal betaalde facturen</div>
                 </div>
             </div>
         </div>
