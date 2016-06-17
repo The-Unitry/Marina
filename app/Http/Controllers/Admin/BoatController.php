@@ -50,6 +50,11 @@ class BoatController extends AdminController
         if (isset($request->all()['image_path'])) {
             $boat->uploadImage($request->all()['image_path']);
         }
+
+        $boat->height *= 100;
+        $boat->length *= 100; 
+        $boat->depth  *= 100; 
+        $boat->width  *= 100;  
         
         $boat->save();
 
@@ -66,6 +71,12 @@ class BoatController extends AdminController
      */
     public function show(Boat $boat)
     {
+
+        $boat->length /= 100;
+        $boat->height /= 100;
+        $boat->depth  /=  100;
+        $boat->width  /=  100;
+
         return view('admin.boats.show', [
             'boat' => $boat,
             'users' => User::all(),
@@ -98,6 +109,11 @@ class BoatController extends AdminController
         if (isset($request->all()['image_path'])) {
             $boat->uploadImage($request->all()['image_path']);
         }
+
+        $boat->length *= 100;
+        $boat->height *= 100;
+        $boat->depth  *= 100;
+        $boat->width  *= 100;
 
         $boat->save();
 
