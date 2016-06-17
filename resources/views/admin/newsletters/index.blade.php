@@ -44,7 +44,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Toch niet</button>
-                    <button type="submit" class="btn btn-primary">Bevestigen</a>
+                    <button type="button" class="btn btn-primary" onclick="this.disabled = true">Bevestigen</a>
                 </div>
             </div>
         </div>
