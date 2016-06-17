@@ -132,7 +132,7 @@
                                                 <select class="form-control" name="products[{{ $product->id }}][vat]" value="{{ $product->vat }}" placeholder="{{ trans('columns.vat') }}">
                                                   <option value="0" {{ ($product->vat == 0) ? 'selected' : '' }}>0</option>
                                                   <option value="6" {{ ($product->vat == 6) ? 'selected' : '' }}>6</option>
-                                                  <option value="21" {{ ($product->vat == setting('tax')) ? 'selected' : '' }}>{{ setting('tax') }}</option>
+                                                  <option value="{{ setting('tax') }}" {{ ($product->vat == setting('tax')) ? 'selected' : '' }}>{{ setting('tax') }}</option>
                                                 </select>
                                                 <span class="input-group-addon">%</span>
                                                 @else

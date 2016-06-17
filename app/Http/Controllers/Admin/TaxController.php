@@ -18,6 +18,7 @@ class TaxController extends AdminController
     public function show(Request $request, $start, $end)
     {
         $invoices = Invoice::where([
+            'status' => 'paid',
             ['created_at', '<=', $end],
             ['created_at', '>=', $start]
         ])->get();
