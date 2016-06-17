@@ -45,19 +45,19 @@
                     <div class="form-group">
                         <label for="depth" class="col-sm-2 control-label">{{ trans('columns.sizes.depth') }}</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" name="depth" id="depth" value="{{ $box->depth or '' }}">
+                            <input type="number" step="0.01" class="form-control" name="depth" id="depth" value="{{ $box->depth or '' }}">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="length" class="col-sm-2 control-label">{{ trans('columns.sizes.length') }}</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" name="length" id="length" value="{{ $box->length or '' }}">
+                            <input type="number" step="0.01" class="form-control" name="length" id="length" value="{{ $box->length or '' }}">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="width" class="col-sm-2 control-label">{{ trans('columns.sizes.width') }}</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" name="width" id="width" value="{{ $box->width or '' }}">
+                            <input type="number" step="0.01" class="form-control" name="width" id="width" value="{{ $box->width or '' }}">
                         </div>
                     </div>
                 </div>
