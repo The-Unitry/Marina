@@ -17,9 +17,9 @@ class Product extends Model
     {
         if (!empty($this->start) && !empty($this->end)) {
             return date('d-m-Y', strtotime($this->start)) . ' - ' . date('d-m-Y', strtotime($this->end));
-        } else {
-            return '';
         }
+        
+        return '';
     }
 
     /**
