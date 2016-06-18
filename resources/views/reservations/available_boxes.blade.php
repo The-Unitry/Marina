@@ -22,7 +22,7 @@
                     <div class="list-group">
                         @if(!count($boxes))
                             <div class="list-group-item">
-                                Er zijn helaas geen beschikbare boxen beschikbaar. Neem <a href="/contact">contact</a> op met de jachthaven of zoek op <a href="/reserveren">een andere periode</a>.
+                                Er zijn helaas momenteel geen boxen beschikbaar. Neem <a href="/contact">contact</a> op met de jachthaven of zoek op <a href="/reserveren">een andere periode</a>.
                             </div>
                         @endif
                         @foreach($boxes as $box)
