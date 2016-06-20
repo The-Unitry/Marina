@@ -27,10 +27,10 @@ class AdminController extends Controller
     public function index()
     {
         return view('admin.dashboard.index', [
-            'transients' => sizeof(User::all()),
-            'berth_holders' => sizeof(User::all()),
-            'boats' => sizeof(Boat::all()),
-            'users' => sizeof(User::all())
+            'transients' => count(User::all()),
+            'berth_holders' => count(User::all()),
+            'boats' => count(Boat::all()),
+            'users' => count(User::all())
         ]);
     }
 }

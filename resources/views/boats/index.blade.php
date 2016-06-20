@@ -14,19 +14,23 @@
         </h3>
         <br>
         @foreach($boats as $boat)
-            <a class="row" href="/mijn-boten/{{ $boat->id }}">
+            <div class="row">
                 <div class="col-md-2">
-                    <img src="/media/medium/{{ $boat->image_path }}.png" alt="" width="100%">
+                    <a href="/mijn-boten/{{ $boat->id }}">
+                        <img src="/media/medium/{{ ($boat->image_path) ? : '../small/anchor_placeholder' }}.png" alt="" width="100%">
+                    </a>
                 </div>
                 <div class="col-md-10">
                     <h3>
-                        {{ $boat->name }}
+                        <a href="/mijn-boten/{{ $boat->id }}">
+                            {{ $boat->name }}
+                        </a>
                     </h3>
                     <h5>
-                        {{ $boat->brand }} - {{ $boat->type }}
+                        {{ $boat->brand }} - {{ trans('columns.' . strtolower($boat->type)) }}
                     </h5>
                 </div>
-            </a>
+            </div>
             <hr>
         @endforeach
     </div>

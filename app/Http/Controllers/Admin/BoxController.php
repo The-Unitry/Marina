@@ -92,6 +92,7 @@ class BoxController extends AdminController
         $box = Box::find($box->id);
         $box->fill($request->all());
         $box->price_per_night = $request->get('price_per_night') * 100;
+
         $box->save();
 
         return back()->with('message', trans(

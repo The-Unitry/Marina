@@ -23,7 +23,7 @@ class ReservationController extends AdminController
     public function index()
     {
         return view('admin.reservations.index', [
-            'reservations' => Reservation::all()
+            'reservations' => Reservation::orderBy('created_at', 'DESC')->get()
         ]);
     }
 
@@ -126,15 +126,16 @@ class ReservationController extends AdminController
     {
         $invoice = Invoice::create([
             'status' => 'pending',
+            'due_days' => 3,
             'user_id' => Auth::id()
         ]);
 
         Product::create([
             'invoice_id' => $invoice->id,
             'amount' => 1,
-            'description' => 'Ligplaats ' . $reservation->box->getFullCode(),
+            'description' => $reservation->box->getFullCode() . ' - ' . $reservation->boat->description(),
             'vat' => setting('tax'),
-            'price' => $reservation->totalNights() * $reservation->price,
+            'price' => $reservation->totalNights() * $reservation->box->price_per_night,
             'start' => $reservation->start,
             'end' => $reservation->end
         ]);
@@ -142,9 +143,9 @@ class ReservationController extends AdminController
         Product::create([
             'invoice_id' => $invoice->id,
             'amount' => $reservation->amount_of_persons,
-            'description' => 'Toeristen belasting ',
+            'description' => 'Toeristenbelasting',
             'vat' => 0,
-            'price' => $reservation->amount_of_persons * setting('tourist_tax')
+            'price' => $reservation->amount_of_persons * intval(floatval(str_replace(',', '.', setting('tourist_tax'))) * 100)
         ]);
 
         return redirect('/admin/invoice/' . $invoice->id);

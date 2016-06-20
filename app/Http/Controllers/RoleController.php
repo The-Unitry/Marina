@@ -19,8 +19,7 @@ class RoleController extends Controller
     public static function createRoles()
     {
         foreach (config('database_fields.roles') as $role) {
-            if (!Role::find($role['id']))
-            {
+            if (!Role::find($role['id'])) {
                 Role::create($role);
             }
         }

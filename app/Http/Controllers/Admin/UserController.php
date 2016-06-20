@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Navicula\Http\Requests;
 use Navicula\Models\Role;
 use Navicula\Models\User;
+use Auth;
 
 class UserController extends AdminController
 {
@@ -31,7 +32,7 @@ class UserController extends AdminController
     {
         return view('admin.users.show', [
             'method' => 'POST',
-            'roles' => Role::all()
+            'roles' => Role::where('id', '>=', Auth::user()->role->id)->get()
         ]);
     }
 
@@ -64,7 +65,7 @@ class UserController extends AdminController
         return view('admin.users.show', [
             'user' => $user,
             'method' => 'PATCH',
-            'roles' => Role::all()
+            'roles' => Role::where('id', '>=', Auth::user()->role->id)->get()
         ]);
     }
 

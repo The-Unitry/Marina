@@ -20,7 +20,9 @@ return [
         'box' => 'Ligplaats toevoegen',
         'boat' => 'Boot toevoegen',
         'user' => 'Gebruiker toevoegen',
-        'scaffold' => 'Steiger toevoegen'
+        'scaffold' => 'Steiger toevoegen',
+        'newsletter' => 'Nieuwsbrief aanmaken',
+        'product' => 'Product toevoegen',
 
     ],
 
@@ -35,6 +37,7 @@ return [
         'boat' => 'Boot bewerken',
         'user' => 'Gebruiker bewerken',
         'scaffold' => 'Steiger bewerken',
+        'newsletter' => 'Nieuwsbrief bewerken',
 
     ],
 
@@ -48,12 +51,14 @@ return [
         'boat' => 'Boot verwijderen',
         'user' => 'Gebruiker verwijderen',
         'scaffold' => 'Steiger verwijderen',
+        'newsletter' => 'Nieuwsbrief verwijderen',
 
     ],
 
     'send' => [
 
-        'message' => 'Stuur bericht'
+        'message' => 'Stuur bericht',
+        'newsletter' => 'Verstuur nieuwsbrief',
 
     ]
 

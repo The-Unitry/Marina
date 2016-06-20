@@ -31,7 +31,7 @@
                     <div class="form-group">
                         <label for="phone" class="col-sm-2 control-label">{{ trans('columns.phone_number') }}</label>
                         <div class="col-sm-10">
-                            <input type="" class="form-control" name="phone" id="phone" value="{{ $user->phone }}">
+                            <input type="text" minlength="10" maxlength="10" pattern="\b\d{3}[-.]?\d{3}[-.]?\d{4}\b" class="form-control" name="phone" id="phone" value="{{ $user->phone }}">
                         </div>
                     </div>
                     <div class="form-group">

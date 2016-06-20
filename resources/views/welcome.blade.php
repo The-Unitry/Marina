@@ -19,23 +19,23 @@
         <div class="row">
             <div class="col-md-4 text-center">
                 <img class="img-responsive anchor" src="/img/anchor.png"/>
-                <h3>Lorem ipsum</h3>
+                <h3>Online reserveren</h3>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto autem consequuntur deserunt hic in.
+                    Boek met ons handige filter een box die geschikt is voor jouw boot en beschikbaar is tussen de door jou opgegeven datums.
                 </p>
             </div>
             <div class="col-md-4 text-center">
                 <img class="img-responsive anchor" src="/img/anchor.png"/>
-                <h3>Lorem ipsum</h3>
+                <h3>Overzicht</h3>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto autem consequuntur deserunt hic in.
+                    Door een overzicht te geven van je reserveringen, weet je altijd waar je aan toe bent. Altijd en overal.
                 </p>
             </div>
             <div class="col-md-4 text-center">
                 <img class="img-responsive anchor" src="/img/anchor.png"/>
-                <h3>Lorem ipsum</h3>
+                <h3>Facturatie</h3>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto autem consequuntur deserunt hic in.
+                    Facturen worden digitaal verstuurd, en zijn terug te vinden in het overzicht van je reserveringen.
                 </p>
             </div>
         </div>

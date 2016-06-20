@@ -75,6 +75,7 @@ return [
     'tax' => 'Belasting',
     'tourist_tax' => 'Toeristenbelasting',
     'bank_account' => 'Rekeningnummer',
+    'subtotal_price' => 'Totaal prijs excl. BTW',
     'author' => 'Auteur',
     'approved' => 'Goedgekeurd',
     'contact_form' => 'Contactformulier',
@@ -90,13 +91,24 @@ return [
     'phone_number' => 'Telefoonnummer',
     'user_mail' => 'E-mailadres',
     'user_city' => 'Woonplaats',
+    'due_days' => 'Betalingstermijn',
+    'products' => 'Producten',
+    'description' => 'Omschrijving',
+    'amount' => 'Aantal',
+    'price' => 'Prijs',
+    'vat' => 'BTW',
+    'days' => 'dagen',
+    'period' => 'Periode',
+    'newsletter' => 'Nieuwsbrief',
+    'subject' => 'Onderwerp',
+    'to' => 'Aan',
 
     'sizes' => [
 
-        'height' => 'Hoogte (cm)',
-        'length' => 'Lengte (cm)',
-        'depth' => 'Diepte (cm)',
-        'width' => 'Breedte (cm)',
+        'height' => 'Hoogte (m)',
+        'length' => 'Lengte (m)',
+        'depth' => 'Diepte (m)',
+        'width' => 'Breedte (m)',
 
     ],
 

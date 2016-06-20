@@ -8,6 +8,7 @@
     <table class="table table-striped" id="datatable">
         <thead>
         <tr>
+            <th>#</th>
             <th>{{ trans('columns.requester') }}</th>
             <th>{{ trans('columns.start_date') }}</th>
             <th>{{ trans('columns.end_date') }}</th>
@@ -18,6 +19,9 @@
         @foreach($reservations as $i => $reservation)
             @if(!$reservation->box->scaffold->hidden)
             <tr data-href="/admin/reservation/{{ $reservation->id }}" class="clickable-row">
+                <td>
+                    {{ $i + 1 }}
+                </td>
                 <td>
                     {{ $reservation->requester->name }}
                 </td>

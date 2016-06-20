@@ -56,6 +56,7 @@ return array(
         'medium' => 'Intervention\Image\Templates\Medium',
         'large' => 'Intervention\Image\Templates\Large',
         'logo' => 'Navicula\Filters\LogoFilter',
+        'favicon' => 'Navicula\Filters\FaviconFilter',
         'header' => 'Navicula\Filters\HeaderFilter',
     ),
 

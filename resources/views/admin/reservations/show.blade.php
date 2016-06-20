@@ -18,13 +18,13 @@
                     <div class="form-group">
                         <label for="start" class="col-sm-2 control-label">{{ trans('columns.start_date') }}</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="start" id="start" value="{{ $reservation->start or '' }}">
+                            <input type="text" class="form-control datepicker" name="start" id="start" value="{{ $reservation->start or '' }}">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="end" class="col-sm-2 control-label">{{ trans('columns.end_date') }}</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="end" id="end" value="{{ $reservation->end or '' }}">
+                            <input type="text" class="form-control datepicker" name="end" id="end" value="{{ $reservation->end or '' }}">
                         </div>
                     </div>
                     <div class="form-group">
@@ -68,9 +68,11 @@
                 </div>
                 <div class="col-md-2">
                     <div class="list-group">
-                        <button type="submit" class="list-group-item bg-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i> 
+                        <button type="submit" class="list-group-item bg-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i>
                         {{ trans('actions.save') }}</button>
+                        @if(isset($reservation))
                         <a href="../reservation/{{ $reservation->id }}/create-invoice" class="list-group-item"><span class="fa fa-money"></span> {{ trans('actions.create.invoice') }}</a>
+                        @endif
                         <a href="../reservation" class="list-group-item"><span class="fa fa-arrow-left"></span> {{ trans('actions.back') }}</a>
                     </div>
                 </div>

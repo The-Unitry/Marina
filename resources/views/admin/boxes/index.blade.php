@@ -21,7 +21,7 @@
                     {{ $i + 1 }}
                 </td>
                 <td>
-                    {{ $box->scaffold->code . $box->id }}
+                    {{ $box->getFullCode() }}
                 </td>
                 <td>
                     {{ ($box->isAvailable()) ? trans('columns.available') : trans('columns.unavailable') }}

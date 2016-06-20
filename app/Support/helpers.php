@@ -12,3 +12,16 @@ if (!function_exists('setting')) {
         return Navicula\Models\Setting::getValueByKey($key);
     }
 }
+
+if (!function_exists('euro')) {
+    /**
+     * Return a formatted price.
+     *
+     * @param $price
+     * @return mixed
+     */
+    function euro($price)
+    {
+        return number_format($price, 2, ',', '.');
+    }
+}

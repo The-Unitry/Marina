@@ -7,7 +7,11 @@
 @section('content')
     <div class="container content">
         <h3>
-            {{ trans('actions.create.boat') }}
+            @if ($method == 'POST')
+                {{ trans('actions.create.boat') }}
+            @elseif ($method == 'PATCH')
+                {{ trans('actions.edit.boat') }}
+            @endif
         </h3>
         <br>
         <form action="{{ (!isset($boat)) ? '/mijn-boten' : '/mijn-boten/'. $boat->id }}" method="post" enctype="multipart/form-data">
@@ -26,7 +30,8 @@
                             </td>
                             <td>
                                 <input type="text" class="form-control" id="name" name="name"
-                                       value="{{ $boat->name or '' }}">
+                                        {{ ($method == 'POST') ? '' : 'disabled' }}
+                                        value="{{ $boat->name or '' }}" required>
                             </td>
                         </tr>
                         <tr>
@@ -35,7 +40,8 @@
                             </td>
                             <td>
                                 <input type="text" class="form-control" id="brand" name="brand"
-                                       value="{{ $boat->brand or '' }}">
+                                        {{ ($method == 'POST') ? '' : 'disabled' }}
+                                        value="{{ $boat->brand or '' }}" required>
                             </td>
                         </tr>
                         <tr>
@@ -44,7 +50,8 @@
                             </td>
                             <td>
                                 <input type="text" class="form-control" id="model" name="model"
-                                       value="{{ $boat->model or '' }}">
+                                        {{ ($method == 'POST') ? '' : 'disabled' }}
+                                        value="{{ $boat->model or '' }}" required>
                             </td>
                         </tr>
                         <tr>
@@ -53,7 +60,8 @@
                             </td>
                             <td>
                                 <input type="text" class="form-control" id="color" name="color"
-                                       value="{{ $boat->color or '' }}">
+                                        {{ ($method == 'POST') ? '' : 'disabled' }}
+                                        value="{{ $boat->color or '' }}" required>
                             </td>
                         </tr>
                         <tr>
@@ -61,7 +69,7 @@
                                 <label for="type">{{ trans('columns.type') }}</label>
                             </td>
                             <td>
-                                <select name="type" id="type" class="form-control">
+                                <select name="type" id="type" class="form-control" {{ ($method == 'POST') ? '' : 'disabled' }} required>
                                     <option value="Motorboat" {{ (isset($boat) && $boat->type == 'Motorboat' ? 'selected' : '') }}>
                                     {{ trans('columns.motorboat') }}</option>
                                     <option value="Sailboat" {{ (isset($boat) && $boat->type == 'Sailboat' ? 'selected' : '') }}>
@@ -87,8 +95,9 @@
                                 <label for="height">{{ trans('columns.sizes.height') }}</label>
                             </td>
                             <td>
-                                <input type="number" class="form-control" id="height" name="height"
-                                       value="{{ $boat->height or '' }}">
+                                <input type="number" step="0.01" min="0" class="form-control" id="height" name="height"
+                                        {{ ($method == 'POST') ? '' : 'disabled' }}
+                                        value="{{ $boat->height or '' }}" required>
                             </td>
                         </tr>
                         <tr>
@@ -96,8 +105,9 @@
                                 <label for="length">{{ trans('columns.sizes.length') }}</label>
                             </td>
                             <td>
-                                <input type="number" class="form-control" id="length" name="length"
-                                       value="{{ $boat->length or '' }}">
+                                <input type="number" step="0.01" min="0" class="form-control" id="length" name="length"
+                                        {{ ($method == 'POST') ? '' : 'disabled' }}
+                                        value="{{ $boat->length or '' }}" required>
                             </td>
                         </tr>
                         <tr>
@@ -105,8 +115,9 @@
                                 <label for="depth">{{ trans('columns.sizes.depth') }}</label>
                             </td>
                             <td>
-                                <input type="number" class="form-control" id="depth" name="depth"
-                                       value="{{ $boat->depth or '' }}">
+                                <input type="number" step="0.01" min="0" class="form-control" id="depth" name="depth"
+                                        {{ ($method == 'POST') ? '' : 'disabled' }}
+                                        value="{{ $boat->depth or '' }}" required>
                             </td>
                         </tr>
                         <tr>
@@ -114,8 +125,9 @@
                                 <label for="width">{{ trans('columns.sizes.width') }}</label>
                             </td>
                             <td>
-                                <input type="number" class="form-control" id="width" name="width"
-                                       value="{{ $boat->width or '' }}">
+                                <input type="number" step="0.01" min="0" class="form-control" id="width" name="width"
+                                        {{ ($method == 'POST') ? '' : 'disabled' }}
+                                        value="{{ $boat->width or '' }}" required>
                             </td>
                         </tr>
                         </tbody>
@@ -134,7 +146,7 @@
                                 <label for="image_path">{{ trans('columns.boat_image') }}</label>
                             </td>
                             <td>
-                                <input type="file" class="form-control" name="image_path" id="image_path" accept=".png,.jpg">
+                                <input type="file" class="form-control" name="image_path" id="image_path" accept="image/*">
                             </td>
                         </tr>
                         @if(isset($boat) && $boat->hasImage())

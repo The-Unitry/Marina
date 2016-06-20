@@ -45,13 +45,13 @@ class BoatController extends AdminController
      */
     public function store(Request $request)
     {
-        $boat = Boat::create($request->all());
+        $boat = new Boat($request->all());
 
         if (isset($request->all()['image_path'])) {
             $boat->uploadImage($request->all()['image_path']);
         }
         
-        $post->save();
+        $boat->save();
 
         return redirect('/admin/boat/' . $boat->id)->with(
             'message', trans('confirmations.created.boat')
